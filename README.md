@@ -2,45 +2,36 @@
 
 Site estático do curso **FaturaOdonto** — faturamento de convênios odontológicos: landing, módulos, aulas em HTML, materiais bônus e página de anúncios (**HTML, CSS e JavaScript**).
 
-## Colocar o site no ar (sem GitHub Pages)
+## Site público (sempre a partir deste repositório)
 
-O GitHub Pages às vezes falha por configuração da conta. Estas opções costumam ser **mais simples** e funcionam com o mesmo projeto (só HTML/CSS/JS).
+URL do site:
 
-### Opção 1 — Netlify Drop (a mais fácil, só navegador)
+**https://marisacastro03.github.io/faturaodonto/**
 
-1. No PC, deixe a pasta do projeto pronta: `curso-faturamento-convenios` (com `index.html`, `styles.css`, `marisa.jpg`, pasta `aulas`, etc.).
-2. Abra **https://app.netlify.com/drop**
-3. **Arraste a pasta inteira** para a página.
-4. Em segundos o Netlify mostra um link tipo `https://nome-aleatorio.netlify.app` — esse é o endereço para compartilhar.
-5. (Opcional) Crie login no Netlify para **fixar o nome** do site e não perder o link.
+- Home: `index.html`
+- Landing de anúncios: `anuncio.html`
 
-Não precisa de linha de comando nem de GitHub Pages.
+### Como funciona
 
-### Opção 2 — Netlify ligado ao GitHub
+1. Você trabalha na branch **`main`** (código-fonte do site).
+2. O workflow **Deploy GitHub Pages** (em `.github/workflows/deploy-pages.yml`) copia os arquivos para a branch **`gh-pages`**.
+3. O **GitHub Pages** serve o site a partir da branch **`gh-pages`**.
 
-1. Acesse **https://app.netlify.com** → **Add new site** → **Import an existing project**
-2. Conecte o GitHub e escolha o repositório **faturaodonto**
-3. Deixe **Build command** vazio e **Publish directory** como **`.`** (ponto = raiz), ou confira se o arquivo **`netlify.toml`** do repo foi detectado
-4. **Deploy site** — cada `git push` na `main` atualiza o site
+### Configurar o GitHub Pages (uma vez)
 
-### Opção 3 — Vercel
+1. Abra o repositório no GitHub → **Settings** → **Pages**
+2. **Build and deployment** → **Source:** **Deploy from a branch**
+3. **Branch:** selecione **`gh-pages`** e pasta **`/ (root)`** → **Save**
+4. Faça um **push** na `main` (ou em **Actions** rode o workflow **Deploy GitHub Pages** manualmente). Na primeira vez, o workflow **cria** a branch `gh-pages`
+5. Em até alguns minutos o link **https://marisacastro03.github.io/faturaodonto/** deve abrir
 
-1. **https://vercel.com** → **Add New** → **Project** → importe o repo **faturaodonto**
-2. Framework: **Other**; **Root Directory** `./`; sem comando de build
-3. **Deploy**
+### Se o workflow falhar
 
-### Depois de publicar
+- **Settings** → **Actions** → **General** → **Workflow permissions:** **Read and write permissions**
+- Confirme que **Actions** estão habilitados no repositório (**Settings** → **Actions** → **General**)
 
-Atualize no código as meta tags **`og:url`** e **`og:image`** em `index.html` e `anuncio.html` para a **URL real** do Netlify/Vercel (assim WhatsApp e redes mostram a prévia certa).
+### Meta tags (Open Graph)
 
-### GitHub Pages (se quiser insistir)
+Em `index.html` e `anuncio.html`, `og:url` e `og:image` já apontam para `https://marisacastro03.github.io/faturaodonto/`. Se usar domínio próprio depois, atualize essas URLs.
 
-1. Repo → **Settings** → **Pages**
-2. **Source:** **Deploy from a branch** → **main** → **`/ (root)`**
-3. Site: `https://marisacastro03.github.io/faturaodonto/`
-
-O arquivo **`.nojekyll`** ajuda o GitHub a não processar o site com Jekyll.
-
-### Domínio próprio
-
-Configure no painel do Netlify/Vercel/GitHub (**Custom domain**) e depois ajuste as meta tags `og:*` para essa URL.
+O arquivo **`.nojekyll`** evita que o Jekyll altere o site estático.

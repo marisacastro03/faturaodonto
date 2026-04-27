@@ -1,3 +1,0 @@
-# Netlify: pasta raiz = site publicado (sem build)
-[build]
-  publish = "."
