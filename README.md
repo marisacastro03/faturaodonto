@@ -1,48 +1,46 @@
 # faturaodonto
 
-Site estático do curso **FaturaOdonto** — faturamento de convênios odontológicos: landing, módulos, aulas em HTML, materiais bônus e página de anúncios (**HTML, CSS e JavaScript**).
+Site estático do curso **FaturaOdonto** — faturamento de convênios odontológicos.
 
-## Link do site (GitHub Pages)
+## Link para testar
 
 **https://marisacastro03.github.io/faturaodonto/**
 
-(é preciso o **`/faturaodonto/`** no final — é site de **projeto**, não de usuário.)
+(use exatamente com **`/faturaodonto/`** no final)
 
 ---
 
-### Se aparecer **404 — There isn't a GitHub Pages site here**
+## Se aparece **404 — There isn't a GitHub Pages site here**
 
-Faça nesta ordem:
+Siga **UMA** das opções abaixo (não misture as duas).
 
-#### 1. Repositório **público**
-
-No plano **gratuito**, o GitHub Pages para este tipo de site costuma exigir repositório **público**.
-
-- **Settings** → role até **Danger Zone** → **Change repository visibility** → **Public** (se ainda estiver privado).
-
-#### 2. Ativar Pages na branch **main**
+### Opção A — Pelo GitHub Actions (este repositório já tem o workflow)
 
 1. **Settings** → **Pages**
-2. **Build and deployment** → **Source:** **Deploy from a branch** (não “GitHub Actions”)
-3. **Branch:** escolha **`main`** → pasta **`/ (root)`** → **Save**
-4. Espere **2 a 10 minutos** e teste de novo o link (às vezes demora).
+2. **Build and deployment** → **Source** → escolha **GitHub Actions** (não “None”, não só “Deploy from branch” se quiser usar o workflow)
+3. **Settings** → **Actions** → **General** → **Workflow permissions** → **Read and write permissions** → Save
+4. Faça um **push** na `main` ou em **Actions** → **Deploy static content to Pages** → **Run workflow**
+5. **Importante (1ª vez):** abra o run em **Actions**. Se aparecer **“Waiting for approval”** / **Review deployments** → clique em **Approve and deploy** no environment **github-pages**
+6. Espere o job ficar verde e teste o link de novo (pode levar alguns minutos)
 
-#### 3. Conferir o endereço
+### Opção B — Sem Actions (só branch main)
 
-Abra exatamente:
+1. **Settings** → **Pages**
+2. **Source** → **Deploy from a branch**
+3. Branch **`main`**, pasta **`/ (root)`** → Save
+4. Se antes estava **GitHub Actions**, **tem que mudar** para esta opção ou o site não sobe por branch
+5. Espere alguns minutos e teste o link
 
-`https://marisacastro03.github.io/faturaodonto/`
+### Requisito
 
-Não use só `https://marisacastro03.github.io` (isso é outro tipo de site).
+No plano **gratuito**, o repositório precisa ser **público** para o GitHub Pages funcionar assim.
+
+**Settings** → **Danger Zone** → repositório **Public**.
 
 ---
-
-### Sobre este repositório
-
-- O site está na **raiz** da branch **`main`** (`index.html`, `styles.css`, pasta `aulas`, etc.).
-- O arquivo **`.nojekyll`** evita que o GitHub rode Jekyll e quebre páginas estáticas.
-- **Não é necessário** workflow de Actions nem branch `gh-pages` para esse modo.
 
 ### Open Graph
 
-Em `index.html` e `anuncio.html`, as meta tags `og:url` e `og:image` usam `https://marisacastro03.github.io/faturaodonto/`. Com domínio próprio, atualize para a URL final.
+`index.html` e `anuncio.html` usam `https://marisacastro03.github.io/faturaodonto/` nas meta tags.
+
+O arquivo **`.nojekyll`** evita o Jekyll alterar o site estático.
