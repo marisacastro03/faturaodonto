@@ -1,5 +1,5 @@
-# Publica o site a partir DESTE repositório na branch gh-pages.
-# Depois configure uma vez: Settings → Pages → Branch gh-pages → / (root)
+# Publica o site na branch gh-pages usando só git (sem actions de terceiros).
+# GitHub: Settings → Pages → Branch gh-pages → / (root)
 name: Deploy GitHub Pages
 
 on:
@@ -22,18 +22,26 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Montar pasta do site (sem .git / .github)
+      - name: Copiar arquivos do site (sem .git / .github)
         run: |
-          mkdir -p _site
+          set -e
+          mkdir -p /tmp/site
           rsync -a \
             --exclude='.git' \
             --exclude='.github' \
-            --exclude='_site' \
-            ./ _site/
+            "${GITHUB_WORKSPACE}/" /tmp/site/
 
-      - name: Enviar para branch gh-pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: _site
-          force_orphan: true
+      - name: Push para gh-pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GIT_SHA: ${{ github.sha }}
+        run: |
+          set -e
+          cd /tmp/site
+          git init -b gh-pages
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+          git add -A
+          git commit -m "deploy: ${GIT_SHA}"
+          git remote add origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          git push --force origin gh-pages

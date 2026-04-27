@@ -27,8 +27,9 @@ URL do site:
 
 ### Se o workflow falhar
 
-- **Settings** → **Actions** → **General** → **Workflow permissions:** **Read and write permissions**
-- Confirme que **Actions** estão habilitados no repositório (**Settings** → **Actions** → **General**)
+1. **Settings** → **Actions** → **General** → **Workflow permissions** → marque **Read and write permissions** e **Allow GitHub Actions to create and approve pull requests** (se aparecer) → **Save**
+2. Na aba **Actions**, abra o workflow vermelho → clique no job **deploy** → leia o log do passo que falhou (copie a última mensagem de erro)
+3. Confirme em **Settings** → **Pages** que a branch é **`gh-pages`** e a pasta **`/`** (não use **main** aqui depois de adotar este fluxo)
 
 ### Meta tags (Open Graph)
 
