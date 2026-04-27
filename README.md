@@ -4,28 +4,23 @@ Site estático do curso **FaturaOdonto** — faturamento de convênios odontoló
 
 ## Site no ar (link para compartilhar)
 
-Depois de ativar o GitHub Pages (passos abaixo), o endereço público será:
-
 **https://marisacastro03.github.io/faturaodonto/**
 
-- Página inicial: `index.html` (abre automaticamente)
-- Landing de anúncios: `anuncio.html`
+- Home: abre o `index.html` automaticamente
+- Landing de anúncios: [anuncio.html](https://marisacastro03.github.io/faturaodonto/anuncio.html)
 
-### Ativar o GitHub Pages (uma vez)
+### Publicar no GitHub Pages (recomendado: pela branch — sem Actions)
 
-1. Abra o repositório no GitHub: **marisacastro03/faturaodonto**
-2. Vá em **Settings** → **Pages** (menu lateral)
-3. Em **Build and deployment** → **Source**, escolha **GitHub Actions** (não “Deploy from a branch” se quiser usar o workflow já configurado neste repo)
-4. Faça um **push** na branch `main` (ou use **Actions** → workflow **Deploy GitHub Pages** → **Run workflow**). Quando o job ficar verde, o site estará publicado em alguns minutos
-5. Se a primeira publicação não aparecer, confira **Settings** → **Pages** se a **URL** do site está indicada e se não há erros na aba **Actions**
+Este repositório é só HTML/CSS/JS. A forma mais simples é **publicar direto da branch `main`**, sem workflow:
 
-### Se o workflow “Deploy GitHub Pages” falhar
+1. Abra **https://github.com/marisacastro03/faturaodonto**
+2. **Settings** → **Pages**
+3. Em **Build and deployment** → **Source**, escolha **Deploy from a branch**
+4. **Branch:** `main` → pasta **`/ (root)`** → **Save**
+5. Em 1–2 minutos o site aparece no link acima (atualize a página se precisar)
 
-- Confirme **Settings** → **Pages** → **Source: GitHub Actions** (não deixe em “None”).
-- Confirme **Settings** → **Actions** → **General** → **Workflow permissions** em **Read and write permissions**.
-- O arquivo do workflow usa **dois jobs** (`build` e `deploy`); é o formato que o `deploy-pages` espera.
-- **Plano B:** em **Pages**, troque a source para **Deploy from a branch** → branch **main** → pasta **/ (root)** e salve (publica sem Actions).
+O arquivo **`.nojekyll`** na raiz evita que o GitHub tente processar o site com Jekyll e quebre os links.
 
 ### Domínio próprio (opcional)
 
-Quando comprar domínio (ex.: `faturaodonto.com.br`), configure no GitHub em **Pages** → **Custom domain** e atualize no código as meta tags `og:url` e `og:image` em `index.html` e `anuncio.html` para usar a nova URL.
+Em **Settings** → **Pages** → **Custom domain**. Depois atualize `og:url` e `og:image` em `index.html` e `anuncio.html` para a nova URL.
