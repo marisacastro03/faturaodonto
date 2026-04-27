@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aula 3 — Dados obrigatórios na nota para operadoras | Módulo 5</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="aulas.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header header--scrolled">
+    <nav class="nav container">
+      <a href="../index.html" class="nav__logo"><span class="logo-icon">🦷</span> FaturaOdonto</a>
+      <a href="../modulo5.html" class="btn btn--outline nav__cta">← Voltar ao Módulo 5</a>
+    </nav>
+  </header>
+  <div class="membros">
+    <aside class="sidebar">
+      <div class="progress-bar">
+        <div class="progress-bar__label">Módulo 5 — Progresso</div>
+        <div class="progress-bar__track"><div class="progress-bar__fill" style="width: 30%"></div></div>
+      </div>
+      <div class="sidebar__title">Módulo 05</div>
+      <div class="sidebar__module">Emissão de Notas Fiscais</div>
+      <div class="sidebar__list">
+        <a href="m5-aula1.html" class="sidebar__link">01 - Quando emitir nota fiscal</a>
+        <a href="m5-aula2.html" class="sidebar__link">02 - Tipos de nota fiscal</a>
+        <a href="m5-aula3.html" class="sidebar__link sidebar__link--active">03 - Dados obrigatórios na nota</a>
+        <a href="m5-aula4.html" class="sidebar__link">04 - Emitindo a NFS-e passo a passo</a>
+        <a href="m5-aula5.html" class="sidebar__link">05 - Competência vs recebimento</a>
+        <a href="m5-aula6.html" class="sidebar__link">06 - Uma nota por lote ou por guia</a>
+        <a href="m5-aula7.html" class="sidebar__link">07 - Conciliação faturamento x notas</a>
+        <a href="m5-aula8.html" class="sidebar__link">08 - Organização fiscal mensal</a>
+        <a href="m5-aula9.html" class="sidebar__link">09 - Erros fiscais mais comuns</a>
+        <a href="m5-aula10.html" class="sidebar__link">10 - Exercício final completo</a>
+      </div>
+    </aside>
+    <main class="aula-content">
+      <span class="aula-content__badge">Módulo 5 · Aula 3 de 10</span>
+      <h1>Dados obrigatórios na nota para operadoras</h1>
+      <p class="aula-content__meta">Tempo estimado de leitura: 15 minutos</p>
+
+      <div class="prose">
+        <h2>Introdução</h2>
+        <p>Emitir a nota fiscal é apenas metade do trabalho. A outra metade — igualmente importante — é garantir que todos os <strong>dados estejam corretos</strong>. Uma nota com informações erradas pode ser rejeitada pela operadora, gerar problemas com o fisco ou atrasar o pagamento por semanas.</p>
+        <p>Nesta aula, vamos detalhar cada campo obrigatório da NFS-e voltada para faturamento de convênios odontológicos, incluindo o CNPJ da operadora, a descrição do serviço, o código de serviço municipal e as retenções de impostos.</p>
+
+        <h2>1. CNPJ da operadora (Tomador do Serviço)</h2>
+        <p>O campo "Tomador do Serviço" é onde você informa os dados de quem está recebendo e pagando pelo serviço — ou seja, a <strong>operadora de planos de saúde</strong>.</p>
+
+        <h3>O que preencher</h3>
+        <ul>
+          <li><strong>CNPJ:</strong> O número do CNPJ da operadora (não da filial, salvo orientação contrária).</li>
+          <li><strong>Razão Social:</strong> O nome empresarial completo conforme consta no CNPJ.</li>
+          <li><strong>Endereço:</strong> O endereço da sede ou da unidade que processa pagamentos.</li>
+          <li><strong>Inscrição Municipal:</strong> Quando o sistema exigir (nem sempre disponível para operadoras).</li>
+        </ul>
+
+        <div class="info-box info-box--atencao">
+          <p>⚠️ Cuidado com CNPJ de matriz vs. filial! Algumas operadoras como a Amil possuem dezenas de CNPJs (matriz, filiais regionais, administradoras). Se você emitir a nota para o CNPJ errado, a operadora pode recusar. Sempre confirme com o setor de credenciamento qual CNPJ usar.</p>
+        </div>
+
+        <div class="exemplo">
+          <div class="exemplo__title">Exemplo: CNPJs mais comuns de operadoras</div>
+          <p>Atenção: os CNPJs abaixo são apenas ilustrativos. Sempre confirme o CNPJ correto diretamente com a operadora.</p>
+          <ul>
+            <li><strong>Amil Assistência Médica:</strong> Verificar no contrato de credenciamento se é matriz ou filial regional.</li>
+            <li><strong>Bradesco Saúde:</strong> O CNPJ de faturamento pode ser diferente do CNPJ de credenciamento.</li>
+            <li><strong>OdontoPrev:</strong> Geralmente usa um único CNPJ para faturamento nacional.</li>
+            <li><strong>MetLife:</strong> Verificar se é o CNPJ da MetLife ou da operadora parceira.</li>
+          </ul>
+        </div>
+
+        <div class="info-box info-box--dica">
+          <p>✅ Dica da Marisa: Eu mantenho uma planilha com o CNPJ, razão social e e-mail de envio de nota de cada operadora. Atualizo toda vez que mudo de convênio. Isso evita retrabalho e erros na hora de emitir as notas.</p>
+        </div>
+
+        <h2>2. Descrição do serviço</h2>
+        <p>O campo de descrição é um texto livre onde você descreve o serviço prestado. Embora pareça simples, cada operadora pode ter exigências específicas sobre o que deve constar nesse campo.</p>
+
+        <h3>O que geralmente deve constar</h3>
+        <ul>
+          <li>Tipo de serviço: "Prestação de serviços odontológicos".</li>
+          <li>Referência ao contrato ou credenciamento (quando exigido).</li>
+          <li>Período de competência: "Referente ao mês de competência MM/AAAA".</li>
+          <li>Número do lote ou protocolo de faturamento (quando aplicável).</li>
+        </ul>
+
+        <h3>Exemplos de descrição</h3>
+
+        <div class="exemplo">
+          <div class="exemplo__title">Modelo básico de descrição</div>
+          <p><em>"Prestação de serviços odontológicos conforme contrato de credenciamento. Competência: março/2026. Lote nº 2026-03-001."</em></p>
+        </div>
+
+        <div class="exemplo">
+          <div class="exemplo__title">Modelo detalhado (quando a operadora exige)</div>
+          <p><em>"Prestação de serviços odontológicos — consultas, restaurações e endodontia — realizados em beneficiários do plano Amil Dental, conforme GTO nº 45678 a 45692, competência março/2026, contrato de credenciamento nº 12345."</em></p>
+        </div>
+
+        <div class="info-box info-box--importante">
+          <p>💡 Algumas operadoras exigem que conste na descrição o <strong>número do contrato</strong>, o <strong>número do lote</strong> ou até o <strong>nome do plano</strong>. Se você não incluir, elas podem devolver a nota e pedir reemissão. Sempre pergunte à operadora o que eles esperam ver na descrição.</p>
+        </div>
+
+        <h2>3. Código de serviço municipal</h2>
+        <p>Toda NFS-e exige a indicação de um <strong>código de serviço</strong> que classifica o tipo de atividade prestada. Esse código é definido pela legislação municipal, baseado na <strong>Lista de Serviços da LC 116/2003</strong>.</p>
+
+        <h3>Código para serviços odontológicos</h3>
+        <p>Na maioria dos municípios, os serviços odontológicos se enquadram no item:</p>
+        <ul>
+          <li><strong>4.03</strong> — Hospitais, clínicas, laboratórios, sanatórios, manicômios, casas de saúde, prontos-socorros, ambulatórios e congêneres (em algumas cidades).</li>
+          <li><strong>4.02</strong> — Análises clínicas, patologia, eletricidade médica, radioterapia, quimioterapia, ultra-sonografia, ressonância magnética, radiologia, tomografia e congêneres.</li>
+          <li>Ou um <strong>código municipal específico</strong> para odontologia.</li>
+        </ul>
+
+        <div class="info-box info-box--atencao">
+          <p>⚠️ O código de serviço varia de município para município! O que vale em São Paulo pode ser diferente em Belo Horizonte. Consulte o site da prefeitura ou pergunte ao seu contador qual é o código correto para serviços odontológicos na sua cidade.</p>
+        </div>
+
+        <div class="info-box info-box--dica">
+          <p>✅ Dica da Marisa: Na primeira vez que você emitir uma NFS-e, peça ao seu contador para confirmar o código de serviço. Depois, anote e use sempre o mesmo. Se você mudar de cidade ou abrir outra filial, lembre-se de verificar novamente — o código pode ser diferente.</p>
+        </div>
+
+        <h2>4. Valores e retenções de impostos</h2>
+        <p>A NFS-e para operadoras de convênios envolve diversos impostos que podem ser <strong>retidos na fonte</strong> pelo tomador (a operadora). Veja os principais:</p>
+
+        <h3>ISS — Imposto Sobre Serviços</h3>
+        <ul>
+          <li>Alíquota varia de <strong>2% a 5%</strong>, dependendo do município e do regime tributário.</li>
+          <li>No Simples Nacional, o ISS já está incluso na guia DAS — mas a alíquota pode precisar ser informada na nota.</li>
+          <li>A retenção na fonte ocorre quando o serviço é prestado em município diferente do cadastro do prestador, ou quando a legislação municipal determina.</li>
+        </ul>
+
+        <h3>IRRF — Imposto de Renda Retido na Fonte</h3>
+        <ul>
+          <li>Alíquota de <strong>1,5%</strong> sobre o valor do serviço (para PJ).</li>
+          <li>A operadora retém e recolhe esse valor — ele aparece como desconto no pagamento.</li>
+          <li>A clínica pode compensar esse valor na apuração do IR.</li>
+        </ul>
+
+        <h3>CSLL, PIS e COFINS</h3>
+        <ul>
+          <li>Para clínicas no <strong>Lucro Presumido</strong> ou <strong>Lucro Real</strong>, essas contribuições são retidas quando o valor da nota ultrapassa R$ 215,05 (soma das três).</li>
+          <li>As alíquotas padrão são: CSLL (1%), PIS (0,65%) e COFINS (3%).</li>
+          <li>Para clínicas no <strong>Simples Nacional</strong>, essas retenções geralmente <strong>não se aplicam</strong> — mas a clínica precisa informar isso na nota.</li>
+        </ul>
+
+        <div class="info-box info-box--importante">
+          <p>💡 Se a clínica é optante pelo Simples Nacional, ela deve informar na NFS-e que <strong>não está sujeita à retenção</strong> de CSLL, PIS e COFINS. Caso contrário, a operadora vai reter esses valores indevidamente, e recuperá-los é um processo burocrático e demorado.</p>
+        </div>
+
+        <h3>Tabela resumo de retenções</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Imposto</th>
+              <th>Alíquota</th>
+              <th>Retido pela operadora?</th>
+              <th>Simples Nacional</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>ISS</strong></td>
+              <td>2% a 5%</td>
+              <td>Depende do município</td>
+              <td>Incluso no DAS</td>
+            </tr>
+            <tr>
+              <td><strong>IRRF</strong></td>
+              <td>1,5%</td>
+              <td>Sim</td>
+              <td>Sim, retido normalmente</td>
+            </tr>
+            <tr>
+              <td><strong>CSLL</strong></td>
+              <td>1%</td>
+              <td>Sim (se acima do mínimo)</td>
+              <td>Não se aplica</td>
+            </tr>
+            <tr>
+              <td><strong>PIS</strong></td>
+              <td>0,65%</td>
+              <td>Sim (se acima do mínimo)</td>
+              <td>Não se aplica</td>
+            </tr>
+            <tr>
+              <td><strong>COFINS</strong></td>
+              <td>3%</td>
+              <td>Sim (se acima do mínimo)</td>
+              <td>Não se aplica</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>5. Exigências específicas de cada operadora</h2>
+        <p>Além dos dados padrão, cada operadora pode ter exigências próprias sobre como a nota fiscal deve ser emitida. Aqui estão algumas situações comuns:</p>
+
+        <ul>
+          <li><strong>Amil:</strong> Costuma exigir número do contrato na descrição e aceita envio por portal do prestador.</li>
+          <li><strong>Bradesco Dental:</strong> Pode pedir que a nota seja enviada junto com o demonstrativo de pagamento.</li>
+          <li><strong>OdontoPrev:</strong> Geralmente aceita uma nota por lote mensal, com o período de competência.</li>
+          <li><strong>SulAmérica:</strong> Pode exigir envio por e-mail específico do setor financeiro.</li>
+          <li><strong>Uniodonto:</strong> Por ser cooperativa, pode ter regras diferentes conforme a regional.</li>
+        </ul>
+
+        <div class="info-box info-box--dica">
+          <p>✅ Dica da Marisa: No primeiro mês de faturamento com uma operadora nova, eu sempre ligo para o setor financeiro e pergunto: "Como vocês querem que eu emita e envie a nota fiscal?" Anoto tudo — CNPJ, e-mail, o que colocar na descrição, se querem nota por lote ou por guia. Isso evita 90% dos problemas futuros.</p>
+        </div>
+
+        <div class="exemplo">
+          <div class="exemplo__title">Checklist: dados para conferir antes de emitir</div>
+          <ol>
+            <li>✔ CNPJ da operadora correto (matriz ou filial)?</li>
+            <li>✔ Razão social da operadora sem erros?</li>
+            <li>✔ Código de serviço municipal correto?</li>
+            <li>✔ Descrição contém as informações exigidas pela operadora?</li>
+            <li>✔ Valor bruto conforme demonstrativo de pagamento?</li>
+            <li>✔ Retenções de impostos estão corretas para o regime tributário?</li>
+            <li>✔ Informação sobre Simples Nacional está indicada (se aplicável)?</li>
+            <li>✔ Período de competência correto?</li>
+          </ol>
+        </div>
+
+        <h2>Resumo da aula</h2>
+        <ul>
+          <li>O <strong>CNPJ da operadora</strong> deve ser exatamente o informado no contrato de credenciamento.</li>
+          <li>A <strong>descrição do serviço</strong> deve seguir as exigências de cada operadora, incluindo competência e número do lote.</li>
+          <li>O <strong>código de serviço</strong> varia por município — confirme com o contador.</li>
+          <li>As <strong>retenções de impostos</strong> dependem do regime tributário da clínica (Simples, Lucro Presumido ou Lucro Real).</li>
+          <li>Cada operadora tem exigências próprias — pergunte no primeiro faturamento e documente tudo.</li>
+        </ul>
+      </div>
+
+      <div class="aula-nav">
+        <a href="m5-aula2.html" class="btn btn--outline">← Aula Anterior</a>
+        <a href="m5-aula4.html" class="btn btn--primary">Próxima Aula →</a>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

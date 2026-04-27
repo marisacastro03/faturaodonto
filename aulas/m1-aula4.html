@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aula 4 — Preenchimento campo a campo | Módulo 1</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="aulas.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header header--scrolled">
+    <nav class="nav container">
+      <a href="../index.html" class="nav__logo"><span class="logo-icon">🦷</span> FaturaOdonto</a>
+      <a href="../modulo1.html" class="btn btn--outline nav__cta">← Voltar ao Módulo 1</a>
+    </nav>
+  </header>
+  <div class="membros">
+    <aside class="sidebar">
+      <div class="progress-bar">
+        <div class="progress-bar__label">Módulo 1 — Progresso</div>
+        <div class="progress-bar__track"><div class="progress-bar__fill" style="width: 33%"></div></div>
+      </div>
+      <div class="sidebar__title">Módulo 01</div>
+      <div class="sidebar__module">Emissão de GTOs</div>
+      <div class="sidebar__list">
+        <a href="m1-aula1.html" class="sidebar__link"><span>01</span> O que é a GTO</a>
+        <a href="m1-aula2.html" class="sidebar__link"><span>02</span> Quem emite e quando</a>
+        <a href="m1-aula3.html" class="sidebar__link"><span>03</span> Tipos de GTO</a>
+        <a href="m1-aula4.html" class="sidebar__link sidebar__link--active"><span>04</span> Preenchimento campo a campo</a>
+        <a href="m1-aula5.html" class="sidebar__link"><span>05</span> Códigos TUSS</a>
+        <a href="m1-aula6.html" class="sidebar__link"><span>06</span> Nomenclatura dentária</a>
+        <a href="m1-aula7.html" class="sidebar__link"><span>07</span> Limite de procedimentos</a>
+        <a href="m1-aula8.html" class="sidebar__link"><span>08</span> Foto e Raio-X na emissão</a>
+        <a href="m1-aula9.html" class="sidebar__link"><span>09</span> Portais das operadoras</a>
+        <a href="m1-aula10.html" class="sidebar__link"><span>10</span> Erros que geram glosa</a>
+        <a href="m1-aula11.html" class="sidebar__link"><span>11</span> Checklist de conferência</a>
+        <a href="m1-aula12.html" class="sidebar__link"><span>12</span> Exercícios práticos</a>
+      </div>
+    </aside>
+    <main class="aula-content">
+      <span class="aula-content__badge">Módulo 1 · Aula 4 de 12</span>
+      <h1>Campo a campo: como preencher a GTO corretamente</h1>
+      <p class="aula-content__meta">Tempo estimado de leitura: 15 minutos</p>
+      <div class="prose">
+
+        <h2>Introdução</h2>
+        <p>Esta é uma das aulas mais importantes do curso. A maioria das glosas acontece por erro de preenchimento. Um campo em branco, um código errado, uma face trocada — qualquer detalhe pode fazer a operadora recusar o pagamento.</p>
+        <p>Vamos passar por cada campo da GTO e explicar exatamente o que preencher e quais cuidados tomar.</p>
+
+        <h2>1. Registro ANS da Operadora</h2>
+        <p>É o número de registro da operadora na ANS. Esse campo geralmente já vem preenchido automaticamente quando você abre a GTO no portal da operadora.</p>
+        <div class="info-box info-box--dica">
+          <span class="info-box__title">✅ Dica:</span>
+          <p>Se você usa um sistema próprio de gestão, verifique se o registro ANS está cadastrado corretamente para cada convênio.</p>
+        </div>
+
+        <h2>2. Dados do Beneficiário (Paciente)</h2>
+        <p>Aqui entram os dados do paciente que possui o plano odontológico:</p>
+        <table>
+          <thead>
+            <tr><th>Campo</th><th>O que preencher</th><th>Cuidado</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Número da carteirinha</strong></td>
+              <td>Número completo do cartão do convênio</td>
+              <td>Copie exatamente como está no cartão. Um dígito errado = glosa.</td>
+            </tr>
+            <tr>
+              <td><strong>Nome do beneficiário</strong></td>
+              <td>Nome completo do paciente</td>
+              <td>Deve ser igual ao cadastrado na operadora. Sem apelidos.</td>
+            </tr>
+            <tr>
+              <td><strong>Data de nascimento</strong></td>
+              <td>DD/MM/AAAA</td>
+              <td>Confira sempre. Data errada pode gerar glosa por "beneficiário não localizado".</td>
+            </tr>
+            <tr>
+              <td><strong>Número do plano/contrato</strong></td>
+              <td>Número do contrato empresarial ou individual</td>
+              <td>Alguns portais preenchem automaticamente ao digitar a carteirinha.</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="info-box info-box--atencao">
+          <span class="info-box__title">⚠️ Atenção!</span>
+          <p>Antes de abrir qualquer GTO, <strong>sempre verifique a elegibilidade do paciente</strong>. Ou seja, confirme se o plano dele está ativo. Paciente com plano cancelado ou em carência = GTO rejeitada automaticamente.</p>
+        </div>
+
+        <h2>3. Dados do Contratado (Clínica)</h2>
+        <p>Informações da clínica ou consultório prestador do serviço:</p>
+        <ul>
+          <li><strong>Código na operadora:</strong> é o número que a operadora atribui à clínica quando ela se credencia. Cada operadora dá um código diferente.</li>
+          <li><strong>Nome do contratado:</strong> razão social ou nome fantasia da clínica.</li>
+          <li><strong>CNES:</strong> Cadastro Nacional de Estabelecimentos de Saúde. Nem todas as operadoras exigem, mas é bom ter cadastrado.</li>
+          <li><strong>CNPJ:</strong> da clínica ou CPF do profissional (se for autônomo).</li>
+        </ul>
+        <div class="info-box info-box--dica">
+          <span class="info-box__title">✅ Dica da Marisa:</span>
+          <p>Mantenha uma planilha com todos os códigos da clínica em cada operadora. Cada convênio dá um código diferente, e você vai precisar disso toda vez que abrir uma GTO. Eu sempre deixava essa "cola" na mesa.</p>
+        </div>
+
+        <h2>4. Dados do Profissional Executante (Dentista)</h2>
+        <table>
+          <thead>
+            <tr><th>Campo</th><th>O que preencher</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Nome do profissional</strong></td>
+              <td>Nome completo do cirurgião-dentista que vai executar o procedimento</td>
+            </tr>
+            <tr>
+              <td><strong>Conselho profissional</strong></td>
+              <td>CRO (Conselho Regional de Odontologia)</td>
+            </tr>
+            <tr>
+              <td><strong>Número do CRO</strong></td>
+              <td>Número do registro + UF (exemplo: CRO-SP 12345)</td>
+            </tr>
+            <tr>
+              <td><strong>CBOS</strong></td>
+              <td>Código Brasileiro de Ocupações. Para dentista geral: 2232-08. Para especialistas, consulte a tabela CBOS.</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="info-box info-box--atencao">
+          <span class="info-box__title">⚠️ CRO errado = glosa!</span>
+          <p>Se o dentista que está na GTO não estiver credenciado naquela operadora, a guia será glosada. Certifique-se de que o profissional está devidamente cadastrado e ativo no convênio.</p>
+        </div>
+
+        <h2>5. Procedimentos Solicitados</h2>
+        <p>Aqui é o coração da GTO. É onde você indica o que será feito no paciente:</p>
+        <table>
+          <thead>
+            <tr><th>Campo</th><th>O que preencher</th><th>Exemplo</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Código TUSS</strong></td>
+              <td>Código do procedimento na tabela TUSS</td>
+              <td>81000065 (Restauração em resina — 1 face)</td>
+            </tr>
+            <tr>
+              <td><strong>Dente/Região</strong></td>
+              <td>Número do dente (sistema FDI)</td>
+              <td>36 (primeiro molar inferior esquerdo)</td>
+            </tr>
+            <tr>
+              <td><strong>Face</strong></td>
+              <td>Faces dentárias envolvidas</td>
+              <td>MO (mésio-oclusal)</td>
+            </tr>
+            <tr>
+              <td><strong>Quantidade</strong></td>
+              <td>Quantidade do procedimento</td>
+              <td>1</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="info-box info-box--importante">
+          <span class="info-box__title">💡 Sobre Código TUSS, Dente e Face:</span>
+          <p>Esses três campos são tão importantes que dedicamos aulas específicas a eles: a <strong>Aula 5</strong> (Códigos TUSS) e a <strong>Aula 6</strong> (Nomenclatura dentária e faces). Por enquanto, saiba que errar qualquer um deles é motivo certo de glosa.</p>
+        </div>
+
+        <h2>6. Observações / Justificativa Clínica</h2>
+        <p>Campo de texto livre onde você pode (e deve, em muitos casos) incluir informações adicionais:</p>
+        <ul>
+          <li><strong>Justificativa para urgência:</strong> obrigatória em GTOs de urgência</li>
+          <li><strong>Justificativa clínica:</strong> por que aquele procedimento é necessário (útil para evitar glosas)</li>
+          <li><strong>Informações complementares:</strong> troca de material, rerretratamento, etc.</li>
+        </ul>
+
+        <div class="info-box info-box--dica">
+          <span class="info-box__title">✅ Dica da Marisa:</span>
+          <p>Mesmo quando a justificativa não é obrigatória, eu sempre recomendo preencher. Uma frase simples como "Paciente apresenta lesão cariosa extensa no dente 36, com comprometimento de 3 faces" já ajuda muito na aprovação e reduz a chance de glosa. Quanto mais informação relevante, melhor.</p>
+        </div>
+
+        <h2>7. Documentação Anexa</h2>
+        <p>Indicação de que há documentação complementar junto à GTO:</p>
+        <ul>
+          <li><strong>Foto clínica inicial</strong> — antes do procedimento</li>
+          <li><strong>Foto clínica final</strong> — depois do procedimento</li>
+          <li><strong>Radiografia periapical</strong></li>
+          <li><strong>Radiografia panorâmica</strong></li>
+          <li><strong>Modelo de estudo</strong> (para ortodontia/prótese)</li>
+        </ul>
+        <p>Na <strong>Aula 8</strong> vamos detalhar quando cada tipo de documentação é obrigatório.</p>
+
+        <h2>Fluxo visual do preenchimento</h2>
+        <p>Para facilitar, aqui está a ordem lógica de preenchimento que eu uso:</p>
+        <ol>
+          <li>Verificar elegibilidade do paciente (plano ativo?)</li>
+          <li>Preencher dados do beneficiário (carteirinha, nome, nascimento)</li>
+          <li>Confirmar dados da clínica (código na operadora)</li>
+          <li>Preencher dados do dentista (CRO correto e credenciado)</li>
+          <li>Incluir os procedimentos (código TUSS + dente + face)</li>
+          <li>Adicionar justificativa clínica (quando aplicável)</li>
+          <li>Anexar documentação (foto/raio-X quando exigido)</li>
+          <li>Revisar tudo antes de enviar</li>
+        </ol>
+
+        <h2>Resumo da Aula</h2>
+        <ul>
+          <li>Cada campo da GTO tem uma função específica — nenhum é opcional "à toa"</li>
+          <li>Sempre verifique a elegibilidade antes de abrir a GTO</li>
+          <li>Carteirinha, CRO e código TUSS errados são os campeões de glosa</li>
+          <li>Justificativa clínica ajuda muito, mesmo quando não é obrigatória</li>
+          <li>Siga sempre a mesma ordem de preenchimento para não esquecer nada</li>
+        </ul>
+
+      </div>
+      <div class="aula-nav">
+        <a href="m1-aula3.html" class="btn btn--outline">← Aula Anterior</a>
+        <a href="m1-aula5.html" class="btn btn--primary">Próxima Aula →</a>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

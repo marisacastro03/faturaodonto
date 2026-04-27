@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Planilha de Controle de Glosas | FaturaOdonto</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --primary: #0891B2;
+      --primary-dark: #0E7490;
+      --secondary: #06D6A0;
+      --dark: #0F172A;
+      --gray: #64748B;
+      --gray-light: #F1F5F9;
+      --white: #FFFFFF;
+      --red: #EF4444;
+      --red-light: #FEF2F2;
+      --green: #22C55E;
+      --green-light: #F0FDF4;
+      --yellow: #EAB308;
+      --yellow-light: #FEFCE8;
+      --orange: #F97316;
+      --orange-light: #FFF7ED;
+      --purple: #8B5CF6;
+      --purple-light: #F5F3FF;
+      --radius: 12px;
+      --shadow: 0 1px 3px rgba(0,0,0,0.1);
+      --shadow-lg: 0 10px 25px rgba(0,0,0,0.1);
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--gray-light);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    /* HEADER */
+    .header {
+      background: var(--dark);
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header__logo {
+      color: var(--white);
+      font-weight: 800;
+      font-size: 1.1rem;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .header__title {
+      color: var(--white);
+      font-size: 0.95rem;
+      font-weight: 500;
+      opacity: 0.8;
+    }
+
+    .header__actions {
+      display: flex;
+      gap: 10px;
+    }
+
+    .btn {
+      padding: 8px 18px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .btn--primary {
+      background: var(--primary);
+      color: var(--white);
+    }
+
+    .btn--primary:hover { background: var(--primary-dark); }
+
+    .btn--success {
+      background: var(--green);
+      color: var(--white);
+    }
+
+    .btn--success:hover { background: #16A34A; }
+
+    .btn--outline {
+      background: transparent;
+      color: var(--white);
+      border: 1px solid rgba(255,255,255,0.3);
+    }
+
+    .btn--outline:hover { border-color: var(--white); }
+
+    .btn--danger {
+      background: var(--red);
+      color: var(--white);
+      padding: 4px 10px;
+      font-size: 0.75rem;
+    }
+
+    .btn--sm {
+      padding: 4px 12px;
+      font-size: 0.8rem;
+    }
+
+    /* MAIN */
+    .main {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+
+    /* KPI CARDS */
+    .kpis {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .kpi {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 20px;
+      box-shadow: var(--shadow);
+      border-left: 4px solid var(--primary);
+    }
+
+    .kpi--danger { border-left-color: var(--red); }
+    .kpi--success { border-left-color: var(--green); }
+    .kpi--warning { border-left-color: var(--yellow); }
+    .kpi--purple { border-left-color: var(--purple); }
+
+    .kpi__label {
+      font-size: 0.8rem;
+      color: var(--gray);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+
+    .kpi__value {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--dark);
+    }
+
+    .kpi__sub {
+      font-size: 0.8rem;
+      color: var(--gray);
+      margin-top: 2px;
+    }
+
+    /* TOOLBAR */
+    .toolbar {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      box-shadow: var(--shadow);
+      margin-bottom: 16px;
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .toolbar__search {
+      flex: 1;
+      min-width: 200px;
+      padding: 8px 14px;
+      border: 1px solid #E2E8F0;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-family: inherit;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .toolbar__search:focus { border-color: var(--primary); }
+
+    .toolbar__select {
+      padding: 8px 14px;
+      border: 1px solid #E2E8F0;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-family: inherit;
+      background: var(--white);
+      cursor: pointer;
+      outline: none;
+    }
+
+    .toolbar__select:focus { border-color: var(--primary); }
+
+    /* TABLE */
+    .table-wrap {
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+    }
+
+    thead {
+      background: var(--dark);
+      color: var(--white);
+    }
+
+    thead th {
+      padding: 12px 14px;
+      text-align: left;
+      font-weight: 600;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      white-space: nowrap;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    thead th:hover { background: rgba(255,255,255,0.1); }
+
+    tbody tr {
+      border-bottom: 1px solid #F1F5F9;
+      transition: background 0.15s;
+    }
+
+    tbody tr:hover { background: #F8FAFC; }
+
+    tbody td {
+      padding: 10px 14px;
+      vertical-align: middle;
+    }
+
+    .empty-row td {
+      text-align: center;
+      padding: 40px;
+      color: var(--gray);
+      font-size: 0.95rem;
+    }
+
+    /* STATUS BADGES */
+    .status {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .status--glosada { background: var(--red-light); color: var(--red); }
+    .status--recurso { background: var(--purple-light); color: var(--purple); }
+    .status--aguardando { background: var(--yellow-light); color: #A16207; }
+    .status--aceito { background: var(--green-light); color: #16A34A; }
+    .status--negado { background: var(--orange-light); color: var(--orange); }
+    .status--parcial { background: #EFF6FF; color: #2563EB; }
+
+    /* MODAL */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: 200;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .modal-overlay.active { display: flex; }
+
+    .modal {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 32px;
+      max-width: 640px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .modal h2 {
+      font-size: 1.3rem;
+      margin-bottom: 20px;
+      color: var(--dark);
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .form-group--full { grid-column: 1 / -1; }
+
+    .form-group label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--gray);
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      padding: 8px 12px;
+      border: 1px solid #E2E8F0;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-family: inherit;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--primary);
+    }
+
+    .form-group textarea { resize: vertical; min-height: 60px; }
+
+    .modal__actions {
+      display: flex;
+      gap: 10px;
+      justify-content: flex-end;
+      margin-top: 20px;
+      padding-top: 16px;
+      border-top: 1px solid var(--gray-light);
+    }
+
+    .btn--ghost {
+      background: transparent;
+      color: var(--gray);
+      border: 1px solid #E2E8F0;
+    }
+
+    .btn--ghost:hover { background: var(--gray-light); }
+
+    /* FOOTER INFO */
+    .footer-info {
+      text-align: center;
+      padding: 24px;
+      color: var(--gray);
+      font-size: 0.8rem;
+    }
+
+    .footer-info a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .header { flex-wrap: wrap; gap: 10px; }
+      .header__title { display: none; }
+      .kpis { grid-template-columns: repeat(2, 1fr); }
+      .form-grid { grid-template-columns: 1fr; }
+      .toolbar { flex-direction: column; }
+      .main { padding: 16px; }
+    }
+
+    @media print {
+      .header, .toolbar, .btn--danger, .footer-info { display: none; }
+      .main { padding: 0; }
+      .table-wrap { box-shadow: none; }
+      .kpi { box-shadow: none; border: 1px solid #ccc; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <a href="index.html" class="header__logo">🦷 FaturaOdonto</a>
+    <span class="header__title">Planilha de Controle de Glosas</span>
+    <div class="header__actions">
+      <button class="btn btn--primary" onclick="openModal()">+ Nova Glosa</button>
+      <button class="btn btn--outline" onclick="exportCSV()">📥 Exportar CSV</button>
+      <button class="btn btn--outline" onclick="window.print()">🖨️ Imprimir</button>
+    </div>
+  </header>
+
+  <main class="main">
+    <!-- KPIs -->
+    <div class="kpis">
+      <div class="kpi">
+        <div class="kpi__label">Total de Glosas</div>
+        <div class="kpi__value" id="kpiTotal">0</div>
+        <div class="kpi__sub">registradas</div>
+      </div>
+      <div class="kpi kpi--danger">
+        <div class="kpi__label">Valor Total Glosado</div>
+        <div class="kpi__value" id="kpiValor">R$ 0</div>
+        <div class="kpi__sub">em glosas</div>
+      </div>
+      <div class="kpi kpi--success">
+        <div class="kpi__label">Valor Recuperado</div>
+        <div class="kpi__value" id="kpiRecuperado">R$ 0</div>
+        <div class="kpi__sub">via recursos aceitos</div>
+      </div>
+      <div class="kpi kpi--warning">
+        <div class="kpi__label">Recursos Pendentes</div>
+        <div class="kpi__value" id="kpiPendentes">0</div>
+        <div class="kpi__sub">aguardando resposta</div>
+      </div>
+      <div class="kpi kpi--purple">
+        <div class="kpi__label">Taxa de Recuperação</div>
+        <div class="kpi__value" id="kpiTaxa">0%</div>
+        <div class="kpi__sub">dos recursos enviados</div>
+      </div>
+    </div>
+
+    <!-- TOOLBAR -->
+    <div class="toolbar">
+      <input type="text" class="toolbar__search" id="searchInput" placeholder="🔍 Buscar por paciente, operadora ou nº GTO...">
+      <select class="toolbar__select" id="filterStatus">
+        <option value="">Todos os status</option>
+        <option value="Glosada">Glosada</option>
+        <option value="Recurso enviado">Recurso enviado</option>
+        <option value="Aguardando resposta">Aguardando resposta</option>
+        <option value="Recurso aceito">Recurso aceito</option>
+        <option value="Recurso negado">Recurso negado</option>
+        <option value="Aceito parcial">Aceito parcial</option>
+      </select>
+      <select class="toolbar__select" id="filterMonth">
+        <option value="">Todos os meses</option>
+        <option value="01">Janeiro</option>
+        <option value="02">Fevereiro</option>
+        <option value="03">Março</option>
+        <option value="04">Abril</option>
+        <option value="05">Maio</option>
+        <option value="06">Junho</option>
+        <option value="07">Julho</option>
+        <option value="08">Agosto</option>
+        <option value="09">Setembro</option>
+        <option value="10">Outubro</option>
+        <option value="11">Novembro</option>
+        <option value="12">Dezembro</option>
+      </select>
+    </div>
+
+    <!-- TABLE -->
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Nº GTO</th>
+            <th>Paciente</th>
+            <th>Operadora</th>
+            <th>Procedimento</th>
+            <th>Valor Glosado</th>
+            <th>Motivo / Código</th>
+            <th>Data Glosa</th>
+            <th>Status</th>
+            <th>Data Recurso</th>
+            <th>Valor Recuperado</th>
+            <th>Obs</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody">
+          <tr class="empty-row" id="emptyRow">
+            <td colspan="12">Nenhuma glosa registrada. Clique em <strong>"+ Nova Glosa"</strong> para começar.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="footer-info">
+      <p>Os dados ficam salvos no seu navegador (localStorage). Para não perder, use <strong>Exportar CSV</strong> periodicamente.</p>
+      <p>Material bônus do <a href="index.html">Curso Básico de Faturamento de Convênios Odontológicos</a> — FaturaOdonto &copy; 2026</p>
+    </div>
+  </main>
+
+  <!-- MODAL -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal">
+      <h2 id="modalTitle">Registrar Nova Glosa</h2>
+      <div class="form-grid">
+        <div class="form-group">
+          <label for="fGto">Nº da GTO</label>
+          <input type="text" id="fGto" placeholder="Ex: GTO-2024-0347">
+        </div>
+        <div class="form-group">
+          <label for="fPaciente">Paciente</label>
+          <input type="text" id="fPaciente" placeholder="Nome do paciente">
+        </div>
+        <div class="form-group">
+          <label for="fOperadora">Operadora</label>
+          <select id="fOperadora">
+            <option value="">Selecione...</option>
+            <option>Amil Dental</option>
+            <option>OdontoPrev</option>
+            <option>Bradesco Dental</option>
+            <option>SulAmérica Odonto</option>
+            <option>MetLife</option>
+            <option>Porto Seguro Odonto</option>
+            <option>Uniodonto</option>
+            <option>Outra</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="fProcedimento">Procedimento</label>
+          <input type="text" id="fProcedimento" placeholder="Ex: Restauração dente 36">
+        </div>
+        <div class="form-group">
+          <label for="fValor">Valor Glosado (R$)</label>
+          <input type="number" id="fValor" step="0.01" min="0" placeholder="0,00">
+        </div>
+        <div class="form-group">
+          <label for="fMotivo">Motivo / Código da Glosa</label>
+          <input type="text" id="fMotivo" placeholder="Ex: Falta de radiografia">
+        </div>
+        <div class="form-group">
+          <label for="fDataGlosa">Data da Glosa</label>
+          <input type="date" id="fDataGlosa">
+        </div>
+        <div class="form-group">
+          <label for="fStatus">Status</label>
+          <select id="fStatus">
+            <option>Glosada</option>
+            <option>Recurso enviado</option>
+            <option>Aguardando resposta</option>
+            <option>Recurso aceito</option>
+            <option>Recurso negado</option>
+            <option>Aceito parcial</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="fDataRecurso">Data do Recurso</label>
+          <input type="date" id="fDataRecurso">
+        </div>
+        <div class="form-group">
+          <label for="fRecuperado">Valor Recuperado (R$)</label>
+          <input type="number" id="fRecuperado" step="0.01" min="0" placeholder="0,00">
+        </div>
+        <div class="form-group form-group--full">
+          <label for="fObs">Observações</label>
+          <textarea id="fObs" placeholder="Anotações adicionais..."></textarea>
+        </div>
+      </div>
+      <div class="modal__actions">
+        <button class="btn btn--ghost" onclick="closeModal()">Cancelar</button>
+        <button class="btn btn--success" onclick="saveEntry()">Salvar</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let glosas = JSON.parse(localStorage.getItem('faturaodonto_glosas') || '[]');
+    let editingId = null;
+
+    function save() {
+      localStorage.setItem('faturaodonto_glosas', JSON.stringify(glosas));
+    }
+
+    function formatCurrency(val) {
+      return 'R$ ' + Number(val || 0).toLocaleString('pt-BR', { minimumFractionDigits: 2 });
+    }
+
+    function formatDate(d) {
+      if (!d) return '—';
+      const parts = d.split('-');
+      return parts[2] + '/' + parts[1] + '/' + parts[0];
+    }
+
+    function statusClass(s) {
+      const map = {
+        'Glosada': 'glosada',
+        'Recurso enviado': 'recurso',
+        'Aguardando resposta': 'aguardando',
+        'Recurso aceito': 'aceito',
+        'Recurso negado': 'negado',
+        'Aceito parcial': 'parcial'
+      };
+      return map[s] || 'glosada';
+    }
+
+    function updateKPIs() {
+      const total = glosas.length;
+      const valorTotal = glosas.reduce((s, g) => s + Number(g.valor || 0), 0);
+      const recuperado = glosas.filter(g => g.status === 'Recurso aceito' || g.status === 'Aceito parcial')
+                               .reduce((s, g) => s + Number(g.recuperado || 0), 0);
+      const pendentes = glosas.filter(g => g.status === 'Recurso enviado' || g.status === 'Aguardando resposta').length;
+      const recursosEnviados = glosas.filter(g => g.status !== 'Glosada').length;
+      const recursosAceitos = glosas.filter(g => g.status === 'Recurso aceito' || g.status === 'Aceito parcial').length;
+      const taxa = recursosEnviados > 0 ? Math.round((recursosAceitos / recursosEnviados) * 100) : 0;
+
+      document.getElementById('kpiTotal').textContent = total;
+      document.getElementById('kpiValor').textContent = formatCurrency(valorTotal);
+      document.getElementById('kpiRecuperado').textContent = formatCurrency(recuperado);
+      document.getElementById('kpiPendentes').textContent = pendentes;
+      document.getElementById('kpiTaxa').textContent = taxa + '%';
+    }
+
+    function renderTable() {
+      const search = document.getElementById('searchInput').value.toLowerCase();
+      const filterStatus = document.getElementById('filterStatus').value;
+      const filterMonth = document.getElementById('filterMonth').value;
+
+      let filtered = glosas.filter(g => {
+        const matchSearch = !search || 
+          (g.gto || '').toLowerCase().includes(search) ||
+          (g.paciente || '').toLowerCase().includes(search) ||
+          (g.operadora || '').toLowerCase().includes(search);
+        const matchStatus = !filterStatus || g.status === filterStatus;
+        const matchMonth = !filterMonth || (g.dataGlosa && g.dataGlosa.split('-')[1] === filterMonth);
+        return matchSearch && matchStatus && matchMonth;
+      });
+
+      const tbody = document.getElementById('tableBody');
+      
+      if (filtered.length === 0) {
+        tbody.innerHTML = `<tr class="empty-row"><td colspan="12">${glosas.length === 0 ? 'Nenhuma glosa registrada. Clique em <strong>"+ Nova Glosa"</strong> para começar.' : 'Nenhum resultado encontrado para os filtros selecionados.'}</td></tr>`;
+      } else {
+        tbody.innerHTML = filtered.map(g => `
+          <tr>
+            <td><strong>${g.gto || '—'}</strong></td>
+            <td>${g.paciente || '—'}</td>
+            <td>${g.operadora || '—'}</td>
+            <td>${g.procedimento || '—'}</td>
+            <td><strong>${formatCurrency(g.valor)}</strong></td>
+            <td>${g.motivo || '—'}</td>
+            <td>${formatDate(g.dataGlosa)}</td>
+            <td><span class="status status--${statusClass(g.status)}">${g.status}</span></td>
+            <td>${formatDate(g.dataRecurso)}</td>
+            <td>${Number(g.recuperado) > 0 ? '<strong>' + formatCurrency(g.recuperado) + '</strong>' : '—'}</td>
+            <td>${g.obs || '—'}</td>
+            <td>
+              <button class="btn btn--sm btn--primary" onclick="editEntry('${g.id}')">✏️</button>
+              <button class="btn btn--sm btn--danger" onclick="deleteEntry('${g.id}')">🗑️</button>
+            </td>
+          </tr>
+        `).join('');
+      }
+
+      updateKPIs();
+    }
+
+    function openModal(id) {
+      editingId = id || null;
+      document.getElementById('modalTitle').textContent = id ? 'Editar Glosa' : 'Registrar Nova Glosa';
+
+      if (id) {
+        const g = glosas.find(x => x.id === id);
+        if (g) {
+          document.getElementById('fGto').value = g.gto || '';
+          document.getElementById('fPaciente').value = g.paciente || '';
+          document.getElementById('fOperadora').value = g.operadora || '';
+          document.getElementById('fProcedimento').value = g.procedimento || '';
+          document.getElementById('fValor').value = g.valor || '';
+          document.getElementById('fMotivo').value = g.motivo || '';
+          document.getElementById('fDataGlosa').value = g.dataGlosa || '';
+          document.getElementById('fStatus').value = g.status || 'Glosada';
+          document.getElementById('fDataRecurso').value = g.dataRecurso || '';
+          document.getElementById('fRecuperado').value = g.recuperado || '';
+          document.getElementById('fObs').value = g.obs || '';
+        }
+      } else {
+        document.querySelectorAll('.modal input, .modal textarea').forEach(el => el.value = '');
+        document.getElementById('fStatus').value = 'Glosada';
+        document.getElementById('fOperadora').value = '';
+      }
+
+      document.getElementById('modalOverlay').classList.add('active');
+    }
+
+    function closeModal() {
+      document.getElementById('modalOverlay').classList.remove('active');
+      editingId = null;
+    }
+
+    function saveEntry() {
+      const data = {
+        id: editingId || Date.now().toString(),
+        gto: document.getElementById('fGto').value.trim(),
+        paciente: document.getElementById('fPaciente').value.trim(),
+        operadora: document.getElementById('fOperadora').value,
+        procedimento: document.getElementById('fProcedimento').value.trim(),
+        valor: document.getElementById('fValor').value,
+        motivo: document.getElementById('fMotivo').value.trim(),
+        dataGlosa: document.getElementById('fDataGlosa').value,
+        status: document.getElementById('fStatus').value,
+        dataRecurso: document.getElementById('fDataRecurso').value,
+        recuperado: document.getElementById('fRecuperado').value,
+        obs: document.getElementById('fObs').value.trim()
+      };
+
+      if (!data.paciente && !data.gto) {
+        alert('Preencha pelo menos o paciente ou o nº da GTO.');
+        return;
+      }
+
+      if (editingId) {
+        const idx = glosas.findIndex(g => g.id === editingId);
+        if (idx !== -1) glosas[idx] = data;
+      } else {
+        glosas.push(data);
+      }
+
+      save();
+      renderTable();
+      closeModal();
+    }
+
+    function editEntry(id) {
+      openModal(id);
+    }
+
+    function deleteEntry(id) {
+      if (confirm('Tem certeza que deseja excluir esta glosa?')) {
+        glosas = glosas.filter(g => g.id !== id);
+        save();
+        renderTable();
+      }
+    }
+
+    function exportCSV() {
+      if (glosas.length === 0) {
+        alert('Nenhuma glosa para exportar.');
+        return;
+      }
+
+      const headers = ['Nº GTO', 'Paciente', 'Operadora', 'Procedimento', 'Valor Glosado', 'Motivo', 'Data Glosa', 'Status', 'Data Recurso', 'Valor Recuperado', 'Observações'];
+      const rows = glosas.map(g => [
+        g.gto, g.paciente, g.operadora, g.procedimento,
+        Number(g.valor || 0).toFixed(2), g.motivo,
+        formatDate(g.dataGlosa), g.status,
+        formatDate(g.dataRecurso), Number(g.recuperado || 0).toFixed(2),
+        g.obs
+      ]);
+
+      let csv = '\uFEFF' + headers.join(';') + '\n';
+      rows.forEach(row => {
+        csv += row.map(cell => '"' + (cell || '').replace(/"/g, '""') + '"').join(';') + '\n';
+      });
+
+      const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+      const link = document.createElement('a');
+      link.href = URL.createObjectURL(blob);
+      link.download = 'controle-glosas-' + new Date().toISOString().slice(0, 10) + '.csv';
+      link.click();
+    }
+
+    document.getElementById('searchInput').addEventListener('input', renderTable);
+    document.getElementById('filterStatus').addEventListener('change', renderTable);
+    document.getElementById('filterMonth').addEventListener('change', renderTable);
+
+    document.getElementById('modalOverlay').addEventListener('click', function(e) {
+      if (e.target === this) closeModal();
+    });
+
+    renderTable();
+  </script>
+</body>
+</html>

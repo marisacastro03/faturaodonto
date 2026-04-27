@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aula 6 — Acompanhamento do Status das Guias | Módulo 2</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="aulas.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header header--scrolled">
+    <nav class="nav container">
+      <a href="../index.html" class="nav__logo"><span class="logo-icon">🦷</span> FaturaOdonto</a>
+      <a href="../modulo2.html" class="btn btn--outline nav__cta">← Voltar ao Módulo 2</a>
+    </nav>
+  </header>
+  <div class="membros">
+    <aside class="sidebar">
+      <div class="progress-bar">
+        <div class="progress-bar__label">Módulo 2 — Progresso</div>
+        <div class="progress-bar__track"><div class="progress-bar__fill" style="width: 66%"></div></div>
+      </div>
+      <div class="sidebar__title">Módulo 02</div>
+      <div class="sidebar__module">Faturamento das GTOs</div>
+      <div class="sidebar__list">
+        <a href="m2-aula1.html" class="sidebar__link"><span>01</span> Fluxo do faturamento</a>
+        <a href="m2-aula2.html" class="sidebar__link"><span>02</span> Lote vs individual</a>
+        <a href="m2-aula3.html" class="sidebar__link"><span>03</span> Prazos por operadora</a>
+        <a href="m2-aula4.html" class="sidebar__link"><span>04</span> Envio das guias</a>
+        <a href="m2-aula5.html" class="sidebar__link"><span>05</span> Montagem de lotes</a>
+        <a href="m2-aula6.html" class="sidebar__link sidebar__link--active"><span>06</span> Status das guias</a>
+        <a href="m2-aula7.html" class="sidebar__link"><span>07</span> Conferência de pagamentos</a>
+        <a href="m2-aula8.html" class="sidebar__link"><span>08</span> Planilha de controle</a>
+        <a href="m2-aula9.html" class="sidebar__link"><span>09</span> Exercícios práticos</a>
+      </div>
+    </aside>
+    <main class="aula-content">
+      <span class="aula-content__badge">Módulo 2 · Aula 6 de 9</span>
+      <h1>Acompanhamento do Status das Guias</h1>
+      <p class="aula-content__meta">Tempo estimado de leitura: 11 minutos</p>
+      <div class="prose">
+        <h2>Por Que Acompanhar é Fundamental</h2>
+        <p>Enviar as guias é apenas metade do trabalho. A outra metade — e muitas vezes a mais negligenciada — é <strong>acompanhar o que acontece com elas</strong> depois do envio.</p>
+        <p>Sem acompanhamento, você pode descobrir semanas depois que uma guia foi rejeitada, que um lote não foi processado, ou que um pagamento veio menor do que o esperado. Acompanhar permite agir rapidamente e corrigir problemas antes que se tornem irreversíveis.</p>
+
+        <h2>Os Status Possíveis de uma Guia</h2>
+        <p>Após o envio, cada guia passa por diferentes status. Embora a nomenclatura varie entre operadoras, os conceitos são os mesmos:</p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Status</th>
+              <th>O que significa</th>
+              <th>Ação necessária</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Recebida</strong></td>
+              <td>A operadora recebeu a guia e ela está na fila para análise</td>
+              <td>Nenhuma — aguardar processamento</td>
+            </tr>
+            <tr>
+              <td><strong>Em análise</strong></td>
+              <td>A guia está sendo avaliada pelo auditor da operadora</td>
+              <td>Nenhuma — aguardar resultado</td>
+            </tr>
+            <tr>
+              <td><strong>Pendente</strong></td>
+              <td>Falta alguma documentação ou informação complementar</td>
+              <td>Verificar o que falta e enviar o mais rápido possível</td>
+            </tr>
+            <tr>
+              <td><strong>Autorizada / Aprovada</strong></td>
+              <td>A guia foi aceita e entrará no ciclo de pagamento</td>
+              <td>Aguardar pagamento conforme calendário</td>
+            </tr>
+            <tr>
+              <td><strong>Glosada (parcial)</strong></td>
+              <td>Parte dos procedimentos foi negada, mas outros foram aprovados</td>
+              <td>Analisar motivo da glosa e avaliar recurso</td>
+            </tr>
+            <tr>
+              <td><strong>Glosada (total)</strong></td>
+              <td>Todos os procedimentos da guia foram negados</td>
+              <td>Analisar motivo e montar recurso (Módulo 4)</td>
+            </tr>
+            <tr>
+              <td><strong>Em pagamento</strong></td>
+              <td>A guia foi aprovada e está na fila de pagamento</td>
+              <td>Aguardar crédito na conta</td>
+            </tr>
+            <tr>
+              <td><strong>Paga</strong></td>
+              <td>O valor foi creditado na conta da clínica</td>
+              <td>Conferir valor recebido vs valor faturado</td>
+            </tr>
+            <tr>
+              <td><strong>Rejeitada</strong></td>
+              <td>A guia foi devolvida antes mesmo da análise (erro grave)</td>
+              <td>Corrigir e reenviar se dentro do prazo</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="info-box info-box--importante">
+          <span class="info-box__title">💡 Importante:</span>
+          <p>Há uma diferença entre <strong>rejeitada</strong> e <strong>glosada</strong>. A guia rejeitada nem entrou na análise — geralmente por erro de formato ou dados inválidos. A guia glosada foi analisada e negada por razão clínica ou documental. O tratamento de cada uma é diferente.</p>
+        </div>
+
+        <h2>Como Verificar no Portal</h2>
+        <p>A verificação do status é feita diretamente no portal de cada operadora. Veja onde encontrar:</p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Operadora</th>
+              <th>Menu/Seção</th>
+              <th>Funcionalidades</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Amil Dental</strong></td>
+              <td>Faturamento → Consulta de Guias</td>
+              <td>Busca por lote, período, paciente ou número da guia</td>
+            </tr>
+            <tr>
+              <td><strong>OdontoPrev</strong></td>
+              <td>Guias → Acompanhamento</td>
+              <td>Filtros por status, período e profissional</td>
+            </tr>
+            <tr>
+              <td><strong>Bradesco Dental</strong></td>
+              <td>Prestador → Status das Guias</td>
+              <td>Visualização por lote com detalhes individuais</td>
+            </tr>
+            <tr>
+              <td><strong>SulAmérica</strong></td>
+              <td>Odonto → Faturamento → Consultar</td>
+              <td>Relatório exportável em Excel</td>
+            </tr>
+            <tr>
+              <td><strong>MetLife</strong></td>
+              <td>Prestadores → Guias Enviadas</td>
+              <td>Status com previsão de pagamento</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Frequência de Verificação Recomendada</h2>
+        <p>A frequência com que você deve verificar o status depende do volume e da importância das guias:</p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Situação</th>
+              <th>Frequência recomendada</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Lote recém-enviado (primeiros 48h)</td>
+              <td>Diária — para confirmar recebimento</td>
+            </tr>
+            <tr>
+              <td>Guias em análise</td>
+              <td>Semanal</td>
+            </tr>
+            <tr>
+              <td>Guias com pendência</td>
+              <td>A cada 2 dias até resolver</td>
+            </tr>
+            <tr>
+              <td>Guias aprovadas aguardando pagamento</td>
+              <td>Semanal</td>
+            </tr>
+            <tr>
+              <td>Guias glosadas</td>
+              <td>Imediato — iniciar recurso</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="info-box info-box--dica">
+          <span class="info-box__title">✅ Dica da Marisa:</span>
+          <p>Na minha rotina de gestão, a <strong>segunda-feira</strong> é o dia de verificar o status de todas as guias pendentes. Dedico 30 minutos a percorrer os portais das operadoras e atualizar a planilha de controle. Isso me permite identificar problemas no início da semana e agir rápido.</p>
+        </div>
+
+        <h2>O Que Fazer em Cada Situação</h2>
+
+        <h3>Guia com status "Pendente"</h3>
+        <ol>
+          <li>Acesse os detalhes da pendência no portal</li>
+          <li>Identifique qual documento ou informação está faltando</li>
+          <li>Providencie o que for necessário (foto, raio-X, dados corrigidos)</li>
+          <li>Reenvie a documentação pelo portal</li>
+          <li>Registre na planilha a data da correção e o que foi enviado</li>
+        </ol>
+
+        <h3>Guia com glosa parcial</h3>
+        <ol>
+          <li>Verifique quais procedimentos foram aprovados e quais glosados</li>
+          <li>Analise o código de glosa (veremos detalhes no Módulo 4)</li>
+          <li>Decida se vale a pena entrar com recurso</li>
+          <li>Se sim, prepare a documentação e entre com o recurso dentro do prazo</li>
+        </ol>
+
+        <h3>Guia com glosa total</h3>
+        <ol>
+          <li>Analise cuidadosamente o motivo da glosa</li>
+          <li>Reúna toda a documentação de suporte</li>
+          <li>Monte o recurso seguindo as diretrizes da operadora</li>
+          <li>Envie dentro do prazo estipulado para recursos</li>
+        </ol>
+
+        <div class="info-box info-box--atencao">
+          <span class="info-box__title">⚠️ Atenção!</span>
+          <p>Cada operadora tem um prazo para contestar glosas, geralmente de <strong>30 a 60 dias</strong> a partir da notificação. Não perca esse prazo! Glosa não contestada no prazo é considerada aceita.</p>
+        </div>
+
+        <h2>Registrando o Status na Planilha</h2>
+        <p>Cada vez que verificar o status de uma guia, atualize sua planilha de controle. Os campos importantes são:</p>
+        <ul>
+          <li><strong>Data da última verificação</strong></li>
+          <li><strong>Status atual</strong></li>
+          <li><strong>Observações</strong> (o que está pendente, motivo da glosa, etc.)</li>
+          <li><strong>Próxima ação</strong> (enviar documento, montar recurso, aguardar pagamento)</li>
+          <li><strong>Prazo para ação</strong> (data limite para resolver pendências ou contestar)</li>
+        </ul>
+
+        <div class="info-box info-box--dica">
+          <span class="info-box__title">✅ Dica da Marisa:</span>
+          <p>Use cores na sua planilha para identificar rapidamente: <strong>verde</strong> = aprovada/paga, <strong>amarelo</strong> = pendente/em análise, <strong>vermelho</strong> = glosada/rejeitada. Quando abrir a planilha, seus olhos vão direto nos problemas!</p>
+        </div>
+
+        <h2>Quando o Status Não Muda</h2>
+        <p>Se uma guia está há mais de 30 dias com o mesmo status ("Em análise", por exemplo), algo pode estar errado. Nesse caso:</p>
+        <ol>
+          <li>Acesse o portal e verifique se há alguma notificação ou pendência oculta</li>
+          <li>Ligue para o SAC da operadora (canal prestador) e questione o andamento</li>
+          <li>Anote o protocolo do atendimento</li>
+          <li>Se necessário, registre uma reclamação formal no canal do prestador</li>
+          <li>Em último caso, acione a ANS (Agência Nacional de Saúde Suplementar)</li>
+        </ol>
+
+        <h2>Resumo da Aula</h2>
+        <ul>
+          <li>Após o envio, as guias passam por vários status: recebida, em análise, aprovada, glosada, paga</li>
+          <li>Verifique o status nos <strong>portais das operadoras</strong> conforme a frequência recomendada</li>
+          <li>Guias pendentes exigem <strong>ação imediata</strong></li>
+          <li>Guias glosadas têm <strong>prazo para recurso</strong> — não perca!</li>
+          <li>Mantenha a planilha de controle <strong>sempre atualizada</strong></li>
+        </ul>
+
+        <p>Na próxima aula, vamos aprender a conferir os pagamentos recebidos e identificar divergências!</p>
+      </div>
+      <div class="aula-nav">
+        <a href="m2-aula5.html" class="btn btn--outline">← Aula Anterior</a>
+        <a href="m2-aula7.html" class="btn btn--primary">Próxima Aula →</a>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aula 6 — Uma nota por lote ou uma por guia? | Módulo 5</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="aulas.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header header--scrolled">
+    <nav class="nav container">
+      <a href="../index.html" class="nav__logo"><span class="logo-icon">🦷</span> FaturaOdonto</a>
+      <a href="../modulo5.html" class="btn btn--outline nav__cta">← Voltar ao Módulo 5</a>
+    </nav>
+  </header>
+  <div class="membros">
+    <aside class="sidebar">
+      <div class="progress-bar">
+        <div class="progress-bar__label">Módulo 5 — Progresso</div>
+        <div class="progress-bar__track"><div class="progress-bar__fill" style="width: 60%"></div></div>
+      </div>
+      <div class="sidebar__title">Módulo 05</div>
+      <div class="sidebar__module">Emissão de Notas Fiscais</div>
+      <div class="sidebar__list">
+        <a href="m5-aula1.html" class="sidebar__link">01 - Quando emitir nota fiscal</a>
+        <a href="m5-aula2.html" class="sidebar__link">02 - Tipos de nota fiscal</a>
+        <a href="m5-aula3.html" class="sidebar__link">03 - Dados obrigatórios na nota</a>
+        <a href="m5-aula4.html" class="sidebar__link">04 - Emitindo a NFS-e passo a passo</a>
+        <a href="m5-aula5.html" class="sidebar__link">05 - Competência vs recebimento</a>
+        <a href="m5-aula6.html" class="sidebar__link sidebar__link--active">06 - Uma nota por lote ou por guia</a>
+        <a href="m5-aula7.html" class="sidebar__link">07 - Conciliação faturamento x notas</a>
+        <a href="m5-aula8.html" class="sidebar__link">08 - Organização fiscal mensal</a>
+        <a href="m5-aula9.html" class="sidebar__link">09 - Erros fiscais mais comuns</a>
+        <a href="m5-aula10.html" class="sidebar__link">10 - Exercício final completo</a>
+      </div>
+    </aside>
+    <main class="aula-content">
+      <span class="aula-content__badge">Módulo 5 · Aula 6 de 10</span>
+      <h1>Uma nota por lote ou uma por guia?</h1>
+      <p class="aula-content__meta">Tempo estimado de leitura: 13 minutos</p>
+
+      <div class="prose">
+        <h2>Introdução</h2>
+        <p>Uma dúvida extremamente prática no faturamento de convênios odontológicos é: <strong>devo emitir uma única nota fiscal para o lote inteiro de guias ou devo emitir uma nota separada para cada GTO?</strong></p>
+        <p>A resposta depende da operadora, do volume de guias e da organização da clínica. Nesta aula, vamos analisar as duas abordagens, entender as vantagens e desvantagens de cada uma e ver como organizar o campo de descrição corretamente.</p>
+
+        <h2>Opção 1: Uma nota por lote</h2>
+        <p>Nessa abordagem, você emite uma <strong>única NFS-e</strong> englobando todas as guias de um mesmo período de competência para uma mesma operadora.</p>
+
+        <div class="exemplo">
+          <div class="exemplo__title">Exemplo — Nota única por lote</div>
+          <p>A Clínica Sorriso enviou 15 GTOs para a Amil no mês de março/2026, totalizando R$ 6.300,00. Após o pagamento, emite uma única NFS-e:</p>
+          <ul>
+            <li><strong>Tomador:</strong> Amil Assistência Médica Internacional</li>
+            <li><strong>Valor:</strong> R$ 6.300,00</li>
+            <li><strong>Descrição:</strong> "Prestação de serviços odontológicos. Competência: março/2026. Lote nº 2026-03. 15 guias de tratamento (GTO nº 10201 a 10215)."</li>
+          </ul>
+        </div>
+
+        <h3>Vantagens da nota por lote</h3>
+        <ul>
+          <li><strong>Menos trabalho:</strong> Emitir uma nota por operadora por mês é muito mais rápido do que emitir dezenas.</li>
+          <li><strong>Mais fácil de conciliar:</strong> Um pagamento = uma nota = uma conferência.</li>
+          <li><strong>Menos consumo de numeração:</strong> Consome menos números sequenciais de NFS-e.</li>
+          <li><strong>Aceita pela maioria das operadoras:</strong> A grande maioria prefere ou aceita nota por lote.</li>
+        </ul>
+
+        <h3>Desvantagens da nota por lote</h3>
+        <ul>
+          <li><strong>Menor detalhamento:</strong> Se houver glosa parcial, não fica claro qual guia gerou a divergência.</li>
+          <li><strong>Valor pode divergir:</strong> Se a operadora pagar em parcelas ou com glosas, o valor total pode não bater com a nota.</li>
+        </ul>
+
+        <h2>Opção 2: Uma nota por guia</h2>
+        <p>Nessa abordagem, cada GTO gera sua própria NFS-e. Se você enviou 15 guias, emite 15 notas.</p>
+
+        <div class="exemplo">
+          <div class="exemplo__title">Exemplo — Nota individual por guia</div>
+          <p>A mesma Clínica Sorriso emite 15 NFS-e separadas:</p>
+          <ul>
+            <li>NFS-e nº 001 — GTO 10201 — R$ 380,00</li>
+            <li>NFS-e nº 002 — GTO 10202 — R$ 520,00</li>
+            <li>NFS-e nº 003 — GTO 10203 — R$ 290,00</li>
+            <li>... e assim por diante.</li>
+          </ul>
+        </div>
+
+        <h3>Vantagens da nota por guia</h3>
+        <ul>
+          <li><strong>Rastreabilidade total:</strong> Cada nota está vinculada a uma guia específica.</li>
+          <li><strong>Facilidade com glosas:</strong> Se uma guia é glosada, basta cancelar a nota correspondente.</li>
+          <li><strong>Algumas operadoras exigem:</strong> Certas operadoras pedem nota individual por guia.</li>
+        </ul>
+
+        <h3>Desvantagens da nota por guia</h3>
+        <ul>
+          <li><strong>Muito mais trabalho:</strong> Clínicas que emitem 50, 80 ou 100 guias por mês teriam que emitir a mesma quantidade de notas.</li>
+          <li><strong>Mais difícil de conciliar:</strong> Comparar dezenas de notas com o extrato bancário é trabalhoso.</li>
+          <li><strong>Risco de erro:</strong> Mais notas = mais chances de digitar valor, CNPJ ou descrição errados.</li>
+        </ul>
+
+        <div class="info-box info-box--dica">
+          <p>✅ Dica da Marisa: Na minha experiência, a grande maioria das clínicas emite <strong>uma nota por lote por operadora</strong>. É mais prático, mais rápido e aceito por quase todas as operadoras. Eu só recomendo nota por guia quando a operadora exige explicitamente — e mesmo assim, sugiro conversar com eles para tentar simplificar.</p>
+        </div>
+
+        <h2>O que as operadoras preferem?</h2>
+        <p>Cada operadora tem sua preferência, e isso pode variar ao longo do tempo. Aqui está o que geralmente se observa:</p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Operadora</th>
+              <th>Preferência mais comum</th>
+              <th>Observação</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Amil</strong></td>
+              <td>Nota por lote</td>
+              <td>Aceita nota única mensal com referência ao lote</td>
+            </tr>
+            <tr>
+              <td><strong>Bradesco Dental</strong></td>
+              <td>Nota por lote</td>
+              <td>Pede referência ao demonstrativo de pagamento</td>
+            </tr>
+            <tr>
+              <td><strong>OdontoPrev</strong></td>
+              <td>Nota por lote</td>
+              <td>Aceita nota mensal consolidada</td>
+            </tr>
+            <tr>
+              <td><strong>SulAmérica</strong></td>
+              <td>Nota por lote</td>
+              <td>Algumas regionais pedem nota por protocolo</td>
+            </tr>
+            <tr>
+              <td><strong>Uniodonto</strong></td>
+              <td>Varia por regional</td>
+              <td>Verificar com a singular local</td>
+            </tr>
+            <tr>
+              <td><strong>MetLife</strong></td>
+              <td>Nota por lote</td>
+              <td>Pode pedir detalhamento na descrição</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="info-box info-box--atencao">
+          <p>⚠️ Esta tabela é um guia geral. As operadoras podem mudar suas exigências a qualquer momento. Sempre confirme diretamente com o setor de pagamento de cada operadora.</p>
+        </div>
+
+        <h2>Como organizar o campo de descrição</h2>
+        <p>Independentemente de emitir por lote ou por guia, o campo de descrição deve ser claro e conter informações que permitam à operadora identificar a que se refere aquela nota.</p>
+
+        <h3>Descrição para nota por lote</h3>
+        <div class="exemplo">
+          <div class="exemplo__title">Modelo de descrição — Nota por lote</div>
+          <p><em>"Prestação de serviços odontológicos a beneficiários do plano [OPERADORA]. Competência: [MÊS/ANO]. Lote nº [NÚMERO]. Guias: [LISTA ou INTERVALO de números]. Contrato de credenciamento nº [NÚMERO]."</em></p>
+          <p><strong>Exemplo preenchido:</strong></p>
+          <p><em>"Prestação de serviços odontológicos a beneficiários do plano Amil Dental. Competência: março/2026. Lote nº 2026-03-001. Guias nº 10201 a 10215. Contrato de credenciamento nº 78456."</em></p>
+        </div>
+
+        <h3>Descrição para nota por guia</h3>
+        <div class="exemplo">
+          <div class="exemplo__title">Modelo de descrição — Nota por guia</div>
+          <p><em>"Prestação de serviços odontológicos — GTO nº [NÚMERO]. Beneficiário: [NOME ou MATRÍCULA]. Procedimentos: [LISTA]. Competência: [MÊS/ANO]."</em></p>
+          <p><strong>Exemplo preenchido:</strong></p>
+          <p><em>"Prestação de serviços odontológicos — GTO nº 10201. Beneficiário: matrícula 987654. Procedimentos: restauração (81000065), consulta (81000014). Competência: março/2026."</em></p>
+        </div>
+
+        <div class="info-box info-box--dica">
+          <p>✅ Dica da Marisa: Eu mantenho modelos prontos de descrição para cada operadora num documento de texto. Na hora de emitir, só copio, altero os dados variáveis (mês, lote, valor) e colo no sistema. Economiza tempo e evita erros de digitação.</p>
+        </div>
+
+        <h2>E se a operadora paga parcialmente?</h2>
+        <p>Quando a operadora faz pagamentos parciais (parte do lote é paga agora, parte depois), a abordagem depende do regime:</p>
+
+        <h3>Regime de caixa</h3>
+        <ul>
+          <li>Emita uma nota para cada pagamento recebido.</li>
+          <li>Na descrição, informe que é pagamento parcial: "Pagamento parcial ref. lote março/2026 — 1ª parcela".</li>
+        </ul>
+
+        <h3>Regime de competência</h3>
+        <ul>
+          <li>Emita a nota pelo valor total faturado.</li>
+          <li>Os pagamentos parciais são registrados contabilmente como "a receber".</li>
+        </ul>
+
+        <h2>Resumo da aula</h2>
+        <ul>
+          <li><strong>Nota por lote</strong> é a opção mais prática e aceita pela maioria das operadoras.</li>
+          <li><strong>Nota por guia</strong> é mais detalhada, mas exige muito mais trabalho e controle.</li>
+          <li>Sempre confirme a preferência da operadora antes de emitir.</li>
+          <li>O campo de <strong>descrição</strong> deve ser claro e conter referências ao lote, competência e contrato.</li>
+          <li>Mantenha <strong>modelos de descrição</strong> prontos para agilizar o processo.</li>
+        </ul>
+      </div>
+
+      <div class="aula-nav">
+        <a href="m5-aula5.html" class="btn btn--outline">← Aula Anterior</a>
+        <a href="m5-aula7.html" class="btn btn--primary">Próxima Aula →</a>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

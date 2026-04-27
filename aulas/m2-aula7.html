@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aula 7 — Conferência de Pagamentos Recebidos | Módulo 2</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="aulas.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header header--scrolled">
+    <nav class="nav container">
+      <a href="../index.html" class="nav__logo"><span class="logo-icon">🦷</span> FaturaOdonto</a>
+      <a href="../modulo2.html" class="btn btn--outline nav__cta">← Voltar ao Módulo 2</a>
+    </nav>
+  </header>
+  <div class="membros">
+    <aside class="sidebar">
+      <div class="progress-bar">
+        <div class="progress-bar__label">Módulo 2 — Progresso</div>
+        <div class="progress-bar__track"><div class="progress-bar__fill" style="width: 77%"></div></div>
+      </div>
+      <div class="sidebar__title">Módulo 02</div>
+      <div class="sidebar__module">Faturamento das GTOs</div>
+      <div class="sidebar__list">
+        <a href="m2-aula1.html" class="sidebar__link"><span>01</span> Fluxo do faturamento</a>
+        <a href="m2-aula2.html" class="sidebar__link"><span>02</span> Lote vs individual</a>
+        <a href="m2-aula3.html" class="sidebar__link"><span>03</span> Prazos por operadora</a>
+        <a href="m2-aula4.html" class="sidebar__link"><span>04</span> Envio das guias</a>
+        <a href="m2-aula5.html" class="sidebar__link"><span>05</span> Montagem de lotes</a>
+        <a href="m2-aula6.html" class="sidebar__link"><span>06</span> Status das guias</a>
+        <a href="m2-aula7.html" class="sidebar__link sidebar__link--active"><span>07</span> Conferência de pagamentos</a>
+        <a href="m2-aula8.html" class="sidebar__link"><span>08</span> Planilha de controle</a>
+        <a href="m2-aula9.html" class="sidebar__link"><span>09</span> Exercícios práticos</a>
+      </div>
+    </aside>
+    <main class="aula-content">
+      <span class="aula-content__badge">Módulo 2 · Aula 7 de 9</span>
+      <h1>Conferência de Pagamentos Recebidos</h1>
+      <p class="aula-content__meta">Tempo estimado de leitura: 13 minutos</p>
+      <div class="prose">
+        <h2>A Importância da Conferência</h2>
+        <p>Receber o pagamento da operadora é sempre um alívio, mas o trabalho não termina aí. Você precisa <strong>conferir se o valor recebido confere com o que foi faturado</strong>. Sem essa conferência, a clínica pode estar perdendo dinheiro sem saber.</p>
+        <p>É mais comum do que se imagina receber valores menores do que o faturado — seja por glosas parciais que passaram despercebidas, descontos não previstos, ou até erros de processamento.</p>
+
+        <div class="info-box info-box--importante">
+          <span class="info-box__title">💡 Importante:</span>
+          <p>Estudos do setor indicam que clínicas que <strong>não conferem pagamentos</strong> perdem, em média, de 5% a 15% do faturamento mensal. Esse dinheiro pode ser recuperado com um simples hábito de conferência.</p>
+        </div>
+
+        <h2>O Demonstrativo de Pagamento</h2>
+        <p>Toda operadora disponibiliza um <strong>demonstrativo de pagamento</strong> (também chamado de "extrato de pagamento" ou "espelho de faturamento"). Este documento detalha:</p>
+        <ul>
+          <li>Período de referência do pagamento</li>
+          <li>Número do(s) lote(s) pagos</li>
+          <li>Relação de guias incluídas no pagamento</li>
+          <li>Valor faturado de cada guia</li>
+          <li>Valor pago de cada guia</li>
+          <li>Glosas aplicadas (quando houver)</li>
+          <li>Descontos (impostos, taxas, etc.)</li>
+          <li>Valor líquido total</li>
+        </ul>
+
+        <div class="info-box info-box--dica">
+          <span class="info-box__title">✅ Dica da Marisa:</span>
+          <p>Baixe o demonstrativo assim que ele estiver disponível no portal — geralmente alguns dias antes do pagamento efetivo. Isso te dá tempo de identificar problemas antes que o dinheiro (ou a falta dele) chegue na conta.</p>
+        </div>
+
+        <h2>Passo a Passo da Conferência</h2>
+
+        <h3>Passo 1: Baixe o demonstrativo</h3>
+        <p>Acesse o portal da operadora e baixe o demonstrativo em PDF ou Excel. Se disponível em Excel, prefira — facilita a comparação.</p>
+
+        <h3>Passo 2: Cruze com a planilha de controle</h3>
+        <p>Compare guia a guia o valor faturado na sua planilha com o valor pago no demonstrativo. Procure por:</p>
+        <ul>
+          <li>Guias que foram faturadas mas não aparecem no demonstrativo</li>
+          <li>Guias com valor pago diferente do faturado</li>
+          <li>Guias com glosa parcial ou total</li>
+        </ul>
+
+        <h3>Passo 3: Identifique as divergências</h3>
+        <p>Classifique cada divergência encontrada:</p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Tipo de divergência</th>
+              <th>Causa provável</th>
+              <th>Ação</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Guia não consta no demonstrativo</td>
+              <td>Guia ainda em análise ou foi rejeitada</td>
+              <td>Verificar status no portal</td>
+            </tr>
+            <tr>
+              <td>Valor menor que o faturado</td>
+              <td>Glosa parcial de procedimento(s)</td>
+              <td>Analisar código da glosa e avaliar recurso</td>
+            </tr>
+            <tr>
+              <td>Valor zerado</td>
+              <td>Glosa total da guia</td>
+              <td>Verificar motivo e montar recurso</td>
+            </tr>
+            <tr>
+              <td>Valor maior que o faturado</td>
+              <td>Raro — pode ser correção de pagamento anterior</td>
+              <td>Verificar se é pagamento retroativo</td>
+            </tr>
+            <tr>
+              <td>Descontos não previstos</td>
+              <td>Impostos retidos na fonte (IRRF, ISS) ou taxa administrativa</td>
+              <td>Confirmar com contabilidade e contrato</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>Passo 4: Registre tudo</h3>
+        <p>Na sua planilha de controle, atualize cada guia com:</p>
+        <ul>
+          <li>Data do pagamento</li>
+          <li>Valor efetivamente recebido</li>
+          <li>Diferença em relação ao valor faturado</li>
+          <li>Motivo da diferença (se houver)</li>
+          <li>Ação tomada (recurso, aceite, etc.)</li>
+        </ul>
+
+        <h3>Passo 5: Aja sobre as divergências</h3>
+        <p>Para cada divergência identificada:</p>
+        <ul>
+          <li><strong>Glosa recuperável:</strong> Monte o recurso (veremos no Módulo 4)</li>
+          <li><strong>Guia faltante:</strong> Verifique o status e cobre a operadora se necessário</li>
+          <li><strong>Desconto contratual:</strong> Confirme com a contabilidade e registre como custo operacional</li>
+        </ul>
+
+        <div class="info-box info-box--atencao">
+          <span class="info-box__title">⚠️ Atenção!</span>
+          <p>Não deixe as divergências para "depois". Cada operadora tem prazo para contestar pagamentos e entrar com recursos. Se você demora para conferir, pode perder o prazo de contestação.</p>
+        </div>
+
+        <h2>Entendendo os Descontos</h2>
+        <p>Nem toda diferença entre o faturado e o recebido é glosa. Existem descontos legítimos que podem estar previstos no contrato:</p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Tipo de desconto</th>
+              <th>O que é</th>
+              <th>Valor típico</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>ISS</strong></td>
+              <td>Imposto sobre serviço retido na fonte</td>
+              <td>2% a 5%</td>
+            </tr>
+            <tr>
+              <td><strong>IRRF</strong></td>
+              <td>Imposto de renda retido na fonte</td>
+              <td>1,5% (quando aplicável)</td>
+            </tr>
+            <tr>
+              <td><strong>Taxa administrativa</strong></td>
+              <td>Cobrada por algumas operadoras pelo uso do sistema</td>
+              <td>Varia conforme contrato</td>
+            </tr>
+            <tr>
+              <td><strong>Contribuições</strong></td>
+              <td>PIS/COFINS retidos (quando PJ)</td>
+              <td>Varia conforme regime tributário</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="info-box info-box--dica">
+          <span class="info-box__title">✅ Dica da Marisa:</span>
+          <p>Peça ao seu contador para explicar exatamente quais impostos são retidos na fonte em cada operadora. Assim, quando fizer a conferência, você já sabe quais descontos são esperados e consegue identificar rapidamente se algo está fora do padrão.</p>
+        </div>
+
+        <h2>Situações Comuns e Como Agir</h2>
+
+        <h3>Situação 1: Pagamento parcial sem motivo aparente</h3>
+        <p>Você faturou R$ 5.000 mas recebeu R$ 4.200, sem glosa aparente no demonstrativo.</p>
+        <p><strong>Ação:</strong> Verifique se há guias que ficaram de fora do pagamento (ainda em análise). Compare o demonstrativo com a lista de guias enviadas. Se confirmar a falta, entre em contato com a operadora.</p>
+
+        <h3>Situação 2: Glosa de procedimento que tem autorização</h3>
+        <p>A operadora glosou um procedimento que tinha autorização prévia.</p>
+        <p><strong>Ação:</strong> Reúna a autorização, o número do protocolo e entre com recurso imediatamente. Essa é uma das glosas mais fáceis de reverter.</p>
+
+        <h3>Situação 3: Valor do procedimento diferente da tabela</h3>
+        <p>O valor pago por um procedimento é diferente do que consta na tabela de referência.</p>
+        <p><strong>Ação:</strong> Compare com a tabela vigente do seu contrato. Se o valor estiver errado, registre a divergência e entre com contestação administrativa.</p>
+
+        <h2>Resumo da Aula</h2>
+        <ul>
+          <li>Sempre <strong>confira o demonstrativo</strong> de pagamento — nunca aceite o valor recebido sem verificar</li>
+          <li>Compare <strong>guia a guia</strong> o valor faturado com o valor pago</li>
+          <li>Identifique se as divergências são <strong>glosas, descontos legais ou erros</strong></li>
+          <li>Aja rapidamente — <strong>prazos de contestação</strong> não esperam</li>
+          <li>Registre tudo na <strong>planilha de controle</strong></li>
+        </ul>
+
+        <p>Na próxima aula, vamos montar a planilha de controle de faturamento mensal — sua ferramenta principal de gestão!</p>
+      </div>
+      <div class="aula-nav">
+        <a href="m2-aula6.html" class="btn btn--outline">← Aula Anterior</a>
+        <a href="m2-aula8.html" class="btn btn--primary">Próxima Aula →</a>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

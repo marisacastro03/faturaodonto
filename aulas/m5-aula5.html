@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aula 5 — Competência vs recebimento | Módulo 5</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="aulas.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header header--scrolled">
+    <nav class="nav container">
+      <a href="../index.html" class="nav__logo"><span class="logo-icon">🦷</span> FaturaOdonto</a>
+      <a href="../modulo5.html" class="btn btn--outline nav__cta">← Voltar ao Módulo 5</a>
+    </nav>
+  </header>
+  <div class="membros">
+    <aside class="sidebar">
+      <div class="progress-bar">
+        <div class="progress-bar__label">Módulo 5 — Progresso</div>
+        <div class="progress-bar__track"><div class="progress-bar__fill" style="width: 50%"></div></div>
+      </div>
+      <div class="sidebar__title">Módulo 05</div>
+      <div class="sidebar__module">Emissão de Notas Fiscais</div>
+      <div class="sidebar__list">
+        <a href="m5-aula1.html" class="sidebar__link">01 - Quando emitir nota fiscal</a>
+        <a href="m5-aula2.html" class="sidebar__link">02 - Tipos de nota fiscal</a>
+        <a href="m5-aula3.html" class="sidebar__link">03 - Dados obrigatórios na nota</a>
+        <a href="m5-aula4.html" class="sidebar__link">04 - Emitindo a NFS-e passo a passo</a>
+        <a href="m5-aula5.html" class="sidebar__link sidebar__link--active">05 - Competência vs recebimento</a>
+        <a href="m5-aula6.html" class="sidebar__link">06 - Uma nota por lote ou por guia</a>
+        <a href="m5-aula7.html" class="sidebar__link">07 - Conciliação faturamento x notas</a>
+        <a href="m5-aula8.html" class="sidebar__link">08 - Organização fiscal mensal</a>
+        <a href="m5-aula9.html" class="sidebar__link">09 - Erros fiscais mais comuns</a>
+        <a href="m5-aula10.html" class="sidebar__link">10 - Exercício final completo</a>
+      </div>
+    </aside>
+    <main class="aula-content">
+      <span class="aula-content__badge">Módulo 5 · Aula 5 de 10</span>
+      <h1>Nota por competência vs nota por recebimento</h1>
+      <p class="aula-content__meta">Tempo estimado de leitura: 14 minutos</p>
+
+      <div class="prose">
+        <h2>Introdução</h2>
+        <p>Uma das dúvidas mais comuns entre profissionais que faturam convênios odontológicos é: <strong>"Eu emito a nota quando faturo ou quando recebo?"</strong> A resposta não é tão simples quanto parece, e escolher errado pode gerar problemas fiscais, contábeis e até financeiros.</p>
+        <p>Nesta aula, vamos explicar em detalhes a diferença entre os dois regimes — <strong>competência e caixa</strong> —, quando cada um é recomendado e como isso impacta o dia a dia da clínica odontológica.</p>
+
+        <h2>O que é regime de competência?</h2>
+        <p>No regime de competência, a nota fiscal é emitida no momento em que o <strong>serviço é prestado ou faturado</strong>, independentemente de quando o pagamento será recebido.</p>
+
+        <h3>Na prática, para convênios</h3>
+        <p>Você envia o lote de guias (GTOs) para a operadora em março e emite a NFS-e em março, mesmo sabendo que o pagamento só virá em abril ou maio.</p>
+
+        <div class="exemplo">
+          <div class="exemplo__title">Exemplo — Regime de competência</div>
+          <p>A Dra. Paula enviou o lote de março/2026 para a OdontoPrev no dia 05/04/2026, contendo guias totalizando R$ 5.200,00.</p>
+          <ul>
+            <li><strong>Data da NFS-e:</strong> março/2026 (competência do serviço).</li>
+            <li><strong>Valor da nota:</strong> R$ 5.200,00 (valor faturado).</li>
+            <li><strong>Pagamento esperado:</strong> maio/2026.</li>
+          </ul>
+          <p>Se a operadora glosar R$ 400,00, a Dra. Paula terá uma nota de R$ 5.200,00 mas só receberá R$ 4.800,00. Ela precisará registrar a diferença contabilmente ou, dependendo do caso, emitir uma nota de crédito.</p>
+        </div>
+
+        <h3>Vantagens do regime de competência</h3>
+        <ul>
+          <li>As notas ficam organizadas por período de atendimento — fácil de rastrear.</li>
+          <li>Melhor para clínicas que precisam de relatórios de faturamento mensal precisos.</li>
+          <li>Obrigatório para clínicas no <strong>Lucro Real</strong>.</li>
+        </ul>
+
+        <h3>Desvantagens do regime de competência</h3>
+        <ul>
+          <li>Pode gerar diferença entre o valor da nota e o valor recebido (por glosas).</li>
+          <li>Exige tratamento contábil para notas com valores divergentes do pagamento efetivo.</li>
+          <li>O imposto é apurado sobre o valor faturado, mesmo que ainda não tenha sido recebido.</li>
+        </ul>
+
+        <h2>O que é regime de caixa?</h2>
+        <p>No regime de caixa, a nota fiscal é emitida somente quando o <strong>pagamento efetivamente entra na conta</strong> da clínica. Ou seja, o fato gerador para a emissão da nota é o recebimento, não o faturamento.</p>
+
+        <h3>Na prática, para convênios</h3>
+        <p>Você envia o lote em março, mas só emite a NFS-e em maio, quando o dinheiro cai na conta.</p>
+
+        <div class="exemplo">
+          <div class="exemplo__title">Exemplo — Regime de caixa</div>
+          <p>A Dra. Paula (mesma clínica do exemplo anterior) recebe o pagamento da OdontoPrev em 15/05/2026, no valor de R$ 4.800,00 (após glosa de R$ 400,00).</p>
+          <ul>
+            <li><strong>Data da NFS-e:</strong> maio/2026 (data do recebimento).</li>
+            <li><strong>Valor da nota:</strong> R$ 4.800,00 (valor efetivamente recebido).</li>
+          </ul>
+          <p>Nesse caso, o valor da nota bate exatamente com o depósito. Não há necessidade de nota de crédito ou ajuste.</p>
+        </div>
+
+        <h3>Vantagens do regime de caixa</h3>
+        <ul>
+          <li>O valor da nota sempre bate com o valor recebido — <strong>zero divergência</strong>.</li>
+          <li>Os impostos são calculados sobre o que foi efetivamente recebido.</li>
+          <li>Mais simples de conciliar no dia a dia.</li>
+          <li>Melhor fluxo de caixa — você só paga impostos quando recebe.</li>
+        </ul>
+
+        <h3>Desvantagens do regime de caixa</h3>
+        <ul>
+          <li>A nota pode ser emitida meses depois do atendimento, dificultando o rastreamento.</li>
+          <li>Se a operadora atrasa o pagamento, pode acumular notas pendentes.</li>
+          <li>Nem todos os regimes tributários permitem o regime de caixa.</li>
+        </ul>
+
+        <h2>Comparativo direto</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Aspecto</th>
+              <th>Competência</th>
+              <th>Caixa</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Quando emite a nota</strong></td>
+              <td>Quando fatura/presta o serviço</td>
+              <td>Quando recebe o pagamento</td>
+            </tr>
+            <tr>
+              <td><strong>Valor da nota</strong></td>
+              <td>Valor faturado (pode divergir do recebido)</td>
+              <td>Valor recebido (sempre bate)</td>
+            </tr>
+            <tr>
+              <td><strong>Impostos</strong></td>
+              <td>Calculados sobre o faturamento</td>
+              <td>Calculados sobre o recebimento</td>
+            </tr>
+            <tr>
+              <td><strong>Glosas</strong></td>
+              <td>Pode precisar de nota de crédito</td>
+              <td>Já descontadas automaticamente</td>
+            </tr>
+            <tr>
+              <td><strong>Organização</strong></td>
+              <td>Notas por competência do atendimento</td>
+              <td>Notas por data de recebimento</td>
+            </tr>
+            <tr>
+              <td><strong>Mais comum em</strong></td>
+              <td>Lucro Real, clínicas maiores</td>
+              <td>Simples Nacional, clínicas menores</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Qual é mais comum em clínicas odontológicas?</h2>
+        <p>Na prática, a <strong>maioria das clínicas de pequeno e médio porte</strong> que atuam com convênios utiliza o <strong>regime de caixa</strong>. As razões são:</p>
+        <ul>
+          <li>A maior parte está enquadrada no <strong>Simples Nacional</strong>, que permite o regime de caixa.</li>
+          <li>O intervalo entre faturamento e pagamento é longo (30 a 90 dias), tornando o regime de caixa mais prático.</li>
+          <li>Evita o problema de emitir nota por um valor e receber outro (glosas).</li>
+          <li>A conciliação financeira fica mais simples.</li>
+        </ul>
+
+        <div class="info-box info-box--dica">
+          <p>✅ Dica da Marisa: Na minha experiência, o regime de caixa é o que funciona melhor para a maioria das clínicas que faturam convênios. A clínica emite a nota no dia que confirma o depósito, com o valor exato. Isso evita retrabalho e ajustes contábeis. Mas atenção: essa decisão precisa ser validada com o seu contador!</p>
+        </div>
+
+        <h2>A importância da orientação do contador</h2>
+        <p>Essa não é uma decisão que o profissional de faturamento deve tomar sozinho. O regime fiscal precisa ser:</p>
+        <ul>
+          <li><strong>Compatível com o regime tributário da clínica</strong> (Simples Nacional, Lucro Presumido ou Lucro Real).</li>
+          <li><strong>Consistente ao longo do exercício fiscal</strong> — não pode ficar alternando entre competência e caixa de um mês para outro.</li>
+          <li><strong>Registrado na contabilidade</strong> — o contador precisa saber qual regime está sendo utilizado para fazer a apuração correta dos impostos.</li>
+        </ul>
+
+        <div class="info-box info-box--atencao">
+          <p>⚠️ Trocar de regime no meio do ano fiscal pode gerar inconsistências e chamar a atenção da Receita Federal. Se for necessário mudar, faça no início do ano seguinte e comunique ao contador com antecedência.</p>
+        </div>
+
+        <h3>Perguntas para fazer ao seu contador</h3>
+        <ol>
+          <li>"Qual regime de reconhecimento de receita devo usar — competência ou caixa?"</li>
+          <li>"O nosso enquadramento tributário permite regime de caixa?"</li>
+          <li>"Se eu emitir nota por competência e houver glosa, como faço o ajuste contábil?"</li>
+          <li>"Preciso emitir a nota no exato dia do recebimento ou posso emitir até o final do mês?"</li>
+        </ol>
+
+        <h2>Situações especiais</h2>
+
+        <h3>Pagamento parcelado pela operadora</h3>
+        <p>Algumas operadoras pagam o lote em duas ou mais parcelas. Nesse caso:</p>
+        <ul>
+          <li><strong>Competência:</strong> Emite-se uma única nota no valor total faturado.</li>
+          <li><strong>Caixa:</strong> Pode-se emitir uma nota para cada parcela recebida, ou uma única nota quando o valor total for recebido (consulte o contador).</li>
+        </ul>
+
+        <h3>Operadora que exige a nota antes de pagar</h3>
+        <p>Há operadoras que só liberam o pagamento após receberem a NFS-e. Nesse caso, mesmo clínicas no regime de caixa precisam emitir a nota antecipadamente. A solução é:</p>
+        <ul>
+          <li>Emitir a nota com o valor do demonstrativo de pagamento.</li>
+          <li>Registrar contabilmente conforme orientação do contador.</li>
+          <li>Isso não muda o regime tributário — é uma exigência operacional da operadora.</li>
+        </ul>
+
+        <div class="info-box info-box--dica">
+          <p>✅ Dica da Marisa: Quando a operadora exige a nota antes de pagar, eu recomendo emitir a nota assim que receber o demonstrativo de pagamento. O demonstrativo já mostra o valor líquido que será depositado, então o risco de divergência é mínimo.</p>
+        </div>
+
+        <h2>Resumo da aula</h2>
+        <ul>
+          <li><strong>Regime de competência:</strong> nota emitida quando fatura — melhor para clínicas maiores e Lucro Real.</li>
+          <li><strong>Regime de caixa:</strong> nota emitida quando recebe — mais comum em clínicas menores e Simples Nacional.</li>
+          <li>A escolha deve ser feita em conjunto com o <strong>contador</strong> e mantida consistente durante o ano fiscal.</li>
+          <li>O regime de caixa evita problemas com glosas, pois o valor da nota bate com o valor recebido.</li>
+          <li>Algumas operadoras exigem nota antes do pagamento — isso é uma questão operacional, não fiscal.</li>
+        </ul>
+      </div>
+
+      <div class="aula-nav">
+        <a href="m5-aula4.html" class="btn btn--outline">← Aula Anterior</a>
+        <a href="m5-aula6.html" class="btn btn--primary">Próxima Aula →</a>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

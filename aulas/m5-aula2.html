@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aula 2 — Tipos de nota fiscal: NFS-e e outras | Módulo 5</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="aulas.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header header--scrolled">
+    <nav class="nav container">
+      <a href="../index.html" class="nav__logo"><span class="logo-icon">🦷</span> FaturaOdonto</a>
+      <a href="../modulo5.html" class="btn btn--outline nav__cta">← Voltar ao Módulo 5</a>
+    </nav>
+  </header>
+  <div class="membros">
+    <aside class="sidebar">
+      <div class="progress-bar">
+        <div class="progress-bar__label">Módulo 5 — Progresso</div>
+        <div class="progress-bar__track"><div class="progress-bar__fill" style="width: 20%"></div></div>
+      </div>
+      <div class="sidebar__title">Módulo 05</div>
+      <div class="sidebar__module">Emissão de Notas Fiscais</div>
+      <div class="sidebar__list">
+        <a href="m5-aula1.html" class="sidebar__link">01 - Quando emitir nota fiscal</a>
+        <a href="m5-aula2.html" class="sidebar__link sidebar__link--active">02 - Tipos de nota fiscal</a>
+        <a href="m5-aula3.html" class="sidebar__link">03 - Dados obrigatórios na nota</a>
+        <a href="m5-aula4.html" class="sidebar__link">04 - Emitindo a NFS-e passo a passo</a>
+        <a href="m5-aula5.html" class="sidebar__link">05 - Competência vs recebimento</a>
+        <a href="m5-aula6.html" class="sidebar__link">06 - Uma nota por lote ou por guia</a>
+        <a href="m5-aula7.html" class="sidebar__link">07 - Conciliação faturamento x notas</a>
+        <a href="m5-aula8.html" class="sidebar__link">08 - Organização fiscal mensal</a>
+        <a href="m5-aula9.html" class="sidebar__link">09 - Erros fiscais mais comuns</a>
+        <a href="m5-aula10.html" class="sidebar__link">10 - Exercício final completo</a>
+      </div>
+    </aside>
+    <main class="aula-content">
+      <span class="aula-content__badge">Módulo 5 · Aula 2 de 10</span>
+      <h1>Tipos de nota fiscal: NFS-e e outras</h1>
+      <p class="aula-content__meta">Tempo estimado de leitura: 14 minutos</p>
+
+      <div class="prose">
+        <h2>Introdução</h2>
+        <p>Quando falamos em "nota fiscal" no contexto de faturamento odontológico, a maioria das pessoas pensa automaticamente na NFS-e. E estão certas — ela é, de fato, o documento mais utilizado. Porém, existem outras formas de documentar fiscalmente a prestação de serviços odontológicos, e entender cada uma delas é fundamental para não cometer erros.</p>
+        <p>Nesta aula, vamos conhecer os três principais documentos fiscais utilizados por clínicas e dentistas que atendem convênios: a <strong>NFS-e</strong>, o <strong>RPA</strong> e o <strong>recibo simples</strong>. Ao final, você saberá exatamente qual usar em cada situação.</p>
+
+        <h2>1. NFS-e — Nota Fiscal de Serviços Eletrônica</h2>
+        <p>A NFS-e é o documento fiscal eletrônico emitido por prestadores de serviço cadastrados como <strong>pessoa jurídica</strong> no município. É o padrão para clínicas odontológicas que faturam convênios.</p>
+
+        <h3>Características da NFS-e</h3>
+        <ul>
+          <li><strong>Emitida eletronicamente</strong> pelo portal da prefeitura do município onde a clínica está registrada.</li>
+          <li>Tem <strong>validade jurídica</strong> e é reconhecida pela Receita Federal e pela Secretaria de Fazenda municipal.</li>
+          <li>Gera um <strong>número único</strong> e um código de verificação que permitem consulta online.</li>
+          <li>Registra automaticamente o <strong>ISS</strong> devido sobre o serviço prestado.</li>
+          <li>Pode ser enviada em <strong>PDF</strong> ou <strong>XML</strong> para a operadora.</li>
+        </ul>
+
+        <h3>Quando usar a NFS-e</h3>
+        <ul>
+          <li>Sempre que a clínica for <strong>pessoa jurídica (CNPJ)</strong>.</li>
+          <li>Para faturar serviços prestados a <strong>operadoras de planos de saúde</strong>.</li>
+          <li>Para faturar serviços a <strong>qualquer tomador</strong>, incluindo pacientes particulares (quando aplicável).</li>
+        </ul>
+
+        <div class="info-box info-box--dica">
+          <p>✅ Dica da Marisa: A NFS-e é a sua melhor amiga no faturamento de convênios. Se a sua clínica é PJ, não existe outra opção — é NFS-e sempre. Muitas alunas me perguntam se podem usar recibo, e a resposta é: não, se você tem CNPJ, a nota fiscal eletrônica é obrigatória.</p>
+        </div>
+
+        <h3>Como funciona o sistema da NFS-e</h3>
+        <p>Cada município tem seu próprio sistema de emissão. Alguns exemplos:</p>
+        <ul>
+          <li><strong>São Paulo:</strong> Sistema NFS-e da Prefeitura de São Paulo (nfe.prefeitura.sp.gov.br)</li>
+          <li><strong>Rio de Janeiro:</strong> Nota Carioca (notacarioca.rio.gov.br)</li>
+          <li><strong>Belo Horizonte:</strong> BH ISS Digital</li>
+          <li><strong>Curitiba:</strong> ISS Curitiba</li>
+        </ul>
+        <p>Embora os sistemas variem, o processo é muito semelhante em todos: cadastro, login, preenchimento dos dados e emissão.</p>
+
+        <h2>2. RPA — Recibo de Pagamento Autônomo</h2>
+        <p>O RPA é o documento utilizado quando o prestador de serviço é <strong>pessoa física</strong> (não possui CNPJ). Ele funciona como um "comprovante de pagamento" que registra o serviço prestado e os impostos retidos.</p>
+
+        <h3>Características do RPA</h3>
+        <ul>
+          <li>É emitido pelo <strong>tomador do serviço</strong> (a operadora ou a empresa contratante), e não pelo prestador.</li>
+          <li>Registra as retenções de <strong>INSS (20%)</strong> e <strong>IRRF</strong> (conforme tabela progressiva).</li>
+          <li>Não é emitido em sistema eletrônico da prefeitura — pode ser em formulário próprio ou gerado pela operadora.</li>
+          <li>Não gera ISS diretamente (o ISS pode ser retido pela fonte, dependendo do município).</li>
+        </ul>
+
+        <h3>Quando usar o RPA</h3>
+        <ul>
+          <li>Quando o dentista atende como <strong>pessoa física (CPF)</strong>, sem CNPJ.</li>
+          <li>Em situações de <strong>cooperativas odontológicas</strong> que pagam os dentistas diretamente.</li>
+          <li>Quando o contrato com a operadora é firmado com o <strong>profissional autônomo</strong>, não com uma empresa.</li>
+        </ul>
+
+        <div class="info-box info-box--atencao">
+          <p>⚠️ Atenção: o RPA não é emitido pelo dentista — é emitido pela operadora ou empresa que está pagando. Se uma operadora pedir para você "emitir um RPA", verifique: quem está emitindo é quem paga, não quem presta o serviço.</p>
+        </div>
+
+        <h2>3. Recibo simples</h2>
+        <p>O recibo simples é um documento que comprova o recebimento de um valor, mas <strong>não tem validade fiscal</strong>. Ele não substitui a nota fiscal ou o RPA perante a Receita Federal ou a prefeitura.</p>
+
+        <h3>Características do recibo simples</h3>
+        <ul>
+          <li>Documento informal, sem registro em sistema público.</li>
+          <li>Não gera obrigação tributária direta.</li>
+          <li>Não é aceito pelas operadoras como documento fiscal.</li>
+          <li>Pode ser usado internamente para controle, mas não substitui a NFS-e.</li>
+        </ul>
+
+        <h3>Quando o recibo simples aparece no dia a dia</h3>
+        <ul>
+          <li>Para controle interno de pagamentos entre sócios.</li>
+          <li>Em situações pontuais de reembolso (não substituindo a nota).</li>
+          <li>Quando o paciente particular pede um "comprovante" (mas a NFS-e ainda precisa ser emitida).</li>
+        </ul>
+
+        <div class="info-box info-box--importante">
+          <p>💡 Recibo simples NÃO serve para faturamento de convênios. Nunca use apenas recibo simples como documento fiscal quando atender operadoras de planos de saúde. A operadora não vai aceitar e o fisco pode questionar.</p>
+        </div>
+
+        <h2>Comparativo: NFS-e vs. RPA vs. Recibo Simples</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Característica</th>
+              <th>NFS-e</th>
+              <th>RPA</th>
+              <th>Recibo Simples</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Quem emite</strong></td>
+              <td>Prestador (clínica PJ)</td>
+              <td>Tomador (operadora)</td>
+              <td>Prestador</td>
+            </tr>
+            <tr>
+              <td><strong>Validade fiscal</strong></td>
+              <td>Sim, plena</td>
+              <td>Sim, para PF</td>
+              <td>Não</td>
+            </tr>
+            <tr>
+              <td><strong>Sistema de emissão</strong></td>
+              <td>Portal da prefeitura</td>
+              <td>Formulário/sistema da operadora</td>
+              <td>Documento livre</td>
+            </tr>
+            <tr>
+              <td><strong>Impostos registrados</strong></td>
+              <td>ISS, IRRF, CSLL, PIS, COFINS</td>
+              <td>INSS, IRRF</td>
+              <td>Nenhum</td>
+            </tr>
+            <tr>
+              <td><strong>Uso em convênios</strong></td>
+              <td>Obrigatório para PJ</td>
+              <td>Usado para PF/autônomos</td>
+              <td>Não aceito</td>
+            </tr>
+            <tr>
+              <td><strong>Aceito pela operadora</strong></td>
+              <td>Sim</td>
+              <td>Sim (quando a operadora emite)</td>
+              <td>Não</td>
+            </tr>
+            <tr>
+              <td><strong>Tipo de prestador</strong></td>
+              <td>Pessoa Jurídica (CNPJ)</td>
+              <td>Pessoa Física (CPF)</td>
+              <td>Qualquer (mas sem validade fiscal)</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Qual usar no faturamento de convênios odontológicos?</h2>
+        <p>A resposta depende do tipo de cadastro do prestador:</p>
+
+        <h3>Se a clínica tem CNPJ → NFS-e</h3>
+        <p>Essa é a situação da grande maioria das clínicas que faturam convênios. Você emite a NFS-e pelo portal da sua prefeitura e envia o PDF ou XML para a operadora.</p>
+
+        <h3>Se o dentista é autônomo (PF) → RPA</h3>
+        <p>Nesse caso, o próprio convênio ou a cooperativa emite o RPA. O dentista não precisa emitir documento fiscal, mas precisa declarar os valores recebidos.</p>
+
+        <h3>Se houver dúvida → Consulte o contador</h3>
+        <p>A legislação pode ter particularidades no seu município. Sempre que houver dúvida sobre qual documento emitir, o contador é a pessoa certa para orientar.</p>
+
+        <div class="exemplo">
+          <div class="exemplo__title">Exemplo prático: Clínica Sorriso Certo</div>
+          <p>A Clínica Sorriso Certo (CNPJ: 12.345.678/0001-90) está credenciada na Amil e na SulAmérica. Todo mês, após receber os pagamentos:</p>
+          <ul>
+            <li>Acessa o portal NFS-e da prefeitura de Campinas.</li>
+            <li>Emite uma NFS-e para a <strong>Amil</strong> (CNPJ: XX.XXX.XXX/0001-XX) no valor de R$ 4.200,00.</li>
+            <li>Emite outra NFS-e para a <strong>SulAmérica</strong> (CNPJ: YY.YYY.YYY/0001-YY) no valor de R$ 2.800,00.</li>
+            <li>Envia ambas as notas em PDF por e-mail para os setores de pagamento das operadoras.</li>
+            <li>Arquiva os XMLs e PDFs em pasta digital organizada por mês.</li>
+          </ul>
+        </div>
+
+        <div class="info-box info-box--dica">
+          <p>✅ Dica da Marisa: Eu recomendo fortemente que todas as minhas alunas regularizem a clínica como PJ, mesmo que seja no Simples Nacional. Além de pagar menos impostos na maioria dos casos, o processo de emissão de nota fica muito mais simples e profissional. E as operadoras preferem trabalhar com PJ.</p>
+        </div>
+
+        <h2>Resumo da aula</h2>
+        <ul>
+          <li>A <strong>NFS-e</strong> é o documento fiscal padrão para clínicas PJ que faturam convênios.</li>
+          <li>O <strong>RPA</strong> é usado quando o dentista é pessoa física — e quem emite é a operadora.</li>
+          <li>O <strong>recibo simples</strong> não tem validade fiscal e não é aceito por operadoras.</li>
+          <li>A escolha do documento depende do <strong>tipo de cadastro</strong> (PJ ou PF) do prestador.</li>
+          <li>Em caso de dúvida, <strong>consulte sempre o seu contador</strong>.</li>
+        </ul>
+      </div>
+
+      <div class="aula-nav">
+        <a href="m5-aula1.html" class="btn btn--outline">← Aula Anterior</a>
+        <a href="m5-aula3.html" class="btn btn--primary">Próxima Aula →</a>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

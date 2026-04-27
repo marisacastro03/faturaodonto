@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aula 3 — Tipos de GTO | Módulo 1</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="aulas.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="header header--scrolled">
+    <nav class="nav container">
+      <a href="../index.html" class="nav__logo"><span class="logo-icon">🦷</span> FaturaOdonto</a>
+      <a href="../modulo1.html" class="btn btn--outline nav__cta">← Voltar ao Módulo 1</a>
+    </nav>
+  </header>
+
+  <div class="membros">
+
+    <aside class="sidebar">
+      <div class="progress-bar">
+        <div class="progress-bar__label">Módulo 1 — Progresso</div>
+        <div class="progress-bar__track">
+          <div class="progress-bar__fill" style="width: 25%"></div>
+        </div>
+      </div>
+      <div class="sidebar__title">Módulo 01</div>
+      <div class="sidebar__module">Emissão de GTOs</div>
+      <div class="sidebar__list">
+        <a href="m1-aula1.html" class="sidebar__link"><span>01</span> O que é a GTO</a>
+        <a href="m1-aula2.html" class="sidebar__link"><span>02</span> Quem emite e quando</a>
+        <a href="m1-aula3.html" class="sidebar__link sidebar__link--active"><span>03</span> Tipos de GTO</a>
+        <a href="m1-aula4.html" class="sidebar__link"><span>04</span> Preenchimento campo a campo</a>
+        <a href="m1-aula5.html" class="sidebar__link"><span>05</span> Códigos TUSS</a>
+        <a href="m1-aula6.html" class="sidebar__link"><span>06</span> Nomenclatura dentária</a>
+        <a href="m1-aula7.html" class="sidebar__link"><span>07</span> Limite de procedimentos</a>
+        <a href="m1-aula8.html" class="sidebar__link"><span>08</span> Foto e Raio-X na emissão</a>
+        <a href="m1-aula9.html" class="sidebar__link"><span>09</span> Portais das operadoras</a>
+        <a href="m1-aula10.html" class="sidebar__link"><span>10</span> Erros que geram glosa</a>
+        <a href="m1-aula11.html" class="sidebar__link"><span>11</span> Checklist de conferência</a>
+        <a href="m1-aula12.html" class="sidebar__link"><span>12</span> Exercícios práticos</a>
+      </div>
+    </aside>
+
+    <main class="aula-content">
+      <span class="aula-content__badge">Módulo 1 · Aula 3 de 12</span>
+      <h1>Tipos de GTO: inicial, aditiva e de urgência</h1>
+      <p class="aula-content__meta">Tempo estimado de leitura: 10 minutos</p>
+
+      <div class="prose">
+
+        <h2>Introdução</h2>
+        <p>Nem toda GTO é igual. Dependendo da situação clínica, você vai emitir um tipo diferente de guia. Saber a diferença entre elas é essencial para evitar erros e garantir que o convênio aprove e pague corretamente.</p>
+        <p>Nesta aula, vamos conhecer os três principais tipos de GTO que você vai usar no dia a dia.</p>
+
+        <h2>1. GTO Inicial (ou Principal)</h2>
+        <p>É a guia padrão. É a primeira GTO aberta para o paciente para um determinado tratamento. Ela contém o plano de tratamento completo ou o procedimento que será realizado.</p>
+
+        <h3>Quando usar:</h3>
+        <ul>
+          <li>Na primeira consulta/avaliação do paciente no convênio</li>
+          <li>Ao iniciar um novo plano de tratamento</li>
+          <li>Para procedimentos isolados (uma restauração, uma extração, etc.)</li>
+        </ul>
+
+        <div class="exemplo">
+          <div class="exemplo__title">Exemplo prático</div>
+          <p>Paciente João chega na clínica com dor no dente 36. O dentista avalia e identifica a necessidade de uma restauração MOD (mésio-ocluso-distal). A secretária abre uma <strong>GTO inicial</strong> com o procedimento de restauração no dente 36, faces M, O e D.</p>
+        </div>
+
+        <h2>2. GTO Aditiva (ou Complementar)</h2>
+        <p>A GTO aditiva é uma guia complementar vinculada a uma GTO inicial já existente. Ela é usada quando surgem <strong>novos procedimentos</strong> durante o tratamento que não estavam na guia original.</p>
+
+        <h3>Quando usar:</h3>
+        <ul>
+          <li>Quando, durante o tratamento, o dentista identifica a necessidade de novos procedimentos</li>
+          <li>Quando o plano de tratamento precisa ser ampliado</li>
+          <li>Quando a GTO inicial atingiu o limite de procedimentos e é preciso incluir mais</li>
+        </ul>
+
+        <div class="exemplo">
+          <div class="exemplo__title">Exemplo prático</div>
+          <p>O paciente João da GTO inicial veio para a restauração do dente 36. Durante o atendimento, o dentista percebeu que o dente 37 também precisa de restauração. Como esse procedimento não estava na GTO original, a secretária abre uma <strong>GTO aditiva</strong> vinculada à GTO inicial, adicionando a restauração do dente 37.</p>
+        </div>
+
+        <div class="info-box info-box--atencao">
+          <span class="info-box__title">⚠️ Atenção!</span>
+          <p>A GTO aditiva precisa referenciar o número da GTO inicial. Se você abrir uma GTO nova em vez de aditiva, a operadora pode glosar por "duplicidade de guia" ou por não estar vinculada ao tratamento original.</p>
+        </div>
+
+        <h2>3. GTO de Urgência/Emergência</h2>
+        <p>Usada em situações que não podem esperar pela autorização prévia normal. O atendimento é realizado imediatamente e a GTO é emitida depois, de forma retroativa.</p>
+
+        <h3>Quando usar:</h3>
+        <ul>
+          <li><strong>Dor aguda</strong> — dor de dente intensa que não cede com medicação</li>
+          <li><strong>Trauma dental</strong> — queda, batida, fratura de dente</li>
+          <li><strong>Infecção/abscesso</strong> — inchaço com pus que precisa de drenagem</li>
+          <li><strong>Hemorragia</strong> — sangramento que não para após procedimento</li>
+        </ul>
+
+        <div class="exemplo">
+          <div class="exemplo__title">Exemplo prático</div>
+          <p>Paciente Maria chega na clínica às 18h com dor intensa e inchaço. O dentista identifica um abscesso no dente 46 e precisa fazer drenagem e prescrever medicação. Não dá para esperar autorização. O atendimento é feito na hora, e a secretária emite a <strong>GTO de urgência</strong> no dia seguinte, com a justificativa clínica detalhada.</p>
+        </div>
+
+        <div class="info-box info-box--importante">
+          <span class="info-box__title">💡 Sobre a justificativa:</span>
+          <p>Na GTO de urgência, a justificativa clínica é <strong>obrigatória</strong>. Descreva claramente: qual era o quadro do paciente, por que não podia esperar e o que foi feito. Sem justificativa, a operadora quase sempre glosa.</p>
+        </div>
+
+        <h2>Tabela comparativa</h2>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Característica</th>
+              <th>GTO Inicial</th>
+              <th>GTO Aditiva</th>
+              <th>GTO Urgência</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Quando emitir</strong></td>
+              <td>Início do tratamento</td>
+              <td>Novos procedimentos durante o tratamento</td>
+              <td>Após atendimento emergencial</td>
+            </tr>
+            <tr>
+              <td><strong>Autorização prévia</strong></td>
+              <td>Sim (quando exigido)</td>
+              <td>Sim (quando exigido)</td>
+              <td>Não — atende primeiro</td>
+            </tr>
+            <tr>
+              <td><strong>Vinculação</strong></td>
+              <td>Independente</td>
+              <td>Vinculada à GTO inicial</td>
+              <td>Independente</td>
+            </tr>
+            <tr>
+              <td><strong>Justificativa</strong></td>
+              <td>Opcional</td>
+              <td>Recomendada</td>
+              <td>Obrigatória</td>
+            </tr>
+            <tr>
+              <td><strong>Prazo de emissão</strong></td>
+              <td>Antes do procedimento</td>
+              <td>Antes do novo procedimento</td>
+              <td>Até 5 dias úteis após</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Erros comuns com os tipos de GTO</h2>
+        <ul>
+          <li><strong>Abrir GTO inicial quando deveria ser aditiva</strong> — causa duplicidade e glosa</li>
+          <li><strong>Não colocar justificativa na urgência</strong> — glosa quase certa</li>
+          <li><strong>Emitir GTO de urgência para tudo</strong> — a operadora percebe e pode auditar a clínica</li>
+          <li><strong>Não vincular a aditiva à guia original</strong> — a operadora não encontra a referência e glosa</li>
+          <li><strong>Ultrapassar o prazo de 5 dias na urgência</strong> — perde o direito de faturar</li>
+        </ul>
+
+        <div class="info-box info-box--dica">
+          <span class="info-box__title">✅ Dica da Marisa:</span>
+          <p>Na minha experiência, o erro mais comum que vejo nas clínicas é usar a GTO de urgência quando não é urgência de verdade. A operadora conhece esse truque e pode começar a auditar todos os atendimentos de urgência da clínica. Use a urgência apenas para urgência real. Para tudo mais, siga o fluxo normal com autorização prévia.</p>
+        </div>
+
+        <h2>Resumo da Aula</h2>
+        <ul>
+          <li><strong>GTO Inicial:</strong> primeira guia do tratamento — padrão para a maioria das situações</li>
+          <li><strong>GTO Aditiva:</strong> complementa a guia inicial quando surgem novos procedimentos</li>
+          <li><strong>GTO de Urgência:</strong> atende primeiro, emite depois — justificativa obrigatória</li>
+          <li>Usar o tipo errado de GTO é causa frequente de glosa</li>
+          <li>Não abuse da GTO de urgência para não gerar auditoria</li>
+        </ul>
+
+      </div>
+
+      <div class="aula-nav">
+        <a href="m1-aula2.html" class="btn btn--outline">← Aula Anterior</a>
+        <a href="m1-aula4.html" class="btn btn--primary">Próxima Aula →</a>
+      </div>
+
+    </main>
+  </div>
+
+</body>
+</html>

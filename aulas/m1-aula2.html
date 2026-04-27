@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aula 2 — Quem emite a GTO e quando emitir | Módulo 1</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="aulas.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="header header--scrolled">
+    <nav class="nav container">
+      <a href="../index.html" class="nav__logo"><span class="logo-icon">🦷</span> FaturaOdonto</a>
+      <a href="../modulo1.html" class="btn btn--outline nav__cta">← Voltar ao Módulo 1</a>
+    </nav>
+  </header>
+
+  <div class="membros">
+
+    <aside class="sidebar">
+      <div class="progress-bar">
+        <div class="progress-bar__label">Módulo 1 — Progresso</div>
+        <div class="progress-bar__track">
+          <div class="progress-bar__fill" style="width: 16%"></div>
+        </div>
+      </div>
+      <div class="sidebar__title">Módulo 01</div>
+      <div class="sidebar__module">Emissão de GTOs</div>
+      <div class="sidebar__list">
+        <a href="m1-aula1.html" class="sidebar__link"><span>01</span> O que é a GTO</a>
+        <a href="m1-aula2.html" class="sidebar__link sidebar__link--active"><span>02</span> Quem emite e quando</a>
+        <a href="m1-aula3.html" class="sidebar__link"><span>03</span> Tipos de GTO</a>
+        <a href="m1-aula4.html" class="sidebar__link"><span>04</span> Preenchimento campo a campo</a>
+        <a href="m1-aula5.html" class="sidebar__link"><span>05</span> Códigos TUSS</a>
+        <a href="m1-aula6.html" class="sidebar__link"><span>06</span> Nomenclatura dentária</a>
+        <a href="m1-aula7.html" class="sidebar__link"><span>07</span> Limite de procedimentos</a>
+        <a href="m1-aula8.html" class="sidebar__link"><span>08</span> Foto e Raio-X na emissão</a>
+        <a href="m1-aula9.html" class="sidebar__link"><span>09</span> Portais das operadoras</a>
+        <a href="m1-aula10.html" class="sidebar__link"><span>10</span> Erros que geram glosa</a>
+        <a href="m1-aula11.html" class="sidebar__link"><span>11</span> Checklist de conferência</a>
+        <a href="m1-aula12.html" class="sidebar__link"><span>12</span> Exercícios práticos</a>
+      </div>
+    </aside>
+
+    <main class="aula-content">
+      <span class="aula-content__badge">Módulo 1 · Aula 2 de 12</span>
+      <h1>Quem emite a GTO e quando emitir</h1>
+      <p class="aula-content__meta">Tempo estimado de leitura: 8 minutos</p>
+
+      <div class="prose">
+
+        <h2>Quem é o responsável pela emissão da GTO?</h2>
+        <p>Uma dúvida muito comum entre quem está começando é: <strong>"Quem deve preencher e emitir a GTO?"</strong></p>
+        <p>Na prática, a emissão pode ser feita por diferentes profissionais, dependendo da organização da clínica:</p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Profissional</th>
+              <th>Papel na GTO</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Dentista (Cirurgião-Dentista)</strong></td>
+              <td>Define os procedimentos, assina a guia e é o responsável técnico. O CRO dele aparece na GTO.</td>
+            </tr>
+            <tr>
+              <td><strong>Secretária / Recepcionista</strong></td>
+              <td>Geralmente é quem preenche a GTO no sistema ou portal, com base no plano de tratamento feito pelo dentista.</td>
+            </tr>
+            <tr>
+              <td><strong>Auxiliar Administrativo / Faturista</strong></td>
+              <td>Confere, organiza e envia as GTOs para as operadoras. Cuida do faturamento e acompanha as respostas.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="info-box info-box--importante">
+          <span class="info-box__title">💡 Importante:</span>
+          <p>Mesmo que a secretária ou o faturista preencha a GTO, a <strong>responsabilidade técnica é sempre do dentista</strong>. É o CRO dele que aparece na guia. Por isso, é fundamental que o dentista informe corretamente os procedimentos, dentes e faces.</p>
+        </div>
+
+        <h2>Quando emitir a GTO?</h2>
+        <p>O momento de emitir a GTO depende de dois fatores: <strong>o tipo de procedimento</strong> e <strong>as regras da operadora</strong>.</p>
+
+        <h3>Situação 1: Procedimentos que precisam de autorização prévia</h3>
+        <p>Para esses procedimentos, a GTO deve ser emitida <strong>ANTES</strong> do atendimento. O fluxo é:</p>
+        <ol>
+          <li>Dentista avalia o paciente e define o tratamento</li>
+          <li>Clínica emite a GTO e envia para a operadora</li>
+          <li>Operadora analisa e autoriza (ou solicita mais informações)</li>
+          <li>Após autorização, o dentista realiza o procedimento</li>
+          <li>Clínica finaliza a GTO e envia para faturamento</li>
+        </ol>
+
+        <div class="info-box info-box--atencao">
+          <span class="info-box__title">⚠️ Atenção!</span>
+          <p>Se o dentista realizar o procedimento <strong>antes</strong> de receber a autorização, a operadora pode glosar (recusar o pagamento) da guia inteira. Isso é muito comum e gera muita perda financeira nas clínicas.</p>
+        </div>
+
+        <h3>Situação 2: Procedimentos de livre demanda (sem autorização prévia)</h3>
+        <p>Alguns procedimentos mais simples não precisam de autorização. A GTO é emitida <strong>no momento ou após</strong> o atendimento. Exemplos:</p>
+        <ul>
+          <li>Consulta inicial (avaliação)</li>
+          <li>Profilaxia (limpeza)</li>
+          <li>Aplicação de flúor</li>
+          <li>Restaurações simples (em alguns convênios)</li>
+          <li>Radiografias periapicais</li>
+        </ul>
+        <p>Nesses casos, a clínica faz o atendimento, emite a GTO e já envia para faturamento.</p>
+
+        <h3>Situação 3: Urgência e Emergência</h3>
+        <p>Em casos de urgência (dor aguda, trauma dental, infecção), o atendimento é feito primeiro e a GTO é emitida depois, geralmente em até 5 dias úteis. A maioria das operadoras aceita a <strong>GTO de urgência</strong> retroativa, desde que devidamente justificada.</p>
+
+        <div class="info-box info-box--dica">
+          <span class="info-box__title">✅ Dica da Marisa:</span>
+          <p>Sempre consulte o manual do prestador de cada operadora para saber quais procedimentos precisam de autorização prévia. Essa lista varia de convênio para convênio. Eu sempre recomendo ter uma "cola" impressa ou salva no computador com as regras de cada operadora que a clínica atende.</p>
+        </div>
+
+        <h2>Prazos importantes</h2>
+        <p>Cada operadora define seus próprios prazos, mas existem regras gerais:</p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Prazo</th>
+              <th>Regra Geral</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Autorização prévia</strong></td>
+              <td>A operadora tem até 10 dias úteis para responder (regra ANS). Na prática, muitas respondem em 24-48h.</td>
+            </tr>
+            <tr>
+              <td><strong>Validade da autorização</strong></td>
+              <td>Geralmente 30 a 90 dias. Se o procedimento não for realizado nesse prazo, a autorização expira e precisa ser solicitada novamente.</td>
+            </tr>
+            <tr>
+              <td><strong>Envio para faturamento</strong></td>
+              <td>A maioria das operadoras exige que a GTO seja enviada em até 30 dias após a realização do procedimento.</td>
+            </tr>
+            <tr>
+              <td><strong>GTO de urgência</strong></td>
+              <td>Deve ser emitida em até 5 dias úteis após o atendimento de emergência.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="info-box info-box--atencao">
+          <span class="info-box__title">⚠️ Prazo perdido = dinheiro perdido!</span>
+          <p>Se a clínica não enviar a GTO dentro do prazo, a operadora pode recusar o pagamento. Isso acontece mais do que você imagina, especialmente em clínicas sem um controle organizado do faturamento.</p>
+        </div>
+
+        <h2>O que acontece se a GTO não for emitida?</h2>
+        <p>Simples: <strong>a clínica não recebe</strong>. O procedimento foi realizado, o dentista gastou tempo e material, mas se não houver GTO registrada e enviada, o convênio não tem nenhuma obrigação de pagar.</p>
+        <p>Infelizmente, muitas clínicas "esquecem" de emitir GTOs ou deixam acumular, e acabam perdendo o prazo. Esse é um dos problemas mais comuns que vemos no dia a dia.</p>
+
+        <h2>Resumo da Aula</h2>
+        <ul>
+          <li>A GTO pode ser preenchida pela secretária/faturista, mas a responsabilidade técnica é do dentista</li>
+          <li>Procedimentos com autorização prévia: GTO <strong>antes</strong> do atendimento</li>
+          <li>Procedimentos de livre demanda: GTO <strong>no momento ou logo após</strong></li>
+          <li>Urgência: atende primeiro, GTO em até 5 dias úteis</li>
+          <li>Respeitar os prazos é fundamental — prazo perdido = dinheiro perdido</li>
+          <li>Sem GTO, a clínica não recebe</li>
+        </ul>
+
+      </div>
+
+      <div class="aula-nav">
+        <a href="m1-aula1.html" class="btn btn--outline">← Aula Anterior</a>
+        <a href="m1-aula3.html" class="btn btn--primary">Próxima Aula →</a>
+      </div>
+
+    </main>
+  </div>
+
+</body>
+</html>

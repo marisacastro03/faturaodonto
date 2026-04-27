@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aula 4 — Como emitir a NFS-e passo a passo | Módulo 5</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="aulas.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header header--scrolled">
+    <nav class="nav container">
+      <a href="../index.html" class="nav__logo"><span class="logo-icon">🦷</span> FaturaOdonto</a>
+      <a href="../modulo5.html" class="btn btn--outline nav__cta">← Voltar ao Módulo 5</a>
+    </nav>
+  </header>
+  <div class="membros">
+    <aside class="sidebar">
+      <div class="progress-bar">
+        <div class="progress-bar__label">Módulo 5 — Progresso</div>
+        <div class="progress-bar__track"><div class="progress-bar__fill" style="width: 40%"></div></div>
+      </div>
+      <div class="sidebar__title">Módulo 05</div>
+      <div class="sidebar__module">Emissão de Notas Fiscais</div>
+      <div class="sidebar__list">
+        <a href="m5-aula1.html" class="sidebar__link">01 - Quando emitir nota fiscal</a>
+        <a href="m5-aula2.html" class="sidebar__link">02 - Tipos de nota fiscal</a>
+        <a href="m5-aula3.html" class="sidebar__link">03 - Dados obrigatórios na nota</a>
+        <a href="m5-aula4.html" class="sidebar__link sidebar__link--active">04 - Emitindo a NFS-e passo a passo</a>
+        <a href="m5-aula5.html" class="sidebar__link">05 - Competência vs recebimento</a>
+        <a href="m5-aula6.html" class="sidebar__link">06 - Uma nota por lote ou por guia</a>
+        <a href="m5-aula7.html" class="sidebar__link">07 - Conciliação faturamento x notas</a>
+        <a href="m5-aula8.html" class="sidebar__link">08 - Organização fiscal mensal</a>
+        <a href="m5-aula9.html" class="sidebar__link">09 - Erros fiscais mais comuns</a>
+        <a href="m5-aula10.html" class="sidebar__link">10 - Exercício final completo</a>
+      </div>
+    </aside>
+    <main class="aula-content">
+      <span class="aula-content__badge">Módulo 5 · Aula 4 de 10</span>
+      <h1>Como emitir a NFS-e passo a passo</h1>
+      <p class="aula-content__meta">Tempo estimado de leitura: 18 minutos</p>
+
+      <div class="prose">
+        <h2>Introdução</h2>
+        <p>Agora que você já sabe por que emitir, quais tipos de nota existem e quais dados são obrigatórios, chegou a hora de colocar a mão na massa. Nesta aula, vamos percorrer o <strong>passo a passo completo</strong> da emissão de uma NFS-e, desde o acesso ao sistema da prefeitura até o envio da nota para a operadora.</p>
+        <p>Embora cada município tenha seu próprio sistema, o fluxo geral é muito semelhante. Vamos usar um modelo genérico que cobre a maioria dos portais municipais.</p>
+
+        <div class="info-box info-box--importante">
+          <p>💡 Se você nunca emitiu uma NFS-e, não se preocupe. O processo é mais simples do que parece. Depois da primeira vez, leva menos de 5 minutos para emitir cada nota.</p>
+        </div>
+
+        <h2>Pré-requisitos</h2>
+        <p>Antes de emitir sua primeira NFS-e, certifique-se de que:</p>
+        <ol>
+          <li><strong>Cadastro na prefeitura:</strong> A clínica deve estar cadastrada como prestadora de serviços no município. Isso é feito no portal da Secretaria de Finanças ou da Fazenda Municipal.</li>
+          <li><strong>Senha de acesso:</strong> Você precisa de login e senha para o sistema de NFS-e. Em alguns municípios, é necessário certificado digital (e-CNPJ).</li>
+          <li><strong>Código de serviço definido:</strong> Confirme com o contador qual código de serviço municipal usar (veja Aula 3).</li>
+          <li><strong>Dados da operadora em mãos:</strong> CNPJ, razão social e endereço da operadora que vai constar como tomadora.</li>
+          <li><strong>Valor a ser faturado:</strong> O valor exato do pagamento recebido ou a ser recebido, conforme o demonstrativo.</li>
+        </ol>
+
+        <h2>Passo 1: Acesse o portal da prefeitura</h2>
+        <p>Abra o navegador e acesse o site da prefeitura do seu município, na seção de <strong>Nota Fiscal Eletrônica de Serviços</strong>. Procure por termos como "NFS-e", "Nota Fiscal de Serviço" ou "ISS Digital".</p>
+
+        <div class="exemplo">
+          <div class="exemplo__title">Exemplos de portais</div>
+          <ul>
+            <li>São Paulo: <strong>nfe.prefeitura.sp.gov.br</strong></li>
+            <li>Rio de Janeiro: <strong>notacarioca.rio.gov.br</strong></li>
+            <li>Belo Horizonte: <strong>bhissdigital.pbh.gov.br</strong></li>
+            <li>Curitiba: <strong>isscuritiba.curitiba.pr.gov.br</strong></li>
+            <li>Outros municípios: pesquise "NFS-e [nome da cidade]" no Google.</li>
+          </ul>
+        </div>
+
+        <h2>Passo 2: Faça login no sistema</h2>
+        <p>Informe o <strong>CNPJ da clínica</strong> e a <strong>senha</strong> cadastrada. Em alguns sistemas, será necessário:</p>
+        <ul>
+          <li>Certificado digital (e-CNPJ tipo A1 ou A3).</li>
+          <li>Código de verificação por SMS ou e-mail.</li>
+          <li>Senha web específica do portal da prefeitura (diferente do certificado).</li>
+        </ul>
+
+        <div class="info-box info-box--dica">
+          <p>✅ Dica da Marisa: Se você ainda não tem a senha do portal, entre em contato com a prefeitura ou com o seu contador. O cadastro pode levar alguns dias, então não deixe para fazer isso no dia em que precisa emitir a nota. Faça o cadastro assim que abrir o CNPJ.</p>
+        </div>
+
+        <h2>Passo 3: Selecione "Emitir NFS-e"</h2>
+        <p>Dentro do sistema, procure a opção <strong>"Emitir NFS-e"</strong>, <strong>"Nova Nota Fiscal"</strong> ou similar. Isso abrirá o formulário de preenchimento.</p>
+
+        <h2>Passo 4: Preencha os dados do tomador</h2>
+        <p>O tomador é quem está recebendo a nota — no nosso caso, a <strong>operadora de plano de saúde</strong>.</p>
+        <ol>
+          <li>Selecione <strong>"Pessoa Jurídica"</strong> como tipo de tomador.</li>
+          <li>Informe o <strong>CNPJ da operadora</strong>.</li>
+          <li>O sistema pode preencher automaticamente a razão social e o endereço. Caso não preencha, insira manualmente.</li>
+          <li>Confira se o nome da operadora e o endereço estão corretos.</li>
+        </ol>
+
+        <div class="info-box info-box--atencao">
+          <p>⚠️ Alguns sistemas permitem salvar os dados do tomador como "favorito" ou "cadastro frequente". Use essa funcionalidade! Assim, nos meses seguintes, basta selecionar a operadora na lista, sem precisar digitar tudo novamente.</p>
+        </div>
+
+        <h2>Passo 5: Selecione o código de serviço</h2>
+        <p>Escolha o <strong>código de serviço</strong> correspondente a serviços odontológicos no seu município. Esse código determina a alíquota de ISS e a classificação do serviço.</p>
+        <ul>
+          <li>Procure por "odontologia", "saúde" ou "serviços médicos" na lista.</li>
+          <li>Se não encontrar, use o código indicado pelo seu contador.</li>
+          <li>Uma vez selecionado, a alíquota de ISS será preenchida automaticamente.</li>
+        </ul>
+
+        <h2>Passo 6: Informe o valor do serviço</h2>
+        <p>Digite o <strong>valor bruto</strong> do serviço prestado. Esse é o valor total antes das retenções de impostos.</p>
+
+        <div class="exemplo">
+          <div class="exemplo__title">Exemplo de valor</div>
+          <p>A clínica recebeu o demonstrativo de pagamento da Amil referente ao lote de março/2026, no valor de <strong>R$ 3.850,00</strong>. Esse é o valor que deve constar no campo "Valor do Serviço" da NFS-e.</p>
+        </div>
+
+        <h3>Atenção com glosas</h3>
+        <p>Se a operadora glosou parte do lote, o valor da nota deve ser o <strong>valor efetivamente pago</strong> (se estiver no regime de caixa) ou o <strong>valor faturado</strong> (se estiver no regime de competência). Essa decisão deve estar alinhada com o seu contador.</p>
+
+        <h2>Passo 7: Preencha a descrição do serviço</h2>
+        <p>No campo de descrição, digite o texto descrevendo o serviço, incluindo as informações exigidas pela operadora:</p>
+
+        <div class="exemplo">
+          <div class="exemplo__title">Modelo de descrição recomendado</div>
+          <p><em>"Prestação de serviços odontológicos a beneficiários do plano [NOME DA OPERADORA], conforme contrato de credenciamento nº [NÚMERO]. Competência: [MÊS/ANO]. Lote nº [NÚMERO DO LOTE]."</em></p>
+        </div>
+
+        <h2>Passo 8: Configure as retenções de impostos</h2>
+        <p>Dependendo do regime tributário da clínica, marque as retenções aplicáveis:</p>
+
+        <h3>Clínica no Simples Nacional</h3>
+        <ul>
+          <li>Marque que é <strong>optante pelo Simples Nacional</strong>.</li>
+          <li>O ISS já está incluso no DAS, mas a alíquota deve ser informada.</li>
+          <li>Desmarque retenções de CSLL, PIS e COFINS.</li>
+          <li>O IRRF (1,5%) geralmente é retido normalmente.</li>
+        </ul>
+
+        <h3>Clínica no Lucro Presumido ou Lucro Real</h3>
+        <ul>
+          <li>Informe a alíquota de ISS do município.</li>
+          <li>Configure IRRF (1,5%), CSLL (1%), PIS (0,65%) e COFINS (3%).</li>
+          <li>Verifique se o valor da nota está acima do limite para retenção das contribuições (R$ 215,05 total).</li>
+        </ul>
+
+        <div class="info-box info-box--dica">
+          <p>✅ Dica da Marisa: Se você não tem certeza sobre as retenções, deixe para o contador configurar da primeira vez. Depois, use as mesmas configurações nos meses seguintes. Eu ensino minhas alunas a tirarem um print da tela de configuração e colarem num documento de referência — assim não esquecem.</p>
+        </div>
+
+        <h2>Passo 9: Revise antes de emitir</h2>
+        <p>Antes de clicar em "Emitir" ou "Gerar NFS-e", <strong>revise todos os campos cuidadosamente</strong>:</p>
+        <ol>
+          <li>✔ CNPJ do tomador está correto?</li>
+          <li>✔ Razão social do tomador confere?</li>
+          <li>✔ Código de serviço está certo?</li>
+          <li>✔ Valor do serviço está correto?</li>
+          <li>✔ Descrição contém todas as informações necessárias?</li>
+          <li>✔ Retenções de impostos estão corretas?</li>
+          <li>✔ Informação do Simples Nacional está marcada (se aplicável)?</li>
+        </ol>
+
+        <div class="info-box info-box--atencao">
+          <p>⚠️ Uma vez emitida, a NFS-e não pode ser editada — apenas <strong>cancelada</strong> (dentro do prazo permitido pelo município) ou <strong>substituída</strong>. Por isso, a revisão antes da emissão é fundamental.</p>
+        </div>
+
+        <h2>Passo 10: Emita a nota</h2>
+        <p>Clique em <strong>"Emitir NFS-e"</strong> ou <strong>"Gerar Nota"</strong>. O sistema processará e gerará:</p>
+        <ul>
+          <li><strong>Número da NFS-e:</strong> Um número sequencial único.</li>
+          <li><strong>Código de verificação:</strong> Para consulta pública da nota.</li>
+          <li><strong>PDF:</strong> O documento visual da nota para envio e arquivo.</li>
+          <li><strong>XML:</strong> O arquivo eletrônico com os dados estruturados.</li>
+        </ul>
+
+        <h2>Passo 11: Salve e envie para a operadora</h2>
+        <p>Após a emissão:</p>
+        <ol>
+          <li><strong>Baixe o PDF</strong> da nota fiscal.</li>
+          <li><strong>Baixe o XML</strong> (para contabilidade e arquivo).</li>
+          <li><strong>Envie o PDF</strong> para a operadora pelo canal indicado (e-mail, portal do prestador, upload em sistema).</li>
+          <li><strong>Arquive ambos os arquivos</strong> em pasta organizada por mês e por operadora.</li>
+        </ol>
+
+        <div class="exemplo">
+          <div class="exemplo__title">Organização de arquivos recomendada</div>
+          <p>Crie a seguinte estrutura de pastas no computador da clínica:</p>
+          <ul>
+            <li>📁 Notas Fiscais
+              <ul>
+                <li>📁 2026
+                  <ul>
+                    <li>📁 03 - Março
+                      <ul>
+                        <li>📁 Amil
+                          <ul>
+                            <li>📄 NFS-e_2026_001234.pdf</li>
+                            <li>📄 NFS-e_2026_001234.xml</li>
+                          </ul>
+                        </li>
+                        <li>📁 Bradesco Dental</li>
+                        <li>📁 OdontoPrev</li>
+                      </ul>
+                    </li>
+                    <li>📁 04 - Abril</li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+
+        <div class="info-box info-box--dica">
+          <p>✅ Dica da Marisa: Eu recomendo usar também o Google Drive ou outro serviço de nuvem como backup. Já tive alunas que perderam notas porque o computador deu problema. A nota fiscal é um documento legal — você precisa guardar por pelo menos 5 anos. Ter backup na nuvem garante que nada se perde.</p>
+        </div>
+
+        <h2>Fluxo resumido</h2>
+        <ol>
+          <li>Acessar o portal da prefeitura</li>
+          <li>Fazer login (senha ou certificado digital)</li>
+          <li>Clicar em "Emitir NFS-e"</li>
+          <li>Informar dados do tomador (CNPJ da operadora)</li>
+          <li>Selecionar código de serviço</li>
+          <li>Informar valor do serviço</li>
+          <li>Preencher descrição</li>
+          <li>Configurar retenções de impostos</li>
+          <li>Revisar todos os campos</li>
+          <li>Emitir a nota</li>
+          <li>Baixar PDF e XML, enviar para operadora e arquivar</li>
+        </ol>
+
+        <h2>Resumo da aula</h2>
+        <ul>
+          <li>O processo de emissão da NFS-e é simples e leva menos de <strong>5 minutos</strong> após a primeira vez.</li>
+          <li>O <strong>cadastro prévio na prefeitura</strong> é obrigatório — faça isso antes de precisar emitir.</li>
+          <li>Cada campo deve ser preenchido com atenção, especialmente <strong>CNPJ do tomador</strong> e <strong>valor do serviço</strong>.</li>
+          <li>Após emitir, <strong>não é possível editar</strong> — revise antes de confirmar.</li>
+          <li><strong>Salve, envie e arquive</strong> cada nota emitida de forma organizada.</li>
+        </ul>
+      </div>
+
+      <div class="aula-nav">
+        <a href="m5-aula3.html" class="btn btn--outline">← Aula Anterior</a>
+        <a href="m5-aula5.html" class="btn btn--primary">Próxima Aula →</a>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

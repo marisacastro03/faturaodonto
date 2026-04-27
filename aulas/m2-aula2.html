@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aula 2 — Diferença entre Faturamento por Lote e Individual | Módulo 2</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="aulas.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header header--scrolled">
+    <nav class="nav container">
+      <a href="../index.html" class="nav__logo"><span class="logo-icon">🦷</span> FaturaOdonto</a>
+      <a href="../modulo2.html" class="btn btn--outline nav__cta">← Voltar ao Módulo 2</a>
+    </nav>
+  </header>
+  <div class="membros">
+    <aside class="sidebar">
+      <div class="progress-bar">
+        <div class="progress-bar__label">Módulo 2 — Progresso</div>
+        <div class="progress-bar__track"><div class="progress-bar__fill" style="width: 22%"></div></div>
+      </div>
+      <div class="sidebar__title">Módulo 02</div>
+      <div class="sidebar__module">Faturamento das GTOs</div>
+      <div class="sidebar__list">
+        <a href="m2-aula1.html" class="sidebar__link"><span>01</span> Fluxo do faturamento</a>
+        <a href="m2-aula2.html" class="sidebar__link sidebar__link--active"><span>02</span> Lote vs individual</a>
+        <a href="m2-aula3.html" class="sidebar__link"><span>03</span> Prazos por operadora</a>
+        <a href="m2-aula4.html" class="sidebar__link"><span>04</span> Envio das guias</a>
+        <a href="m2-aula5.html" class="sidebar__link"><span>05</span> Montagem de lotes</a>
+        <a href="m2-aula6.html" class="sidebar__link"><span>06</span> Status das guias</a>
+        <a href="m2-aula7.html" class="sidebar__link"><span>07</span> Conferência de pagamentos</a>
+        <a href="m2-aula8.html" class="sidebar__link"><span>08</span> Planilha de controle</a>
+        <a href="m2-aula9.html" class="sidebar__link"><span>09</span> Exercícios práticos</a>
+      </div>
+    </aside>
+    <main class="aula-content">
+      <span class="aula-content__badge">Módulo 2 · Aula 2 de 9</span>
+      <h1>Diferença entre Faturamento por Lote e Individual</h1>
+      <p class="aula-content__meta">Tempo estimado de leitura: 11 minutos</p>
+      <div class="prose">
+        <h2>Introdução</h2>
+        <p>Na aula anterior, você aprendeu que a montagem de lotes é uma das etapas do ciclo de faturamento. Mas será que <strong>toda guia precisa ir em um lote</strong>? E quando faz mais sentido enviar de forma individual?</p>
+        <p>Nesta aula, vamos explorar as duas formas de faturamento, entender as vantagens e desvantagens de cada uma, e descobrir qual operadora prefere qual método.</p>
+
+        <h2>O Que é Faturamento por Lote?</h2>
+        <p>O faturamento por lote (ou "em lote") é quando você <strong>agrupa várias GTOs</strong> e as envia de uma só vez para a operadora. É como enviar um "pacote" com várias guias dentro.</p>
+        <p>Cada lote recebe um número de identificação (número do lote) e um protocolo de envio. Isso facilita o rastreamento e a conferência posterior.</p>
+
+        <div class="exemplo">
+          <div class="exemplo__title">Exemplo de Lote</div>
+          <p><strong>Lote nº 2024-03-001</strong></p>
+          <p>Operadora: Amil Dental</p>
+          <p>Período: 01/03 a 15/03/2024</p>
+          <p>Quantidade de guias: 23</p>
+          <p>Valor total: R$ 4.750,00</p>
+          <p>Data de envio: 16/03/2024</p>
+        </div>
+
+        <h3>Vantagens do faturamento por lote</h3>
+        <ul>
+          <li><strong>Organização:</strong> Você sabe exatamente quais guias foram enviadas e quando</li>
+          <li><strong>Conferência facilitada:</strong> Na hora de conferir o pagamento, basta comparar o lote com o demonstrativo</li>
+          <li><strong>Protocolo único:</strong> Um número de protocolo cobre todo o lote, facilitando recursos</li>
+          <li><strong>Eficiência:</strong> Enviar 30 guias de uma vez é muito mais rápido do que enviar uma por uma</li>
+          <li><strong>Controle financeiro:</strong> Você consegue fechar valores por período e acompanhar mensalmente</li>
+        </ul>
+
+        <h3>Desvantagens do faturamento por lote</h3>
+        <ul>
+          <li><strong>Atraso no envio:</strong> Se você espera acumular guias, pode perder prazos de algumas delas</li>
+          <li><strong>Erro em cascata:</strong> Se o lote inteiro tiver um problema sistêmico (ex: CRO errado no cabeçalho), todas as guias são rejeitadas</li>
+          <li><strong>Dependência de volume:</strong> Clínicas com pouco movimento podem demorar semanas para "fechar" um lote</li>
+        </ul>
+
+        <h2>O Que é Faturamento Individual?</h2>
+        <p>No faturamento individual, cada GTO é enviada <strong>separadamente</strong> para a operadora, geralmente logo após o fechamento. Cada guia gera seu próprio protocolo de envio.</p>
+
+        <h3>Vantagens do faturamento individual</h3>
+        <ul>
+          <li><strong>Agilidade:</strong> A guia é enviada assim que está pronta, sem esperar outras</li>
+          <li><strong>Menos risco de perder prazo:</strong> Cada guia é enviada no tempo certo</li>
+          <li><strong>Ideal para urgências:</strong> Procedimentos de alto valor podem ser faturados imediatamente</li>
+          <li><strong>Flexibilidade:</strong> Não precisa organizar lotes</li>
+        </ul>
+
+        <h3>Desvantagens do faturamento individual</h3>
+        <ul>
+          <li><strong>Difícil de rastrear:</strong> Com muitas guias avulsas, é fácil perder o controle</li>
+          <li><strong>Trabalhoso:</strong> Enviar uma guia por vez consome muito mais tempo</li>
+          <li><strong>Conferência complexa:</strong> Na hora do pagamento, é preciso cruzar cada guia individualmente</li>
+          <li><strong>Nem sempre aceito:</strong> Algumas operadoras exigem envio em lote</li>
+        </ul>
+
+        <h2>Comparativo Direto</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Critério</th>
+              <th>Faturamento por Lote</th>
+              <th>Faturamento Individual</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Velocidade de envio</strong></td>
+              <td>Mais lento (acumula guias)</td>
+              <td>Mais rápido (envia na hora)</td>
+            </tr>
+            <tr>
+              <td><strong>Organização</strong></td>
+              <td>Excelente (lotes numerados)</td>
+              <td>Requer controle manual extra</td>
+            </tr>
+            <tr>
+              <td><strong>Conferência de pagamento</strong></td>
+              <td>Fácil (lote vs demonstrativo)</td>
+              <td>Trabalhosa (guia a guia)</td>
+            </tr>
+            <tr>
+              <td><strong>Risco de perda de prazo</strong></td>
+              <td>Médio (se acumular demais)</td>
+              <td>Baixo (envia imediatamente)</td>
+            </tr>
+            <tr>
+              <td><strong>Ideal para</strong></td>
+              <td>Clínicas com alto volume</td>
+              <td>Clínicas com baixo volume ou urgências</td>
+            </tr>
+            <tr>
+              <td><strong>Aceitação pelas operadoras</strong></td>
+              <td>Aceito por todas</td>
+              <td>Nem todas aceitam</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Qual Método Cada Operadora Prefere?</h2>
+        <p>Cada operadora tem suas próprias preferências e regras. Aqui está um panorama geral:</p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Operadora</th>
+              <th>Método preferido</th>
+              <th>Observação</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Amil Dental</strong></td>
+              <td>Lote</td>
+              <td>Envio pelo portal, com numeração automática de lote</td>
+            </tr>
+            <tr>
+              <td><strong>OdontoPrev</strong></td>
+              <td>Lote ou individual</td>
+              <td>Aceita ambos pelo portal; lote é mais prático</td>
+            </tr>
+            <tr>
+              <td><strong>Bradesco Dental</strong></td>
+              <td>Lote</td>
+              <td>Prefere lotes organizados por período</td>
+            </tr>
+            <tr>
+              <td><strong>SulAmérica Odonto</strong></td>
+              <td>Lote</td>
+              <td>Exige lote para pagamento em bloco</td>
+            </tr>
+            <tr>
+              <td><strong>MetLife</strong></td>
+              <td>Individual ou lote</td>
+              <td>Flexível, mas recomenda lote para volumes acima de 10 guias</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="info-box info-box--dica">
+          <span class="info-box__title">✅ Dica da Marisa:</span>
+          <p>Na prática, eu recomendo sempre usar o <strong>faturamento por lote</strong>, mesmo para clínicas menores. A organização que ele traz compensa o esforço. A exceção é quando você tem uma guia urgente de alto valor que precisa entrar no ciclo de pagamento o quanto antes — nesse caso, envie individual e depois inclua a referência no seu controle de lotes.</p>
+        </div>
+
+        <h2>Estratégia Mista: O Melhor dos Dois Mundos</h2>
+        <p>Muitas clínicas bem organizadas usam uma <strong>estratégia mista</strong>:</p>
+        <ol>
+          <li><strong>Rotina semanal de lotes:</strong> Toda sexta-feira, fecham o lote da semana e enviam</li>
+          <li><strong>Envio individual para urgências:</strong> Procedimentos de alto valor (ex: prótese, implante) são enviados individualmente assim que a GTO é fechada</li>
+          <li><strong>Controle unificado:</strong> Tanto os lotes quanto os envios individuais são registrados na mesma planilha de controle</li>
+        </ol>
+
+        <div class="info-box info-box--atencao">
+          <span class="info-box__title">⚠️ Atenção!</span>
+          <p>Se você usa a estratégia mista, tome cuidado para não enviar a mesma guia duas vezes — uma no lote e outra individualmente. Isso pode gerar rejeição e atrasar o pagamento. Sempre marque na planilha o status de cada guia.</p>
+        </div>
+
+        <h2>Dicas de Organização</h2>
+        <h3>Para faturamento por lote</h3>
+        <ul>
+          <li>Defina uma frequência fixa (semanal ou quinzenal)</li>
+          <li>Use uma pasta (física ou digital) para cada lote</li>
+          <li>Numere seus lotes sequencialmente: 2024-01-001, 2024-01-002...</li>
+          <li>Faça uma lista de conferência antes de enviar</li>
+          <li>Guarde o protocolo de envio junto com a cópia do lote</li>
+        </ul>
+
+        <h3>Para faturamento individual</h3>
+        <ul>
+          <li>Anote o protocolo de cada envio imediatamente</li>
+          <li>Mantenha uma planilha atualizada com todas as guias enviadas</li>
+          <li>Confira semanalmente se todas as guias foram processadas</li>
+          <li>Não deixe guias "soltas" — toda guia deve estar registrada em algum lugar</li>
+        </ul>
+
+        <h2>Resumo da Aula</h2>
+        <ul>
+          <li>O faturamento por <strong>lote</strong> agrupa várias guias e é mais organizado</li>
+          <li>O faturamento <strong>individual</strong> envia cada guia separadamente e é mais ágil</li>
+          <li>A maioria das operadoras prefere ou exige o envio em lote</li>
+          <li>A <strong>estratégia mista</strong> (lotes semanais + urgências individuais) é a mais eficiente</li>
+          <li>Independente do método, o <strong>controle</strong> de todas as guias enviadas é essencial</li>
+        </ul>
+
+        <p>Na próxima aula, vamos detalhar os prazos e regras de cada operadora — informação crucial para nunca perder uma guia por atraso!</p>
+      </div>
+      <div class="aula-nav">
+        <a href="m2-aula1.html" class="btn btn--outline">← Aula Anterior</a>
+        <a href="m2-aula3.html" class="btn btn--primary">Próxima Aula →</a>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
