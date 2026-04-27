@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guia Rápido de Códigos TUSS Odontológicos | FaturaOdonto</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --primary: #0891B2;
+      --primary-dark: #0E7490;
+      --secondary: #06D6A0;
+      --dark: #0F172A;
+      --gray: #64748B;
+      --gray-light: #F1F5F9;
+      --white: #FFFFFF;
+      --radius: 12px;
+      --shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--gray-light);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    .header {
+      background: var(--dark);
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header__logo {
+      color: var(--white);
+      font-weight: 800;
+      font-size: 1.1rem;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .header__title { color: var(--white); font-size: 0.95rem; font-weight: 500; opacity: 0.8; }
+    .header__actions { display: flex; gap: 10px; }
+
+    .btn {
+      padding: 8px 18px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--white);
+    }
+
+    .btn--outline { background: transparent; border: 1px solid rgba(255,255,255,0.3); }
+    .btn--outline:hover { border-color: var(--white); }
+
+    .main { max-width: 1100px; margin: 0 auto; padding: 24px; }
+
+    .intro {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 28px 32px;
+      box-shadow: var(--shadow);
+      margin-bottom: 24px;
+      border-left: 4px solid var(--primary);
+    }
+
+    .intro h1 { font-size: 1.5rem; margin-bottom: 8px; }
+    .intro p { color: var(--gray); font-size: 0.95rem; }
+
+    .intro__stats {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid var(--gray-light);
+    }
+
+    .intro__stat { display: flex; align-items: center; gap: 8px; }
+
+    .intro__stat-num {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--primary);
+    }
+
+    .intro__stat-label { font-size: 0.8rem; color: var(--gray); }
+
+    .toolbar {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 14px 20px;
+      box-shadow: var(--shadow);
+      margin-bottom: 20px;
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .toolbar__search {
+      flex: 1;
+      min-width: 220px;
+      padding: 10px 14px;
+      border: 1px solid #E2E8F0;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-family: inherit;
+      outline: none;
+    }
+
+    .toolbar__search:focus { border-color: var(--primary); }
+
+    .toolbar__select {
+      padding: 10px 14px;
+      border: 1px solid #E2E8F0;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-family: inherit;
+      background: var(--white);
+      cursor: pointer;
+      outline: none;
+    }
+
+    .toolbar__count {
+      font-size: 0.85rem;
+      color: var(--gray);
+      margin-left: auto;
+    }
+
+    .toolbar__count strong { color: var(--dark); }
+
+    .category { margin-bottom: 28px; }
+
+    .category__title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      padding: 12px 20px;
+      background: var(--dark);
+      color: var(--white);
+      border-radius: var(--radius) var(--radius) 0 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .category__count {
+      background: rgba(255,255,255,0.15);
+      padding: 2px 10px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 500;
+    }
+
+    .table-wrap {
+      background: var(--white);
+      border-radius: 0 0 var(--radius) var(--radius);
+      box-shadow: var(--shadow);
+      overflow-x: auto;
+    }
+
+    table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+
+    thead { background: #F8FAFC; }
+
+    thead th {
+      padding: 10px 14px;
+      text-align: left;
+      font-weight: 600;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      color: var(--gray);
+      border-bottom: 2px solid #E2E8F0;
+      white-space: nowrap;
+    }
+
+    tbody tr { border-bottom: 1px solid #F1F5F9; transition: background 0.15s; }
+    tbody tr:hover { background: #F0FDFA; }
+
+    tbody td { padding: 10px 14px; vertical-align: middle; }
+
+    .code {
+      display: inline-block;
+      background: var(--dark);
+      color: var(--secondary);
+      padding: 3px 10px;
+      border-radius: 6px;
+      font-family: 'Courier New', monospace;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    .proc-name { font-weight: 600; color: var(--dark); }
+
+    .tag {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .tag--livre { background: #DCFCE7; color: #166534; }
+    .tag--autoriz { background: #FEF3C7; color: #92400E; }
+    .tag--varia { background: #E0E7FF; color: #3730A3; }
+
+    .obs { font-size: 0.8rem; color: var(--gray); }
+
+    .copy-btn {
+      background: none;
+      border: 1px solid #E2E8F0;
+      border-radius: 4px;
+      padding: 2px 6px;
+      cursor: pointer;
+      font-size: 0.7rem;
+      color: var(--gray);
+      transition: all 0.2s;
+    }
+
+    .copy-btn:hover { border-color: var(--primary); color: var(--primary); }
+
+    .hidden { display: none; }
+
+    .disclaimer {
+      background: #FFFBEB;
+      border: 1px solid #FDE68A;
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      margin-bottom: 24px;
+      font-size: 0.85rem;
+      color: #92400E;
+    }
+
+    .disclaimer strong { color: #78350F; }
+
+    .footer-info {
+      text-align: center;
+      padding: 24px;
+      color: var(--gray);
+      font-size: 0.8rem;
+    }
+
+    .footer-info a { color: var(--primary); text-decoration: none; }
+
+    @media (max-width: 768px) {
+      .header { flex-wrap: wrap; gap: 10px; }
+      .header__title { display: none; }
+      .toolbar { flex-direction: column; }
+      .toolbar__count { margin-left: 0; }
+      .intro__stats { flex-direction: column; gap: 8px; }
+      .main { padding: 16px; }
+    }
+
+    @media print {
+      .header, .toolbar, .footer-info, .copy-btn { display: none; }
+      .main { padding: 0; max-width: 100%; }
+      .category__title { background: #333; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .code { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .tag { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .table-wrap, .intro, .disclaimer { box-shadow: none; }
+      .category { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <a href="index.html" class="header__logo">🦷 FaturaOdonto</a>
+    <span class="header__title">Guia Rápido de Códigos TUSS</span>
+    <div class="header__actions">
+      <button class="btn btn--outline" onclick="window.print()">🖨️ Imprimir / PDF</button>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="intro">
+      <h1>📖 Guia Rápido de Códigos TUSS Odontológicos</h1>
+      <p>Consulta rápida dos códigos TUSS mais usados no faturamento odontológico, organizados por especialidade. Códigos verificados na Tabela 22 — TISS/ANS. Clique no código para copiar.</p>
+      <div class="intro__stats">
+        <div class="intro__stat">
+          <span class="intro__stat-num">90+</span>
+          <span class="intro__stat-label">códigos catalogados</span>
+        </div>
+        <div class="intro__stat">
+          <span class="intro__stat-num">10</span>
+          <span class="intro__stat-label">especialidades</span>
+        </div>
+        <div class="intro__stat">
+          <span class="intro__stat-num">TUSS</span>
+          <span class="intro__stat-label">Terminologia Unificada da Saúde Suplementar</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="disclaimer">
+      ⚠️ <strong>Importante:</strong> Os códigos TUSS são atualizados periodicamente pela ANS. Este guia é uma referência prática — sempre confirme na tabela vigente da operadora e no site oficial da ANS (<a href="https://www.gov.br/ans" target="_blank" style="color: #92400E; text-decoration: underline;">www.gov.br/ans</a>).
+    </div>
+
+    <div class="toolbar">
+      <input type="text" class="toolbar__search" id="searchInput" placeholder="🔍 Buscar por código, procedimento ou observação...">
+      <select class="toolbar__select" id="filterCat">
+        <option value="">Todas as especialidades</option>
+        <option value="diag">Diagnóstico / Consultas</option>
+        <option value="radio">Radiologia / Imagem</option>
+        <option value="prev">Prevenção</option>
+        <option value="dent">Dentística / Restaurações</option>
+        <option value="endo">Endodontia</option>
+        <option value="perio">Periodontia</option>
+        <option value="ciru">Cirurgia</option>
+        <option value="prot">Prótese</option>
+        <option value="orto">Ortodontia</option>
+        <option value="odped">Odontopediatria</option>
+      </select>
+      <span class="toolbar__count">Mostrando <strong id="visibleCount">0</strong> códigos</span>
+    </div>
+
+    <!-- DIAGNÓSTICO / CONSULTAS -->
+    <div class="category" data-cat="diag">
+      <div class="category__title">🔍 Diagnóstico / Consultas <span class="category__count" data-count></span></div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Código TUSS</th><th>Procedimento</th><th>Autorização</th><th>Observações</th><th></th></tr></thead>
+          <tbody>
+            <tr><td><span class="code">81000065</span></td><td class="proc-name">Consulta odontológica inicial</td><td><span class="tag tag--livre">Livre demanda</span></td><td class="obs">Primeira avaliação clínica do paciente com anamnese e plano de tratamento</td><td><button class="copy-btn" data-code="81000065">copiar</button></td></tr>
+            <tr><td><span class="code">81000030</span></td><td class="proc-name">Consulta odontológica</td><td><span class="tag tag--livre">Livre demanda</span></td><td class="obs">Consulta subsequente / periódica; mín. 60 dias após a inicial</td><td><button class="copy-btn" data-code="81000030">copiar</button></td></tr>
+            <tr><td><span class="code">81000049</span></td><td class="proc-name">Consulta odontológica de urgência</td><td><span class="tag tag--livre">Livre demanda</span></td><td class="obs">Atendimento emergencial: dor, trauma, etc.</td><td><button class="copy-btn" data-code="81000049">copiar</button></td></tr>
+            <tr><td><span class="code">81000057</span></td><td class="proc-name">Consulta odontológica de urgência 24h</td><td><span class="tag tag--livre">Livre demanda</span></td><td class="obs">Urgência em horário especial (plantão)</td><td><button class="copy-btn" data-code="81000057">copiar</button></td></tr>
+            <tr><td><span class="code">81000014</span></td><td class="proc-name">Condicionamento em odontologia</td><td><span class="tag tag--livre">Livre demanda</span></td><td class="obs">Adaptação comportamental do paciente (crianças/fóbicos)</td><td><button class="copy-btn" data-code="81000014">copiar</button></td></tr>
+            <tr><td><span class="code">81000073</span></td><td class="proc-name">Consulta odontológica p/ avaliação técnica de auditoria</td><td><span class="tag tag--livre">Livre demanda</span></td><td class="obs">Avaliação pericial pela operadora</td><td><button class="copy-btn" data-code="81000073">copiar</button></td></tr>
+            <tr><td><span class="code">81000189</span></td><td class="proc-name">Diagnóstico e planejamento para tratamento odontológico</td><td><span class="tag tag--livre">Livre demanda</span></td><td class="obs">Planejamento detalhado do tratamento</td><td><button class="copy-btn" data-code="81000189">copiar</button></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- RADIOLOGIA -->
+    <div class="category" data-cat="radio">
+      <div class="category__title">📷 Radiologia / Diagnóstico por Imagem <span class="category__count" data-count></span></div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Código TUSS</th><th>Procedimento</th><th>Autorização</th><th>Observações</th><th></th></tr></thead>
+          <tbody>
+            <tr><td><span class="code">81000421</span></td><td class="proc-name">Radiografia periapical</td><td><span class="tag tag--livre">Livre demanda</span></td><td class="obs">Rx individual do dente e região periapical; essencial em endo</td><td><button class="copy-btn" data-code="81000421">copiar</button></td></tr>
+            <tr><td><span class="code">81000375</span></td><td class="proc-name">Radiografia interproximal (bite-wing)</td><td><span class="tag tag--livre">Livre demanda</span></td><td class="obs">Detecta cáries interproximais em dentes posteriores</td><td><button class="copy-btn" data-code="81000375">copiar</button></td></tr>
+            <tr><td><span class="code">81000383</span></td><td class="proc-name">Radiografia oclusal</td><td><span class="tag tag--livre">Livre demanda</span></td><td class="obs">Visualização da arcada superior ou inferior</td><td><button class="copy-btn" data-code="81000383">copiar</button></td></tr>
+            <tr><td><span class="code">81000405</span></td><td class="proc-name">Radiografia panorâmica (ortopantomografia)</td><td><span class="tag tag--varia">Varia</span></td><td class="obs">Rx de toda a arcada; algumas operadoras exigem pedido prévio</td><td><button class="copy-btn" data-code="81000405">copiar</button></td></tr>
+            <tr><td><span class="code">81000413</span></td><td class="proc-name">Radiografia panorâmica com traçado cefalométrico</td><td><span class="tag tag--varia">Varia</span></td><td class="obs">Panorâmica + cefalometria para planejamento ortodôntico</td><td><button class="copy-btn" data-code="81000413">copiar</button></td></tr>
+            <tr><td><span class="code">81000430</span></td><td class="proc-name">Radiografia póstero-anterior</td><td><span class="tag tag--varia">Varia</span></td><td class="obs">Rx extra-bucal</td><td><button class="copy-btn" data-code="81000430">copiar</button></td></tr>
+            <tr><td><span class="code">81000472</span></td><td class="proc-name">Telerradiografia</td><td><span class="tag tag--varia">Varia</span></td><td class="obs">Documentação ortodôntica; perfil lateral</td><td><button class="copy-btn" data-code="81000472">copiar</button></td></tr>
+            <tr><td><span class="code">81000480</span></td><td class="proc-name">Telerradiografia com traçado cefalométrico</td><td><span class="tag tag--varia">Varia</span></td><td class="obs">Telerradiografia + análise cefalométrica</td><td><button class="copy-btn" data-code="81000480">copiar</button></td></tr>
+            <tr><td><span class="code">81000510</span></td><td class="proc-name">Tomografia computadorizada (cone beam)</td><td><span class="tag tag--autoriz">Autorização</span></td><td class="obs">Exige autorização; usada em implantes e cirurgias complexas</td><td><button class="copy-btn" data-code="81000510">copiar</button></td></tr>
+            <tr><td><span class="code">81000294</span></td><td class="proc-name">Levantamento radiográfico (exame radiodôntico)</td><td><span class="tag tag--varia">Varia</span></td><td class="obs">Conjunto de periapicais de boca inteira (14 Rx)</td><td><button class="copy-btn" data-code="81000294">copiar</button></td></tr>
+            <tr><td><span class="code">81000278</span></td><td class="proc-name">Fotografia</td><td><span class="tag tag--livre">Livre demanda</span></td><td class="obs">Fotografia clínica para documentação; máx. 8 por fase</td><td><button class="copy-btn" data-code="81000278">copiar</button></td></tr>
+            <tr><td><span class="code">81000308</span></td><td class="proc-name">Modelos ortodônticos (par)</td><td><span class="tag tag--varia">Varia</span></td><td class="obs">Modelos em gesso para documentação ortodôntica</td><td><button class="copy-btn" data-code="81000308">copiar</button></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- PREVENÇÃO -->
+    <div class="category" data-cat="prev">
+      <div class="category__title">🪥 Prevenção <span class="category__count" data-count></span></div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Código TUSS</th><th>Procedimento</th><th>Autorização</th><th>Observações</th><th></th></tr></thead>
+          <tbody>
+            <tr><td><span class="code">84000198</span></td><td class="proc-name">Profilaxia: polimento coronário</td><td><span class="tag tag--livre">Livre demanda</span></td><td class="obs">Limpeza e polimento; inclui as 2 arcadas. Geralmente 1x a cada 6 meses</td><td><button class="copy-btn" data-code="84000198">copiar</button></td></tr>
+            <tr><td><span class="code">84000090</span></td><td class="proc-name">Aplicação tópica de flúor</td><td><span class="tag tag--livre">Livre demanda</span></td><td class="obs">Inclui as 2 arcadas; máximo 1x a cada 6 meses (geral) ou 4 meses (perio)</td><td><button class="copy-btn" data-code="84000090">copiar</button></td></tr>
+            <tr><td><span class="code">84000112</span></td><td class="proc-name">Aplicação tópica de verniz fluoretado</td><td><span class="tag tag--livre">Livre demanda</span></td><td class="obs">Flúor em verniz por dente; indicado em áreas específicas</td><td><button class="copy-btn" data-code="84000112">copiar</button></td></tr>
+            <tr><td><span class="code">84000074</span></td><td class="proc-name">Aplicação de selante de fóssulas e fissuras</td><td><span class="tag tag--livre">Livre demanda</span></td><td class="obs">Proteção de sulcos em molares; máximo 1 por dente a cada 12 meses</td><td><button class="copy-btn" data-code="84000074">copiar</button></td></tr>
+            <tr><td><span class="code">84000058</span></td><td class="proc-name">Aplicação de selante — técnica invasiva</td><td><span class="tag tag--livre">Livre demanda</span></td><td class="obs">Selante com preparo do sulco (ameloplastia)</td><td><button class="copy-btn" data-code="84000058">copiar</button></td></tr>
+            <tr><td><span class="code">84000163</span></td><td class="proc-name">Controle de biofilme (placa bacteriana)</td><td><span class="tag tag--livre">Livre demanda</span></td><td class="obs">Evidenciação de placa + orientação de higiene</td><td><button class="copy-btn" data-code="84000163">copiar</button></td></tr>
+            <tr><td><span class="code">84000139</span></td><td class="proc-name">Atividade educativa em saúde bucal</td><td><span class="tag tag--livre">Livre demanda</span></td><td class="obs">Orientação de dieta e higiene bucal</td><td><button class="copy-btn" data-code="84000139">copiar</button></td></tr>
+            <tr><td><span class="code">84000201</span></td><td class="proc-name">Remineralização</td><td><span class="tag tag--livre">Livre demanda</span></td><td class="obs">Tratamento de manchas brancas / cáries iniciais</td><td><button class="copy-btn" data-code="84000201">copiar</button></td></tr>
+            <tr><td><span class="code">84000031</span></td><td class="proc-name">Aplicação de cariostático</td><td><span class="tag tag--livre">Livre demanda</span></td><td class="obs">Inibição de cárie em decíduos; inclui 3 sessões por arcada</td><td><button class="copy-btn" data-code="84000031">copiar</button></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- DENTÍSTICA -->
+    <div class="category" data-cat="dent">
+      <div class="category__title">🦷 Dentística / Restaurações <span class="category__count" data-count></span></div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Código TUSS</th><th>Procedimento</th><th>Autorização</th><th>Observações</th><th></th></tr></thead>
+          <tbody>
+            <tr><td><span class="code">85100196</span></td><td class="proc-name">Restauração em resina fotopolimerizável — 1 face</td><td><span class="tag tag--livre">Livre demanda</span></td><td class="obs">Informar dente e face (ex: 36O). Anterior pode exigir foto</td><td><button class="copy-btn" data-code="85100196">copiar</button></td></tr>
+            <tr><td><span class="code">85100200</span></td><td class="proc-name">Restauração em resina fotopolimerizável — 2 faces</td><td><span class="tag tag--varia">Varia</span></td><td class="obs">Informar faces (ex: 36MO). Pode exigir Rx em algumas operadoras</td><td><button class="copy-btn" data-code="85100200">copiar</button></td></tr>
+            <tr><td><span class="code">85100218</span></td><td class="proc-name">Restauração em resina fotopolimerizável — 3 faces</td><td><span class="tag tag--varia">Varia</span></td><td class="obs">Frequentemente exige foto + Rx. Pode pedir autorização</td><td><button class="copy-btn" data-code="85100218">copiar</button></td></tr>
+            <tr><td><span class="code">85100226</span></td><td class="proc-name">Restauração em resina fotopolimerizável — 4 faces</td><td><span class="tag tag--autoriz">Autorização</span></td><td class="obs">Quase sempre exige autorização, foto e Rx</td><td><button class="copy-btn" data-code="85100226">copiar</button></td></tr>
+            <tr><td><span class="code">85100099</span></td><td class="proc-name">Restauração de amálgama — 1 face</td><td><span class="tag tag--livre">Livre demanda</span></td><td class="obs">Em desuso, mas ainda aceito por operadoras</td><td><button class="copy-btn" data-code="85100099">copiar</button></td></tr>
+            <tr><td><span class="code">85100102</span></td><td class="proc-name">Restauração de amálgama — 2 faces</td><td><span class="tag tag--livre">Livre demanda</span></td><td class="obs">Informar dente e faces</td><td><button class="copy-btn" data-code="85100102">copiar</button></td></tr>
+            <tr><td><span class="code">85100110</span></td><td class="proc-name">Restauração de amálgama — 3 faces</td><td><span class="tag tag--varia">Varia</span></td><td class="obs">Pode exigir autorização em algumas operadoras</td><td><button class="copy-btn" data-code="85100110">copiar</button></td></tr>
+            <tr><td><span class="code">85100129</span></td><td class="proc-name">Restauração de amálgama — 4 faces</td><td><span class="tag tag--autoriz">Autorização</span></td><td class="obs">Autorização geralmente exigida</td><td><button class="copy-btn" data-code="85100129">copiar</button></td></tr>
+            <tr><td><span class="code">85100137</span></td><td class="proc-name">Restauração em ionômero de vidro — 1 face</td><td><span class="tag tag--livre">Livre demanda</span></td><td class="obs">Usado em decíduos e como restauração provisória</td><td><button class="copy-btn" data-code="85100137">copiar</button></td></tr>
+            <tr><td><span class="code">85100064</span></td><td class="proc-name">Faceta direta em resina fotopolimerizável</td><td><span class="tag tag--autoriz">Autorização</span></td><td class="obs">Foto obrigatória (antes e depois); dentes anteriores</td><td><button class="copy-btn" data-code="85100064">copiar</button></td></tr>
+            <tr><td><span class="code">85100170</span></td><td class="proc-name">Restauração em resina (indireta) — Inlay</td><td><span class="tag tag--autoriz">Autorização</span></td><td class="obs">Restauração indireta em resina</td><td><button class="copy-btn" data-code="85100170">copiar</button></td></tr>
+            <tr><td><span class="code">85100188</span></td><td class="proc-name">Restauração em resina (indireta) — Onlay</td><td><span class="tag tag--autoriz">Autorização</span></td><td class="obs">Restauração indireta em resina recobrindo cúspide</td><td><button class="copy-btn" data-code="85100188">copiar</button></td></tr>
+            <tr><td><span class="code">85400211</span></td><td class="proc-name">Núcleo de preenchimento</td><td><span class="tag tag--autoriz">Autorização</span></td><td class="obs">Pré-requisito para coroa; exige Rx + foto</td><td><button class="copy-btn" data-code="85400211">copiar</button></td></tr>
+            <tr><td><span class="code">85100242</span></td><td class="proc-name">Adequação do meio bucal</td><td><span class="tag tag--livre">Livre demanda</span></td><td class="obs">Preparo da boca antes do tratamento definitivo</td><td><button class="copy-btn" data-code="85100242">copiar</button></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ENDODONTIA -->
+    <div class="category" data-cat="endo">
+      <div class="category__title">🔬 Endodontia <span class="category__count" data-count></span></div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Código TUSS</th><th>Procedimento</th><th>Autorização</th><th>Observações</th><th></th></tr></thead>
+          <tbody>
+            <!-- TRATAMENTO ENDODÔNTICO -->
+            <tr style="background:#F0FDFA"><td colspan="5" style="padding:8px 14px;font-weight:700;font-size:0.8rem;color:#0E7490;text-transform:uppercase;letter-spacing:0.5px">▸ Tratamento Endodôntico</td></tr>
+            <tr><td><span class="code">85200166</span></td><td class="proc-name">Tratamento endodôntico unirradicular</td><td><span class="tag tag--autoriz">Autorização</span></td><td class="obs">Rx obrigatório (inicial + final). Incisivos e caninos</td><td><button class="copy-btn" data-code="85200166">copiar</button></td></tr>
+            <tr><td><span class="code">85200140</span></td><td class="proc-name">Tratamento endodôntico birradicular</td><td><span class="tag tag--autoriz">Autorização</span></td><td class="obs">Rx obrigatório. Pré-molares geralmente</td><td><button class="copy-btn" data-code="85200140">copiar</button></td></tr>
+            <tr><td><span class="code">85200158</span></td><td class="proc-name">Tratamento endodôntico multirradicular</td><td><span class="tag tag--autoriz">Autorização</span></td><td class="obs">Rx obrigatório. Molares. Relatório frequentemente exigido</td><td><button class="copy-btn" data-code="85200158">copiar</button></td></tr>
+            <!-- RETRATAMENTO ENDODÔNTICO -->
+            <tr style="background:#FEF3C7"><td colspan="5" style="padding:8px 14px;font-weight:700;font-size:0.8rem;color:#92400E;text-transform:uppercase;letter-spacing:0.5px">▸ Retratamento Endodôntico</td></tr>
+            <tr><td><span class="code">85200115</span></td><td class="proc-name">Retratamento endodôntico unirradicular</td><td><span class="tag tag--autoriz">Autorização</span></td><td class="obs">Rx mostrando tratamento anterior + relatório justificativo</td><td><button class="copy-btn" data-code="85200115">copiar</button></td></tr>
+            <tr><td><span class="code">85200093</span></td><td class="proc-name">Retratamento endodôntico birradicular</td><td><span class="tag tag--autoriz">Autorização</span></td><td class="obs">Rx mostrando tratamento anterior + relatório</td><td><button class="copy-btn" data-code="85200093">copiar</button></td></tr>
+            <tr><td><span class="code">85200107</span></td><td class="proc-name">Retratamento endodôntico multirradicular</td><td><span class="tag tag--autoriz">Autorização</span></td><td class="obs">Rx + relatório detalhado obrigatório</td><td><button class="copy-btn" data-code="85200107">copiar</button></td></tr>
+            <!-- OUTROS PROCEDIMENTOS ENDODÔNTICOS -->
+            <tr style="background:#F1F5F9"><td colspan="5" style="padding:8px 14px;font-weight:700;font-size:0.8rem;color:#64748B;text-transform:uppercase;letter-spacing:0.5px">▸ Outros Procedimentos Endodônticos</td></tr>
+            <tr><td><span class="code">85200042</span></td><td class="proc-name">Pulpotomia</td><td><span class="tag tag--varia">Varia</span></td><td class="obs">Tratamento parcial da polpa; comum em permanentes jovens</td><td><button class="copy-btn" data-code="85200042">copiar</button></td></tr>
+            <tr><td><span class="code">85200034</span></td><td class="proc-name">Pulpectomia</td><td><span class="tag tag--varia">Varia</span></td><td class="obs">Remoção total da polpa</td><td><button class="copy-btn" data-code="85200034">copiar</button></td></tr>
+            <tr><td><span class="code">85100013</span></td><td class="proc-name">Capeamento pulpar direto</td><td><span class="tag tag--livre">Livre demanda</span></td><td class="obs">Proteção direta da polpa exposta</td><td><button class="copy-btn" data-code="85100013">copiar</button></td></tr>
+            <tr><td><span class="code">85100056</span></td><td class="proc-name">Curativo de demora em endodontia</td><td><span class="tag tag--livre">Livre demanda</span></td><td class="obs">Curativo entre sessões; urgência endodôntica</td><td><button class="copy-btn" data-code="85100056">copiar</button></td></tr>
+            <tr><td><span class="code">85200085</span></td><td class="proc-name">Restauração temporária / tratamento expectante</td><td><span class="tag tag--livre">Livre demanda</span></td><td class="obs">Restauração provisória durante tratamento</td><td><button class="copy-btn" data-code="85200085">copiar</button></td></tr>
+            <tr><td><span class="code">85200050</span></td><td class="proc-name">Remoção de corpo estranho intracanal</td><td><span class="tag tag--autoriz">Autorização</span></td><td class="obs">Rx mostrando instrumento fraturado + relatório</td><td><button class="copy-btn" data-code="85200050">copiar</button></td></tr>
+            <tr><td><span class="code">85200123</span></td><td class="proc-name">Tratamento de perfuração endodôntica</td><td><span class="tag tag--autoriz">Autorização</span></td><td class="obs">Rx obrigatório + relatório detalhado</td><td><button class="copy-btn" data-code="85200123">copiar</button></td></tr>
+            <tr><td><span class="code">85200131</span></td><td class="proc-name">Tratamento endodôntico de dente com rizogênese incompleta</td><td><span class="tag tag--autoriz">Autorização</span></td><td class="obs">Apicificação; Rx obrigatório</td><td><button class="copy-btn" data-code="85200131">copiar</button></td></tr>
+            <tr><td><span class="code">85200026</span></td><td class="proc-name">Preparo para núcleo intrarradicular</td><td><span class="tag tag--autoriz">Autorização</span></td><td class="obs">Rx obrigatório mostrando canal obturado</td><td><button class="copy-btn" data-code="85200026">copiar</button></td></tr>
+            <tr><td><span class="code">85200077</span></td><td class="proc-name">Remoção de núcleo intrarradicular</td><td><span class="tag tag--autoriz">Autorização</span></td><td class="obs">Rx mostrando núcleo a ser removido</td><td><button class="copy-btn" data-code="85200077">copiar</button></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- PERIODONTIA -->
+    <div class="category" data-cat="perio">
+      <div class="category__title">🩺 Periodontia <span class="category__count" data-count></span></div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Código TUSS</th><th>Procedimento</th><th>Autorização</th><th>Observações</th><th></th></tr></thead>
+          <tbody>
+            <tr><td><span class="code">85300047</span></td><td class="proc-name">Raspagem supra-gengival e polimento coronário</td><td><span class="tag tag--livre">Livre demanda</span></td><td class="obs">Remoção de cálculo acima da gengiva; máx. 1x a cada 6 meses (geral) ou 4 meses (perio)</td><td><button class="copy-btn" data-code="85300047">copiar</button></td></tr>
+            <tr><td><span class="code">85300039</span></td><td class="proc-name">Raspagem sub-gengival e alisamento radicular (por sextante)</td><td><span class="tag tag--varia">Varia</span></td><td class="obs">Exige Rx periapical da região + periograma; pode pedir autorização</td><td><button class="copy-btn" data-code="85300039">copiar</button></td></tr>
+            <tr><td><span class="code">85300012</span></td><td class="proc-name">Dessensibilização dentária</td><td><span class="tag tag--livre">Livre demanda</span></td><td class="obs">Tratamento de sensibilidade; inclui 4 sessões para as 2 arcadas</td><td><button class="copy-btn" data-code="85300012">copiar</button></td></tr>
+            <tr><td><span class="code">85300055</span></td><td class="proc-name">Remoção dos fatores de retenção do biofilme dental</td><td><span class="tag tag--livre">Livre demanda</span></td><td class="obs">Remoção de excessos de restauração, bandas, etc.</td><td><button class="copy-btn" data-code="85300055">copiar</button></td></tr>
+            <tr><td><span class="code">82000921</span></td><td class="proc-name">Gengivectomia (por segmento)</td><td><span class="tag tag--autoriz">Autorização</span></td><td class="obs">Foto + Rx + relatório obrigatórios</td><td><button class="copy-btn" data-code="82000921">copiar</button></td></tr>
+            <tr><td><span class="code">82000948</span></td><td class="proc-name">Gengivoplastia (por segmento)</td><td><span class="tag tag--autoriz">Autorização</span></td><td class="obs">Foto + relatório obrigatórios</td><td><button class="copy-btn" data-code="82000948">copiar</button></td></tr>
+            <tr><td><span class="code">82000417</span></td><td class="proc-name">Cirurgia periodontal a retalho (por segmento)</td><td><span class="tag tag--autoriz">Autorização</span></td><td class="obs">Documentação completa: foto, Rx, periograma, relatório</td><td><button class="copy-btn" data-code="82000417">copiar</button></td></tr>
+            <tr><td><span class="code">82000212</span></td><td class="proc-name">Aumento de coroa clínica</td><td><span class="tag tag--autoriz">Autorização</span></td><td class="obs">Foto + Rx obrigatórios + relatório</td><td><button class="copy-btn" data-code="82000212">copiar</button></td></tr>
+            <tr><td><span class="code">82000662</span></td><td class="proc-name">Enxerto gengival livre (por segmento)</td><td><span class="tag tag--autoriz">Autorização</span></td><td class="obs">Documentação extensiva; foto + relatório</td><td><button class="copy-btn" data-code="82000662">copiar</button></td></tr>
+            <tr><td><span class="code">82000689</span></td><td class="proc-name">Enxerto pediculado (por segmento)</td><td><span class="tag tag--autoriz">Autorização</span></td><td class="obs">Foto + relatório obrigatórios</td><td><button class="copy-btn" data-code="82000689">copiar</button></td></tr>
+            <tr><td><span class="code">85300063</span></td><td class="proc-name">Tratamento de abscesso periodontal agudo</td><td><span class="tag tag--livre">Livre demanda</span></td><td class="obs">Procedimento de urgência</td><td><button class="copy-btn" data-code="85300063">copiar</button></td></tr>
+            <tr><td><span class="code">85300080</span></td><td class="proc-name">Tratamento de pericoronarite</td><td><span class="tag tag--livre">Livre demanda</span></td><td class="obs">Inflamação gengival ao redor de dente em erupção (sisos)</td><td><button class="copy-btn" data-code="85300080">copiar</button></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- CIRURGIA -->
+    <div class="category" data-cat="ciru">
+      <div class="category__title">🔪 Cirurgia Oral <span class="category__count" data-count></span></div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Código TUSS</th><th>Procedimento</th><th>Autorização</th><th>Observações</th><th></th></tr></thead>
+          <tbody>
+            <tr><td><span class="code">82000875</span></td><td class="proc-name">Exodontia simples de permanente</td><td><span class="tag tag--varia">Varia</span></td><td class="obs">Rx periapical obrigatório; autorização varia por operadora</td><td><button class="copy-btn" data-code="82000875">copiar</button></td></tr>
+            <tr><td><span class="code">82000816</span></td><td class="proc-name">Exodontia a retalho</td><td><span class="tag tag--autoriz">Autorização</span></td><td class="obs">Dentes inclusos/semi-inclusos; Rx panorâmica + periapical + relatório</td><td><button class="copy-btn" data-code="82000816">copiar</button></td></tr>
+            <tr><td><span class="code">82000832</span></td><td class="proc-name">Exodontia de permanente por indicação ortodôntica/protética</td><td><span class="tag tag--autoriz">Autorização</span></td><td class="obs">Rx + relatório justificando a necessidade ortodôntica/protética</td><td><button class="copy-btn" data-code="82000832">copiar</button></td></tr>
+            <tr><td><span class="code">82000859</span></td><td class="proc-name">Exodontia de raiz residual</td><td><span class="tag tag--varia">Varia</span></td><td class="obs">Rx mostrando a raiz residual</td><td><button class="copy-btn" data-code="82000859">copiar</button></td></tr>
+            <tr><td><span class="code">82000336</span></td><td class="proc-name">Cirurgia odontológica a retalho</td><td><span class="tag tag--autoriz">Autorização</span></td><td class="obs">Rx + relatório obrigatórios</td><td><button class="copy-btn" data-code="82000336">copiar</button></td></tr>
+            <tr><td><span class="code">82000034</span></td><td class="proc-name">Alveoloplastia (por segmento)</td><td><span class="tag tag--autoriz">Autorização</span></td><td class="obs">Regularização de rebordo alveolar</td><td><button class="copy-btn" data-code="82000034">copiar</button></td></tr>
+            <tr><td><span class="code">82000298</span></td><td class="proc-name">Bridectomia (por arcada)</td><td><span class="tag tag--autoriz">Autorização</span></td><td class="obs">Remoção de bridas; foto + relatório</td><td><button class="copy-btn" data-code="82000298">copiar</button></td></tr>
+            <tr><td><span class="code">82000301</span></td><td class="proc-name">Bridotomia (por arcada)</td><td><span class="tag tag--autoriz">Autorização</span></td><td class="obs">Secção de brida; foto + relatório</td><td><button class="copy-btn" data-code="82000301">copiar</button></td></tr>
+            <tr><td><span class="code">82000786</span></td><td class="proc-name">Exérese ou excisão de cistos odontológicos</td><td><span class="tag tag--autoriz">Autorização</span></td><td class="obs">Rx + relatório + biópsia obrigatórios</td><td><button class="copy-btn" data-code="82000786">copiar</button></td></tr>
+            <tr><td><span class="code">82000794</span></td><td class="proc-name">Exérese ou excisão de mucocele</td><td><span class="tag tag--autoriz">Autorização</span></td><td class="obs">Foto + relatório obrigatórios</td><td><button class="copy-btn" data-code="82000794">copiar</button></td></tr>
+            <tr><td><span class="code">82000557</span></td><td class="proc-name">Cunha proximal</td><td><span class="tag tag--autoriz">Autorização</span></td><td class="obs">Procedimento periodontal cirúrgico</td><td><button class="copy-btn" data-code="82000557">copiar</button></td></tr>
+            <tr><td><span class="code">82000506</span></td><td class="proc-name">Controle pós-operatório em odontologia</td><td><span class="tag tag--livre">Livre demanda</span></td><td class="obs">Acompanhamento após procedimento cirúrgico</td><td><button class="copy-btn" data-code="82000506">copiar</button></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- PRÓTESE -->
+    <div class="category" data-cat="prot">
+      <div class="category__title">🔩 Prótese Dentária <span class="category__count" data-count></span></div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Código TUSS</th><th>Procedimento</th><th>Autorização</th><th>Observações</th><th></th></tr></thead>
+          <tbody>
+            <tr><td><span class="code">85400076</span></td><td class="proc-name">Coroa provisória com pino</td><td><span class="tag tag--autoriz">Autorização</span></td><td class="obs">Vinculada à autorização da coroa definitiva</td><td><button class="copy-btn" data-code="85400076">copiar</button></td></tr>
+            <tr><td><span class="code">85500038</span></td><td class="proc-name">Coroa total metalocerâmica</td><td><span class="tag tag--autoriz">Autorização</span></td><td class="obs">Foto + Rx + relatório. Documentação completa obrigatória</td><td><button class="copy-btn" data-code="85500038">copiar</button></td></tr>
+            <tr><td><span class="code">85400165</span></td><td class="proc-name">Coroa total metalocerâmica sobre implante</td><td><span class="tag tag--autoriz">Autorização</span></td><td class="obs">Foto + Rx + relatório. Prótese sobre implante</td><td><button class="copy-btn" data-code="85400165">copiar</button></td></tr>
+            <tr><td><span class="code">85400173</span></td><td class="proc-name">Coroa total metaloplástica — cerômero</td><td><span class="tag tag--autoriz">Autorização</span></td><td class="obs">Foto + Rx obrigatórios</td><td><button class="copy-btn" data-code="85400173">copiar</button></td></tr>
+            <tr><td><span class="code">85400513</span></td><td class="proc-name">Restauração em cerâmica pura — Inlay</td><td><span class="tag tag--autoriz">Autorização</span></td><td class="obs">Foto + Rx obrigatórios; autorização prévia</td><td><button class="copy-btn" data-code="85400513">copiar</button></td></tr>
+            <tr><td><span class="code">85400556</span></td><td class="proc-name">Restauração metálica fundida</td><td><span class="tag tag--autoriz">Autorização</span></td><td class="obs">Foto + Rx obrigatórios</td><td><button class="copy-btn" data-code="85400556">copiar</button></td></tr>
+            <tr><td><span class="code">85400289</span></td><td class="proc-name">Prótese fixa adesiva direta (provisória)</td><td><span class="tag tag--autoriz">Autorização</span></td><td class="obs">Foto obrigatória; vinculada ao plano de tratamento</td><td><button class="copy-btn" data-code="85400289">copiar</button></td></tr>
+            <tr><td><span class="code">85400270</span></td><td class="proc-name">Placa oclusal resiliente</td><td><span class="tag tag--autoriz">Autorização</span></td><td class="obs">Para bruxismo; relatório justificando necessidade</td><td><button class="copy-btn" data-code="85400270">copiar</button></td></tr>
+            <tr><td><span class="code">85400033</span></td><td class="proc-name">Conserto em prótese parcial removível (consultório + laboratório)</td><td><span class="tag tag--varia">Varia</span></td><td class="obs">Foto mostrando a fratura/dano</td><td><button class="copy-btn" data-code="85400033">copiar</button></td></tr>
+            <tr><td><span class="code">85400041</span></td><td class="proc-name">Conserto em prótese parcial removível (só consultório)</td><td><span class="tag tag--varia">Varia</span></td><td class="obs">Reparo feito exclusivamente em consultório</td><td><button class="copy-btn" data-code="85400041">copiar</button></td></tr>
+            <tr><td><span class="code">85400050</span></td><td class="proc-name">Conserto em prótese total (consultório + laboratório)</td><td><span class="tag tag--varia">Varia</span></td><td class="obs">Foto mostrando a fratura/dano</td><td><button class="copy-btn" data-code="85400050">copiar</button></td></tr>
+            <tr><td><span class="code">85400475</span></td><td class="proc-name">Reembasamento de coroa provisória</td><td><span class="tag tag--varia">Varia</span></td><td class="obs">Pode exigir autorização em algumas operadoras</td><td><button class="copy-btn" data-code="85400475">copiar</button></td></tr>
+            <tr><td><span class="code">85400505</span></td><td class="proc-name">Remoção de trabalho protético</td><td><span class="tag tag--varia">Varia</span></td><td class="obs">Remoção de prótese fixa existente</td><td><button class="copy-btn" data-code="85400505">copiar</button></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ORTODONTIA -->
+    <div class="category" data-cat="orto">
+      <div class="category__title">😁 Ortodontia <span class="category__count" data-count></span></div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Código TUSS</th><th>Procedimento</th><th>Autorização</th><th>Observações</th><th></th></tr></thead>
+          <tbody>
+            <tr><td><span class="code">86000098</span></td><td class="proc-name">Aparelho ortodôntico fixo metálico</td><td><span class="tag tag--autoriz">Autorização</span></td><td class="obs">Documentação ortodôntica completa obrigatória (panorâmica, tele, fotos, modelos)</td><td><button class="copy-btn" data-code="86000098">copiar</button></td></tr>
+            <tr><td><span class="code">86000110</span></td><td class="proc-name">Aparelho ortodôntico fixo metálico parcial</td><td><span class="tag tag--autoriz">Autorização</span></td><td class="obs">Apenas uma arcada; documentação obrigatória</td><td><button class="copy-btn" data-code="86000110">copiar</button></td></tr>
+            <tr><td><span class="code">86000063</span></td><td class="proc-name">Aparelho ortodôntico fixo estético</td><td><span class="tag tag--autoriz">Autorização</span></td><td class="obs">Brackets cerâmicos/policarbonato; documentação completa</td><td><button class="copy-btn" data-code="86000063">copiar</button></td></tr>
+            <tr><td><span class="code">86000080</span></td><td class="proc-name">Aparelho ortodôntico fixo estético parcial</td><td><span class="tag tag--autoriz">Autorização</span></td><td class="obs">Apenas uma arcada; documentação obrigatória</td><td><button class="copy-btn" data-code="86000080">copiar</button></td></tr>
+            <tr><td><span class="code">86000357</span></td><td class="proc-name">Manutenção de aparelho ortodôntico — aparelho fixo</td><td><span class="tag tag--livre">Livre demanda</span></td><td class="obs">Cobrança mensal durante o tratamento; um dos mais usados em orto</td><td><button class="copy-btn" data-code="86000357">copiar</button></td></tr>
+            <tr><td><span class="code">86000365</span></td><td class="proc-name">Manutenção de aparelho ortodôntico — aparelho ortopédico</td><td><span class="tag tag--livre">Livre demanda</span></td><td class="obs">Manutenção mensal de aparelhos ortopédicos funcionais</td><td><button class="copy-btn" data-code="86000365">copiar</button></td></tr>
+            <tr><td><span class="code">86000373</span></td><td class="proc-name">Manutenção de aparelho ortodôntico — aparelho removível</td><td><span class="tag tag--livre">Livre demanda</span></td><td class="obs">Manutenção mensal de aparelho removível</td><td><button class="copy-btn" data-code="86000373">copiar</button></td></tr>
+            <tr><td><span class="code">86000209</span></td><td class="proc-name">Contenção fixa (por arcada)</td><td><span class="tag tag--varia">Varia</span></td><td class="obs">Fio de contenção colado após remoção do aparelho</td><td><button class="copy-btn" data-code="86000209">copiar</button></td></tr>
+            <tr><td><span class="code">86000462</span></td><td class="proc-name">Placa de Hawley</td><td><span class="tag tag--varia">Varia</span></td><td class="obs">Contenção removível; usada pós-tratamento ortodôntico</td><td><button class="copy-btn" data-code="86000462">copiar</button></td></tr>
+            <tr><td><span class="code">86000055</span></td><td class="proc-name">Aparelho extra-bucal</td><td><span class="tag tag--autoriz">Autorização</span></td><td class="obs">Documentação completa + relatório justificativo</td><td><button class="copy-btn" data-code="86000055">copiar</button></td></tr>
+            <tr><td><span class="code">86000225</span></td><td class="proc-name">Disjuntor palatino — Hirax</td><td><span class="tag tag--autoriz">Autorização</span></td><td class="obs">Expansão maxilar; documentação + relatório</td><td><button class="copy-btn" data-code="86000225">copiar</button></td></tr>
+            <tr><td><span class="code">86000233</span></td><td class="proc-name">Disjuntor palatino — McNamara</td><td><span class="tag tag--autoriz">Autorização</span></td><td class="obs">Expansão maxilar com cobertura oclusal</td><td><button class="copy-btn" data-code="86000233">copiar</button></td></tr>
+            <tr><td><span class="code">86000039</span></td><td class="proc-name">Aparelho de protração mandibular — APM</td><td><span class="tag tag--autoriz">Autorização</span></td><td class="obs">Aparelho ortopédico; documentação obrigatória</td><td><button class="copy-btn" data-code="86000039">copiar</button></td></tr>
+            <tr><td><span class="code">86000020</span></td><td class="proc-name">Aparelho de Klammt</td><td><span class="tag tag--autoriz">Autorização</span></td><td class="obs">Aparelho ortopédico funcional</td><td><button class="copy-btn" data-code="86000020">copiar</button></td></tr>
+            <tr><td><span class="code">86000179</span></td><td class="proc-name">Bionator de Balters</td><td><span class="tag tag--autoriz">Autorização</span></td><td class="obs">Aparelho ortopédico funcional bimaxilar</td><td><button class="copy-btn" data-code="86000179">copiar</button></td></tr>
+            <tr><td><span class="code">86000144</span></td><td class="proc-name">Arco lingual</td><td><span class="tag tag--autoriz">Autorização</span></td><td class="obs">Mantenedor de espaço / ancoragem</td><td><button class="copy-btn" data-code="86000144">copiar</button></td></tr>
+            <tr><td><span class="code">86000152</span></td><td class="proc-name">Barra transpalatina fixa</td><td><span class="tag tag--autoriz">Autorização</span></td><td class="obs">Ancoragem maxilar</td><td><button class="copy-btn" data-code="86000152">copiar</button></td></tr>
+            <tr><td><span class="code">86000195</span></td><td class="proc-name">Botão de Nance</td><td><span class="tag tag--autoriz">Autorização</span></td><td class="obs">Ancoragem maxilar posterior</td><td><button class="copy-btn" data-code="86000195">copiar</button></td></tr>
+            <tr><td><span class="code">86000314</span></td><td class="proc-name">Grade palatina fixa</td><td><span class="tag tag--autoriz">Autorização</span></td><td class="obs">Tratamento de hábitos deletérios (sucção digital, interposição lingual)</td><td><button class="copy-btn" data-code="86000314">copiar</button></td></tr>
+            <tr><td><span class="code">85400025</span></td><td class="proc-name">Ajuste oclusal por desgaste seletivo</td><td><span class="tag tag--autoriz">Autorização</span></td><td class="obs">Máx. 2 sessões; relatório justificando</td><td><button class="copy-btn" data-code="85400025">copiar</button></td></tr>
+            <tr><td><span class="code">85400017</span></td><td class="proc-name">Ajuste oclusal por acréscimo</td><td><span class="tag tag--autoriz">Autorização</span></td><td class="obs">Relatório justificando necessidade</td><td><button class="copy-btn" data-code="85400017">copiar</button></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ODONTOPEDIATRIA -->
+    <div class="category" data-cat="odped">
+      <div class="category__title">👶 Odontopediatria <span class="category__count" data-count></span></div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Código TUSS</th><th>Procedimento</th><th>Autorização</th><th>Observações</th><th></th></tr></thead>
+          <tbody>
+            <tr><td><span class="code">83000127</span></td><td class="proc-name">Pulpotomia em dente decíduo</td><td><span class="tag tag--varia">Varia</span></td><td class="obs">Tratamento parcial da polpa em dente de leite</td><td><button class="copy-btn" data-code="83000127">copiar</button></td></tr>
+            <tr><td><span class="code">83000151</span></td><td class="proc-name">Tratamento endodôntico em dente decíduo</td><td><span class="tag tag--autoriz">Autorização</span></td><td class="obs">Rx obrigatório (inicial + final)</td><td><button class="copy-btn" data-code="83000151">copiar</button></td></tr>
+            <tr><td><span class="code">83000135</span></td><td class="proc-name">Restauração atraumática em dente decíduo</td><td><span class="tag tag--livre">Livre demanda</span></td><td class="obs">Técnica ART; geralmente ionômero de vidro</td><td><button class="copy-btn" data-code="83000135">copiar</button></td></tr>
+            <tr><td><span class="code">85100080</span></td><td class="proc-name">Restauração atraumática em dente permanente</td><td><span class="tag tag--livre">Livre demanda</span></td><td class="obs">Técnica ART em permanentes</td><td><button class="copy-btn" data-code="85100080">copiar</button></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="footer-info">
+      <p><strong>Fonte:</strong> Tabela TUSS — Terminologia Unificada da Saúde Suplementar (Tabela 22 do Padrão TISS/ANS).</p>
+      <p>Material bônus do <a href="index.html">Curso Básico de Faturamento de Convênios Odontológicos</a> — FaturaOdonto &copy; 2026</p>
+    </div>
+  </main>
+
+  <script>
+    const searchInput = document.getElementById('searchInput');
+    const filterCat = document.getElementById('filterCat');
+    const visibleCountEl = document.getElementById('visibleCount');
+
+    function updateCounts() {
+      let totalVisible = 0;
+      document.querySelectorAll('.category').forEach(section => {
+        const visible = section.querySelectorAll('tbody tr:not(.hidden)').length;
+        const countEl = section.querySelector('[data-count]');
+        if (countEl) countEl.textContent = visible + ' códigos';
+        if (!section.classList.contains('hidden')) totalVisible += visible;
+      });
+      visibleCountEl.textContent = totalVisible;
+    }
+
+    function filterTable() {
+      const search = searchInput.value.toLowerCase();
+      const cat = filterCat.value;
+
+      document.querySelectorAll('.category').forEach(section => {
+        const sectionCat = section.dataset.cat;
+        if (cat && sectionCat !== cat) {
+          section.classList.add('hidden');
+          return;
+        }
+        section.classList.remove('hidden');
+
+        let visibleCount = 0;
+        section.querySelectorAll('tbody tr').forEach(row => {
+          const text = row.textContent.toLowerCase();
+          if (search && !text.includes(search)) {
+            row.classList.add('hidden');
+          } else {
+            row.classList.remove('hidden');
+            visibleCount++;
+          }
+        });
+
+        if (visibleCount === 0 && search) section.classList.add('hidden');
+      });
+
+      updateCounts();
+    }
+
+    document.querySelectorAll('.copy-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        const code = this.dataset.code;
+        navigator.clipboard.writeText(code).then(() => {
+          this.textContent = '✓';
+          setTimeout(() => { this.textContent = 'copiar'; }, 1500);
+        });
+      });
+    });
+
+    searchInput.addEventListener('input', filterTable);
+    filterCat.addEventListener('change', filterTable);
+
+    updateCounts();
+  </script>
+</body>
+</html>

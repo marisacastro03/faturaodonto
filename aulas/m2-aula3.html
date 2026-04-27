@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aula 3 — Prazos de Envio e Regras de Cada Operadora | Módulo 2</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="aulas.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header header--scrolled">
+    <nav class="nav container">
+      <a href="../index.html" class="nav__logo"><span class="logo-icon">🦷</span> FaturaOdonto</a>
+      <a href="../modulo2.html" class="btn btn--outline nav__cta">← Voltar ao Módulo 2</a>
+    </nav>
+  </header>
+  <div class="membros">
+    <aside class="sidebar">
+      <div class="progress-bar">
+        <div class="progress-bar__label">Módulo 2 — Progresso</div>
+        <div class="progress-bar__track"><div class="progress-bar__fill" style="width: 33%"></div></div>
+      </div>
+      <div class="sidebar__title">Módulo 02</div>
+      <div class="sidebar__module">Faturamento das GTOs</div>
+      <div class="sidebar__list">
+        <a href="m2-aula1.html" class="sidebar__link"><span>01</span> Fluxo do faturamento</a>
+        <a href="m2-aula2.html" class="sidebar__link"><span>02</span> Lote vs individual</a>
+        <a href="m2-aula3.html" class="sidebar__link sidebar__link--active"><span>03</span> Prazos por operadora</a>
+        <a href="m2-aula4.html" class="sidebar__link"><span>04</span> Envio das guias</a>
+        <a href="m2-aula5.html" class="sidebar__link"><span>05</span> Montagem de lotes</a>
+        <a href="m2-aula6.html" class="sidebar__link"><span>06</span> Status das guias</a>
+        <a href="m2-aula7.html" class="sidebar__link"><span>07</span> Conferência de pagamentos</a>
+        <a href="m2-aula8.html" class="sidebar__link"><span>08</span> Planilha de controle</a>
+        <a href="m2-aula9.html" class="sidebar__link"><span>09</span> Exercícios práticos</a>
+      </div>
+    </aside>
+    <main class="aula-content">
+      <span class="aula-content__badge">Módulo 2 · Aula 3 de 9</span>
+      <h1>Prazos de Envio e Regras de Cada Operadora</h1>
+      <p class="aula-content__meta">Tempo estimado de leitura: 14 minutos</p>
+      <div class="prose">
+        <h2>Por Que os Prazos São Tão Importantes?</h2>
+        <p>Uma das maiores causas de perda de receita nas clínicas odontológicas não são as glosas — é o <strong>vencimento do prazo de envio</strong>. Quando uma guia perde o prazo, ela simplesmente não pode mais ser faturada. O trabalho foi feito, o material foi gasto, mas o pagamento não virá.</p>
+        <p>Cada operadora estabelece um prazo máximo para que a clínica envie as guias após a realização do procedimento. Esse prazo varia de 30 a 180 dias, dependendo da operadora e do tipo de procedimento.</p>
+
+        <div class="info-box info-box--atencao">
+          <span class="info-box__title">⚠️ Atenção!</span>
+          <p>Guia vencida é dinheiro perdido. Diferente de uma glosa (que pode ser contestada), uma guia enviada fora do prazo geralmente é <strong>irreversível</strong>. A operadora simplesmente não aceita.</p>
+        </div>
+
+        <h2>Tabela Geral de Prazos por Operadora</h2>
+        <p>Aqui está um resumo dos prazos mais comuns das principais operadoras odontológicas. Esses prazos podem sofrer alterações, então sempre confirme no contrato ou portal da operadora.</p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Operadora</th>
+              <th>Prazo de envio</th>
+              <th>Data de corte mensal</th>
+              <th>Previsão de pagamento</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Amil Dental</strong></td>
+              <td>Até 90 dias da execução</td>
+              <td>Dia 20 de cada mês</td>
+              <td>45 dias após o corte</td>
+            </tr>
+            <tr>
+              <td><strong>OdontoPrev</strong></td>
+              <td>Até 120 dias da execução</td>
+              <td>Dia 25 de cada mês</td>
+              <td>30 a 45 dias após o corte</td>
+            </tr>
+            <tr>
+              <td><strong>Bradesco Dental</strong></td>
+              <td>Até 90 dias da execução</td>
+              <td>Dia 15 de cada mês</td>
+              <td>30 a 60 dias após o corte</td>
+            </tr>
+            <tr>
+              <td><strong>SulAmérica Odonto</strong></td>
+              <td>Até 60 dias da execução</td>
+              <td>Dia 20 de cada mês</td>
+              <td>30 a 45 dias após o corte</td>
+            </tr>
+            <tr>
+              <td><strong>MetLife</strong></td>
+              <td>Até 180 dias da execução</td>
+              <td>Dia 25 de cada mês</td>
+              <td>45 a 60 dias após o corte</td>
+            </tr>
+            <tr>
+              <td><strong>Porto Seguro Odonto</strong></td>
+              <td>Até 90 dias da execução</td>
+              <td>Dia 20 de cada mês</td>
+              <td>30 a 45 dias após o corte</td>
+            </tr>
+            <tr>
+              <td><strong>Uniodonto</strong></td>
+              <td>Até 90 dias da execução</td>
+              <td>Varia por região</td>
+              <td>30 a 60 dias após o corte</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="info-box info-box--dica">
+          <span class="info-box__title">✅ Dica da Marisa:</span>
+          <p>Nunca confie no prazo máximo! Na minha experiência, o ideal é enviar as guias em no máximo <strong>15 dias</strong> após a execução do procedimento. Quanto antes enviar, antes recebe — e elimina o risco de esquecer e perder o prazo.</p>
+        </div>
+
+        <h2>Entendendo a Data de Corte</h2>
+        <p>A <strong>data de corte</strong> é o dia do mês em que a operadora "fecha" o período de faturamento. Todas as guias recebidas até essa data entram no processamento daquele mês. Guias recebidas após o corte só serão processadas no mês seguinte.</p>
+
+        <div class="exemplo">
+          <div class="exemplo__title">Exemplo Prático — Data de Corte</div>
+          <p>Operadora: Bradesco Dental (corte no dia 15)</p>
+          <p><strong>Cenário 1:</strong> Você envia o lote no dia <strong>14/03</strong> → entra no processamento de março → pagamento previsto em abril/maio.</p>
+          <p><strong>Cenário 2:</strong> Você envia o lote no dia <strong>16/03</strong> → entra no processamento de abril → pagamento previsto em maio/junho.</p>
+          <p><strong>Diferença:</strong> apenas 2 dias de atraso no envio resultaram em <strong>30 dias de atraso no pagamento</strong>!</p>
+        </div>
+
+        <h2>Regras Específicas por Operadora</h2>
+
+        <h3>Amil Dental</h3>
+        <ul>
+          <li>Envio exclusivamente pelo portal <strong>eDentalNet</strong> ou sistema integrado</li>
+          <li>Procedimentos de livre demanda: não exigem autorização prévia</li>
+          <li>Procedimentos com autorização: aguardar liberação antes da execução</li>
+          <li>Exige foto para procedimentos estéticos e raio-X para endodontias</li>
+          <li>Prazo de autorização: até 10 dias úteis</li>
+          <li>Guias devem ser enviadas com assinatura digital do profissional quando disponível</li>
+        </ul>
+
+        <h3>OdontoPrev</h3>
+        <ul>
+          <li>Portal próprio com sistema de envio de guias bem intuitivo</li>
+          <li>Permite consulta de elegibilidade online em tempo real</li>
+          <li>Prazo de autorização mais ágil: geralmente 3 a 5 dias úteis</li>
+          <li>Aceita envio individual ou em lote</li>
+          <li>Disponibiliza demonstrativo de pagamento detalhado no portal</li>
+          <li>Exige foto para restaurações em dentes anteriores</li>
+        </ul>
+
+        <h3>Bradesco Dental</h3>
+        <ul>
+          <li>Envio pelo portal Bradesco Saúde ou sistema integrado</li>
+          <li>Corte mensal no dia 15 — atenção a essa data!</li>
+          <li>Procedimentos acima de determinado valor exigem perícia presencial</li>
+          <li>Prazo de autorização: até 15 dias úteis para procedimentos complexos</li>
+          <li>Exige radiografia periapical para endodontias e cirurgias</li>
+          <li>Lotes devem ser organizados por dentista credenciado</li>
+        </ul>
+
+        <h3>SulAmérica Odonto</h3>
+        <ul>
+          <li>Prazo de envio mais curto: apenas 60 dias — redobrar a atenção!</li>
+          <li>Portal Saúde SulAmérica para envio e acompanhamento</li>
+          <li>Exige número de autorização prévia para a maioria dos procedimentos</li>
+          <li>Periodicidade de pagamento: mensal, após o corte no dia 20</li>
+          <li>Documentação fotográfica obrigatória para próteses</li>
+        </ul>
+
+        <h3>MetLife</h3>
+        <ul>
+          <li>Prazo mais longo: 180 dias — mas não acomode!</li>
+          <li>Sistema próprio para envio de guias</li>
+          <li>Aceita tanto envio individual quanto em lote</li>
+          <li>Autorização prévia obrigatória para procedimentos acima do valor base</li>
+          <li>Pagamento pode demorar até 60 dias após o corte</li>
+        </ul>
+
+        <div class="info-box info-box--importante">
+          <span class="info-box__title">💡 Importante:</span>
+          <p>Os prazos e regras apresentados aqui são uma referência geral baseada na prática do mercado. Sempre consulte o <strong>contrato de credenciamento</strong> e o <strong>manual do prestador</strong> da sua operadora, pois as regras podem variar conforme o tipo de contrato e a região.</p>
+        </div>
+
+        <h2>O Que Acontece Quando o Prazo é Perdido?</h2>
+        <p>Quando uma guia é enviada após o prazo estipulado pela operadora, as consequências podem ser:</p>
+        <ol>
+          <li><strong>Rejeição automática:</strong> O sistema da operadora simplesmente não aceita a guia</li>
+          <li><strong>Glosa por intempestividade:</strong> A guia é recebida mas glosada com o código específico de "fora do prazo"</li>
+          <li><strong>Perda total:</strong> Em ambos os casos, o valor do procedimento é perdido, sem possibilidade de recurso</li>
+        </ol>
+
+        <div class="info-box info-box--atencao">
+          <span class="info-box__title">⚠️ Atenção!</span>
+          <p>Em casos excepcionais (como falha no sistema da operadora, greves, ou força maior), algumas operadoras aceitam recursos para guias fora do prazo. Mas são exceções raríssimas. Não conte com isso!</p>
+        </div>
+
+        <h2>Como Nunca Perder um Prazo</h2>
+        <p>Aqui estão as práticas que recomendo para garantir que nenhuma guia vença:</p>
+        <ul>
+          <li><strong>Rotina semanal:</strong> Feche e envie guias toda semana, sem exceção</li>
+          <li><strong>Alarmes no celular:</strong> Configure lembretes 5 dias antes da data de corte de cada operadora</li>
+          <li><strong>Planilha com "data limite":</strong> Para cada guia, calcule a data limite de envio (data da execução + prazo da operadora) e destaque em vermelho as que estão próximas</li>
+          <li><strong>Verificação mensal:</strong> No início de cada mês, revise se há guias antigas pendentes</li>
+          <li><strong>Responsável definido:</strong> Deixe claro quem é o responsável pelo faturamento — quando é "todo mundo", ninguém faz</li>
+        </ul>
+
+        <div class="info-box info-box--dica">
+          <span class="info-box__title">✅ Dica da Marisa:</span>
+          <p>Nas clínicas que eu gerenciei, implementei uma regra simples: <strong>nenhuma guia fica mais de 7 dias sem ser faturada</strong>. Isso eliminou completamente o problema de prazos vencidos. O segredo está na disciplina da rotina.</p>
+        </div>
+
+        <h2>Calendário de Corte — Planejamento Mensal</h2>
+        <p>Para facilitar sua organização, crie um calendário mensal com as datas de corte de todas as operadoras com as quais a clínica trabalha:</p>
+
+        <div class="exemplo">
+          <div class="exemplo__title">Exemplo de Calendário Mensal</div>
+          <p><strong>Dia 15:</strong> Corte Bradesco Dental → enviar lote até dia 14</p>
+          <p><strong>Dia 20:</strong> Corte Amil Dental e SulAmérica → enviar lotes até dia 19</p>
+          <p><strong>Dia 25:</strong> Corte OdontoPrev e MetLife → enviar lotes até dia 24</p>
+          <p>Imprima e cole na parede ao lado do computador. Funciona!</p>
+        </div>
+
+        <h2>Resumo da Aula</h2>
+        <ul>
+          <li>Cada operadora tem <strong>prazo máximo</strong> para envio (de 60 a 180 dias) e <strong>data de corte</strong> mensal</li>
+          <li>A <strong>data de corte</strong> determina quando o pagamento será processado — perder por 1 dia pode atrasar 30</li>
+          <li>Guia fora do prazo = <strong>dinheiro perdido</strong>, geralmente sem possibilidade de recurso</li>
+          <li>A melhor estratégia é <strong>faturar semanalmente</strong> e manter alarmes para as datas de corte</li>
+          <li>Consulte sempre o <strong>contrato de credenciamento</strong> para os prazos exatos</li>
+        </ul>
+
+        <p>Na próxima aula, vamos ao passo a passo de como enviar as guias pelo portal de cada operadora!</p>
+      </div>
+      <div class="aula-nav">
+        <a href="m2-aula2.html" class="btn btn--outline">← Aula Anterior</a>
+        <a href="m2-aula4.html" class="btn btn--primary">Próxima Aula →</a>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

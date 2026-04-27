@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arte anúncio — Marisa (exportar PNG)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <!--
+    EXPORTAR COMO IMAGEM (1080×1080):
+    1) Abra este arquivo no Chrome/Edge (duplo clique).
+    2) Pressione F12 → ícone de dispositivo (Ctrl+Shift+M) → defina 1080 × 1080.
+    3) Use uma extensão tipo "GoFullPage" / "Screenshot Element" no bloco .ad-canvas,
+       OU capture a janela com a ferramenta de Recorte do Windows alinhada ao quadrado.
+    Texto neutro: "convênio" + "Não precisa aprender sozinho" (vale para qualquer pessoa).
+  -->
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      min-height: 100vh;
+      background: #1e293b;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      font-family: 'Inter', system-ui, sans-serif;
+    }
+    .ad-canvas {
+      width: 1080px;
+      height: 1080px;
+      flex-shrink: 0;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, #0f172a 0%, #0e7490 45%, #0891b2 70%, #06d6a0 100%);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    .ad-copy {
+      padding: 64px 48px 64px 64px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      z-index: 2;
+    }
+    .ad-tag {
+      display: inline-block;
+      align-self: flex-start;
+      background: rgba(255,255,255,0.15);
+      color: #fff;
+      font-size: 22px;
+      font-weight: 700;
+      padding: 12px 24px;
+      border-radius: 999px;
+      margin-bottom: 28px;
+      letter-spacing: 0.02em;
+    }
+    .ad-headline {
+      font-size: 52px;
+      font-weight: 900;
+      line-height: 1.12;
+      color: #fff;
+      text-shadow: 0 4px 24px rgba(0,0,0,0.25);
+      margin-bottom: 28px;
+    }
+    .ad-headline .ad-highlight {
+      color: #fef08a;
+      -webkit-text-fill-color: #fef08a;
+    }
+    .ad-headline .ad-headline__line2 {
+      display: block;
+      margin-top: 12px;
+      font-size: 0.92em;
+    }
+    .ad-sub {
+      font-size: 30px;
+      font-weight: 600;
+      line-height: 1.35;
+      color: rgba(255,255,255,0.92);
+      margin-bottom: 36px;
+    }
+    .ad-name {
+      font-size: 26px;
+      font-weight: 700;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .ad-name svg {
+      flex-shrink: 0;
+    }
+    .ad-badge {
+      margin-top: auto;
+      padding-top: 32px;
+    }
+    .ad-badge-inner {
+      display: inline-block;
+      background: #fff;
+      color: #0e7490;
+      font-size: 28px;
+      font-weight: 800;
+      padding: 18px 32px;
+      border-radius: 16px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.2);
+    }
+    .ad-photo {
+      position: relative;
+      height: 100%;
+    }
+    .ad-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 55% 15%;
+    }
+    .ad-photo::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      left: 0;
+      width: 35%;
+      background: linear-gradient(90deg, #0891b2 0%, transparent 100%);
+      pointer-events: none;
+    }
+    .preview-hint {
+      position: fixed;
+      bottom: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0,0,0,0.75);
+      color: #e2e8f0;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 14px;
+      max-width: 90vw;
+      text-align: center;
+      z-index: 100;
+    }
+    @media (max-width: 1200px) {
+      .ad-canvas {
+        transform: scale(0.45);
+        transform-origin: center center;
+      }
+    }
+    @media (max-width: 600px) {
+      .ad-canvas {
+        transform: scale(0.32);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="ad-canvas" id="adCanvas">
+    <div class="ad-copy">
+      <span class="ad-tag">Curso prático · 100% online</span>
+      <h1 class="ad-headline">Nunca teve contato com <span class="ad-highlight">convênio</span>?<span class="ad-headline__line2 ad-highlight">Não precisa aprender sozinho.</span></h1>
+      <p class="ad-sub">Do zero ao passo a passo — GTO, faturamento e documentação. Para quem está começando ou quer ver o administrativo com clareza.</p>
+      <p class="ad-name">
+        <svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="20" fill="#fff"/><path d="M20 8c-3.5 0-5 1.6-6.3 3.2s-1.3 3.8-1 6.3c.5 3.8 1.6 7.5 3.2 11.3.6 1.6 1.6 2.5 2.8 2.5h2.5c1.3 0 2.2-1 2.8-2.5 1.6-3.8 2.7-7.5 3.2-11.3.3-2.5.3-4.7-1-6.3S23.5 8 20 8z" fill="#0891B2"/><path d="M16.5 19l3 3 5.5-5.5" stroke="#06D6A0" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Eu sou a Marisa · +10 anos na prática
+      </p>
+      <div class="ad-badge">
+        <span class="ad-badge-inner">FaturaOdonto</span>
+      </div>
+    </div>
+    <div class="ad-photo">
+      <img src="marisa.jpg" alt="">
+    </div>
+  </div>
+  <p class="preview-hint">Tamanho fixo 1080×1080 · Use F12 → modo responsivo 1080×1080 e capture só o quadrado do anúncio.</p>
+</body>
+</html>

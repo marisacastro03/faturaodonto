@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curso Básico de Faturamento de Convênios Odontológicos</title>
+  <meta name="description" content="Aprenda a faturar convênios odontológicos: emissão de GTO, faturamento, glosas, documentação com fotos e raio-x, e emissão de notas.">
+  <!-- Favicon SVG -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%230891B2'/%3E%3Cpath d='M32 14c-5.5 0-8 2.5-10 5s-2 6-1.5 10c.8 6 2.5 12 5 18 1 2.5 2.5 4 4.5 4h4c2 0 3.5-1.5 4.5-4 2.5-6 4.2-12 5-18 .5-4 .5-7.5-1.5-10s-4.5-5-10-5z' fill='white'/%3E%3Cpath d='M27 30l4 4 8-8' stroke='%2306D6A0' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Curso Básico de Faturamento de Convênios Odontológicos — FaturaOdonto">
+  <meta property="og:description" content="50 aulas práticas em 5 módulos: emissão de GTO, faturamento, documentação, recursos de glosa e emissão de notas fiscais. Por Marisa Castro, +10 anos de experiência.">
+  <meta property="og:type" content="website">
+  <!-- URL canônica: troque para seu domínio próprio quando tiver (ex.: https://faturaodonto.com.br) -->
+  <meta property="og:url" content="https://marisacastro03.github.io/faturaodonto/">
+  <meta property="og:image" content="https://marisacastro03.github.io/faturaodonto/marisa.jpg">
+  <meta property="og:image:alt" content="Marisa Castro — FaturaOdonto">
+  <meta property="og:locale" content="pt_BR">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://marisacastro03.github.io/faturaodonto/marisa.jpg">
+  <meta name="robots" content="index, follow">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header" id="header">
+    <nav class="nav container">
+      <a href="#" class="nav__logo">
+        <svg class="logo-svg" viewBox="0 0 40 40" width="36" height="36"><circle cx="20" cy="20" r="20" fill="#0891B2"/><path d="M20 8c-3.5 0-5 1.6-6.3 3.2s-1.3 3.8-1 6.3c.5 3.8 1.6 7.5 3.2 11.3.6 1.6 1.6 2.5 2.8 2.5h2.5c1.3 0 2.2-1 2.8-2.5 1.6-3.8 2.7-7.5 3.2-11.3.3-2.5.3-4.7-1-6.3S23.5 8 20 8z" fill="#fff"/><path d="M16.5 19l3 3 5.5-5.5" stroke="#06D6A0" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        FaturaOdonto
+      </a>
+      <ul class="nav__list" id="navList">
+        <li><a href="#sobre" class="nav__link">O Curso</a></li>
+        <li><a href="#modulos" class="nav__link">Conteúdo</a></li>
+        <li><a href="#publico" class="nav__link">Para Quem</a></li>
+        <li><a href="#depoimentos" class="nav__link">Depoimentos</a></li>
+        <li><a href="#preco" class="nav__link">Investimento</a></li>
+        <li><a href="#faq" class="nav__link">FAQ</a></li>
+      </ul>
+      <a href="#preco" class="btn btn--primary nav__cta">Inscreva-se</a>
+      <button class="nav__toggle" id="navToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero__bg"></div>
+    <div class="container hero__content">
+      <span class="hero__badge">🎓 50 Aulas — 5 Módulos — 100% Online — Estude no seu ritmo</span>
+      <h1 class="hero__title">
+        Aprenda <span class="text-gradient">Faturamento de Convênios Odontológicos</span> do Zero ao Completo
+      </h1>
+      <p class="hero__subtitle">
+        O curso mais completo do mercado: da emissão da GTO até a emissão de nota fiscal, 
+        passando por faturamento, documentação com fotos e raio-X — e principalmente 
+        <strong>como evitar e reverter glosas</strong>. 
+        Feito por quem fatura, gerencia clínicas e credencia dentistas há mais de 10 anos.
+      </p>
+      <div class="hero__actions">
+        <a href="#preco" class="btn btn--primary btn--lg">Quero me Inscrever</a>
+        <a href="#modulos" class="btn btn--outline btn--lg">Ver Conteúdo</a>
+      </div>
+      <div class="hero__stats">
+        <div class="stat">
+          <span class="stat__number" data-target="50">0</span>
+          <span class="stat__label">Aulas Completas</span>
+        </div>
+        <div class="stat">
+          <span class="stat__number" data-target="5">0</span>
+          <span class="stat__label">Módulos Práticos</span>
+        </div>
+        <div class="stat">
+          <span class="stat__number" data-target="4">0</span>
+          <span class="stat__label">Bônus Inclusos</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE -->
+  <section class="section sobre" id="sobre">
+    <div class="container">
+      <span class="section__tag">Sobre o Curso</span>
+      <h2 class="section__title">Por que fazer este curso?</h2>
+      <p class="section__desc">
+        Muitos consultórios perdem dinheiro por não saber faturar corretamente os convênios odontológicos. 
+        GTOs preenchidas de forma errada, falta de documentação e glosas que nunca são contestadas consomem o faturamento da clínica. 
+        Com <strong>50 aulas práticas</strong> em <strong>5 módulos</strong>, este é o curso mais completo de faturamento odontológico do mercado.
+      </p>
+      <div class="features">
+        <div class="feature-card">
+          <div class="feature-card__icon">📝</div>
+          <h3>Emissão de GTOs</h3>
+          <p>Aprenda a preencher e emitir Guias de Tratamento Odontológico corretamente, evitando erros que geram glosas.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-card__icon">💰</div>
+          <h3>Faturamento de GTOs</h3>
+          <p>Domine todo o processo de faturamento das guias junto às operadoras, prazos e envio de lotes.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-card__icon">📸</div>
+          <h3>Fotos e Raio-X</h3>
+          <p>Saiba exatamente quando é obrigatório anexar fotos ou radiografias para aprovação dos procedimentos.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-card__icon">⚖️</div>
+          <h3>Recursos de Glosa</h3>
+          <p>Aprenda a identificar, analisar e elaborar recursos para reverter glosas e recuperar o faturamento.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-card__icon">🧾</div>
+          <h3>Emissão de Notas</h3>
+          <p>Entenda como emitir notas fiscais corretamente para os convênios e manter a parte fiscal em dia.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-card__icon">🎯</div>
+          <h3>Prático e Direto</h3>
+          <p>Conteúdo feito por quem vive o dia a dia do faturamento odontológico, com exemplos reais e dicas práticas.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NÚMEROS IMPACTANTES -->
+  <section class="section numeros">
+    <div class="container">
+      <div class="numeros__grid">
+        <div class="numero-card">
+          <span class="numero-card__value">30%</span>
+          <span class="numero-card__label">do faturamento é perdido com glosas em clínicas sem controle adequado</span>
+        </div>
+        <div class="numero-card">
+          <span class="numero-card__value">80%</span>
+          <span class="numero-card__label">das glosas poderiam ser evitadas com documentação correta</span>
+        </div>
+        <div class="numero-card">
+          <span class="numero-card__value">R$ 5 mil+</span>
+          <span class="numero-card__label">é o prejuízo médio mensal por clínica que não sabe recorrer de glosas</span>
+        </div>
+        <div class="numero-card">
+          <span class="numero-card__value">72h</span>
+          <span class="numero-card__label">é o prazo médio que você tem para contestar uma glosa — e a maioria não contesta</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MÓDULOS -->
+  <section class="section modulos" id="modulos">
+    <div class="container">
+      <span class="section__tag">Conteúdo Programático</span>
+      <h2 class="section__title">O que você vai aprender</h2>
+      <p class="section__desc">
+        50 aulas organizadas em 5 módulos, numa sequência lógica que cobre todo o ciclo do faturamento odontológico — do preenchimento da GTO até a emissão da nota fiscal.
+      </p>
+      <div class="modules-grid">
+
+        <a href="modulo1.html" class="module-card module-card--link">
+          <div class="module-card__number">01</div>
+          <h3>Emissão de GTOs</h3>
+          <ul class="module-card__list">
+            <li>O que é a GTO e para que serve</li>
+            <li>Como preencher corretamente cada campo</li>
+            <li>Códigos TUSS odontológicos mais usados</li>
+            <li>Tipos de guias: inicial, aditiva e de urgência</li>
+            <li>Limite de procedimentos por guia</li>
+            <li>Atenção à solicitação de foto e raio-X na emissão</li>
+            <li>Erros mais comuns e como evitar</li>
+          </ul>
+          <span class="module-card__hours">12 aulas · Módulo Essencial</span>
+          <span class="module-card__cta">Ver conteúdo completo →</span>
+        </a>
+
+        <a href="modulo2.html" class="module-card module-card--link">
+          <div class="module-card__number">02</div>
+          <h3>Faturamento das GTOs</h3>
+          <ul class="module-card__list">
+            <li>Fluxo completo do faturamento odontológico</li>
+            <li>Como enviar as guias para as operadoras</li>
+            <li>Prazos de envio e regras de cada convênio</li>
+            <li>Montagem de lotes para faturamento</li>
+            <li>Acompanhamento do status das guias</li>
+            <li>Conferência de pagamentos recebidos</li>
+          </ul>
+          <span class="module-card__hours">9 aulas · Módulo Prático</span>
+          <span class="module-card__cta">Ver conteúdo completo →</span>
+        </a>
+
+        <a href="modulo3.html" class="module-card module-card--link">
+          <div class="module-card__number">03</div>
+          <h3>Documentação: Fotos e Raio-X</h3>
+          <ul class="module-card__list">
+            <li>Quando a foto clínica é obrigatória</li>
+            <li>Quando o raio-X é exigido pela operadora</li>
+            <li>Padrões de imagem aceitos (formato, qualidade)</li>
+            <li>Procedimentos que exigem documentação prévia</li>
+            <li>Procedimentos que exigem documentação final</li>
+            <li>Como organizar e anexar as imagens</li>
+          </ul>
+          <span class="module-card__hours">9 aulas · Módulo Documentação</span>
+          <span class="module-card__cta">Ver conteúdo completo →</span>
+        </a>
+
+        <a href="modulo4.html" class="module-card module-card--link">
+          <div class="module-card__number">04</div>
+          <h3>Recursos de Glosa</h3>
+          <ul class="module-card__list">
+            <li>O que é uma glosa e por que acontece</li>
+            <li>Tipos de glosa: administrativa, técnica e linear</li>
+            <li>Como analisar o motivo da glosa</li>
+            <li>Passo a passo para elaborar o recurso</li>
+            <li>Prazos e regras da ANS para recursos</li>
+            <li>Modelos prontos de recursos mais comuns</li>
+          </ul>
+          <span class="module-card__hours">10 aulas · Módulo Estratégico</span>
+          <span class="module-card__cta">Ver conteúdo completo →</span>
+        </a>
+
+        <a href="modulo5.html" class="module-card module-card--link module-card--wide">
+          <div class="module-card__number">05</div>
+          <h3>Emissão de Notas Fiscais</h3>
+          <ul class="module-card__list">
+            <li>Quando e como emitir nota fiscal para convênios</li>
+            <li>Diferença entre NFS-e e outros tipos de nota</li>
+            <li>Dados obrigatórios na nota para operadoras</li>
+            <li>Conciliação entre faturamento e notas emitidas</li>
+            <li>Controle fiscal e organização mensal</li>
+            <li>Dicas para manter a regularidade fiscal da clínica</li>
+          </ul>
+          <span class="module-card__hours">10 aulas · Módulo Fiscal</span>
+          <span class="module-card__cta">Ver conteúdo completo →</span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- JORNADA DO ALUNO -->
+  <section class="section jornada">
+    <div class="container">
+      <span class="section__tag">Sua Jornada</span>
+      <h2 class="section__title">O caminho completo do faturamento odontológico</h2>
+      <p class="section__desc">Você vai dominar cada etapa do ciclo, do início ao fim.</p>
+      <div class="jornada__timeline">
+        <div class="jornada__step">
+          <div class="jornada__icon">📝</div>
+          <div class="jornada__connector"></div>
+          <h3>Emissão da GTO</h3>
+          <p>Preencher guias corretamente e sem erros</p>
+        </div>
+        <div class="jornada__step">
+          <div class="jornada__icon">💰</div>
+          <div class="jornada__connector"></div>
+          <h3>Faturamento</h3>
+          <p>Enviar lotes e acompanhar pagamentos</p>
+        </div>
+        <div class="jornada__step">
+          <div class="jornada__icon">📸</div>
+          <div class="jornada__connector"></div>
+          <h3>Documentação</h3>
+          <p>Fotos e raio-X exigidos por procedimento</p>
+        </div>
+        <div class="jornada__step">
+          <div class="jornada__icon">⚖️</div>
+          <div class="jornada__connector"></div>
+          <h3>Glosas</h3>
+          <p>Prevenir, identificar e recorrer</p>
+        </div>
+        <div class="jornada__step">
+          <div class="jornada__icon">🧾</div>
+          <h3>Notas Fiscais</h3>
+          <p>Emitir NFS-e corretamente</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO ANTI-GLOSA -->
+  <section class="section glosa-alert" id="glosas">
+    <div class="container">
+      <div class="glosa-alert__box">
+        <div class="glosa-alert__left">
+          <span class="glosa-alert__emoji">🚨</span>
+          <h2>Você sabia que a maioria das clínicas odontológicas perde até <span class="text-highlight">30% do faturamento</span> por causa de glosas?</h2>
+          <p class="glosa-alert__sub">E o pior: muitas dessas glosas poderiam ser evitadas com conhecimento básico de faturamento.</p>
+        </div>
+        <div class="glosa-alert__right">
+          <h3>Neste curso você aprende a:</h3>
+          <div class="glosa-tips">
+            <div class="glosa-tip">
+              <span class="glosa-tip__icon">🛡️</span>
+              <div>
+                <strong>Prevenir glosas antes que aconteçam</strong>
+                <p>Preencha GTOs sem erros, envie a documentação certa e respeite os prazos de cada operadora.</p>
+              </div>
+            </div>
+            <div class="glosa-tip">
+              <span class="glosa-tip__icon">📸</span>
+              <div>
+                <strong>Saber quando foto e raio-x são obrigatórios</strong>
+                <p>A falta de uma simples radiografia pode glosar todo o procedimento. Aqui você aprende cada caso.</p>
+              </div>
+            </div>
+            <div class="glosa-tip">
+              <span class="glosa-tip__icon">🔎</span>
+              <div>
+                <strong>Identificar os motivos das glosas</strong>
+                <p>Entenda os códigos de glosa das operadoras e saiba exatamente por que cada guia foi recusada.</p>
+              </div>
+            </div>
+            <div class="glosa-tip">
+              <span class="glosa-tip__icon">📝</span>
+              <div>
+                <strong>Montar recursos de glosa que funcionam</strong>
+                <p>Modelos prontos e passo a passo para contestar e reverter glosas com sucesso.</p>
+              </div>
+            </div>
+            <div class="glosa-tip">
+              <span class="glosa-tip__icon">💰</span>
+              <div>
+                <strong>Recuperar dinheiro que você achava perdido</strong>
+                <p>Muitas clínicas simplesmente desistem das glosas. Aqui você aprende a recuperar esses valores.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="glosa-alert__cta">
+        <p>Não deixe as glosas consumirem o faturamento da sua clínica.</p>
+        <a href="#preco" class="btn btn--primary btn--lg">Quero Aprender a Evitar Glosas</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARA QUEM É -->
+  <section class="section publico" id="publico">
+    <div class="container">
+      <div class="publico__grid">
+        <div class="publico__text">
+          <span class="section__tag">Para Quem É</span>
+          <h2 class="section__title section__title--left">Este curso foi feito para você</h2>
+          <ul class="check-list">
+            <li>✅ <strong>Dentistas</strong> que atendem convênios e querem entender o faturamento</li>
+            <li>✅ <strong>Secretárias e recepcionistas</strong> de clínicas odontológicas</li>
+            <li>✅ <strong>Auxiliares administrativos</strong> responsáveis pelo faturamento</li>
+            <li>✅ <strong>Gestores de clínicas</strong> que querem reduzir glosas e aumentar o recebimento</li>
+            <li>✅ <strong>Profissionais em transição</strong> que querem entrar na área odontológica</li>
+            <li>✅ <strong>Quem está começando</strong> e nunca mexeu com convênio odontológico</li>
+          </ul>
+        </div>
+        <div class="publico__image">
+          <div class="publico__card">
+            <div class="publico__card-icon">🦷</div>
+            <h3>Não precisa de experiência prévia</h3>
+            <p>O curso é nível básico. Ensina desde o primeiro passo para quem nunca trabalhou com faturamento de convênios odontológicos.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INSTRUTORA -->
+  <section class="section instrutora" id="instrutora">
+    <div class="container">
+      <span class="section__tag">Quem vai te ensinar</span>
+      <h2 class="section__title">Aprenda com quem vive o faturamento odontológico há mais de 10 anos</h2>
+      <div class="instrutora__grid">
+        <div class="instrutora__photo">
+          <img src="marisa.jpg" alt="Marisa Castro - Especialista em Faturamento Odontológico" class="instrutora__img">
+        </div>
+        <div class="instrutora__info">
+          <h3>Marisa Castro</h3>
+          <span class="instrutora__role">Especialista em Faturamento, Gestão e Credenciamento Odontológico</span>
+          <div class="instrutora__badges">
+            <span class="instrutora__badge">🦷 +10 anos na área</span>
+            <span class="instrutora__badge">📋 Formação em ASB</span>
+            <span class="instrutora__badge">🏥 Gestão de clínicas</span>
+            <span class="instrutora__badge">🤝 Credenciamento</span>
+            <span class="instrutora__badge">💼 Faturamento terceirizado</span>
+          </div>
+          <p class="instrutora__mission"><strong>Minha missão é simples:</strong> ajudar clínicas e profissionais a faturarem convênios com segurança, sem deixar dinheiro na mesa por erro de guia, documentação ou recurso de glosa.</p>
+          <p>Há <strong>mais de 10 anos</strong> atuo com faturamento de convênios odontológicos, com experiência em <strong>diversas operadoras</strong> e cenários diferentes do mercado.</p>
+          <p>Sou <strong>formada como ASB (Auxiliar de Saúde Bucal)</strong> — isso me dá base clínica para entender o que acontece na cadeira e traduzir isso para o que a operadora exige na documentação e na guia.</p>
+          <p>Já <strong>gerenciei clínicas</strong>, prestei <strong>faturamento terceirizado</strong> para várias unidades e acompanhei <strong>credenciamento de dentistas</strong>. Ou seja: conheço o ciclo do convênio de ponta a ponta, da abertura do contrato ao recebimento.</p>
+          <p>Nesses anos, lidiei com GTOs complexas, glosas que pareciam definitivas e regras muito exigentes de operadoras. Tudo isso virou método prático — e é esse conteúdo que trago para você neste curso.</p>
+          <p class="instrutora__social">Quer acompanhar dicas e novidades? <a href="https://instagram.com/odontofatura" target="_blank" rel="noopener noreferrer">Me siga no Instagram @odontofatura</a>.</p>
+          <div class="instrutora__highlights">
+            <div class="instrutora__highlight">
+              <strong>Visão clínica + administrativa</strong>
+              <span>traduz o protocolo da clínica para o que passa no faturamento</span>
+            </div>
+            <div class="instrutora__highlight">
+              <strong>Ciclo completo</strong>
+              <span>da GTO ao pagamento, incluindo terceirização e credenciamento</span>
+            </div>
+            <div class="instrutora__highlight">
+              <strong>Na prática, todo dia</strong>
+              <span>conteúdo baseado em casos reais, não só teoria de manual</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIFERENCIAIS -->
+  <section class="section diferenciais">
+    <div class="container">
+      <span class="section__tag">Diferenciais</span>
+      <h2 class="section__title">O que torna este curso diferente</h2>
+      <div class="diff-grid">
+        <div class="diff-item">
+          <div class="diff-item__icon">📚</div>
+          <h3>50 Aulas Detalhadas</h3>
+          <p>Conteúdo completo e aprofundado em cada aula, com tabelas, exemplos reais e exercícios práticos.</p>
+        </div>
+        <div class="diff-item">
+          <div class="diff-item__icon">📋</div>
+          <h3>Modelos e Planilhas Prontos</h3>
+          <p>Receba modelos de recursos de glosa, checklists de documentação e planilhas de controle para usar na clínica.</p>
+        </div>
+        <div class="diff-item">
+          <div class="diff-item__icon">🗣️</div>
+          <h3>Linguagem Simples e Direta</h3>
+          <p>Sem termos complicados. Tudo explicado com dicas práticas da Marisa, que vive o faturamento no dia a dia.</p>
+        </div>
+        <div class="diff-item">
+          <div class="diff-item__icon">📱</div>
+          <h3>Estude de Qualquer Lugar</h3>
+          <p>Acesse do celular, tablet ou computador. Leia no seu ritmo, sem pressão de horários.</p>
+        </div>
+        <div class="diff-item">
+          <div class="diff-item__icon">🦷</div>
+          <h3>100% Focado em Odontologia</h3>
+          <p>Não é curso genérico de faturamento. Todo o conteúdo é específico para convênios odontológicos.</p>
+        </div>
+        <div class="diff-item">
+          <div class="diff-item__icon">🔄</div>
+          <h3>Do Início ao Fim do Ciclo</h3>
+          <p>Da emissão da GTO ao recebimento do pagamento. Nenhum outro curso cobre o ciclo completo como este.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ANTES X DEPOIS -->
+  <section class="section antes-depois">
+    <div class="container">
+      <span class="section__tag">Transformação</span>
+      <h2 class="section__title">Antes e depois do curso</h2>
+      <div class="ad-grid">
+        <div class="ad-card ad-card--antes">
+          <h3>😰 Antes do Curso</h3>
+          <ul>
+            <li>❌ Preenche GTOs com dúvidas e medo de errar</li>
+            <li>❌ Não sabe quando enviar foto ou raio-X</li>
+            <li>❌ Recebe glosas e não sabe o que fazer</li>
+            <li>❌ Perde dinheiro com guias recusadas</li>
+            <li>❌ Não emite nota fiscal corretamente</li>
+            <li>❌ Depende de outros para resolver problemas</li>
+            <li>❌ Clínica desorganizada financeiramente</li>
+          </ul>
+        </div>
+        <div class="ad-card ad-card--depois">
+          <h3>🚀 Depois do Curso</h3>
+          <ul>
+            <li>✅ Emite GTOs com confiança e sem erros</li>
+            <li>✅ Sabe exatamente a documentação de cada procedimento</li>
+            <li>✅ Identifica, previne e recorre de glosas</li>
+            <li>✅ Recupera valores que antes eram perdidos</li>
+            <li>✅ Emite notas fiscais em dia e sem erros</li>
+            <li>✅ Autonomia total no faturamento da clínica</li>
+            <li>✅ Faturamento organizado e maximizado</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPARATIVO -->
+  <section class="section comparativo">
+    <div class="container">
+      <span class="section__tag">Comparativo</span>
+      <h2 class="section__title">Por que este curso e não outro?</h2>
+      <div class="comparativo__table-wrap">
+        <table class="comparativo__table">
+          <thead>
+            <tr>
+              <th>Característica</th>
+              <th>Cursos Genéricos</th>
+              <th class="comparativo__destaque">FaturaOdonto</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Focado 100% em odontologia</td>
+              <td><span class="comp-no">✗</span></td>
+              <td><span class="comp-yes">✓</span></td>
+            </tr>
+            <tr>
+              <td>Cobre o ciclo completo (GTO → Nota Fiscal)</td>
+              <td><span class="comp-no">✗</span></td>
+              <td><span class="comp-yes">✓</span></td>
+            </tr>
+            <tr>
+              <td>Módulo específico de recursos de glosa</td>
+              <td><span class="comp-no">✗</span></td>
+              <td><span class="comp-yes">✓</span></td>
+            </tr>
+            <tr>
+              <td>Documentação: quando enviar foto e raio-X</td>
+              <td><span class="comp-partial">Parcial</span></td>
+              <td><span class="comp-yes">✓</span></td>
+            </tr>
+            <tr>
+              <td>Planilhas e checklists prontos para usar</td>
+              <td><span class="comp-no">✗</span></td>
+              <td><span class="comp-yes">✓</span></td>
+            </tr>
+            <tr>
+              <td>Guia de códigos TUSS odontológicos</td>
+              <td><span class="comp-no">✗</span></td>
+              <td><span class="comp-yes">✓</span></td>
+            </tr>
+            <tr>
+              <td>Aula bônus sobre credenciamento</td>
+              <td><span class="comp-no">✗</span></td>
+              <td><span class="comp-yes">✓</span></td>
+            </tr>
+            <tr>
+              <td>Instrutora com +10 anos no faturamento odontológico</td>
+              <td><span class="comp-partial">Varia</span></td>
+              <td><span class="comp-yes">✓</span></td>
+            </tr>
+            <tr>
+              <td>Preço acessível</td>
+              <td><span class="comp-partial">R$ 400–800</span></td>
+              <td><span class="comp-yes">R$ 297</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- BÔNUS -->
+  <section class="section bonus" id="bonus">
+    <div class="container">
+      <span class="section__tag">🎁 Bônus Exclusivos</span>
+      <h2 class="section__title">Você ainda recebe esses materiais de presente</h2>
+      <p class="section__desc">Materiais práticos para usar no dia a dia da clínica, incluídos sem custo adicional.</p>
+      <div class="bonus-grid">
+        <div class="bonus-card">
+          <span class="bonus-card__icon">📊</span>
+          <h3>Planilha de Controle de Glosas</h3>
+          <p>Planilha pronta para registrar, acompanhar e controlar todas as glosas e recursos da clínica mês a mês.</p>
+          <span class="bonus-card__valor">Valor: R$ 97</span>
+          <span class="bonus-card__gratis">GRÁTIS</span>
+        </div>
+        <div class="bonus-card">
+          <span class="bonus-card__icon">📋</span>
+          <h3>Checklist de Documentação por Procedimento</h3>
+          <p>Tabela completa com cada procedimento e a documentação exigida: foto, raio-X, relatório. Pronto para imprimir.</p>
+          <span class="bonus-card__valor">Valor: R$ 67</span>
+          <span class="bonus-card__gratis">GRÁTIS</span>
+        </div>
+        <div class="bonus-card">
+          <span class="bonus-card__icon">📖</span>
+          <h3>Guia Rápido de Códigos TUSS Odontológicos</h3>
+          <p>Os códigos mais usados no dia a dia organizados por especialidade. Consulta rápida para não errar nunca mais.</p>
+          <span class="bonus-card__valor">Valor: R$ 47</span>
+          <span class="bonus-card__gratis">GRÁTIS</span>
+        </div>
+        <div class="bonus-card">
+          <span class="bonus-card__icon">🎓</span>
+          <h3>Mini Aula Bônus: Credenciamento de Dentistas</h3>
+          <p>Aula exclusiva explicando como funciona o processo de credenciamento de profissionais junto às operadoras.</p>
+          <span class="bonus-card__valor">Valor: R$ 127</span>
+          <span class="bonus-card__gratis">GRÁTIS</span>
+        </div>
+      </div>
+      <p class="bonus-total">Total em bônus: <strong>R$ 338,00</strong> — tudo incluso no curso sem custo adicional.</p>
+    </div>
+  </section>
+
+  <!-- CERTIFICADO -->
+  <section class="section certificado">
+    <div class="container">
+      <span class="section__tag">🏅 Certificado</span>
+      <h2 class="section__title">Certificado de conclusão incluso</h2>
+      <p class="section__desc">Ao completar o curso, você recebe um certificado digital para comprovar sua qualificação em faturamento odontológico.</p>
+      <div class="certificado__preview">
+        <div class="certificado__doc">
+          <div class="certificado__header">
+            <svg class="certificado__logo" viewBox="0 0 40 40" width="48" height="48"><circle cx="20" cy="20" r="20" fill="#0891B2"/><path d="M20 8c-3.5 0-5 1.6-6.3 3.2s-1.3 3.8-1 6.3c.5 3.8 1.6 7.5 3.2 11.3.6 1.6 1.6 2.5 2.8 2.5h2.5c1.3 0 2.2-1 2.8-2.5 1.6-3.8 2.7-7.5 3.2-11.3.3-2.5.3-4.7-1-6.3S23.5 8 20 8z" fill="#fff"/><path d="M16.5 19l3 3 5.5-5.5" stroke="#06D6A0" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>FATURAODONTO</span>
+          </div>
+          <h3>Certificado de Conclusão</h3>
+          <p class="certificado__nome">Seu Nome Aqui</p>
+          <p class="certificado__texto">Concluiu com aproveitamento o <strong>Curso Básico de Faturamento de Convênios Odontológicos</strong>, com carga de 50 aulas em 5 módulos, abrangendo emissão de GTOs, faturamento, documentação, recursos de glosa e emissão de notas fiscais.</p>
+          <div class="certificado__footer">
+            <div class="certificado__assinatura">
+              <div class="certificado__linha"></div>
+              <span>Marisa Castro</span>
+              <small>Instrutora</small>
+            </div>
+            <div class="certificado__selo">
+              <svg viewBox="0 0 60 60" width="60" height="60"><circle cx="30" cy="30" r="28" fill="none" stroke="#06D6A0" stroke-width="2"/><circle cx="30" cy="30" r="22" fill="none" stroke="#0891B2" stroke-width="1.5"/><text x="30" y="28" text-anchor="middle" fill="#0891B2" font-size="7" font-weight="700">VÁLIDO</text><text x="30" y="38" text-anchor="middle" fill="#0891B2" font-size="5">CERTIFICADO</text></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEPOIMENTOS -->
+  <section class="section depoimentos" id="depoimentos">
+    <div class="container">
+      <span class="section__tag">Depoimentos</span>
+      <h2 class="section__title">O que nossos alunos dizem</h2>
+      <div class="testimonials">
+        <div class="testimonial-card">
+          <div class="testimonial-card__stars">⭐⭐⭐⭐⭐</div>
+          <p>"Eu sou dentista e nunca entendi direito como faturar os convênios. Depois desse curso, parei de ter glosas e meu faturamento aumentou muito."</p>
+          <div class="testimonial-card__author">
+            <div class="avatar">DF</div>
+            <div>
+              <strong>Dra. Fernanda Lima</strong>
+              <span>Dentista — Clínica própria</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-card__stars">⭐⭐⭐⭐⭐</div>
+          <p>"Trabalho na recepção de uma clínica e vivia com dúvidas nas GTOs. O módulo de documentação com fotos e raio-x me salvou. Agora sei exatamente o que anexar."</p>
+          <div class="testimonial-card__author">
+            <div class="avatar">PS</div>
+            <div>
+              <strong>Patrícia Souza</strong>
+              <span>Recepcionista — OdontoVida</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-card__stars">⭐⭐⭐⭐⭐</div>
+          <p>"O módulo de recursos de glosa é ouro! Recuperei valores que achava que estavam perdidos. Muito prático e com modelos prontos que uso toda semana."</p>
+          <div class="testimonial-card__author">
+            <div class="avatar">CM</div>
+            <div>
+              <strong>Carlos Mendonça</strong>
+              <span>Adm. de Clínica Odontológica</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-card__stars">⭐⭐⭐⭐⭐</div>
+          <p>"Achei o checklist de documentação sensacional. Imprimi e coloquei na recepção — agora ninguém mais esquece de pedir a foto ou o raio-X antes do procedimento."</p>
+          <div class="testimonial-card__author">
+            <div class="avatar">RA</div>
+            <div>
+              <strong>Renata Alves</strong>
+              <span>ASB — Clínica OdontoSaúde</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-card__stars">⭐⭐⭐⭐⭐</div>
+          <p>"Eu administro 3 clínicas e o faturamento era uma bagunça. Depois do curso, padronizamos tudo. As glosas caíram e o financeiro ficou muito mais previsível."</p>
+          <div class="testimonial-card__author">
+            <div class="avatar">AT</div>
+            <div>
+              <strong>André Torres</strong>
+              <span>Gestor — Rede de Clínicas</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-card__stars">⭐⭐⭐⭐⭐</div>
+          <p>"Estava mudando de área e não sabia nada de convênio odontológico. O curso é tão didático que em poucas semanas já estava faturando com segurança na clínica."</p>
+          <div class="testimonial-card__author">
+            <div class="avatar">JO</div>
+            <div>
+              <strong>Juliana Oliveira</strong>
+              <span>Auxiliar Administrativo</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PREÇO -->
+  <section class="section preco" id="preco">
+    <div class="container">
+      <span class="section__tag">Investimento</span>
+      <h2 class="section__title">Invista na sua carreira e no seu consultório</h2>
+      <div class="urgencia">
+        <span class="urgencia__icon">⏰</span>
+        <p>Preço promocional por tempo limitado! A oferta encerra em:</p>
+        <div class="countdown" id="countdown">
+          <div class="countdown__item"><span id="days">00</span><small>dias</small></div>
+          <div class="countdown__item"><span id="hours">00</span><small>horas</small></div>
+          <div class="countdown__item"><span id="minutes">00</span><small>min</small></div>
+          <div class="countdown__item"><span id="seconds">00</span><small>seg</small></div>
+        </div>
+      </div>
+      <div class="pricing pricing--single">
+        <div class="pricing-card pricing-card--featured pricing-card--center">
+          <div class="pricing-card__badge">Curso Completo</div>
+          <div class="pricing-card__header">
+            <h3>Faturamento Odontológico Básico</h3>
+            <p>Todos os 5 módulos + materiais de apoio</p>
+          </div>
+          <div class="pricing-card__price">
+            <span class="old-price">R$ 497</span>
+            <span class="current-price">R$ <strong>297</strong></span>
+            <span class="price-period">ou 12x de R$ 28,90</span>
+          </div>
+          <ul class="pricing-card__features">
+            <li>✓ <strong>50 aulas</strong> em 5 módulos completos</li>
+            <li>✓ Módulo 1 — Emissão de GTOs (12 aulas)</li>
+            <li>✓ Módulo 2 — Faturamento das GTOs (9 aulas)</li>
+            <li>✓ Módulo 3 — Fotos e Raio-X (9 aulas)</li>
+            <li>✓ Módulo 4 — Recursos de Glosa (10 aulas)</li>
+            <li>✓ Módulo 5 — Emissão de Notas Fiscais (10 aulas)</li>
+            <li>✓ Modelos prontos de recursos de glosa</li>
+            <li>✓ Checklists de documentação por procedimento</li>
+            <li>✓ Planilha de controle de glosas</li>
+            <li>✓ Guia rápido de códigos TUSS</li>
+            <li>✓ Mini aula bônus: Credenciamento</li>
+            <li>✓ Certificado de conclusão</li>
+            <li>✓ Acesso por 12 meses</li>
+            <li>✓ Suporte para dúvidas</li>
+          </ul>
+          <a href="#" class="btn btn--primary btn--full btn--lg">Quero me Inscrever Agora</a>
+          <p class="pricing-card__guarantee">🔒 Garantia de 7 dias — Risco zero para você</p>
+          <div class="payment-badges">
+            <span class="payment-badge">💳 Cartão</span>
+            <span class="payment-badge">📱 Pix</span>
+            <span class="payment-badge">📄 Boleto</span>
+          </div>
+          <p class="payment-secure">🔐 Pagamento 100% seguro · Dados criptografados</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GARANTIA -->
+  <section class="section garantia-section">
+    <div class="container">
+      <div class="garantia__box">
+        <div class="garantia__selo">
+          <svg viewBox="0 0 100 100" width="120" height="120">
+            <circle cx="50" cy="50" r="48" fill="none" stroke="#06D6A0" stroke-width="3"/>
+            <circle cx="50" cy="50" r="40" fill="none" stroke="#0891B2" stroke-width="2"/>
+            <text x="50" y="35" text-anchor="middle" fill="#0891B2" font-size="28" font-weight="800">7</text>
+            <text x="50" y="50" text-anchor="middle" fill="#0891B2" font-size="10" font-weight="700">DIAS DE</text>
+            <text x="50" y="63" text-anchor="middle" fill="#0891B2" font-size="10" font-weight="700">GARANTIA</text>
+            <text x="50" y="78" text-anchor="middle" fill="#06D6A0" font-size="7" font-weight="600">INCONDICIONAL</text>
+          </svg>
+        </div>
+        <div class="garantia__texto">
+          <h2>Garantia incondicional de 7 dias</h2>
+          <p>Após a compra, você tem <strong>7 dias para acessar todo o conteúdo</strong> e avaliar se o curso é para você. Se por qualquer motivo não ficar satisfeito, devolvemos <strong>100% do seu dinheiro</strong> sem perguntas e sem burocracia.</p>
+          <p>Ou seja: <strong>o risco é todo nosso</strong>. Você não tem nada a perder.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section faq" id="faq">
+    <div class="container">
+      <span class="section__tag">Dúvidas Frequentes</span>
+      <h2 class="section__title">Perguntas e Respostas</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-item__question">
+            Preciso ser dentista para fazer o curso?
+            <span class="faq-item__icon">+</span>
+          </button>
+          <div class="faq-item__answer">
+            <p>Não! O curso é para qualquer pessoa que trabalhe ou queira trabalhar com faturamento de convênios odontológicos: dentistas, secretárias, recepcionistas, auxiliares administrativos e gestores de clínicas.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-item__question">
+            Preciso ter experiência com faturamento?
+            <span class="faq-item__icon">+</span>
+          </button>
+          <div class="faq-item__answer">
+            <p>Não. O curso é nível básico e foi feito para quem está começando do zero. Tudo é explicado passo a passo, de forma simples e com exemplos práticos.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-item__question">
+            O curso cobre quais operadoras/convênios?
+            <span class="faq-item__icon">+</span>
+          </button>
+          <div class="faq-item__answer">
+            <p>O curso ensina o processo geral de faturamento odontológico que se aplica à maioria das operadoras (Amil Dental, OdontoPrev, MetLife, SulAmérica, Bradesco Dental, entre outras). O fluxo é padronizado pela ANS.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-item__question">
+            O que vou receber de material de apoio?
+            <span class="faq-item__icon">+</span>
+          </button>
+          <div class="faq-item__answer">
+            <p>Você recebe modelos prontos de recursos de glosa, checklists de documentação (quando enviar foto, quando enviar raio-x), planilha de controle de faturamento mensal e um guia rápido de códigos TUSS odontológicos.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-item__question">
+            Como funcionam as aulas?
+            <span class="faq-item__icon">+</span>
+          </button>
+          <div class="faq-item__answer">
+            <p>As aulas são em formato escrito, com conteúdo detalhado, tabelas, exemplos práticos e dicas da instrutora. Você acessa 24h por dia, lê no seu ritmo, de qualquer dispositivo (celular, tablet ou computador). É como ter um manual completo e prático sempre à mão.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-item__question">
+            Como funciona a garantia de 7 dias?
+            <span class="faq-item__icon">+</span>
+          </button>
+          <div class="faq-item__answer">
+            <p>Após a compra, você tem 7 dias para acessar o conteúdo e avaliar. Se não ficar satisfeito por qualquer motivo, devolvemos 100% do seu dinheiro sem burocracia.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-item__question">
+            Quando é necessário enviar foto ou raio-x?
+            <span class="faq-item__icon">+</span>
+          </button>
+          <div class="faq-item__answer">
+            <p>Depende do procedimento e da operadora. No módulo 3 do curso, detalhamos cada situação: procedimentos que exigem foto inicial, foto final, radiografia periapical, panorâmica, e em quais casos a documentação é obrigatória ou opcional.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEASER CURSO AVANÇADO -->
+  <section class="section teaser">
+    <div class="container">
+      <div class="teaser__box">
+        <span class="teaser__badge">🔜 Em Breve</span>
+        <h2>Curso Avançado: Credenciamento e Faturamento de Especialidades</h2>
+        <p>Depois de dominar o básico, dê o próximo passo. No curso avançado você vai aprender:</p>
+        <div class="teaser__items">
+          <div class="teaser__item">
+            <span>🤝</span>
+            <strong>Credenciamento de dentistas junto às operadoras</strong>
+          </div>
+          <div class="teaser__item">
+            <span>🦷</span>
+            <strong>Faturamento de especialidades odontológicas</strong>
+          </div>
+          <div class="teaser__item">
+            <span>📊</span>
+            <strong>Gestão avançada de convênios e contratos</strong>
+          </div>
+        </div>
+        <p class="teaser__note">Alunos do curso básico terão <strong>desconto exclusivo</strong> no curso avançado.</p>
+        <a href="https://wa.me/5511941480180?text=Oi!%20Quero%20saber%20mais%20sobre%20o%20curso%20avan%C3%A7ado%20de%20credenciamento" target="_blank" class="btn btn--outline btn--lg teaser__btn">Quero ser avisado quando abrir</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="section cta-final">
+    <div class="container">
+      <h2>Pare de perder dinheiro com convênios mal faturados</h2>
+      <p>São 50 aulas, 5 módulos completos, 4 bônus exclusivos e o conhecimento de quem tem mais de 10 anos de experiência prática em faturamento, gestão e credenciamento odontológico.</p>
+      <a href="#preco" class="btn btn--primary btn--lg">Garantir Minha Vaga por R$ 297</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer__content">
+      <div class="footer__brand">
+        <a href="#" class="nav__logo">
+          <svg class="logo-svg" viewBox="0 0 40 40" width="32" height="32"><circle cx="20" cy="20" r="20" fill="#0891B2"/><path d="M20 8c-3.5 0-5 1.6-6.3 3.2s-1.3 3.8-1 6.3c.5 3.8 1.6 7.5 3.2 11.3.6 1.6 1.6 2.5 2.8 2.5h2.5c1.3 0 2.2-1 2.8-2.5 1.6-3.8 2.7-7.5 3.2-11.3.3-2.5.3-4.7-1-6.3S23.5 8 20 8z" fill="#fff"/><path d="M16.5 19l3 3 5.5-5.5" stroke="#06D6A0" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          FaturaOdonto
+        </a>
+        <p>Curso básico de faturamento de convênios odontológicos para dentistas e profissionais administrativos.</p>
+      </div>
+      <div class="footer__links">
+        <h4>Links Rápidos</h4>
+        <a href="#sobre">O Curso</a>
+        <a href="#modulos">Conteúdo</a>
+        <a href="#preco">Investimento</a>
+        <a href="#faq">Dúvidas</a>
+      </div>
+      <div class="footer__links">
+        <h4>Contato</h4>
+        <a href="https://wa.me/5511941480180" target="_blank">WhatsApp: (11) 94148-0180</a>
+        <a href="mailto:faturaodonto@hotmail.com">E-mail: faturaodonto@hotmail.com</a>
+        <a href="https://instagram.com/odontofatura" target="_blank">Instagram: @odontofatura</a>
+      </div>
+    </div>
+    <div class="footer__bottom container">
+      <p>&copy; 2026 FaturaOdonto. Todos os direitos reservados.</p>
+      <div class="footer__legal">
+        <a href="termos.html">Termos de Uso</a>
+        <span>·</span>
+        <a href="privacidade.html">Política de Privacidade</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- CTA FIXO MOBILE -->
+  <div class="mobile-cta" id="mobileCta">
+    <a href="#preco" class="btn btn--primary btn--full">Inscreva-se — R$ 297</a>
+  </div>
+
+  <!-- WHATSAPP FLUTUANTE -->
+  <a href="https://wa.me/5511941480180?text=Oi!%20Quero%20saber%20mais%20sobre%20o%20curso%20de%20faturamento%20odontol%C3%B3gico" 
+     target="_blank" class="whatsapp-float" aria-label="Fale conosco no WhatsApp">
+    <svg viewBox="0 0 32 32" width="32" height="32" fill="#fff">
+      <path d="M16.004 0h-.008C7.174 0 0 7.176 0 16.004c0 3.5 1.132 6.742 3.052 9.376L1.054 31.4l6.256-1.97a15.907 15.907 0 008.694 2.574C24.828 32 32 24.826 32 16.004 32 7.176 24.828 0 16.004 0zm9.316 22.594c-.39 1.1-1.932 2.014-3.152 2.28-.834.18-1.924.324-5.594-1.202-4.692-1.952-7.708-6.71-7.942-7.02-.226-.31-1.846-2.46-1.846-4.692 0-2.232 1.168-3.33 1.584-3.784.39-.424.916-.6 1.214-.6.152 0 .286.008.408.014.424.018.636.044.916.71.35.834 1.2 2.924 1.304 3.136.106.214.214.494.074.786-.132.298-.248.482-.462.74-.214.256-.44.456-.654.736-.196.242-.416.502-.172.926.244.424 1.084 1.786 2.328 2.894 1.598 1.424 2.868 1.882 3.35 2.076.368.15.806.11 1.06-.168.322-.356.72-.946 1.124-1.53.288-.418.652-.47 1.056-.31.41.15 2.594 1.224 3.038 1.446.444.222.74.334.848.516.106.182.106 1.06-.284 2.16z"/>
+    </svg>
+    <span class="whatsapp-float__text">Dúvidas? Fale comigo!</span>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>

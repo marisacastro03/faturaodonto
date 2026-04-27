@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aula 6 — Padrões técnicos aceitos para radiografias | Módulo 3</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="aulas.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="header header--scrolled">
+    <nav class="nav container">
+      <a href="../index.html" class="nav__logo"><span class="logo-icon">🦷</span> FaturaOdonto</a>
+      <a href="../modulo3.html" class="btn btn--outline nav__cta">← Voltar ao Módulo 3</a>
+    </nav>
+  </header>
+
+  <div class="membros">
+
+    <aside class="sidebar">
+      <div class="progress-bar">
+        <div class="progress-bar__label">Módulo 3 — Progresso</div>
+        <div class="progress-bar__track">
+          <div class="progress-bar__fill" style="width: 66%"></div>
+        </div>
+      </div>
+      <div class="sidebar__title">Módulo 03</div>
+      <div class="sidebar__module">Fotos e Raio-X</div>
+      <div class="sidebar__list">
+        <a href="m3-aula1.html" class="sidebar__link"><span>01</span> Quando foto é obrigatória</a>
+        <a href="m3-aula2.html" class="sidebar__link"><span>02</span> Foto inicial vs final</a>
+        <a href="m3-aula3.html" class="sidebar__link"><span>03</span> Padrões de foto aceitos</a>
+        <a href="m3-aula4.html" class="sidebar__link"><span>04</span> Quando raio-X é exigido</a>
+        <a href="m3-aula5.html" class="sidebar__link"><span>05</span> Raio-X inicial vs controle</a>
+        <a href="m3-aula6.html" class="sidebar__link sidebar__link--active"><span>06</span> Padrões técnicos de raio-X</a>
+        <a href="m3-aula7.html" class="sidebar__link"><span>07</span> Organizar e anexar imagens</a>
+        <a href="m3-aula8.html" class="sidebar__link"><span>08</span> Checklist de documentação</a>
+        <a href="m3-aula9.html" class="sidebar__link"><span>09</span> Casos práticos</a>
+      </div>
+    </aside>
+
+    <main class="aula-content">
+      <span class="aula-content__badge">Módulo 3 · Aula 6 de 9</span>
+      <h1>Padrões técnicos aceitos para radiografias</h1>
+      <p class="aula-content__meta">Tempo estimado de leitura: 12 minutos</p>
+
+      <div class="prose">
+
+        <h2>Introdução</h2>
+        <p>Assim como as fotos clínicas, as radiografias também precisam atender a <strong>padrões técnicos específicos</strong> para serem aceitas pelas operadoras. Um raio-X com contraste ruim, cortado, escuro demais ou sem identificação do paciente será rejeitado — e pode significar ter que expor o paciente à radiação novamente.</p>
+        <p>Nesta aula, vamos detalhar todos os requisitos de qualidade, formato digital e identificação que as operadoras esperam das radiografias odontológicas.</p>
+
+        <h2>Requisitos de qualidade da imagem</h2>
+        <p>O auditor precisa conseguir visualizar claramente as estruturas anatômicas no raio-X. Para isso, a imagem deve atender aos seguintes critérios:</p>
+
+        <h3>Contraste e densidade</h3>
+        <ul>
+          <li><strong>A imagem não pode ser escura demais</strong> — estruturas devem ser distinguíveis</li>
+          <li><strong>A imagem não pode ser clara demais</strong> — perda de detalhes em áreas sobreexpostas</li>
+          <li><strong>O esmalte deve ser visível</strong> como uma faixa mais clara que a dentina</li>
+          <li><strong>O osso alveolar deve ser distinguível</strong> do ligamento periodontal</li>
+          <li><strong>Lesões periapicais devem ser visíveis</strong> como áreas radiolúcidas (escuras)</li>
+        </ul>
+
+        <h3>Nitidez</h3>
+        <ul>
+          <li><strong>Bordas nítidas</strong> — as margens dos dentes devem ser bem definidas</li>
+          <li><strong>Sem distorção</strong> — os dentes não devem aparecer alongados ou encurtados</li>
+          <li><strong>Sem sobreposição desnecessária</strong> — os dentes devem estar separados (especialmente em periapicais)</li>
+        </ul>
+
+        <h3>Abrangência</h3>
+        <ul>
+          <li><strong>O dente de interesse deve aparecer por inteiro</strong> — coroa, raiz e região periapical</li>
+          <li><strong>Deve incluir pelo menos 2-3mm de osso além do ápice</strong></li>
+          <li><strong>Não pode estar cortado</strong> — raio-X que corta a raiz ou o ápice é rejeitado</li>
+        </ul>
+
+        <div class="info-box info-box--atencao">
+          <span class="info-box__title">⚠️ Atenção!</span>
+          <p>A causa mais comum de rejeição de periapical é o raio-X que CORTA O ÁPICE do dente. Se o ápice não aparece na imagem, o auditor não consegue avaliar se há lesão periapical ou se a obturação atingiu o comprimento correto. Resultado: glosa.</p>
+        </div>
+
+        <h2>Formato digital das radiografias</h2>
+        <p>Com a transição para a radiografia digital, as operadoras passaram a aceitar (e exigir) imagens em formato digital. Veja os formatos:</p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Formato</th>
+              <th>Aceito?</th>
+              <th>Observação</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>JPG / JPEG</td>
+              <td>✓ Sim</td>
+              <td>Formato mais aceito — funciona em todos os portais</td>
+            </tr>
+            <tr>
+              <td>PNG</td>
+              <td>✓ Sim</td>
+              <td>Aceito pela maioria, mas gera arquivos maiores</td>
+            </tr>
+            <tr>
+              <td>DICOM</td>
+              <td>Variável</td>
+              <td>Formato nativo de imagem médica — nem todos os portais aceitam</td>
+            </tr>
+            <tr>
+              <td>BMP</td>
+              <td>✗ Não</td>
+              <td>Muito pesado, incompatível com portais</td>
+            </tr>
+            <tr>
+              <td>TIFF</td>
+              <td>✗ Não</td>
+              <td>Raramente aceito nos portais das operadoras</td>
+            </tr>
+            <tr>
+              <td>PDF</td>
+              <td>Variável</td>
+              <td>Algumas operadoras aceitam raio-X em PDF, outras não</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="info-box info-box--dica">
+          <span class="info-box__title">✅ Dica da Marisa:</span>
+          <p>O software de radiografia digital (como Digora, Schick, Dexis, Romexis) exporta imagens em vários formatos. Configure para exportar em JPG com qualidade alta (90-95%). Assim você garante compatibilidade com todas as operadoras e mantém a qualidade diagnóstica.</p>
+        </div>
+
+        <h3>Resolução e tamanho</h3>
+        <ul>
+          <li><strong>Resolução mínima:</strong> 600 x 400 pixels para periapical</li>
+          <li><strong>Resolução recomendada:</strong> 1024 x 768 pixels ou superior</li>
+          <li><strong>Panorâmica:</strong> pelo menos 2400 x 1200 pixels</li>
+          <li><strong>Tamanho máximo:</strong> geralmente 2 a 5 MB (mesmo limite das fotos)</li>
+        </ul>
+
+        <h3>Radiografia convencional (filme) digitalizada</h3>
+        <p>Se a clínica ainda utiliza radiografia convencional com filme, a imagem precisa ser digitalizada. Nesse caso:</p>
+        <ul>
+          <li><strong>Use um scanner com negatoscópio</strong> (scanner específico para radiografias) ou um digitalizador de películas</li>
+          <li><strong>NÃO fotografe o raio-X contra a luz</strong> com o celular — a qualidade é inaceitável</li>
+          <li><strong>NÃO fotografe o raio-X no negatoscópio</strong> — reflexos e perda de qualidade</li>
+          <li><strong>Resolução mínima do scanner:</strong> 300 DPI</li>
+        </ul>
+
+        <div class="info-box info-box--atencao">
+          <span class="info-box__title">⚠️ Atenção!</span>
+          <p>Fotografar o raio-X com o celular contra a luz ou no negatoscópio é o erro mais comum das clínicas que ainda usam filme. A imagem fica com reflexo, baixo contraste e perda de detalhes. Muitas operadoras rejeitam automaticamente esse tipo de imagem.</p>
+        </div>
+
+        <h2>Identificação do paciente no raio-X</h2>
+        <p>Toda radiografia deve conter a <strong>identificação do paciente</strong>. As operadoras exigem que seja possível vincular o raio-X ao beneficiário da GTO.</p>
+
+        <h3>Radiografia digital</h3>
+        <p>Na radiografia digital, a identificação geralmente é feita pelo software:</p>
+        <ul>
+          <li>Nome completo do paciente</li>
+          <li>Data da tomada da radiografia</li>
+          <li>Identificação do dente/região</li>
+          <li>Nome da clínica ou profissional</li>
+        </ul>
+        <p>O software de radiografia digital normalmente insere essas informações automaticamente nos metadados e/ou na imagem.</p>
+
+        <h3>Radiografia convencional (filme)</h3>
+        <p>No filme convencional, a identificação era feita com:</p>
+        <ul>
+          <li>Etiqueta adesiva com nome e data no envelope do filme</li>
+          <li>Letras de chumbo posicionadas na boca do paciente durante a tomada</li>
+          <li>Anotação manual no envelope de armazenamento</li>
+        </ul>
+
+        <div class="info-box info-box--dica">
+          <span class="info-box__title">✅ Dica da Marisa:</span>
+          <p>Se a clínica usa radiografia digital, verifique se o software está configurado para inserir automaticamente nome do paciente e data na exportação da imagem. Isso evita que o raio-X seja rejeitado por "ausência de identificação". Basta configurar uma vez e funciona para sempre.</p>
+        </div>
+
+        <h2>Marcação de lateralidade</h2>
+        <p>Para periapicais e panorâmicas, a marcação de <strong>lado direito (D) e lado esquerdo (E)</strong> é importante:</p>
+        <ul>
+          <li>Na panorâmica, a marcação D/E é feita automaticamente pelo equipamento</li>
+          <li>Na periapical digital, o software geralmente permite indicar o dente/região</li>
+          <li>Na periapical convencional, usava-se letras de chumbo ou a orientação do ponto do filme</li>
+        </ul>
+
+        <h2>Motivos mais comuns de rejeição de raio-X</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Motivo da rejeição</th>
+              <th>Frequência</th>
+              <th>Como evitar</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Ápice cortado (não aparece na imagem)</td>
+              <td>Muito comum</td>
+              <td>Posicionar o filme/sensor corretamente</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Imagem escura demais (subexposição)</td>
+              <td>Comum</td>
+              <td>Ajustar tempo de exposição</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Imagem clara demais (sobreexposição)</td>
+              <td>Comum</td>
+              <td>Ajustar tempo de exposição</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>Sobreposição de dentes</td>
+              <td>Comum</td>
+              <td>Corrigir angulação horizontal</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>Foto do raio-X no negatoscópio</td>
+              <td>Comum</td>
+              <td>Usar scanner ou radiografia digital</td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td>Sem identificação do paciente</td>
+              <td>Moderado</td>
+              <td>Configurar software para inserir nome/data</td>
+            </tr>
+            <tr>
+              <td>7</td>
+              <td>Raio-X de outro paciente/dente</td>
+              <td>Moderado</td>
+              <td>Conferir antes de anexar à GTO</td>
+            </tr>
+            <tr>
+              <td>8</td>
+              <td>Distorção (alongamento/encurtamento)</td>
+              <td>Moderado</td>
+              <td>Técnica correta de angulação vertical</td>
+            </tr>
+            <tr>
+              <td>9</td>
+              <td>Imagem com artefatos (dedos, avental, etc.)</td>
+              <td>Raro</td>
+              <td>Atenção durante a tomada</td>
+            </tr>
+            <tr>
+              <td>10</td>
+              <td>Formato de arquivo incompatível</td>
+              <td>Raro</td>
+              <td>Exportar sempre em JPG</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Padrões específicos por tipo de raio-X</h2>
+
+        <h3>Periapical</h3>
+        <ul>
+          <li>O dente inteiro deve aparecer, da coroa ao ápice</li>
+          <li>Pelo menos 2-3mm de osso periapical visível</li>
+          <li>Sem sobreposição entre dentes adjacentes (quando possível)</li>
+          <li>Angulação correta (sem alongamento ou encurtamento)</li>
+        </ul>
+
+        <h3>Panorâmica</h3>
+        <ul>
+          <li>Todos os dentes visíveis, de um lado ao outro</li>
+          <li>Sem fantasma (imagem duplicada) por mau posicionamento</li>
+          <li>Côndilos e seios maxilares visíveis</li>
+          <li>Paciente bem posicionado (sem inclinação de cabeça)</li>
+        </ul>
+
+        <h3>Bite-wing</h3>
+        <ul>
+          <li>Coroas dos dentes superiores e inferiores visíveis simultaneamente</li>
+          <li>Cristas ósseas alveolares visíveis</li>
+          <li>Espaços interproximais abertos (sem sobreposição)</li>
+        </ul>
+
+        <div class="info-box info-box--dica">
+          <span class="info-box__title">✅ Dica da Marisa:</span>
+          <p>Peça ao dentista que verifique a qualidade do raio-X ANTES de dispensar o paciente. Se o raio-X ficou ruim (cortou ápice, ficou escuro, sobrepôs dentes), é melhor repetir na hora do que descobrir na auditoria. O paciente ainda está na cadeira — aproveite!</p>
+        </div>
+
+        <h2>Raio-X digital vs. convencional: comparativo para faturamento</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Aspecto</th>
+              <th>Digital</th>
+              <th>Convencional (filme)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Qualidade de imagem</td>
+              <td>Excelente e consistente</td>
+              <td>Depende do processamento</td>
+            </tr>
+            <tr>
+              <td>Facilidade de envio</td>
+              <td>Exporta direto do software</td>
+              <td>Precisa digitalizar (scanner)</td>
+            </tr>
+            <tr>
+              <td>Identificação do paciente</td>
+              <td>Automática pelo software</td>
+              <td>Manual (etiqueta/chumbo)</td>
+            </tr>
+            <tr>
+              <td>Armazenamento</td>
+              <td>Digital, fácil backup</td>
+              <td>Físico, risco de perda</td>
+            </tr>
+            <tr>
+              <td>Aceitação pelas operadoras</td>
+              <td>Preferido</td>
+              <td>Aceito se bem digitalizado</td>
+            </tr>
+            <tr>
+              <td>Dose de radiação</td>
+              <td>Menor (até 80% menos)</td>
+              <td>Maior</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Resumo da Aula</h2>
+        <ul>
+          <li>O raio-X deve ter contraste, nitidez e abrangência adequados para ser aceito</li>
+          <li>Ápice cortado é a causa #1 de rejeição de periapical</li>
+          <li>Exporte radiografias em JPG com qualidade alta (90-95%)</li>
+          <li>Nunca fotografe o raio-X com celular no negatoscópio — use scanner ou digital</li>
+          <li>Toda radiografia deve ter identificação do paciente e data</li>
+          <li>Verifique a qualidade do raio-X antes de dispensar o paciente</li>
+          <li>Radiografia digital é preferida pelas operadoras e mais prática para faturamento</li>
+        </ul>
+
+      </div>
+
+      <div class="aula-nav">
+        <a href="m3-aula5.html" class="btn btn--outline">← Aula Anterior</a>
+        <a href="m3-aula7.html" class="btn btn--primary">Próxima Aula →</a>
+      </div>
+
+    </main>
+  </div>
+
+</body>
+</html>

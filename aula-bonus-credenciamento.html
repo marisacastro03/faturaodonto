@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini Aula Bônus — Credenciamento de Dentistas | FaturaOdonto</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="aulas/aulas.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    .sidebar__section-title {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: rgba(255,255,255,0.3);
+      padding: 16px 20px 6px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      margin-top: 8px;
+    }
+    .sidebar__section-title:first-child { border-top: none; margin-top: 0; }
+    .checklist-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 12px 16px;
+      background: #F8FAFC;
+      border-radius: 8px;
+      margin-bottom: 8px;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .checklist-item__icon {
+      flex-shrink: 0;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      font-weight: 700;
+      margin-top: 2px;
+    }
+    .step-card {
+      background: white;
+      border: 1px solid #E2E8F0;
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 16px;
+      position: relative;
+      padding-left: 70px;
+    }
+    .step-card__number {
+      position: absolute;
+      left: 20px;
+      top: 24px;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #0891B2, #06D6A0);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1rem;
+    }
+    .step-card h4 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+      color: var(--dark, #0F172A);
+    }
+    .step-card p { font-size: 0.95rem; margin-bottom: 0; color: #4B5563; }
+    .doc-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 12px;
+      margin: 20px 0;
+    }
+    .doc-card {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 8px;
+      padding: 16px;
+    }
+    .doc-card__title {
+      font-weight: 700;
+      font-size: 0.9rem;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .doc-card p { font-size: 0.85rem; color: #64748B; margin-bottom: 0; }
+    .timeline {
+      border-left: 3px solid #E2E8F0;
+      margin-left: 16px;
+      padding-left: 28px;
+    }
+    .timeline__item {
+      position: relative;
+      margin-bottom: 24px;
+    }
+    .timeline__item::before {
+      content: '';
+      position: absolute;
+      left: -36px;
+      top: 4px;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--primary, #0891B2);
+      border: 3px solid white;
+      box-shadow: 0 0 0 2px #E2E8F0;
+    }
+    .timeline__item h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .timeline__item p { font-size: 0.9rem; color: #64748B; margin-bottom: 0; }
+    .compare-table { margin: 24px 0; }
+    .compare-table td:first-child { font-weight: 600; }
+  </style>
+</head>
+<body>
+
+  <header class="header header--scrolled">
+    <nav class="nav container">
+      <a href="index.html" class="nav__logo"><span class="logo-icon">🦷</span> FaturaOdonto</a>
+      <a href="index.html" class="btn btn--outline nav__cta">← Voltar ao Curso</a>
+    </nav>
+  </header>
+
+  <div class="membros">
+
+    <aside class="sidebar">
+      <div class="progress-bar">
+        <div class="progress-bar__label">Aula Bônus — Credenciamento</div>
+        <div class="progress-bar__track">
+          <div class="progress-bar__fill" style="width: 100%"></div>
+        </div>
+      </div>
+      <div class="sidebar__title">Bônus</div>
+      <div class="sidebar__module">Credenciamento de Dentistas</div>
+      <div class="sidebar__list">
+        <div class="sidebar__section-title">Conteúdo da Aula</div>
+        <a href="#intro" class="sidebar__link sidebar__link--active"><span>01</span> Introdução</a>
+        <a href="#o-que-e" class="sidebar__link"><span>02</span> O que é o credenciamento</a>
+        <a href="#por-que" class="sidebar__link"><span>03</span> Por que se credenciar</a>
+        <a href="#requisitos" class="sidebar__link"><span>04</span> Requisitos e documentação</a>
+        <a href="#passo-a-passo" class="sidebar__link"><span>05</span> Passo a passo</a>
+        <a href="#operadoras" class="sidebar__link"><span>06</span> Principais operadoras</a>
+        <a href="#contrato" class="sidebar__link"><span>07</span> Contrato e negociação</a>
+        <a href="#prazo" class="sidebar__link"><span>08</span> Prazos e aprovação</a>
+        <a href="#obrigacoes" class="sidebar__link"><span>09</span> Obrigações do credenciado</a>
+        <a href="#erros" class="sidebar__link"><span>10</span> Erros comuns</a>
+        <a href="#dicas" class="sidebar__link"><span>11</span> Dicas da Marisa</a>
+        <div class="sidebar__section-title">Materiais Bônus</div>
+        <a href="planilha-glosas.html" class="sidebar__link"><span>📊</span> Planilha de Glosas</a>
+        <a href="checklist-documentacao.html" class="sidebar__link"><span>📋</span> Checklist de Documentação</a>
+        <a href="guia-tuss.html" class="sidebar__link"><span>📖</span> Guia de Códigos TUSS</a>
+      </div>
+    </aside>
+
+    <main class="aula-content">
+      <span class="aula-content__badge">Aula Bônus · Conteúdo Exclusivo</span>
+      <h1>Credenciamento de Dentistas junto a Operadoras de Convênio</h1>
+      <p class="aula-content__meta">Tempo estimado de leitura: 25 minutos</p>
+
+      <div class="prose">
+
+        <!-- 1. INTRODUÇÃO -->
+        <h2 id="intro">Introdução</h2>
+        <p>Você já domina a emissão de GTOs, sabe processar guias, controlar glosas e emitir notas fiscais. Mas tudo isso só acontece <strong>depois</strong> que a clínica ou o dentista estiver <strong>credenciado</strong> a uma operadora de convênio odontológico.</p>
+        <p>O credenciamento é a porta de entrada para o atendimento por convênios. Sem ele, não há como emitir guias, faturar procedimentos ou receber pagamentos das operadoras. E aqui está uma verdade que pouca gente fala: <strong>o credenciamento é tão estratégico quanto saber faturar</strong>.</p>
+        <p>Nesta mini aula bônus, vamos cobrir todo o processo — do zero à aprovação — para que você consiga orientar dentistas e clínicas que desejam ingressar no mundo dos convênios odontológicos.</p>
+
+        <div class="info-box info-box--importante">
+          <span class="info-box__title">📌 Para quem é esta aula?</span>
+          <p>Para secretárias e auxiliares que precisam entender o processo para ajudar o dentista; para dentistas que querem se credenciar pela primeira vez; e para profissionais administrativos que gerenciam os credenciamentos da clínica.</p>
+        </div>
+
+        <!-- 2. O QUE É -->
+        <h2 id="o-que-e">O que é o Credenciamento?</h2>
+        <p>O <strong>credenciamento</strong> é o processo pelo qual um dentista (pessoa física ou jurídica) se cadastra junto a uma <strong>operadora de plano odontológico</strong> para poder atender os beneficiários daquele convênio.</p>
+        <p>Na prática, ao se credenciar, o dentista passa a fazer parte da <strong>rede credenciada</strong> da operadora. Isso significa que:</p>
+        <ul>
+          <li>Os pacientes daquele plano podem ser atendidos na sua clínica</li>
+          <li>Você pode emitir GTOs e faturar procedimentos</li>
+          <li>A operadora se compromete a remunerar os procedimentos realizados conforme a tabela acordada</li>
+          <li>O dentista aparece no guia de profissionais para os beneficiários</li>
+        </ul>
+
+        <div class="info-box info-box--dica">
+          <span class="info-box__title">💡 Analogia simples:</span>
+          <p>Pense no credenciamento como "abrir uma conta" com a operadora. Assim como você precisa abrir conta no banco antes de receber transferências, você precisa estar credenciado antes de faturar convênios.</p>
+        </div>
+
+        <h3>Credenciamento vs. Reembolso</h3>
+        <p>É importante não confundir:</p>
+        <table>
+          <thead><tr><th>Credenciamento</th><th>Reembolso</th></tr></thead>
+          <tbody>
+            <tr><td>Dentista faz parte da rede da operadora</td><td>Dentista não tem vínculo com a operadora</td></tr>
+            <tr><td>Paciente não paga (ou paga coparticipação)</td><td>Paciente paga e pede reembolso ao plano</td></tr>
+            <tr><td>Operadora paga diretamente ao dentista</td><td>Operadora reembolsa o paciente</td></tr>
+            <tr><td>Usa a tabela da operadora</td><td>Dentista usa sua própria tabela</td></tr>
+            <tr><td>Exige contrato e padrão TISS</td><td>Não exige credenciamento</td></tr>
+          </tbody>
+        </table>
+
+        <!-- 3. POR QUE SE CREDENCIAR -->
+        <h2 id="por-que">Por que se credenciar a convênios?</h2>
+
+        <h3>Vantagens</h3>
+        <ul>
+          <li><strong>Volume de pacientes:</strong> convênios trazem fluxo constante de novos pacientes, especialmente para clínicas em início de operação</li>
+          <li><strong>Previsibilidade:</strong> receita recorrente com pagamento mensal (mesmo que menor que particular)</li>
+          <li><strong>Visibilidade:</strong> a clínica aparece no guia de rede credenciada, aumentando a exposição</li>
+          <li><strong>Fidelização:</strong> pacientes de convênio que têm boa experiência tendem a fazer tratamentos particulares na mesma clínica</li>
+          <li><strong>Ocupação de agenda:</strong> preenche horários ociosos com atendimentos de convênio</li>
+        </ul>
+
+        <h3>Desvantagens e Pontos de Atenção</h3>
+        <ul>
+          <li><strong>Valores mais baixos:</strong> a tabela de convênios paga significativamente menos que o particular</li>
+          <li><strong>Burocracia:</strong> exige faturamento correto, envio de guias, documentação e prazos</li>
+          <li><strong>Glosas:</strong> se errar no processo, pode não receber (daí a importância deste curso!)</li>
+          <li><strong>Dependência:</strong> clínicas que atendem 100% convênio ficam vulneráveis a mudanças de tabela</li>
+        </ul>
+
+        <div class="info-box info-box--atencao">
+          <span class="info-box__title">⚠️ Regra de ouro da Marisa:</span>
+          <p>Convênio é <strong>porta de entrada</strong>, não destino final. Use os convênios para trazer pacientes, criar relacionamento e, com o tempo, oferecer tratamentos particulares mais completos. O ideal é que convênios representem no máximo 50-60% do faturamento da clínica.</p>
+        </div>
+
+        <!-- 4. REQUISITOS E DOCUMENTAÇÃO -->
+        <h2 id="requisitos">Requisitos e Documentação Necessária</h2>
+        <p>Os requisitos variam por operadora, mas existe uma base comum que praticamente todas exigem:</p>
+
+        <h3>Requisitos do Profissional</h3>
+        <ul>
+          <li><strong>CRO ativo e regular</strong> — sem pendências no Conselho Regional de Odontologia</li>
+          <li><strong>Especialidade registrada</strong> (quando for o caso) — endodontistas, ortodontistas, etc. precisam ter a especialidade registrada no CRO</li>
+          <li><strong>Responsabilidade Técnica (RT)</strong> — para clínicas, é obrigatório ter um dentista como Responsável Técnico</li>
+        </ul>
+
+        <h3>Documentação — Pessoa Física (autônomo)</h3>
+        <div class="doc-grid">
+          <div class="doc-card">
+            <div class="doc-card__title">📄 Documentos Pessoais</div>
+            <p>RG/CNH, CPF, comprovante de residência atualizado (últimos 90 dias)</p>
+          </div>
+          <div class="doc-card">
+            <div class="doc-card__title">🦷 Documentos Profissionais</div>
+            <p>Carteira do CRO, diploma de graduação, certificado de especialidade (se houver)</p>
+          </div>
+          <div class="doc-card">
+            <div class="doc-card__title">🏢 Alvará e Licenças</div>
+            <p>Alvará de funcionamento, Licença sanitária (Vigilância Sanitária), CNES atualizado</p>
+          </div>
+          <div class="doc-card">
+            <div class="doc-card__title">💰 Dados Bancários</div>
+            <p>Conta bancária em nome do profissional para receber os pagamentos</p>
+          </div>
+        </div>
+
+        <h3>Documentação — Pessoa Jurídica (clínica/CNPJ)</h3>
+        <div class="doc-grid">
+          <div class="doc-card">
+            <div class="doc-card__title">📋 Documentação Societária</div>
+            <p>Contrato Social ou Requerimento de Empresário, CNPJ, Inscrição Municipal</p>
+          </div>
+          <div class="doc-card">
+            <div class="doc-card__title">🦷 CRO Pessoa Jurídica</div>
+            <p>Registro da clínica no CRO (CRO-PJ), registro do Responsável Técnico</p>
+          </div>
+          <div class="doc-card">
+            <div class="doc-card__title">🏥 Licenças e Registros</div>
+            <p>Alvará, Licença Sanitária, CNES, Certificado de Regularidade (FGTS se tiver CLT)</p>
+          </div>
+          <div class="doc-card">
+            <div class="doc-card__title">📸 Fotos do Consultório</div>
+            <p>Fotos da fachada, recepção, consultório(s), equipo, autoclave — exigido por muitas operadoras</p>
+          </div>
+        </div>
+
+        <div class="info-box info-box--dica">
+          <span class="info-box__title">🎯 Dica da Marisa:</span>
+          <p>Antes de iniciar o credenciamento, reúna <strong>todos</strong> os documentos e digitalize em PDF com boa qualidade. Tenha uma pasta organizada no computador chamada "Credenciamento" com subpastas para cada documento. Isso vai acelerar muito o processo, pois cada operadora pedirá praticamente a mesma documentação.</p>
+        </div>
+
+        <h3>CNES — O que é e por que é obrigatório?</h3>
+        <p>O <strong>CNES (Cadastro Nacional de Estabelecimentos de Saúde)</strong> é o registro do consultório/clínica junto ao Ministério da Saúde. Praticamente todas as operadoras exigem o CNES atualizado para credenciar.</p>
+        <p>Para cadastrar ou atualizar, acesse: <strong>cnes.datasus.gov.br</strong>. O cadastro é gratuito e feito pela Secretaria Municipal de Saúde.</p>
+
+        <!-- 5. PASSO A PASSO -->
+        <h2 id="passo-a-passo">Passo a Passo do Credenciamento</h2>
+
+        <div class="step-card">
+          <div class="step-card__number">1</div>
+          <h4>Escolha as operadoras</h4>
+          <p>Pesquise quais operadoras são mais fortes na sua região. Converse com colegas dentistas, verifique quais convênios os pacientes da região mais procuram. Não é preciso se credenciar a todas — comece com 2 a 4 operadoras estratégicas.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-card__number">2</div>
+          <h4>Solicite o credenciamento</h4>
+          <p>A maioria das operadoras tem formulário online no site ("Seja um credenciado" ou "Credenciar minha clínica"). Algumas exigem contato por telefone ou e-mail. Preencha o formulário com os dados do profissional e da clínica.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-card__number">3</div>
+          <h4>Envie a documentação</h4>
+          <p>Após o formulário, a operadora solicita toda a documentação listada acima. Envie em PDF com boa resolução. Documentos ilegíveis atrasam o processo.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-card__number">4</div>
+          <h4>Vistoria do consultório (se aplicável)</h4>
+          <p>Algumas operadoras enviam um auditor para vistoriar a estrutura física: equipo, autoclave, condições de biossegurança, acessibilidade. Nem todas fazem vistoria — depende da operadora e da região.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-card__number">5</div>
+          <h4>Análise e aprovação</h4>
+          <p>A operadora analisa documentação, estrutura e disponibilidade de rede na região. Se já houver muitos credenciados na área, pode haver fila de espera ou recusa. O prazo varia de 15 a 90 dias.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-card__number">6</div>
+          <h4>Assinatura do contrato</h4>
+          <p>Aprovado o credenciamento, você recebe o contrato com a tabela de valores, regras de faturamento, prazos e obrigações. Leia com atenção antes de assinar. Negocie se possível.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-card__number">7</div>
+          <h4>Cadastro no sistema / portal</h4>
+          <p>Após o contrato, a operadora cria seu login no portal (ex: Portal Amil, Portal Bradesco Dental). É por ali que você emitirá GTOs, enviará guias e acompanhará pagamentos.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-card__number">8</div>
+          <h4>Início dos atendimentos</h4>
+          <p>Com o login ativo, você já pode receber pacientes do convênio e emitir GTOs. Comece com calma, siga o processo que aprendeu neste curso e preste atenção à documentação de cada procedimento.</p>
+        </div>
+
+        <!-- 6. PRINCIPAIS OPERADORAS -->
+        <h2 id="operadoras">Principais Operadoras Odontológicas do Brasil</h2>
+        <p>Conheça as maiores operadoras de planos odontológicos do mercado brasileiro:</p>
+
+        <table class="compare-table">
+          <thead>
+            <tr><th>Operadora</th><th>Tipo</th><th>Abrangência</th><th>Observações</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Amil Dental</td><td>Seguradora</td><td>Nacional</td><td>Grande volume; portal bem estruturado</td></tr>
+            <tr><td>Bradesco Dental</td><td>Seguradora</td><td>Nacional</td><td>Bons valores de tabela; muitos planos empresariais</td></tr>
+            <tr><td>SulAmérica Odonto</td><td>Seguradora</td><td>Nacional</td><td>Cresce no segmento corporativo</td></tr>
+            <tr><td>MetLife Dental</td><td>Seguradora</td><td>Nacional</td><td>Forte em planos empresariais; boa tabela</td></tr>
+            <tr><td>Uniodonto</td><td>Cooperativa</td><td>Regional/Nacional</td><td>Cooperativa de dentistas; varia por região</td></tr>
+            <tr><td>OdontoPrev</td><td>Operadora</td><td>Nacional</td><td>Maior operadora exclusivamente odonto do Brasil</td></tr>
+            <tr><td>Interodonto</td><td>Operadora</td><td>Nacional</td><td>Grupo GNDI/Hapvida; grande volume no Norte/Nordeste</td></tr>
+            <tr><td>Porto Seguro Odonto</td><td>Seguradora</td><td>Nacional</td><td>Cresce junto com outros produtos Porto</td></tr>
+            <tr><td>Caixa Seguradora Odonto</td><td>Seguradora</td><td>Nacional</td><td>Beneficiários vinculados à Caixa Econômica</td></tr>
+            <tr><td>Dental Uni</td><td>Operadora</td><td>Regional</td><td>Atuação regional; avaliar presença local</td></tr>
+          </tbody>
+        </table>
+
+        <div class="info-box info-box--dica">
+          <span class="info-box__title">🎯 Dica da Marisa:</span>
+          <p>Não se credenciar a "todas" as operadoras de uma vez. Comece pelas 2-3 que têm mais demanda na sua região. Pergunte aos pacientes que ligam: "Qual seu convênio?" — em 30 dias você terá uma boa noção de quais operadoras priorizar.</p>
+        </div>
+
+        <!-- 7. CONTRATO E NEGOCIAÇÃO -->
+        <h2 id="contrato">O Contrato de Credenciamento</h2>
+        <p>O contrato é o documento que formaliza a relação entre o dentista/clínica e a operadora. Preste atenção nestes pontos:</p>
+
+        <h3>O que analisar no contrato</h3>
+        <ul>
+          <li><strong>Tabela de valores:</strong> quanto a operadora paga por cada procedimento (código TUSS). Compare com outras operadoras</li>
+          <li><strong>Prazo de pagamento:</strong> em quantos dias a operadora paga após o faturamento (geralmente 30 a 60 dias)</li>
+          <li><strong>Glosas e prazos de recurso:</strong> qual o prazo para contestar glosas</li>
+          <li><strong>Cláusula de exclusividade:</strong> verificar se há impedimento de atender outras operadoras (raro, mas existe)</li>
+          <li><strong>Cláusula de rescisão:</strong> com quantos dias de antecedência você pode encerrar o contrato (geralmente 30 a 60 dias)</li>
+          <li><strong>Cobertura de procedimentos:</strong> quais procedimentos estão cobertos e quais não</li>
+          <li><strong>Reajuste de tabela:</strong> se há previsão de reajuste anual dos valores</li>
+        </ul>
+
+        <div class="info-box info-box--atencao">
+          <span class="info-box__title">⚠️ Atenção:</span>
+          <p>Muitos dentistas assinam o contrato sem ler. Isso é um erro grave. Peça para levar o contrato para casa, leia com calma, e se possível, peça orientação de um advogado ou contador. Depois de assinado, as cláusulas valem.</p>
+        </div>
+
+        <h3>É possível negociar valores?</h3>
+        <p>Depende. As grandes seguradoras (Amil, Bradesco) geralmente têm tabela fixa e pouca margem de negociação para credenciados individuais. Já cooperativas como a Uniodonto e operadoras regionais podem ter mais flexibilidade.</p>
+        <p>Se você tiver uma clínica com boa estrutura, múltiplos consultórios e atender grande volume, tem mais poder de negociação. <strong>Volume é o argumento mais forte.</strong></p>
+
+        <!-- 8. PRAZOS -->
+        <h2 id="prazo">Prazos Típicos do Credenciamento</h2>
+
+        <div class="timeline">
+          <div class="timeline__item">
+            <h4>Dia 1 — Envio do formulário</h4>
+            <p>Preencher formulário online ou enviar solicitação por e-mail/telefone</p>
+          </div>
+          <div class="timeline__item">
+            <h4>Dias 3-7 — Solicitação de documentos</h4>
+            <p>Operadora solicita documentação completa em PDF</p>
+          </div>
+          <div class="timeline__item">
+            <h4>Dias 7-15 — Envio e protocolo</h4>
+            <p>Você envia tudo; operadora protocola e inicia análise</p>
+          </div>
+          <div class="timeline__item">
+            <h4>Dias 15-30 — Análise documental</h4>
+            <p>Operadora verifica regularidade do CRO, CNES, alvará, etc.</p>
+          </div>
+          <div class="timeline__item">
+            <h4>Dias 20-45 — Vistoria (se houver)</h4>
+            <p>Auditor visita o consultório para verificar estrutura</p>
+          </div>
+          <div class="timeline__item">
+            <h4>Dias 30-60 — Aprovação ou pendência</h4>
+            <p>Operadora comunica aprovação ou solicita ajustes/documentos adicionais</p>
+          </div>
+          <div class="timeline__item">
+            <h4>Dias 45-90 — Contrato e ativação</h4>
+            <p>Assinatura do contrato, cadastro no portal e liberação para atendimento</p>
+          </div>
+        </div>
+
+        <div class="info-box info-box--importante">
+          <span class="info-box__title">📌 Na prática:</span>
+          <p>O processo completo leva em média <strong>30 a 60 dias</strong>. Operadoras maiores tendem a ser mais demoradas. Se a documentação estiver toda correta e a região precisar de dentistas, pode ser mais rápido. Se houver pendências ou excesso de rede na região, pode demorar até 90 dias ou mais.</p>
+        </div>
+
+        <!-- 9. OBRIGAÇÕES -->
+        <h2 id="obrigacoes">Obrigações do Dentista Credenciado</h2>
+        <p>Ao assinar o contrato, o dentista assume uma série de obrigações:</p>
+
+        <h3>Obrigações Administrativas</h3>
+        <ul>
+          <li><strong>Emissão correta de GTOs</strong> — preencher todos os campos, usar códigos TUSS corretos</li>
+          <li><strong>Envio de guias no prazo</strong> — respeitar o prazo de faturamento de cada operadora (geralmente mensal)</li>
+          <li><strong>Documentação fotográfica e radiográfica</strong> — anexar fotos e Rx conforme exigido por cada procedimento</li>
+          <li><strong>Manter dados atualizados</strong> — informar mudanças de endereço, telefone, horário de funcionamento</li>
+          <li><strong>Manter CNES e CRO regulares</strong> — qualquer irregularidade pode causar suspensão</li>
+        </ul>
+
+        <h3>Obrigações com o Paciente</h3>
+        <ul>
+          <li><strong>Não cobrar do paciente</strong> procedimentos cobertos pelo plano (exceto coparticipação prevista)</li>
+          <li><strong>Atender com a mesma qualidade</strong> que um paciente particular</li>
+          <li><strong>Informar sobre coberturas</strong> — esclarecer o que está e o que não está coberto</li>
+          <li><strong>Não condicionar</strong> o atendimento à realização de procedimentos particulares</li>
+        </ul>
+
+        <div class="info-box info-box--atencao">
+          <span class="info-box__title">⚠️ Cuidado — Isso é proibido:</span>
+          <p>Cobrar do paciente valores "por fora" para procedimentos cobertos pelo plano é <strong>infração ética e legal</strong>. Se o procedimento está coberto, o paciente só paga a coparticipação prevista em contrato (ou nada). Se não estiver coberto, o paciente deve ser informado previamente e assinar um termo.</p>
+        </div>
+
+        <!-- 10. ERROS COMUNS -->
+        <h2 id="erros">10 Erros Comuns no Credenciamento</h2>
+
+        <ol>
+          <li><strong>Enviar documentos vencidos</strong> — Alvará, CRO e comprovante de residência devem estar válidos</li>
+          <li><strong>CNES desatualizado</strong> — Muitas clínicas esquecem de atualizar o CNES quando mudam de endereço ou adicionam profissionais</li>
+          <li><strong>Fotos ruins do consultório</strong> — Fotos escuras, desfocadas ou de ambientes desorganizados causam má impressão na vistoria</li>
+          <li><strong>Não ler o contrato</strong> — Assinar sem entender cláusulas de rescisão, exclusividade e tabela de valores</li>
+          <li><strong>Credenciar-se em operadoras demais</strong> — Melhor atender bem 3-4 convênios do que gerenciar mal 10</li>
+          <li><strong>Não verificar a tabela de valores antes</strong> — Aceitar credenciamento sem comparar se os valores são viáveis</li>
+          <li><strong>Especialidade não registrada no CRO</strong> — Ortodontistas e endodontistas precisam ter a especialidade averbada para receber por procedimentos de especialidade</li>
+          <li><strong>Conta bancária em nome diferente</strong> — A conta para receber deve ser do mesmo CPF/CNPJ do credenciado</li>
+          <li><strong>Demora para responder pendências</strong> — Quando a operadora pede documentação complementar, responda rápido. Demora pode cancelar o processo</li>
+          <li><strong>Não treinar a equipe</strong> — Credenciar e não capacitar secretárias/ASBs para o faturamento gera glosas e frustração</li>
+        </ol>
+
+        <!-- 11. DICAS DA MARISA -->
+        <h2 id="dicas">Dicas da Marisa para um Credenciamento de Sucesso</h2>
+
+        <div class="info-box info-box--dica">
+          <span class="info-box__title">🎯 Dica 1 — Monte uma "Pasta de Credenciamento"</span>
+          <p>Crie uma pasta digital organizada com todos os documentos atualizados em PDF. Quando for se credenciar a uma nova operadora, é só enviar — sem correr atrás de documentos na hora.</p>
+        </div>
+
+        <div class="info-box info-box--dica">
+          <span class="info-box__title">🎯 Dica 2 — Pesquise a demanda antes de credenciar</span>
+          <p>Antes de se credenciar, pergunte a si mesmo: "Quantos pacientes com este convênio ligam para minha clínica por mês?" Se ninguém procura aquele convênio na sua região, talvez não valha a pena.</p>
+        </div>
+
+        <div class="info-box info-box--dica">
+          <span class="info-box__title">🎯 Dica 3 — Separe horários para convênio e particular</span>
+          <p>Um erro clássico é encher a agenda inteira de convênio e não ter horário para particular. Defina blocos: manhã convênio, tarde particular (ou vice-versa). Assim você garante volume <strong>e</strong> rentabilidade.</p>
+        </div>
+
+        <div class="info-box info-box--dica">
+          <span class="info-box__title">🎯 Dica 4 — Conheça a tabela ANTES de assinar</span>
+          <p>Peça a tabela de valores antes de fechar o contrato. Faça a conta: se você fizer X procedimentos por dia no valor Y, cobre seus custos? Se não cobrir nem o custo do material, melhor recusar.</p>
+        </div>
+
+        <div class="info-box info-box--dica">
+          <span class="info-box__title">🎯 Dica 5 — Invista em quem fatura</span>
+          <p>Ter um profissional bem treinado no faturamento (ou ser você esse profissional!) faz toda a diferença. Uma clínica que fatura corretamente, sem glosas, recebe 100% do que trabalhou. Uma que fatura errado pode perder 20-30% em glosas.</p>
+        </div>
+
+        <div class="info-box info-box--dica">
+          <span class="info-box__title">🎯 Dica 6 — Mantenha um controle de credenciamentos</span>
+          <p>Crie uma planilha com: nome da operadora, data do credenciamento, status, nº do contrato, login do portal, telefone/e-mail de contato, e data de vencimento dos documentos. Isso evita surpresas.</p>
+        </div>
+
+        <h2>Checklist Final — Estou Pronto para Credenciar?</h2>
+
+        <div class="checklist-item">
+          <span class="checklist-item__icon">✓</span>
+          <span>CRO do profissional está ativo e regular (sem pendências)?</span>
+        </div>
+        <div class="checklist-item">
+          <span class="checklist-item__icon">✓</span>
+          <span>Especialidade registrada no CRO (se for o caso)?</span>
+        </div>
+        <div class="checklist-item">
+          <span class="checklist-item__icon">✓</span>
+          <span>CNES do consultório/clínica está atualizado?</span>
+        </div>
+        <div class="checklist-item">
+          <span class="checklist-item__icon">✓</span>
+          <span>Alvará de funcionamento está vigente?</span>
+        </div>
+        <div class="checklist-item">
+          <span class="checklist-item__icon">✓</span>
+          <span>Licença sanitária (Vigilância Sanitária) em dia?</span>
+        </div>
+        <div class="checklist-item">
+          <span class="checklist-item__icon">✓</span>
+          <span>Documentos digitalizados em PDF com boa qualidade?</span>
+        </div>
+        <div class="checklist-item">
+          <span class="checklist-item__icon">✓</span>
+          <span>Fotos do consultório (fachada, recepção, equipo, autoclave)?</span>
+        </div>
+        <div class="checklist-item">
+          <span class="checklist-item__icon">✓</span>
+          <span>Conta bancária aberta no nome do credenciado (CPF ou CNPJ)?</span>
+        </div>
+        <div class="checklist-item">
+          <span class="checklist-item__icon">✓</span>
+          <span>Pesquisou quais operadoras são mais procuradas na região?</span>
+        </div>
+        <div class="checklist-item">
+          <span class="checklist-item__icon">✓</span>
+          <span>Comparou as tabelas de valores das operadoras pretendidas?</span>
+        </div>
+        <div class="checklist-item">
+          <span class="checklist-item__icon">✓</span>
+          <span>Equipe treinada para faturamento (ou você é a equipe treinada!)?</span>
+        </div>
+
+        <div class="info-box info-box--importante" style="margin-top:32px">
+          <span class="info-box__title">🎓 Parabéns!</span>
+          <p>Você completou a Mini Aula Bônus sobre Credenciamento! Com esse conhecimento, somado a tudo que você aprendeu nos 5 módulos do curso, você está preparado(a) para dominar todo o ciclo do faturamento odontológico — do credenciamento à emissão da nota fiscal.</p>
+        </div>
+
+      </div><!-- /.prose -->
+
+      <div class="aula-nav">
+        <a href="index.html" class="btn btn--primary">← Voltar ao Curso</a>
+        <a href="planilha-glosas.html" class="btn btn--primary">Planilha de Glosas →</a>
+      </div>
+    </main>
+
+  </div>
+
+  <script>
+    const links = document.querySelectorAll('.sidebar__link[href^="#"]');
+    links.forEach(link => {
+      link.addEventListener('click', function(e) {
+        links.forEach(l => l.classList.remove('sidebar__link--active'));
+        this.classList.add('sidebar__link--active');
+      });
+    });
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.id;
+          links.forEach(l => {
+            l.classList.toggle('sidebar__link--active', l.getAttribute('href') === '#' + id);
+          });
+        }
+      });
+    }, { rootMargin: '-80px 0px -60% 0px' });
+
+    document.querySelectorAll('h2[id]').forEach(h2 => observer.observe(h2));
+  </script>
+</body>
+</html>

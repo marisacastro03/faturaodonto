@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aula 10 — Exercício final completo | Módulo 5</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="aulas.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header header--scrolled">
+    <nav class="nav container">
+      <a href="../index.html" class="nav__logo"><span class="logo-icon">🦷</span> FaturaOdonto</a>
+      <a href="../modulo5.html" class="btn btn--outline nav__cta">← Voltar ao Módulo 5</a>
+    </nav>
+  </header>
+  <div class="membros">
+    <aside class="sidebar">
+      <div class="progress-bar">
+        <div class="progress-bar__label">Módulo 5 — Progresso</div>
+        <div class="progress-bar__track"><div class="progress-bar__fill" style="width: 100%"></div></div>
+      </div>
+      <div class="sidebar__title">Módulo 05</div>
+      <div class="sidebar__module">Emissão de Notas Fiscais</div>
+      <div class="sidebar__list">
+        <a href="m5-aula1.html" class="sidebar__link">01 - Quando emitir nota fiscal</a>
+        <a href="m5-aula2.html" class="sidebar__link">02 - Tipos de nota fiscal</a>
+        <a href="m5-aula3.html" class="sidebar__link">03 - Dados obrigatórios na nota</a>
+        <a href="m5-aula4.html" class="sidebar__link">04 - Emitindo a NFS-e passo a passo</a>
+        <a href="m5-aula5.html" class="sidebar__link">05 - Competência vs recebimento</a>
+        <a href="m5-aula6.html" class="sidebar__link">06 - Uma nota por lote ou por guia</a>
+        <a href="m5-aula7.html" class="sidebar__link">07 - Conciliação faturamento x notas</a>
+        <a href="m5-aula8.html" class="sidebar__link">08 - Organização fiscal mensal</a>
+        <a href="m5-aula9.html" class="sidebar__link">09 - Erros fiscais mais comuns</a>
+        <a href="m5-aula10.html" class="sidebar__link sidebar__link--active">10 - Exercício final completo</a>
+      </div>
+    </aside>
+    <main class="aula-content">
+      <span class="aula-content__badge">Módulo 5 · Aula 10 de 10</span>
+      <h1>Exercício final: faturamento completo com emissão de nota</h1>
+      <p class="aula-content__meta">Tempo estimado de leitura: 20 minutos</p>
+
+      <div class="prose">
+        <h2>Introdução</h2>
+        <p>Parabéns por chegar à última aula do módulo — e do curso inteiro! Neste exercício final, você vai percorrer o <strong>ciclo completo de faturamento de convênios odontológicos</strong>, desde a emissão da GTO até a emissão da nota fiscal. Vamos trabalhar com dois casos práticos que cobrem situações reais do dia a dia.</p>
+        <p>Leia cada caso com atenção, responda às perguntas e confira o gabarito comentado ao final. Esse exercício integra conhecimentos de todos os cinco módulos do curso.</p>
+
+        <div class="info-box info-box--importante">
+          <p>💡 Este exercício é a sua prova de que você domina o ciclo completo. Pegue papel e caneta (ou abra uma planilha) e trabalhe cada caso como se fosse um dia real de trabalho na clínica.</p>
+        </div>
+
+        <hr>
+
+        <h2>Caso 1: Clínica OdontoVida — Faturamento Amil</h2>
+
+        <h3>Contexto</h3>
+        <p>A Clínica OdontoVida (CNPJ: 12.345.678/0001-90) está localizada em São Paulo, é optante pelo <strong>Simples Nacional</strong> e está credenciada na <strong>Amil Dental</strong>. A clínica atende uma média de 40 pacientes de convênio por mês.</p>
+
+        <h3>Dados do mês de março/2026</h3>
+        <p>Durante o mês de março, a clínica realizou os seguintes atendimentos para beneficiários da Amil:</p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>GTO nº</th>
+              <th>Beneficiário</th>
+              <th>Procedimentos</th>
+              <th>Código TUSS</th>
+              <th>Valor (R$)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>50201</td>
+              <td>Maria Silva</td>
+              <td>Consulta + Restauração resina (2 faces)</td>
+              <td>81000014 + 81000286</td>
+              <td>95,00</td>
+            </tr>
+            <tr>
+              <td>50202</td>
+              <td>João Santos</td>
+              <td>Tratamento endodôntico (molar)</td>
+              <td>81000499</td>
+              <td>280,00</td>
+            </tr>
+            <tr>
+              <td>50203</td>
+              <td>Ana Oliveira</td>
+              <td>Consulta + Profilaxia + Aplicação flúor</td>
+              <td>81000014 + 81000171 + 81000197</td>
+              <td>75,00</td>
+            </tr>
+            <tr>
+              <td>50204</td>
+              <td>Carlos Mendes</td>
+              <td>Exodontia simples</td>
+              <td>81000391</td>
+              <td>120,00</td>
+            </tr>
+            <tr>
+              <td>50205</td>
+              <td>Patrícia Costa</td>
+              <td>Restauração resina (1 face) + Restauração resina (2 faces)</td>
+              <td>81000278 + 81000286</td>
+              <td>130,00</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p><strong>Total faturado no lote:</strong> R$ 700,00</p>
+        <p>O lote foi enviado em 05/04/2026 com protocolo nº 2026-03-001.</p>
+
+        <h3>Resultado do processamento</h3>
+        <p>Em 20/04/2026, a Amil enviou o demonstrativo de pagamento:</p>
+        <ul>
+          <li>GTO 50201: <strong>Paga integralmente</strong> — R$ 95,00</li>
+          <li>GTO 50202: <strong>Paga integralmente</strong> — R$ 280,00</li>
+          <li>GTO 50203: <strong>Glosada parcialmente</strong> — Aplicação de flúor glosada (R$ 15,00). Pago: R$ 60,00</li>
+          <li>GTO 50204: <strong>Paga integralmente</strong> — R$ 120,00</li>
+          <li>GTO 50205: <strong>Glosada totalmente</strong> — Motivo: documentação incompleta. Pago: R$ 0,00</li>
+        </ul>
+        <p><strong>Total do demonstrativo:</strong> R$ 555,00</p>
+        <p>O depósito foi realizado em 25/04/2026.</p>
+
+        <h3>Perguntas do Caso 1</h3>
+        <ol>
+          <li>Qual foi o valor total da glosa neste lote?</li>
+          <li>A GTO 50203 pode ser recurso? Qual seria o argumento?</li>
+          <li>A GTO 50205 pode ser recurso? Qual seria a ação necessária?</li>
+          <li>Considerando que a clínica adota o <strong>regime de caixa</strong>, qual valor deve constar na NFS-e?</li>
+          <li>Escreva a <strong>descrição completa</strong> que deveria constar na NFS-e.</li>
+          <li>Quais impostos serão retidos nesta nota, considerando o Simples Nacional?</li>
+          <li>Preencha a linha da <strong>planilha de conciliação</strong> para este pagamento.</li>
+        </ol>
+
+        <div class="info-box info-box--dica">
+          <p>✅ Dica da Marisa: Tente responder todas as perguntas antes de olhar o gabarito. Se precisar, volte às aulas anteriores para revisar. Esse exercício simula exatamente o que você fará no dia a dia.</p>
+        </div>
+
+        <h3>Gabarito comentado — Caso 1</h3>
+
+        <div class="exemplo">
+          <div class="exemplo__title">Respostas</div>
+          <p><strong>1. Valor total da glosa:</strong> R$ 700,00 − R$ 555,00 = <strong>R$ 145,00</strong> (R$ 15,00 da GTO 50203 + R$ 130,00 da GTO 50205).</p>
+
+          <p><strong>2. Recurso da GTO 50203:</strong> Sim, pode ser recurso. A aplicação tópica de flúor é um procedimento preventivo coberto pela maioria dos planos da Amil. O argumento seria que o procedimento está previsto no rol da ANS e no contrato do beneficiário, e que a profilaxia e o flúor são procedimentos complementares frequentemente realizados na mesma sessão.</p>
+
+          <p><strong>3. Recurso da GTO 50205:</strong> Sim, deve ser recurso. Como o motivo da glosa foi "documentação incompleta", a ação é: reunir a documentação faltante (radiografias, fotos, relatório clínico conforme exigido), preencher o formulário de recurso e reenviar a GTO com todos os anexos necessários dentro do prazo de recurso da operadora.</p>
+
+          <p><strong>4. Valor da NFS-e (regime de caixa):</strong> <strong>R$ 555,00</strong> — o valor efetivamente depositado na conta.</p>
+
+          <p><strong>5. Descrição da NFS-e:</strong> <em>"Prestação de serviços odontológicos a beneficiários do plano Amil Dental, conforme contrato de credenciamento. Competência: março/2026. Lote nº 2026-03-001. Guias nº 50201 a 50205. Empresa optante pelo Simples Nacional, conforme LC 123/2006."</em></p>
+
+          <p><strong>6. Impostos retidos (Simples Nacional):</strong></p>
+          <ul>
+            <li>ISS: Incluso no DAS (alíquota informada na nota, mas não retida pela operadora no Simples Nacional em SP, salvo exceções).</li>
+            <li>IRRF: 1,5% retido pela operadora = R$ 8,33.</li>
+            <li>CSLL, PIS, COFINS: Não se aplicam (optante pelo Simples Nacional).</li>
+          </ul>
+
+          <p><strong>7. Linha da planilha de conciliação:</strong></p>
+          <table>
+            <thead>
+              <tr>
+                <th>Operadora</th>
+                <th>Competência</th>
+                <th>Lote</th>
+                <th>Valor Pago</th>
+                <th>Nº NFS-e</th>
+                <th>Valor Nota</th>
+                <th>Diferença</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Amil</td>
+                <td>Mar/2026</td>
+                <td>2026-03-001</td>
+                <td>555,00</td>
+                <td>[nº da nota]</td>
+                <td>555,00</td>
+                <td>0,00</td>
+                <td>✅ OK</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <hr>
+
+        <h2>Caso 2: Dra. Camila — Faturamento OdontoPrev + Bradesco</h2>
+
+        <h3>Contexto</h3>
+        <p>A Dra. Camila Rodrigues possui o consultório Odonto Camila (CNPJ: 98.765.432/0001-10) em Curitiba, enquadrada no <strong>Lucro Presumido</strong>. Ela é credenciada na <strong>OdontoPrev</strong> e no <strong>Bradesco Dental</strong>.</p>
+
+        <h3>Dados de abril/2026</h3>
+
+        <h4>OdontoPrev — Lote abril/2026</h4>
+        <table>
+          <thead>
+            <tr>
+              <th>GTO nº</th>
+              <th>Beneficiário</th>
+              <th>Procedimento</th>
+              <th>Valor (R$)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>70301</td>
+              <td>Roberto Lima</td>
+              <td>Consulta + Radiografia periapical</td>
+              <td>65,00</td>
+            </tr>
+            <tr>
+              <td>70302</td>
+              <td>Fernanda Alves</td>
+              <td>Restauração amálgama (2 faces)</td>
+              <td>85,00</td>
+            </tr>
+            <tr>
+              <td>70303</td>
+              <td>Lucas Pereira</td>
+              <td>Tratamento endodôntico (pré-molar)</td>
+              <td>220,00</td>
+            </tr>
+          </tbody>
+        </table>
+        <p><strong>Total faturado OdontoPrev:</strong> R$ 370,00</p>
+        <p>Demonstrativo: todas as guias pagas integralmente. Depósito em 20/05/2026: R$ 370,00.</p>
+
+        <h4>Bradesco Dental — Lote abril/2026</h4>
+        <table>
+          <thead>
+            <tr>
+              <th>GTO nº</th>
+              <th>Beneficiário</th>
+              <th>Procedimento</th>
+              <th>Valor (R$)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>80401</td>
+              <td>Mariana Souza</td>
+              <td>Consulta + Profilaxia</td>
+              <td>70,00</td>
+            </tr>
+            <tr>
+              <td>80402</td>
+              <td>Pedro Gomes</td>
+              <td>Exodontia de incluso</td>
+              <td>350,00</td>
+            </tr>
+            <tr>
+              <td>80403</td>
+              <td>Juliana Martins</td>
+              <td>Restauração resina (3 faces)</td>
+              <td>110,00</td>
+            </tr>
+            <tr>
+              <td>80404</td>
+              <td>Ricardo Dias</td>
+              <td>Consulta + Restauração resina (1 face)</td>
+              <td>90,00</td>
+            </tr>
+          </tbody>
+        </table>
+        <p><strong>Total faturado Bradesco:</strong> R$ 620,00</p>
+        <p>Demonstrativo: GTO 80402 glosada (motivo: "procedimento não coberto pelo plano contratado"). Demais pagas integralmente.</p>
+        <p><strong>Total pago Bradesco:</strong> R$ 270,00. Depósito em 22/05/2026.</p>
+
+        <h3>Perguntas do Caso 2</h3>
+        <ol>
+          <li>Quantas NFS-e a Dra. Camila deve emitir neste mês? Para quem e com quais valores?</li>
+          <li>A clínica está no Lucro Presumido. Quais impostos serão retidos em cada nota?</li>
+          <li>Calcule o IRRF (1,5%) de cada nota.</li>
+          <li>A soma de CSLL + PIS + COFINS (4,65%) das duas notas ultrapassa o mínimo de R$ 215,05? Haverá retenção dessas contribuições?</li>
+          <li>A GTO 80402 (exodontia de incluso glosada por "não coberto") pode ser recurso? Qual seria a estratégia?</li>
+          <li>A Dra. Camila usa regime de caixa. Qual deve ser a data das notas fiscais?</li>
+          <li>Preencha a <strong>planilha de conciliação completa</strong> do mês de maio/2026 (dois pagamentos).</li>
+          <li>Liste os documentos que a Dra. Camila deve enviar ao contador referentes a maio/2026.</li>
+        </ol>
+
+        <h3>Gabarito comentado — Caso 2</h3>
+
+        <div class="exemplo">
+          <div class="exemplo__title">Respostas</div>
+          <p><strong>1. Notas a emitir:</strong> Duas NFS-e:</p>
+          <ul>
+            <li>NFS-e para <strong>OdontoPrev</strong>: R$ 370,00</li>
+            <li>NFS-e para <strong>Bradesco Dental</strong>: R$ 270,00</li>
+          </ul>
+
+          <p><strong>2. Impostos retidos (Lucro Presumido):</strong></p>
+          <ul>
+            <li>ISS: conforme alíquota de Curitiba (verificar — geralmente 2% a 5%).</li>
+            <li>IRRF: 1,5% retido pela operadora.</li>
+            <li>CSLL, PIS, COFINS: retidos se o valor da nota ou a soma ultrapassar o mínimo.</li>
+          </ul>
+
+          <p><strong>3. IRRF de cada nota:</strong></p>
+          <ul>
+            <li>OdontoPrev: R$ 370,00 × 1,5% = <strong>R$ 5,55</strong></li>
+            <li>Bradesco: R$ 270,00 × 1,5% = <strong>R$ 4,05</strong></li>
+          </ul>
+
+          <p><strong>4. Retenção de CSLL + PIS + COFINS:</strong></p>
+          <ul>
+            <li>OdontoPrev: R$ 370,00 × 4,65% = R$ 17,21</li>
+            <li>Bradesco: R$ 270,00 × 4,65% = R$ 12,56</li>
+            <li>Nenhuma das notas individualmente gera retenção ≥ R$ 215,05, portanto <strong>não haverá retenção</strong> de CSLL, PIS e COFINS neste caso. (A análise é feita por nota, não pela soma das notas.)</li>
+          </ul>
+
+          <p><strong>5. Recurso da GTO 80402:</strong> Depende da análise do contrato do beneficiário. Exodontia de incluso pode ser considerada cirurgia, que em alguns planos tem cobertura e em outros não. A estratégia seria: verificar o contrato do plano do paciente Pedro Gomes, consultar o rol de procedimentos da ANS (que inclui exodontia de inclusos como obrigatório em planos com cobertura odontológica ambulatorial), e entrar com recurso argumentando a obrigatoriedade conforme a RN 465/2021 da ANS.</p>
+
+          <p><strong>6. Data das notas fiscais (regime de caixa):</strong></p>
+          <ul>
+            <li>NFS-e OdontoPrev: <strong>20/05/2026</strong> (data do depósito).</li>
+            <li>NFS-e Bradesco: <strong>22/05/2026</strong> (data do depósito).</li>
+          </ul>
+
+          <p><strong>7. Planilha de conciliação — Maio/2026:</strong></p>
+          <table>
+            <thead>
+              <tr>
+                <th>Operadora</th>
+                <th>Competência</th>
+                <th>Valor Pago</th>
+                <th>Nº NFS-e</th>
+                <th>Valor Nota</th>
+                <th>Diferença</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>OdontoPrev</td>
+                <td>Abr/2026</td>
+                <td>370,00</td>
+                <td>[nº]</td>
+                <td>370,00</td>
+                <td>0,00</td>
+                <td>✅ OK</td>
+              </tr>
+              <tr>
+                <td>Bradesco</td>
+                <td>Abr/2026</td>
+                <td>270,00</td>
+                <td>[nº]</td>
+                <td>270,00</td>
+                <td>0,00</td>
+                <td>✅ OK</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p><strong>8. Documentos para o contador (maio/2026):</strong></p>
+          <ol>
+            <li>Relatório de NFS-e emitidas em maio/2026 (PDF do portal da prefeitura de Curitiba).</li>
+            <li>Demonstrativo de pagamento da OdontoPrev — competência abril/2026.</li>
+            <li>Demonstrativo de pagamento do Bradesco Dental — competência abril/2026.</li>
+            <li>Extrato bancário de maio/2026 mostrando os depósitos de R$ 370,00 e R$ 270,00.</li>
+            <li>Planilha de conciliação de maio/2026.</li>
+            <li>Informação sobre a glosa da GTO 80402 (R$ 350,00) e se há recurso em andamento.</li>
+          </ol>
+        </div>
+
+        <hr>
+
+        <h2 style="text-align: center; font-size: 2rem; margin-top: 3rem;">Você concluiu o curso! 🎉</h2>
+
+        <div class="info-box info-box--dica" style="text-align: center; padding: 2rem;">
+          <p style="font-size: 1.15rem;">✅ <strong>Parabéns! Você completou todas as 50 aulas dos 5 módulos do curso Faturamento de Convênios Odontológicos!</strong></p>
+        </div>
+
+        <h3>O que você aprendeu neste curso</h3>
+        <p>Ao longo de cinco módulos intensivos, você percorreu todo o ciclo do faturamento de convênios odontológicos:</p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Módulo</th>
+              <th>Tema</th>
+              <th>O que você domina agora</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Módulo 1</strong></td>
+              <td>Introdução ao Faturamento</td>
+              <td>Fundamentos do sistema de convênios, terminologia, papel do faturista, fluxo geral do processo.</td>
+            </tr>
+            <tr>
+              <td><strong>Módulo 2</strong></td>
+              <td>Preenchimento de Guias (GTOs)</td>
+              <td>Como preencher guias corretamente, códigos TUSS, documentação clínica, erros comuns e como evitá-los.</td>
+            </tr>
+            <tr>
+              <td><strong>Módulo 3</strong></td>
+              <td>Envio e Acompanhamento</td>
+              <td>Montagem de lotes, envio para operadoras, acompanhamento de processamento, glosas e recursos.</td>
+            </tr>
+            <tr>
+              <td><strong>Módulo 4</strong></td>
+              <td>Recebimento e Conciliação</td>
+              <td>Análise de demonstrativos, conferência de pagamentos, tratamento de glosas, conciliação financeira.</td>
+            </tr>
+            <tr>
+              <td><strong>Módulo 5</strong></td>
+              <td>Emissão de Notas Fiscais</td>
+              <td>Quando e como emitir NFS-e, dados obrigatórios, regimes fiscais, conciliação, organização e erros comuns.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>Mensagem da instrutora Marisa Castro</h3>
+        <div class="info-box info-box--dica" style="padding: 1.5rem;">
+          <p>✅ <strong>Dica final da Marisa:</strong></p>
+          <p>"Querida aluna, querido aluno — se você chegou até aqui, saiba que estou muito orgulhosa de você. O faturamento de convênios odontológicos é uma área que exige conhecimento técnico, atenção aos detalhes e muita organização. E agora você tem tudo isso.</p>
+          <p>Lembre-se: o aprendizado não termina aqui. Cada operadora tem suas particularidades, cada município tem suas regras, e o mercado está sempre mudando. Continue estudando, praticando e se atualizando.</p>
+          <p>Minha maior dica para a sua carreira: <strong>seja a pessoa na clínica que resolve problemas, não que cria</strong>. Um bom faturista é aquele que antecipa glosas, organiza processos e garante que o dinheiro entre na conta. Você agora tem todas as ferramentas para ser essa pessoa.</p>
+          <p>Sucesso na sua jornada! 💙"</p>
+          <p><em>— Marisa Castro</em></p>
+        </div>
+
+        <h3>Próximos passos</h3>
+        <ul>
+          <li><strong>Certificado:</strong> Ao concluir todas as aulas e exercícios, você está apta(o) a receber o seu certificado de conclusão. Verifique na área de membros como solicitar.</li>
+          <li><strong>Materiais bônus:</strong> Não se esqueça de baixar os materiais complementares disponíveis na plataforma — planilhas de controle, modelos de descrição para NFS-e, checklists e mais.</li>
+          <li><strong>Comunidade:</strong> Participe do grupo de alunas para trocar experiências, tirar dúvidas e compartilhar conquistas.</li>
+          <li><strong>Atualização:</strong> Fique atenta(o) a novos conteúdos e atualizações que a Marisa libera periodicamente para alunas do curso.</li>
+        </ul>
+
+        <div class="info-box info-box--importante">
+          <p>💡 Este curso é vitalício — você pode voltar e rever qualquer aula sempre que precisar. Use-o como referência no seu dia a dia profissional!</p>
+        </div>
+      </div>
+
+      <div class="aula-nav">
+        <a href="m5-aula9.html" class="btn btn--outline">← Aula Anterior</a>
+        <a href="../index.html" class="btn btn--primary">Voltar ao Início</a>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

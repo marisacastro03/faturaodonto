@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aula 9 — Exercícios Práticos: Simulação Completa | Módulo 2</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="aulas.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header header--scrolled">
+    <nav class="nav container">
+      <a href="../index.html" class="nav__logo"><span class="logo-icon">🦷</span> FaturaOdonto</a>
+      <a href="../modulo2.html" class="btn btn--outline nav__cta">← Voltar ao Módulo 2</a>
+    </nav>
+  </header>
+  <div class="membros">
+    <aside class="sidebar">
+      <div class="progress-bar">
+        <div class="progress-bar__label">Módulo 2 — Concluído! 🎉</div>
+        <div class="progress-bar__track"><div class="progress-bar__fill" style="width: 100%"></div></div>
+      </div>
+      <div class="sidebar__title">Módulo 02</div>
+      <div class="sidebar__module">Faturamento das GTOs</div>
+      <div class="sidebar__list">
+        <a href="m2-aula1.html" class="sidebar__link"><span>01</span> Fluxo do faturamento</a>
+        <a href="m2-aula2.html" class="sidebar__link"><span>02</span> Lote vs individual</a>
+        <a href="m2-aula3.html" class="sidebar__link"><span>03</span> Prazos por operadora</a>
+        <a href="m2-aula4.html" class="sidebar__link"><span>04</span> Envio das guias</a>
+        <a href="m2-aula5.html" class="sidebar__link"><span>05</span> Montagem de lotes</a>
+        <a href="m2-aula6.html" class="sidebar__link"><span>06</span> Status das guias</a>
+        <a href="m2-aula7.html" class="sidebar__link"><span>07</span> Conferência de pagamentos</a>
+        <a href="m2-aula8.html" class="sidebar__link"><span>08</span> Planilha de controle</a>
+        <a href="m2-aula9.html" class="sidebar__link sidebar__link--active"><span>09</span> Exercícios práticos</a>
+      </div>
+    </aside>
+    <main class="aula-content">
+      <span class="aula-content__badge">Módulo 2 · Aula 9 de 9</span>
+      <h1>Exercícios Práticos — Simulação Completa</h1>
+      <p class="aula-content__meta">Tempo estimado de leitura: 15 minutos</p>
+      <div class="prose">
+        <h2>Hora de Praticar!</h2>
+        <p>Parabéns por chegar à última aula do Módulo 2! Agora é hora de colocar em prática tudo o que você aprendeu. Vamos trabalhar com 3 casos práticos que simulam situações reais do dia a dia de uma clínica odontológica.</p>
+        <p>Para cada caso, tente resolver <strong>antes de ver a resposta</strong>. Anote suas respostas em um papel ou no bloco de notas e depois confira.</p>
+
+        <div class="info-box info-box--dica">
+          <span class="info-box__title">✅ Dica da Marisa:</span>
+          <p>Esses exercícios foram criados com base em situações reais que enfrentei ao longo de mais de 10 anos de experiência. Se você conseguir resolver todos com segurança, está pronto para faturar na prática!</p>
+        </div>
+
+        <h2>Caso 1: Restauração Simples — Faturamento Direto</h2>
+
+        <h3>Situação</h3>
+        <p>A paciente <strong>Ana Beatriz Oliveira</strong> (carteirinha Amil Dental nº 789456123) foi atendida pelo <strong>Dr. Carlos Mendes</strong> (CRO 54321-SP) no dia <strong>05/03/2024</strong>. Foi realizada uma <strong>restauração em resina composta no dente 36</strong> (face oclusal), código TUSS <strong>81000065</strong>. O procedimento é de livre demanda na Amil. Valor: R$ 95,00.</p>
+
+        <h3>Perguntas</h3>
+        <ol>
+          <li>Esse procedimento precisa de autorização prévia?</li>
+          <li>Até quando essa guia pode ser enviada à Amil?</li>
+          <li>Se a clínica monta lotes semanais (toda sexta-feira), em qual lote essa guia entraria?</li>
+          <li>Se a data de corte da Amil é dia 20/03, quando seria a previsão de pagamento?</li>
+          <li>Quais dados precisam constar na GTO?</li>
+        </ol>
+
+        <div class="exemplo">
+          <div class="exemplo__title">Resolução do Caso 1</div>
+          <p><strong>1. Autorização prévia:</strong> Não. O enunciado informa que é procedimento de livre demanda na Amil. Restaurações simples geralmente não exigem autorização.</p>
+          <p><strong>2. Prazo de envio:</strong> Até 90 dias da execução = até 03/06/2024. Mas o ideal é enviar em no máximo 15 dias.</p>
+          <p><strong>3. Lote:</strong> Se o procedimento foi dia 05/03 (terça-feira), a GTO seria fechada e incluída no lote de sexta-feira 08/03. Número do lote: AMIL-2024-03-001.</p>
+          <p><strong>4. Previsão de pagamento:</strong> Enviada em 08/03, antes do corte de 20/03, entra no processamento de março. Pagamento previsto: 45 dias após o corte = início de maio/2024.</p>
+          <p><strong>5. Dados na GTO:</strong> Nome completo da paciente, nº carteirinha (789456123), CRO do dentista (54321-SP), código TUSS (81000065), dente 36, face O (oclusal), data execução 05/03/2024, valor R$ 95,00, assinatura do profissional.</p>
+        </div>
+
+        <h2>Caso 2: Endodontia com Autorização — Processo Completo</h2>
+
+        <h3>Situação</h3>
+        <p>O paciente <strong>Roberto Ferreira</strong> (carteirinha Bradesco Dental nº 456789012) precisa de um <strong>tratamento endodôntico no dente 21</strong> (1 canal), código TUSS <strong>81000421</strong>. A <strong>Dra. Patricia Almeida</strong> (CRO 67890-SP) solicitou autorização em <strong>01/03/2024</strong>. A autorização foi concedida em <strong>12/03/2024</strong> sob o nº AUT-2024-5678. O procedimento foi executado em <strong>18/03/2024</strong>. Valor: R$ 350,00. A operadora exige radiografia periapical.</p>
+
+        <h3>Perguntas</h3>
+        <ol>
+          <li>A sequência de datas está correta (solicitação → autorização → execução)?</li>
+          <li>Que documentação precisa ser anexada?</li>
+          <li>Se a data de corte do Bradesco é dia 15 e a guia será enviada em 22/03, quando a clínica receberá?</li>
+          <li>Se a Dra. Patricia tivesse executado o procedimento em 10/03 (antes da autorização), o que aconteceria?</li>
+          <li>Monte o registro dessa guia na planilha de controle.</li>
+        </ol>
+
+        <div class="exemplo">
+          <div class="exemplo__title">Resolução do Caso 2</div>
+          <p><strong>1. Sequência de datas:</strong> Sim, está correta! Solicitação (01/03) → Autorização (12/03) → Execução (18/03). A execução foi posterior à autorização, como deve ser.</p>
+          <p><strong>2. Documentação:</strong> Radiografia periapical do dente 21 (obrigatória para endodontias no Bradesco). A imagem deve ser nítida, em formato JPEG ou PNG, com identificação do paciente.</p>
+          <p><strong>3. Previsão de pagamento:</strong> Corte dia 15 e envio dia 22/03 = a guia só entra no processamento de abril. Pagamento 30 a 60 dias após o corte de abril (15/04), ou seja, entre maio e junho/2024. Se tivesse sido enviada até 14/03 (antes do corte), receberia entre abril e maio.</p>
+          <p><strong>4. Execução antes da autorização:</strong> Seria glosada por "execução anterior à autorização". Esse é um dos erros mais graves e de difícil contestação. O valor de R$ 350,00 seria perdido.</p>
+          <p><strong>5. Planilha:</strong></p>
+          <p>Nº GTO: GTO-2024-0089 | Paciente: Roberto Ferreira | Operadora: Bradesco Dental | Profissional: Dra. Patricia — CRO 67890 | Procedimento: 81000421 — Endodontia 1 canal | Data exec: 18/03/2024 | Data envio: 22/03/2024 | Lote: BRAD-2024-03-002 | Valor faturado: R$ 350,00 | Status: ENV | Autorização: AUT-2024-5678 | Obs: Raio-X anexado</p>
+        </div>
+
+        <h2>Caso 3: Lote com Procedimentos Mistos — Gestão Completa</h2>
+
+        <h3>Situação</h3>
+        <p>É sexta-feira, 15/03/2024. Você é responsável pelo faturamento e precisa montar o lote semanal da <strong>OdontoPrev</strong>. Estas são as guias prontas para envio:</p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Nº</th>
+              <th>Paciente</th>
+              <th>Procedimento</th>
+              <th>Data exec.</th>
+              <th>Valor</th>
+              <th>Autorização</th>
+              <th>Anexos</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>João Silva</td>
+              <td>Restauração dente 15</td>
+              <td>11/03</td>
+              <td>R$ 95,00</td>
+              <td>Livre demanda</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Maria Costa</td>
+              <td>Restauração dente 11</td>
+              <td>11/03</td>
+              <td>R$ 110,00</td>
+              <td>Livre demanda</td>
+              <td>Foto exigida (dente anterior)</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Pedro Santos</td>
+              <td>Profilaxia</td>
+              <td>12/03</td>
+              <td>R$ 45,00</td>
+              <td>Livre demanda</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>Ana Ribeiro</td>
+              <td>Exodontia dente 38</td>
+              <td>13/03</td>
+              <td>R$ 180,00</td>
+              <td>AUT-7890</td>
+              <td>Raio-X panorâmica</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>Carlos Lima</td>
+              <td>Endodontia dente 46</td>
+              <td>14/03</td>
+              <td>R$ 420,00</td>
+              <td>Aguardando</td>
+              <td>Raio-X periapical</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>Perguntas</h3>
+        <ol>
+          <li>Quantas guias podem entrar no lote de hoje?</li>
+          <li>Há alguma guia que NÃO deve ser incluída? Por quê?</li>
+          <li>A guia da Maria Costa (restauração dente 11) tem alguma exigência especial?</li>
+          <li>Monte o resumo do lote.</li>
+          <li>Qual o valor total do lote?</li>
+          <li>Se a data de corte da OdontoPrev é dia 25, esse lote entrará no processamento de qual mês?</li>
+        </ol>
+
+        <div class="exemplo">
+          <div class="exemplo__title">Resolução do Caso 3</div>
+          <p><strong>1. Guias para o lote:</strong> 4 guias (João, Maria, Pedro e Ana).</p>
+          <p><strong>2. Guia excluída:</strong> A guia do Carlos Lima (endodontia dente 46) <strong>NÃO deve ser incluída</strong>, pois a autorização ainda está "Aguardando". Sem autorização, a guia não pode ser faturada. Ela deve aguardar a autorização e entrar em um lote futuro.</p>
+          <p><strong>3. Maria Costa — dente 11:</strong> Sim! O dente 11 é um incisivo central superior (dente anterior). A OdontoPrev exige foto para restaurações em dentes anteriores. A foto deve ser anexada à guia antes do envio.</p>
+          <p><strong>4. Resumo do lote:</strong></p>
+          <p>Nº Lote: ODONTO-2024-03-002</p>
+          <p>Operadora: OdontoPrev</p>
+          <p>Período: 11/03 a 14/03/2024</p>
+          <p>Quantidade de guias: 4</p>
+          <p>Profissional(is): [conforme CROs]</p>
+          <p>Data envio: 15/03/2024</p>
+          <p><strong>5. Valor total:</strong> R$ 95 + R$ 110 + R$ 45 + R$ 180 = <strong>R$ 430,00</strong></p>
+          <p>(A guia de R$ 420 do Carlos não entra pois está sem autorização)</p>
+          <p><strong>6. Processamento:</strong> Enviado em 15/03, corte OdontoPrev dia 25/03 → entra no processamento de março. Pagamento previsto: 30-45 dias após 25/03, ou seja, final de abril a início de maio.</p>
+        </div>
+
+        <h2>Autoavaliação</h2>
+        <p>Confira como você se saiu:</p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Acertos</th>
+              <th>Nível</th>
+              <th>Recomendação</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>14-16 perguntas</td>
+              <td>Excelente!</td>
+              <td>Você está pronto para faturar com confiança. Avance para o Módulo 3!</td>
+            </tr>
+            <tr>
+              <td>10-13 perguntas</td>
+              <td>Muito bom</td>
+              <td>Revise os pontos que errou e siga em frente.</td>
+            </tr>
+            <tr>
+              <td>6-9 perguntas</td>
+              <td>Bom</td>
+              <td>Releia as aulas 3 (prazos) e 5 (montagem de lotes) antes de prosseguir.</td>
+            </tr>
+            <tr>
+              <td>0-5 perguntas</td>
+              <td>Precisa revisar</td>
+              <td>Releia todo o Módulo 2 com calma. A prática leva à perfeição!</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="info-box info-box--importante">
+          <span class="info-box__title">💡 Importante:</span>
+          <p>Não se preocupe se errou algumas perguntas — o importante é aprender com cada erro. Na prática, esses erros custam dinheiro. Aqui no curso, custam apenas uma releitura. Aproveite!</p>
+        </div>
+
+        <h2>Resumo do Módulo 2</h2>
+        <p>Ao longo deste módulo, você aprendeu:</p>
+        <ul>
+          <li><strong>Aula 1:</strong> O fluxo completo do faturamento em 8 etapas</li>
+          <li><strong>Aula 2:</strong> Diferença entre faturamento por lote e individual</li>
+          <li><strong>Aula 3:</strong> Prazos e regras de cada operadora</li>
+          <li><strong>Aula 4:</strong> Como enviar guias pelos portais</li>
+          <li><strong>Aula 5:</strong> Montagem eficiente de lotes</li>
+          <li><strong>Aula 6:</strong> Acompanhamento do status das guias</li>
+          <li><strong>Aula 7:</strong> Conferência de pagamentos recebidos</li>
+          <li><strong>Aula 8:</strong> Planilha de controle e KPIs</li>
+          <li><strong>Aula 9:</strong> Exercícios práticos de simulação</li>
+        </ul>
+
+        <div class="info-box info-box--dica">
+          <span class="info-box__title">✅ Dica da Marisa:</span>
+          <p>Você completou o módulo mais operacional do curso. A partir de agora, com o conhecimento dos Módulos 1 e 2, você já consegue emitir GTOs e faturar com segurança. Nos próximos módulos, vamos dominar fotos e raio-X (Módulo 3), aprender a reverter glosas (Módulo 4) e emitir notas fiscais (Módulo 5). Continue firme!</p>
+        </div>
+
+        <h2>Próximo Passo</h2>
+        <p>No <strong>Módulo 3 — Fotos e Raio-X</strong>, você vai aprender quando e como capturar as imagens exigidas pelas operadoras, quais são os requisitos técnicos e como evitar glosas por documentação fotográfica inadequada.</p>
+      </div>
+      <div class="aula-nav">
+        <a href="m2-aula8.html" class="btn btn--outline">← Aula Anterior</a>
+        <a href="../modulo3.html" class="btn btn--primary">Ir para o Módulo 3 →</a>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

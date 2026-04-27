@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aula 7 — Conciliação faturamento x notas | Módulo 5</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="aulas.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header header--scrolled">
+    <nav class="nav container">
+      <a href="../index.html" class="nav__logo"><span class="logo-icon">🦷</span> FaturaOdonto</a>
+      <a href="../modulo5.html" class="btn btn--outline nav__cta">← Voltar ao Módulo 5</a>
+    </nav>
+  </header>
+  <div class="membros">
+    <aside class="sidebar">
+      <div class="progress-bar">
+        <div class="progress-bar__label">Módulo 5 — Progresso</div>
+        <div class="progress-bar__track"><div class="progress-bar__fill" style="width: 70%"></div></div>
+      </div>
+      <div class="sidebar__title">Módulo 05</div>
+      <div class="sidebar__module">Emissão de Notas Fiscais</div>
+      <div class="sidebar__list">
+        <a href="m5-aula1.html" class="sidebar__link">01 - Quando emitir nota fiscal</a>
+        <a href="m5-aula2.html" class="sidebar__link">02 - Tipos de nota fiscal</a>
+        <a href="m5-aula3.html" class="sidebar__link">03 - Dados obrigatórios na nota</a>
+        <a href="m5-aula4.html" class="sidebar__link">04 - Emitindo a NFS-e passo a passo</a>
+        <a href="m5-aula5.html" class="sidebar__link">05 - Competência vs recebimento</a>
+        <a href="m5-aula6.html" class="sidebar__link">06 - Uma nota por lote ou por guia</a>
+        <a href="m5-aula7.html" class="sidebar__link sidebar__link--active">07 - Conciliação faturamento x notas</a>
+        <a href="m5-aula8.html" class="sidebar__link">08 - Organização fiscal mensal</a>
+        <a href="m5-aula9.html" class="sidebar__link">09 - Erros fiscais mais comuns</a>
+        <a href="m5-aula10.html" class="sidebar__link">10 - Exercício final completo</a>
+      </div>
+    </aside>
+    <main class="aula-content">
+      <span class="aula-content__badge">Módulo 5 · Aula 7 de 10</span>
+      <h1>Conciliação entre faturamento e notas emitidas</h1>
+      <p class="aula-content__meta">Tempo estimado de leitura: 15 minutos</p>
+
+      <div class="prose">
+        <h2>Introdução</h2>
+        <p>Emitir notas fiscais é essencial, mas de nada adianta emitir se você não <strong>confere se tudo bate</strong>. A conciliação entre faturamento e notas emitidas é o processo de verificar se cada pagamento recebido tem uma nota fiscal correspondente — e se os valores estão corretos.</p>
+        <p>Sem essa conferência, a clínica corre o risco de ter notas faltando, valores divergentes, ou pagamentos não rastreados. Nesta aula, vamos aprender a fazer essa conciliação de forma organizada e eficiente.</p>
+
+        <h2>Por que a conciliação é importante</h2>
+        <ul>
+          <li><strong>Compliance fiscal:</strong> Todo pagamento recebido precisa ter nota fiscal correspondente. Sem conciliação, notas podem ser esquecidas.</li>
+          <li><strong>Controle financeiro:</strong> A conciliação garante que nenhum pagamento passe despercebido e que os valores estejam corretos.</li>
+          <li><strong>Prestação de contas ao contador:</strong> O contador precisa de todas as notas para fazer a apuração dos impostos.</li>
+          <li><strong>Auditoria e fiscalização:</strong> Em caso de fiscalização, a clínica precisa demonstrar que todos os recebimentos estão documentados.</li>
+        </ul>
+
+        <div class="info-box info-box--importante">
+          <p>💡 A conciliação não é "trabalho a mais" — é a garantia de que o faturamento está completo. Uma clínica que fatura sem conciliar é como um piloto que decola sem checar os instrumentos.</p>
+        </div>
+
+        <h2>O que verificar na conciliação</h2>
+        <p>O processo de conciliação responde a três perguntas fundamentais:</p>
+        <ol>
+          <li><strong>Todos os pagamentos recebidos têm nota fiscal emitida?</strong></li>
+          <li><strong>O valor de cada nota bate com o valor do pagamento correspondente?</strong></li>
+          <li><strong>Todas as notas emitidas correspondem a pagamentos reais?</strong></li>
+        </ol>
+
+        <h2>Passo a passo da conciliação mensal</h2>
+
+        <h3>1. Reúna os demonstrativos de pagamento</h3>
+        <p>No final de cada mês (ou no início do mês seguinte), colete todos os <strong>demonstrativos de pagamento</strong> recebidos das operadoras. Esses documentos mostram:</p>
+        <ul>
+          <li>Quais guias foram pagas.</li>
+          <li>Quais foram glosadas.</li>
+          <li>O valor bruto, as retenções e o valor líquido depositado.</li>
+        </ul>
+
+        <h3>2. Liste as notas fiscais emitidas</h3>
+        <p>Acesse o portal da NFS-e da prefeitura e gere o <strong>relatório de notas emitidas</strong> no período. Esse relatório deve conter:</p>
+        <ul>
+          <li>Número da NFS-e.</li>
+          <li>Data de emissão.</li>
+          <li>Tomador (operadora).</li>
+          <li>Valor.</li>
+        </ul>
+
+        <h3>3. Compare demonstrativos x notas</h3>
+        <p>Para cada demonstrativo de pagamento, verifique se existe uma nota fiscal correspondente com o mesmo valor. Use a planilha de conciliação (modelo abaixo).</p>
+
+        <h3>4. Identifique pendências</h3>
+        <p>As pendências mais comuns são:</p>
+        <ul>
+          <li><strong>Pagamento sem nota:</strong> A operadora pagou, mas a clínica esqueceu de emitir a NFS-e.</li>
+          <li><strong>Nota sem pagamento:</strong> A nota foi emitida (regime de competência), mas o pagamento ainda não chegou.</li>
+          <li><strong>Valor divergente:</strong> A nota tem valor diferente do pagamento (geralmente por glosa).</li>
+        </ul>
+
+        <h3>5. Resolva as pendências</h3>
+        <ul>
+          <li><strong>Nota faltando:</strong> Emita imediatamente. Alguns municípios permitem emissão retroativa dentro do mês; outros, não. Consulte o contador.</li>
+          <li><strong>Valor divergente:</strong> Se a divergência é por glosa, avalie se cabe nota de crédito, carta de correção ou cancelamento e reemissão.</li>
+          <li><strong>Nota sem pagamento:</strong> Mantenha o registro e acompanhe até o pagamento efetivo.</li>
+        </ul>
+
+        <div class="info-box info-box--dica">
+          <p>✅ Dica da Marisa: Eu recomendo fazer a conciliação até o 5º dia útil do mês seguinte. Assim, as notas faltantes ainda podem ser emitidas dentro do prazo. Quando deixa para o final do mês, fica muito mais complicado resolver pendências — e o contador fica de cabelo em pé!</p>
+        </div>
+
+        <h2>Modelo de planilha de conciliação</h2>
+        <p>Você pode criar uma planilha simples no Excel ou Google Sheets com as seguintes colunas:</p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Operadora</th>
+              <th>Competência</th>
+              <th>Nº do Lote</th>
+              <th>Valor Pago (R$)</th>
+              <th>Nº NFS-e</th>
+              <th>Valor Nota (R$)</th>
+              <th>Diferença (R$)</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Amil</td>
+              <td>Mar/2026</td>
+              <td>2026-03-001</td>
+              <td>4.200,00</td>
+              <td>001234</td>
+              <td>4.200,00</td>
+              <td>0,00</td>
+              <td>✅ OK</td>
+            </tr>
+            <tr>
+              <td>Bradesco</td>
+              <td>Mar/2026</td>
+              <td>2026-03-002</td>
+              <td>2.800,00</td>
+              <td>001235</td>
+              <td>2.800,00</td>
+              <td>0,00</td>
+              <td>✅ OK</td>
+            </tr>
+            <tr>
+              <td>OdontoPrev</td>
+              <td>Mar/2026</td>
+              <td>2026-03-003</td>
+              <td>1.950,00</td>
+              <td>—</td>
+              <td>—</td>
+              <td>-1.950,00</td>
+              <td>⚠️ Nota pendente</td>
+            </tr>
+            <tr>
+              <td>SulAmérica</td>
+              <td>Fev/2026</td>
+              <td>2026-02-001</td>
+              <td>3.100,00</td>
+              <td>001230</td>
+              <td>3.500,00</td>
+              <td>+400,00</td>
+              <td>⚠️ Valor divergente</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="info-box info-box--atencao">
+          <p>⚠️ Neste modelo, a OdontoPrev pagou R$ 1.950,00 mas nenhuma nota foi emitida — é preciso emitir urgentemente. Já a SulAmérica tem uma divergência de R$ 400,00, provavelmente por glosa — precisa de ajuste contábil ou cancelamento/reemissão da nota.</p>
+        </div>
+
+        <h2>O que fazer com pagamentos parciais</h2>
+        <p>Quando uma operadora faz pagamento parcial do lote, a conciliação fica um pouco mais complexa:</p>
+
+        <h3>Regime de caixa</h3>
+        <ul>
+          <li>Emita uma nota para cada pagamento parcial recebido.</li>
+          <li>Na planilha, registre cada parcela separadamente.</li>
+          <li>Só marque como "OK" quando o valor total do lote estiver coberto por notas.</li>
+        </ul>
+
+        <h3>Regime de competência</h3>
+        <ul>
+          <li>A nota já foi emitida pelo valor total.</li>
+          <li>Registre os pagamentos parciais e acompanhe até o saldo ser zerado.</li>
+          <li>Se o valor final for menor (glosa definitiva), trate com nota de crédito.</li>
+        </ul>
+
+        <div class="exemplo">
+          <div class="exemplo__title">Exemplo — Pagamento parcial</div>
+          <p>A Amil enviou demonstrativo de R$ 4.200,00, mas depositou R$ 3.000,00 na primeira parcela e R$ 1.200,00 na segunda (15 dias depois).</p>
+          <p><strong>No regime de caixa:</strong> Emite NFS-e de R$ 3.000,00 no primeiro depósito e outra de R$ 1.200,00 no segundo.</p>
+          <p><strong>No regime de competência:</strong> Já havia emitido uma única NFS-e de R$ 4.200,00. Os depósitos são registrados como quitação parcial do valor.</p>
+        </div>
+
+        <h2>Ferramenta de rastreamento</h2>
+        <p>Para clínicas com maior volume de convênios, a planilha básica pode não ser suficiente. Considere:</p>
+        <ul>
+          <li><strong>Planilha avançada com fórmulas:</strong> Use PROCV, SOMASE e formatação condicional para automatizar a identificação de pendências.</li>
+          <li><strong>Software de gestão:</strong> Muitos softwares odontológicos (como Dental Office, OdontoControl) possuem módulo de faturamento que integra com a emissão de notas.</li>
+          <li><strong>Controle em nuvem:</strong> Google Sheets compartilhado entre secretária, dentista e contador garante que todos tenham acesso à mesma informação.</li>
+        </ul>
+
+        <div class="info-box info-box--dica">
+          <p>✅ Dica da Marisa: A planilha de conciliação é uma das ferramentas mais importantes que eu ensino nos meus cursos. Pode parecer simples, mas ela evita que dinheiro fique "perdido" — e já vi clínicas descobrirem pagamentos de meses atrás que nunca tiveram nota emitida. A conciliação mensal é inegociável.</p>
+        </div>
+
+        <h2>Resumo da aula</h2>
+        <ul>
+          <li>A <strong>conciliação</strong> verifica se todos os pagamentos têm notas correspondentes e se os valores batem.</li>
+          <li>O processo envolve: coletar demonstrativos, listar notas, comparar e resolver pendências.</li>
+          <li>Use uma <strong>planilha de conciliação</strong> com colunas para operadora, valor pago, nota emitida e status.</li>
+          <li>Faça a conciliação <strong>até o 5º dia útil do mês seguinte</strong>.</li>
+          <li>Pagamentos parciais exigem atenção redobrada — registre cada parcela separadamente.</li>
+        </ul>
+      </div>
+
+      <div class="aula-nav">
+        <a href="m5-aula6.html" class="btn btn--outline">← Aula Anterior</a>
+        <a href="m5-aula8.html" class="btn btn--primary">Próxima Aula →</a>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

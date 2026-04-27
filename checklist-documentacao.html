@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checklist de Documentação por Procedimento | FaturaOdonto</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --primary: #0891B2;
+      --primary-dark: #0E7490;
+      --primary-light: #E0F7FA;
+      --secondary: #06D6A0;
+      --dark: #0F172A;
+      --gray: #64748B;
+      --gray-light: #F1F5F9;
+      --white: #FFFFFF;
+      --red: #EF4444;
+      --green: #22C55E;
+      --yellow: #EAB308;
+      --orange: #F97316;
+      --radius: 12px;
+      --shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--gray-light);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    .header {
+      background: var(--dark);
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header__logo {
+      color: var(--white);
+      font-weight: 800;
+      font-size: 1.1rem;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .header__title {
+      color: var(--white);
+      font-size: 0.95rem;
+      font-weight: 500;
+      opacity: 0.8;
+    }
+
+    .header__actions { display: flex; gap: 10px; }
+
+    .btn {
+      padding: 8px 18px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--white);
+    }
+
+    .btn--outline {
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.3);
+    }
+
+    .btn--outline:hover { border-color: var(--white); }
+
+    .main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+
+    /* INTRO */
+    .intro {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 28px 32px;
+      box-shadow: var(--shadow);
+      margin-bottom: 24px;
+      border-left: 4px solid var(--primary);
+    }
+
+    .intro h1 {
+      font-size: 1.5rem;
+      margin-bottom: 8px;
+    }
+
+    .intro p {
+      color: var(--gray);
+      font-size: 0.95rem;
+    }
+
+    .intro__legend {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid var(--gray-light);
+    }
+
+    .intro__legend-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.85rem;
+      color: var(--dark);
+    }
+
+    .legend-icon {
+      width: 24px;
+      height: 24px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .legend-icon--obrig { background: #FEE2E2; color: var(--red); }
+    .legend-icon--freq { background: #FEF3C7; color: #A16207; }
+    .legend-icon--raro { background: #E0F2FE; color: #0369A1; }
+    .legend-icon--na { background: var(--gray-light); color: var(--gray); }
+
+    /* FILTER */
+    .toolbar {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 14px 20px;
+      box-shadow: var(--shadow);
+      margin-bottom: 20px;
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .toolbar__search {
+      flex: 1;
+      min-width: 200px;
+      padding: 8px 14px;
+      border: 1px solid #E2E8F0;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-family: inherit;
+      outline: none;
+    }
+
+    .toolbar__search:focus { border-color: var(--primary); }
+
+    .toolbar__select {
+      padding: 8px 14px;
+      border: 1px solid #E2E8F0;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-family: inherit;
+      background: var(--white);
+      cursor: pointer;
+      outline: none;
+    }
+
+    /* CATEGORY SECTION */
+    .category {
+      margin-bottom: 28px;
+    }
+
+    .category__title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      padding: 12px 20px;
+      background: var(--dark);
+      color: var(--white);
+      border-radius: var(--radius) var(--radius) 0 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .category__count {
+      background: rgba(255,255,255,0.15);
+      padding: 2px 10px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 500;
+    }
+
+    .table-wrap {
+      background: var(--white);
+      border-radius: 0 0 var(--radius) var(--radius);
+      box-shadow: var(--shadow);
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+    }
+
+    thead { background: #F8FAFC; }
+
+    thead th {
+      padding: 10px 14px;
+      text-align: center;
+      font-weight: 600;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      color: var(--gray);
+      border-bottom: 2px solid #E2E8F0;
+      white-space: nowrap;
+    }
+
+    thead th:first-child, thead th:nth-child(2) {
+      text-align: left;
+    }
+
+    tbody tr {
+      border-bottom: 1px solid #F1F5F9;
+      transition: background 0.15s;
+    }
+
+    tbody tr:hover { background: #F8FAFC; }
+
+    tbody td {
+      padding: 10px 14px;
+      text-align: center;
+      vertical-align: middle;
+    }
+
+    tbody td:first-child {
+      text-align: left;
+      font-weight: 600;
+      color: var(--dark);
+      white-space: nowrap;
+    }
+
+    tbody td:nth-child(2) {
+      text-align: left;
+      color: var(--gray);
+      font-size: 0.8rem;
+    }
+
+    /* CELL ICONS */
+    .cell {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+
+    .cell--obrig { background: #FEE2E2; color: var(--red); }
+    .cell--freq { background: #FEF3C7; color: #A16207; }
+    .cell--raro { background: #E0F2FE; color: #0369A1; }
+    .cell--na { background: #F1F5F9; color: #CBD5E1; }
+
+    /* NOTES */
+    .notes {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+      margin-top: 24px;
+    }
+
+    .notes h3 {
+      font-size: 1rem;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .notes ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .notes li {
+      font-size: 0.88rem;
+      color: var(--gray);
+      padding-left: 20px;
+      position: relative;
+    }
+
+    .notes li::before {
+      content: '•';
+      position: absolute;
+      left: 4px;
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    .footer-info {
+      text-align: center;
+      padding: 24px;
+      color: var(--gray);
+      font-size: 0.8rem;
+    }
+
+    .footer-info a { color: var(--primary); text-decoration: none; }
+
+    /* HIDDEN ROW FOR FILTER */
+    .hidden { display: none; }
+
+    @media (max-width: 768px) {
+      .header { flex-wrap: wrap; gap: 10px; }
+      .header__title { display: none; }
+      .toolbar { flex-direction: column; }
+      .intro__legend { flex-direction: column; gap: 8px; }
+      .main { padding: 16px; }
+    }
+
+    @media print {
+      .header, .toolbar, .footer-info { display: none; }
+      .main { padding: 0; max-width: 100%; }
+      .category__title { background: #333; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .cell--obrig, .cell--freq, .cell--raro, .cell--na { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .table-wrap, .intro, .notes { box-shadow: none; break-inside: avoid; }
+      .category { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <a href="index.html" class="header__logo">🦷 FaturaOdonto</a>
+    <span class="header__title">Checklist de Documentação por Procedimento</span>
+    <div class="header__actions">
+      <button class="btn btn--outline" onclick="window.print()">🖨️ Imprimir / PDF</button>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="intro">
+      <h1>📋 Checklist de Documentação por Procedimento</h1>
+      <p>Consulte rapidamente quais documentos cada procedimento odontológico exige para evitar glosas por falta de documentação. Referência geral — sempre confirme com a operadora específica.</p>
+      <div class="intro__legend">
+        <div class="intro__legend-item">
+          <span class="legend-icon legend-icon--obrig">✓</span>
+          Obrigatório (maioria das operadoras)
+        </div>
+        <div class="intro__legend-item">
+          <span class="legend-icon legend-icon--freq">~</span>
+          Frequentemente exigido
+        </div>
+        <div class="intro__legend-item">
+          <span class="legend-icon legend-icon--raro">?</span>
+          Às vezes exigido (depende da operadora)
+        </div>
+        <div class="intro__legend-item">
+          <span class="legend-icon legend-icon--na">—</span>
+          Geralmente não exigido
+        </div>
+      </div>
+    </div>
+
+    <div class="toolbar">
+      <input type="text" class="toolbar__search" id="searchInput" placeholder="🔍 Buscar procedimento...">
+      <select class="toolbar__select" id="filterCat">
+        <option value="">Todas as categorias</option>
+        <option value="prev">Prevenção</option>
+        <option value="rest">Restaurações</option>
+        <option value="endo">Endodontia</option>
+        <option value="perio">Periodontia</option>
+        <option value="ciru">Cirurgia</option>
+        <option value="prot">Prótese</option>
+        <option value="orto">Ortodontia</option>
+        <option value="impl">Implantodontia</option>
+        <option value="diag">Diagnóstico</option>
+      </select>
+    </div>
+
+    <!-- PREVENÇÃO -->
+    <div class="category" data-cat="prev">
+      <div class="category__title">🪥 Prevenção e Diagnóstico <span class="category__count">5 procedimentos</span></div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Procedimento</th>
+              <th>Código TUSS</th>
+              <th>Foto Inicial</th>
+              <th>Foto Final</th>
+              <th>Rx Periapical</th>
+              <th>Rx Panorâmica</th>
+              <th>Rx Interprox.</th>
+              <th>Relatório</th>
+              <th>Autorização</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Profilaxia (limpeza)</td><td>81000030</td><td><span class="cell cell--na">—</span></td><td><span class="cell cell--na">—</span></td><td><span class="cell cell--na">—</span></td><td><span class="cell cell--na">—</span></td><td><span class="cell cell--na">—</span></td><td><span class="cell cell--na">—</span></td><td><span class="cell cell--na">—</span></td></tr>
+            <tr><td>Aplicação de flúor</td><td>81000049</td><td><span class="cell cell--na">—</span></td><td><span class="cell cell--na">—</span></td><td><span class="cell cell--na">—</span></td><td><span class="cell cell--na">—</span></td><td><span class="cell cell--na">—</span></td><td><span class="cell cell--na">—</span></td><td><span class="cell cell--na">—</span></td></tr>
+            <tr><td>Aplicação de selante</td><td>81000057</td><td><span class="cell cell--raro">?</span></td><td><span class="cell cell--na">—</span></td><td><span class="cell cell--na">—</span></td><td><span class="cell cell--na">—</span></td><td><span class="cell cell--raro">?</span></td><td><span class="cell cell--na">—</span></td><td><span class="cell cell--na">—</span></td></tr>
+            <tr><td>Consulta odontológica</td><td>81000014</td><td><span class="cell cell--na">—</span></td><td><span class="cell cell--na">—</span></td><td><span class="cell cell--na">—</span></td><td><span class="cell cell--na">—</span></td><td><span class="cell cell--na">—</span></td><td><span class="cell cell--na">—</span></td><td><span class="cell cell--na">—</span></td></tr>
+            <tr><td>Radiografia periapical</td><td>81000170</td><td><span class="cell cell--na">—</span></td><td><span class="cell cell--na">—</span></td><td><span class="cell cell--na">—</span></td><td><span class="cell cell--na">—</span></td><td><span class="cell cell--na">—</span></td><td><span class="cell cell--na">—</span></td><td><span class="cell cell--na">—</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- RESTAURAÇÕES -->
+    <div class="category" data-cat="rest">
+      <div class="category__title">🦷 Restaurações <span class="category__count">6 procedimentos</span></div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Procedimento</th>
+              <th>Código TUSS</th>
+              <th>Foto Inicial</th>
+              <th>Foto Final</th>
+              <th>Rx Periapical</th>
+              <th>Rx Panorâmica</th>
+              <th>Rx Interprox.</th>
+              <th>Relatório</th>
+              <th>Autorização</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Restauração resina 1 face (posterior)</td><td>81000065</td><td><span class="cell cell--raro">?</span></td><td><span class="cell cell--raro">?</span></td><td><span class="cell cell--raro">?</span></td><td><span class="cell cell--na">—</span></td><td><span class="cell cell--raro">?</span></td><td><span class="cell cell--na">—</span></td><td><span class="cell cell--na">—</span></td></tr>
+            <tr><td>Restauração resina 2 faces (posterior)</td><td>81000073</td><td><span class="cell cell--freq">~</span></td><td><span class="cell cell--freq">~</span></td><td><span class="cell cell--freq">~</span></td><td><span class="cell cell--na">—</span></td><td><span class="cell cell--freq">~</span></td><td><span class="cell cell--na">—</span></td><td><span class="cell cell--raro">?</span></td></tr>
+            <tr><td>Restauração resina 3+ faces (posterior)</td><td>81000081</td><td><span class="cell cell--obrig">✓</span></td><td><span class="cell cell--obrig">✓</span></td><td><span class="cell cell--obrig">✓</span></td><td><span class="cell cell--na">—</span></td><td><span class="cell cell--freq">~</span></td><td><span class="cell cell--na">—</span></td><td><span class="cell cell--freq">~</span></td></tr>
+            <tr><td>Restauração resina (dente anterior)</td><td>81000065</td><td><span class="cell cell--obrig">✓</span></td><td><span class="cell cell--obrig">✓</span></td><td><span class="cell cell--freq">~</span></td><td><span class="cell cell--na">—</span></td><td><span class="cell cell--na">—</span></td><td><span class="cell cell--na">—</span></td><td><span class="cell cell--raro">?</span></td></tr>
+            <tr><td>Restauração de amálgama</td><td>81000103</td><td><span class="cell cell--raro">?</span></td><td><span class="cell cell--raro">?</span></td><td><span class="cell cell--raro">?</span></td><td><span class="cell cell--na">—</span></td><td><span class="cell cell--raro">?</span></td><td><span class="cell cell--na">—</span></td><td><span class="cell cell--na">—</span></td></tr>
+            <tr><td>Núcleo de preenchimento</td><td>81000375</td><td><span class="cell cell--obrig">✓</span></td><td><span class="cell cell--obrig">✓</span></td><td><span class="cell cell--obrig">✓</span></td><td><span class="cell cell--na">—</span></td><td><span class="cell cell--na">—</span></td><td><span class="cell cell--freq">~</span></td><td><span class="cell cell--obrig">✓</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ENDODONTIA -->
+    <div class="category" data-cat="endo">
+      <div class="category__title">🔬 Endodontia <span class="category__count">4 procedimentos</span></div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Procedimento</th>
+              <th>Código TUSS</th>
+              <th>Foto Inicial</th>
+              <th>Foto Final</th>
+              <th>Rx Periapical</th>
+              <th>Rx Panorâmica</th>
+              <th>Rx Interprox.</th>
+              <th>Relatório</th>
+              <th>Autorização</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Tratamento endodôntico 1 canal</td><td>81000421</td><td><span class="cell cell--raro">?</span></td><td><span class="cell cell--na">—</span></td><td><span class="cell cell--obrig">✓</span></td><td><span class="cell cell--na">—</span></td><td><span class="cell cell--na">—</span></td><td><span class="cell cell--freq">~</span></td><td><span class="cell cell--obrig">✓</span></td></tr>
+            <tr><td>Tratamento endodôntico 2 canais</td><td>81000430</td><td><span class="cell cell--raro">?</span></td><td><span class="cell cell--na">—</span></td><td><span class="cell cell--obrig">✓</span></td><td><span class="cell cell--na">—</span></td><td><span class="cell cell--na">—</span></td><td><span class="cell cell--freq">~</span></td><td><span class="cell cell--obrig">✓</span></td></tr>
+            <tr><td>Tratamento endodôntico 3+ canais</td><td>81000448</td><td><span class="cell cell--raro">?</span></td><td><span class="cell cell--na">—</span></td><td><span class="cell cell--obrig">✓</span></td><td><span class="cell cell--na">—</span></td><td><span class="cell cell--na">—</span></td><td><span class="cell cell--obrig">✓</span></td><td><span class="cell cell--obrig">✓</span></td></tr>
+            <tr><td>Retratamento endodôntico</td><td>81000456</td><td><span class="cell cell--freq">~</span></td><td><span class="cell cell--na">—</span></td><td><span class="cell cell--obrig">✓</span></td><td><span class="cell cell--na">—</span></td><td><span class="cell cell--na">—</span></td><td><span class="cell cell--obrig">✓</span></td><td><span class="cell cell--obrig">✓</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- PERIODONTIA -->
+    <div class="category" data-cat="perio">
+      <div class="category__title">🩺 Periodontia <span class="category__count">4 procedimentos</span></div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Procedimento</th>
+              <th>Código TUSS</th>
+              <th>Foto Inicial</th>
+              <th>Foto Final</th>
+              <th>Rx Periapical</th>
+              <th>Rx Panorâmica</th>
+              <th>Rx Interprox.</th>
+              <th>Relatório</th>
+              <th>Autorização</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Raspagem subgengival (por sextante)</td><td>81000286</td><td><span class="cell cell--raro">?</span></td><td><span class="cell cell--na">—</span></td><td><span class="cell cell--obrig">✓</span></td><td><span class="cell cell--freq">~</span></td><td><span class="cell cell--na">—</span></td><td><span class="cell cell--freq">~</span></td><td><span class="cell cell--freq">~</span></td></tr>
+            <tr><td>Raspagem supragengival</td><td>81000278</td><td><span class="cell cell--na">—</span></td><td><span class="cell cell--na">—</span></td><td><span class="cell cell--raro">?</span></td><td><span class="cell cell--na">—</span></td><td><span class="cell cell--na">—</span></td><td><span class="cell cell--na">—</span></td><td><span class="cell cell--na">—</span></td></tr>
+            <tr><td>Gengivectomia</td><td>81000308</td><td><span class="cell cell--obrig">✓</span></td><td><span class="cell cell--obrig">✓</span></td><td><span class="cell cell--obrig">✓</span></td><td><span class="cell cell--freq">~</span></td><td><span class="cell cell--na">—</span></td><td><span class="cell cell--obrig">✓</span></td><td><span class="cell cell--obrig">✓</span></td></tr>
+            <tr><td>Cirurgia periodontal (retalho)</td><td>81000316</td><td><span class="cell cell--obrig">✓</span></td><td><span class="cell cell--obrig">✓</span></td><td><span class="cell cell--obrig">✓</span></td><td><span class="cell cell--obrig">✓</span></td><td><span class="cell cell--na">—</span></td><td><span class="cell cell--obrig">✓</span></td><td><span class="cell cell--obrig">✓</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- CIRURGIA -->
+    <div class="category" data-cat="ciru">
+      <div class="category__title">🔪 Cirurgia <span class="category__count">5 procedimentos</span></div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Procedimento</th>
+              <th>Código TUSS</th>
+              <th>Foto Inicial</th>
+              <th>Foto Final</th>
+              <th>Rx Periapical</th>
+              <th>Rx Panorâmica</th>
+              <th>Rx Interprox.</th>
+              <th>Relatório</th>
+              <th>Autorização</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Exodontia simples</td><td>81000200</td><td><span class="cell cell--na">—</span></td><td><span class="cell cell--na">—</span></td><td><span class="cell cell--obrig">✓</span></td><td><span class="cell cell--na">—</span></td><td><span class="cell cell--na">—</span></td><td><span class="cell cell--na">—</span></td><td><span class="cell cell--raro">?</span></td></tr>
+            <tr><td>Exodontia de dente incluso/semi</td><td>81000219</td><td><span class="cell cell--freq">~</span></td><td><span class="cell cell--na">—</span></td><td><span class="cell cell--obrig">✓</span></td><td><span class="cell cell--obrig">✓</span></td><td><span class="cell cell--na">—</span></td><td><span class="cell cell--obrig">✓</span></td><td><span class="cell cell--obrig">✓</span></td></tr>
+            <tr><td>Exodontia de raiz residual</td><td>81000227</td><td><span class="cell cell--raro">?</span></td><td><span class="cell cell--na">—</span></td><td><span class="cell cell--obrig">✓</span></td><td><span class="cell cell--freq">~</span></td><td><span class="cell cell--na">—</span></td><td><span class="cell cell--na">—</span></td><td><span class="cell cell--freq">~</span></td></tr>
+            <tr><td>Frenectomia</td><td>81000235</td><td><span class="cell cell--obrig">✓</span></td><td><span class="cell cell--obrig">✓</span></td><td><span class="cell cell--na">—</span></td><td><span class="cell cell--na">—</span></td><td><span class="cell cell--na">—</span></td><td><span class="cell cell--obrig">✓</span></td><td><span class="cell cell--obrig">✓</span></td></tr>
+            <tr><td>Ulectomia / Ulotomia</td><td>81000243</td><td><span class="cell cell--obrig">✓</span></td><td><span class="cell cell--freq">~</span></td><td><span class="cell cell--freq">~</span></td><td><span class="cell cell--na">—</span></td><td><span class="cell cell--na">—</span></td><td><span class="cell cell--freq">~</span></td><td><span class="cell cell--obrig">✓</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- PRÓTESE -->
+    <div class="category" data-cat="prot">
+      <div class="category__title">🔩 Prótese Dentária <span class="category__count">5 procedimentos</span></div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Procedimento</th>
+              <th>Código TUSS</th>
+              <th>Foto Inicial</th>
+              <th>Foto Final</th>
+              <th>Rx Periapical</th>
+              <th>Rx Panorâmica</th>
+              <th>Rx Interprox.</th>
+              <th>Relatório</th>
+              <th>Autorização</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Coroa unitária</td><td>81000502</td><td><span class="cell cell--obrig">✓</span></td><td><span class="cell cell--obrig">✓</span></td><td><span class="cell cell--obrig">✓</span></td><td><span class="cell cell--freq">~</span></td><td><span class="cell cell--na">—</span></td><td><span class="cell cell--obrig">✓</span></td><td><span class="cell cell--obrig">✓</span></td></tr>
+            <tr><td>Prótese parcial removível (PPR)</td><td>81000545</td><td><span class="cell cell--obrig">✓</span></td><td><span class="cell cell--obrig">✓</span></td><td><span class="cell cell--freq">~</span></td><td><span class="cell cell--obrig">✓</span></td><td><span class="cell cell--na">—</span></td><td><span class="cell cell--obrig">✓</span></td><td><span class="cell cell--obrig">✓</span></td></tr>
+            <tr><td>Prótese total (dentadura)</td><td>81000570</td><td><span class="cell cell--obrig">✓</span></td><td><span class="cell cell--obrig">✓</span></td><td><span class="cell cell--na">—</span></td><td><span class="cell cell--obrig">✓</span></td><td><span class="cell cell--na">—</span></td><td><span class="cell cell--obrig">✓</span></td><td><span class="cell cell--obrig">✓</span></td></tr>
+            <tr><td>Ponte fixa</td><td>81000510</td><td><span class="cell cell--obrig">✓</span></td><td><span class="cell cell--obrig">✓</span></td><td><span class="cell cell--obrig">✓</span></td><td><span class="cell cell--freq">~</span></td><td><span class="cell cell--na">—</span></td><td><span class="cell cell--obrig">✓</span></td><td><span class="cell cell--obrig">✓</span></td></tr>
+            <tr><td>Reembasamento de prótese</td><td>81000596</td><td><span class="cell cell--obrig">✓</span></td><td><span class="cell cell--obrig">✓</span></td><td><span class="cell cell--na">—</span></td><td><span class="cell cell--na">—</span></td><td><span class="cell cell--na">—</span></td><td><span class="cell cell--freq">~</span></td><td><span class="cell cell--freq">~</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ORTODONTIA -->
+    <div class="category" data-cat="orto">
+      <div class="category__title">😁 Ortodontia <span class="category__count">3 procedimentos</span></div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Procedimento</th>
+              <th>Código TUSS</th>
+              <th>Foto Inicial</th>
+              <th>Foto Final</th>
+              <th>Rx Periapical</th>
+              <th>Rx Panorâmica</th>
+              <th>Rx Interprox.</th>
+              <th>Relatório</th>
+              <th>Autorização</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Instalação de aparelho fixo</td><td>81000618</td><td><span class="cell cell--obrig">✓</span></td><td><span class="cell cell--na">—</span></td><td><span class="cell cell--na">—</span></td><td><span class="cell cell--obrig">✓</span></td><td><span class="cell cell--na">—</span></td><td><span class="cell cell--obrig">✓</span></td><td><span class="cell cell--obrig">✓</span></td></tr>
+            <tr><td>Manutenção ortodôntica mensal</td><td>81000626</td><td><span class="cell cell--raro">?</span></td><td><span class="cell cell--na">—</span></td><td><span class="cell cell--na">—</span></td><td><span class="cell cell--na">—</span></td><td><span class="cell cell--na">—</span></td><td><span class="cell cell--na">—</span></td><td><span class="cell cell--na">—</span></td></tr>
+            <tr><td>Contenção ortodôntica</td><td>81000634</td><td><span class="cell cell--freq">~</span></td><td><span class="cell cell--obrig">✓</span></td><td><span class="cell cell--na">—</span></td><td><span class="cell cell--freq">~</span></td><td><span class="cell cell--na">—</span></td><td><span class="cell cell--freq">~</span></td><td><span class="cell cell--freq">~</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- IMPLANTODONTIA -->
+    <div class="category" data-cat="impl">
+      <div class="category__title">⚙️ Implantodontia <span class="category__count">3 procedimentos</span></div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Procedimento</th>
+              <th>Código TUSS</th>
+              <th>Foto Inicial</th>
+              <th>Foto Final</th>
+              <th>Rx Periapical</th>
+              <th>Rx Panorâmica</th>
+              <th>Rx Interprox.</th>
+              <th>Relatório</th>
+              <th>Autorização</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Instalação de implante</td><td>81000710</td><td><span class="cell cell--obrig">✓</span></td><td><span class="cell cell--obrig">✓</span></td><td><span class="cell cell--obrig">✓</span></td><td><span class="cell cell--obrig">✓</span></td><td><span class="cell cell--na">—</span></td><td><span class="cell cell--obrig">✓</span></td><td><span class="cell cell--obrig">✓</span></td></tr>
+            <tr><td>Reabertura de implante</td><td>81000728</td><td><span class="cell cell--obrig">✓</span></td><td><span class="cell cell--obrig">✓</span></td><td><span class="cell cell--obrig">✓</span></td><td><span class="cell cell--freq">~</span></td><td><span class="cell cell--na">—</span></td><td><span class="cell cell--obrig">✓</span></td><td><span class="cell cell--obrig">✓</span></td></tr>
+            <tr><td>Prótese sobre implante</td><td>81000736</td><td><span class="cell cell--obrig">✓</span></td><td><span class="cell cell--obrig">✓</span></td><td><span class="cell cell--obrig">✓</span></td><td><span class="cell cell--freq">~</span></td><td><span class="cell cell--na">—</span></td><td><span class="cell cell--obrig">✓</span></td><td><span class="cell cell--obrig">✓</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- NOTAS -->
+    <div class="notes">
+      <h3>📝 Observações Importantes — Dicas da Marisa</h3>
+      <ul>
+        <li><strong>Dentes anteriores</strong> (11 a 23 e 31 a 43): restaurações nesses dentes quase sempre exigem foto, mesmo que o procedimento em posterior não exija.</li>
+        <li><strong>Endodontia:</strong> sempre exige Rx periapical — inicial (para autorização) e final (para comprovar obturação). Guarde ambas!</li>
+        <li><strong>Próteses e implantes:</strong> são os procedimentos com maior exigência documental. Na dúvida, fotografe e radiografe TUDO.</li>
+        <li><strong>Cirurgias:</strong> exodontia de incluso sempre exige panorâmica para mostrar a posição do dente.</li>
+        <li><strong>Cada operadora pode ter regras extras.</strong> Este checklist é uma referência geral. Sempre consulte o manual do prestador da operadora específica.</li>
+        <li><strong>Qualidade das imagens:</strong> fotos devem ser nítidas, com boa iluminação e identificação do paciente. Rx deve estar legível e em formato digital (JPEG/PNG).</li>
+        <li><strong>Na dúvida, documente.</strong> É melhor ter documentação sobrando do que faltar e ser glosado. O custo de uma foto é zero — o custo de uma glosa é o valor inteiro do procedimento.</li>
+      </ul>
+    </div>
+
+    <div class="footer-info">
+      <p>Material bônus do <a href="index.html">Curso Básico de Faturamento de Convênios Odontológicos</a> — FaturaOdonto &copy; 2026</p>
+    </div>
+  </main>
+
+  <script>
+    const searchInput = document.getElementById('searchInput');
+    const filterCat = document.getElementById('filterCat');
+
+    function filterTable() {
+      const search = searchInput.value.toLowerCase();
+      const cat = filterCat.value;
+
+      document.querySelectorAll('.category').forEach(section => {
+        const sectionCat = section.dataset.cat;
+        if (cat && sectionCat !== cat) {
+          section.classList.add('hidden');
+          return;
+        }
+        section.classList.remove('hidden');
+
+        let visibleCount = 0;
+        section.querySelectorAll('tbody tr').forEach(row => {
+          const text = row.textContent.toLowerCase();
+          if (search && !text.includes(search)) {
+            row.classList.add('hidden');
+          } else {
+            row.classList.remove('hidden');
+            visibleCount++;
+          }
+        });
+
+        if (visibleCount === 0 && search) {
+          section.classList.add('hidden');
+        }
+      });
+    }
+
+    searchInput.addEventListener('input', filterTable);
+    filterCat.addEventListener('change', filterTable);
+  </script>
+</body>
+</html>

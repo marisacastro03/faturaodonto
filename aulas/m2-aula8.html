@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aula 8 — Planilha de Controle de Faturamento Mensal | Módulo 2</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="aulas.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header header--scrolled">
+    <nav class="nav container">
+      <a href="../index.html" class="nav__logo"><span class="logo-icon">🦷</span> FaturaOdonto</a>
+      <a href="../modulo2.html" class="btn btn--outline nav__cta">← Voltar ao Módulo 2</a>
+    </nav>
+  </header>
+  <div class="membros">
+    <aside class="sidebar">
+      <div class="progress-bar">
+        <div class="progress-bar__label">Módulo 2 — Progresso</div>
+        <div class="progress-bar__track"><div class="progress-bar__fill" style="width: 88%"></div></div>
+      </div>
+      <div class="sidebar__title">Módulo 02</div>
+      <div class="sidebar__module">Faturamento das GTOs</div>
+      <div class="sidebar__list">
+        <a href="m2-aula1.html" class="sidebar__link"><span>01</span> Fluxo do faturamento</a>
+        <a href="m2-aula2.html" class="sidebar__link"><span>02</span> Lote vs individual</a>
+        <a href="m2-aula3.html" class="sidebar__link"><span>03</span> Prazos por operadora</a>
+        <a href="m2-aula4.html" class="sidebar__link"><span>04</span> Envio das guias</a>
+        <a href="m2-aula5.html" class="sidebar__link"><span>05</span> Montagem de lotes</a>
+        <a href="m2-aula6.html" class="sidebar__link"><span>06</span> Status das guias</a>
+        <a href="m2-aula7.html" class="sidebar__link"><span>07</span> Conferência de pagamentos</a>
+        <a href="m2-aula8.html" class="sidebar__link sidebar__link--active"><span>08</span> Planilha de controle</a>
+        <a href="m2-aula9.html" class="sidebar__link"><span>09</span> Exercícios práticos</a>
+      </div>
+    </aside>
+    <main class="aula-content">
+      <span class="aula-content__badge">Módulo 2 · Aula 8 de 9</span>
+      <h1>Planilha de Controle de Faturamento Mensal</h1>
+      <p class="aula-content__meta">Tempo estimado de leitura: 12 minutos</p>
+      <div class="prose">
+        <h2>Por Que Usar uma Planilha?</h2>
+        <p>Mesmo clínicas que usam sistemas de gestão precisam de uma <strong>planilha de controle de faturamento</strong>. Ela é a sua visão consolidada de tudo o que foi faturado, o que está pendente e o que foi recebido. É o seu painel de controle financeiro.</p>
+        <p>A planilha complementa o sistema — enquanto o sistema gerencia os dados operacionais, a planilha permite análises gerenciais, cálculo de indicadores e decisões estratégicas.</p>
+
+        <div class="info-box info-box--dica">
+          <span class="info-box__title">✅ Dica da Marisa:</span>
+          <p>Nos meus anos de experiência com faturamento terceirizado, a planilha de controle foi a ferramenta que mais fez diferença na gestão financeira das clínicas. Clínicas que adotaram o controle viram a taxa de glosa cair e o recebimento aumentar, porque passaram a <strong>enxergar</strong> onde o dinheiro estava sendo perdido.</p>
+        </div>
+
+        <h2>Estrutura da Planilha</h2>
+        <p>Uma boa planilha de controle de faturamento deve ter as seguintes colunas:</p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Coluna</th>
+              <th>Descrição</th>
+              <th>Exemplo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Nº GTO</strong></td>
+              <td>Número da guia de tratamento</td>
+              <td>GTO-2024-0347</td>
+            </tr>
+            <tr>
+              <td><strong>Paciente</strong></td>
+              <td>Nome completo do paciente</td>
+              <td>Maria Silva Santos</td>
+            </tr>
+            <tr>
+              <td><strong>Operadora</strong></td>
+              <td>Nome da operadora</td>
+              <td>Amil Dental</td>
+            </tr>
+            <tr>
+              <td><strong>Profissional</strong></td>
+              <td>Dentista que executou</td>
+              <td>Dr. Carlos — CRO 12345</td>
+            </tr>
+            <tr>
+              <td><strong>Procedimento(s)</strong></td>
+              <td>Código TUSS e descrição resumida</td>
+              <td>81000065 — Restauração</td>
+            </tr>
+            <tr>
+              <td><strong>Data execução</strong></td>
+              <td>Data em que o procedimento foi realizado</td>
+              <td>05/03/2024</td>
+            </tr>
+            <tr>
+              <td><strong>Data envio</strong></td>
+              <td>Data em que a guia foi enviada à operadora</td>
+              <td>10/03/2024</td>
+            </tr>
+            <tr>
+              <td><strong>Nº Lote</strong></td>
+              <td>Número do lote em que a guia foi incluída</td>
+              <td>AMIL-2024-03-001</td>
+            </tr>
+            <tr>
+              <td><strong>Valor faturado</strong></td>
+              <td>Valor total dos procedimentos da guia</td>
+              <td>R$ 180,00</td>
+            </tr>
+            <tr>
+              <td><strong>Status</strong></td>
+              <td>Situação atual da guia</td>
+              <td>Aprovada</td>
+            </tr>
+            <tr>
+              <td><strong>Valor pago</strong></td>
+              <td>Valor efetivamente recebido</td>
+              <td>R$ 180,00</td>
+            </tr>
+            <tr>
+              <td><strong>Data pagamento</strong></td>
+              <td>Data do crédito na conta</td>
+              <td>15/04/2024</td>
+            </tr>
+            <tr>
+              <td><strong>Glosa</strong></td>
+              <td>Valor glosado, se houver</td>
+              <td>R$ 0,00</td>
+            </tr>
+            <tr>
+              <td><strong>Observações</strong></td>
+              <td>Notas adicionais</td>
+              <td>Pago integralmente</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="info-box info-box--importante">
+          <span class="info-box__title">💡 Importante:</span>
+          <p>Essa é a estrutura básica. Conforme você for ganhando prática, pode adicionar colunas como: "Data limite de envio", "Recurso enviado (S/N)", "Data do recurso", "Resultado do recurso", etc.</p>
+        </div>
+
+        <h2>Códigos de Status Padronizados</h2>
+        <p>Para facilitar filtros e fórmulas, use códigos padronizados para o status:</p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Código</th>
+              <th>Status</th>
+              <th>Cor sugerida</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>EM</td>
+              <td>Em montagem (GTO fechada, aguardando lote)</td>
+              <td>Cinza claro</td>
+            </tr>
+            <tr>
+              <td>ENV</td>
+              <td>Enviada à operadora</td>
+              <td>Azul claro</td>
+            </tr>
+            <tr>
+              <td>ANA</td>
+              <td>Em análise pela operadora</td>
+              <td>Amarelo</td>
+            </tr>
+            <tr>
+              <td>PEN</td>
+              <td>Pendente (falta documentação)</td>
+              <td>Laranja</td>
+            </tr>
+            <tr>
+              <td>APR</td>
+              <td>Aprovada, aguardando pagamento</td>
+              <td>Verde claro</td>
+            </tr>
+            <tr>
+              <td>PGA</td>
+              <td>Paga integralmente</td>
+              <td>Verde escuro</td>
+            </tr>
+            <tr>
+              <td>GP</td>
+              <td>Glosa parcial</td>
+              <td>Vermelho claro</td>
+            </tr>
+            <tr>
+              <td>GT</td>
+              <td>Glosa total</td>
+              <td>Vermelho escuro</td>
+            </tr>
+            <tr>
+              <td>REC</td>
+              <td>Recurso enviado</td>
+              <td>Roxo</td>
+            </tr>
+            <tr>
+              <td>REJ</td>
+              <td>Rejeitada/Expirada</td>
+              <td>Preto</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Rotina de Fechamento Mensal</h2>
+        <p>No final de cada mês (ou início do mês seguinte), faça o fechamento mensal do faturamento. Essa rotina é essencial para a gestão financeira da clínica.</p>
+
+        <h3>Checklist de fechamento mensal</h3>
+        <ol>
+          <li><strong>Verifique se todas as GTOs do mês foram lançadas</strong> na planilha</li>
+          <li><strong>Confirme que todos os lotes foram enviados</strong> dentro do prazo</li>
+          <li><strong>Atualize o status</strong> de cada guia com base nas informações dos portais</li>
+          <li><strong>Registre os pagamentos recebidos</strong> com os valores do demonstrativo</li>
+          <li><strong>Identifique guias glosadas</strong> e inicie os recursos necessários</li>
+          <li><strong>Calcule os indicadores</strong> do mês (veja abaixo)</li>
+          <li><strong>Compare com o mês anterior</strong> para identificar tendências</li>
+          <li><strong>Gere um relatório resumido</strong> para o gestor da clínica</li>
+        </ol>
+
+        <div class="info-box info-box--dica">
+          <span class="info-box__title">✅ Dica da Marisa:</span>
+          <p>Reserve as <strong>2 primeiras horas do primeiro dia útil do mês</strong> para fazer o fechamento. Nesse horário, você terá foco e energia para cruzar todos os dados. Se deixar para o final do dia ou para "quando sobrar tempo", pode acabar nunca fazendo.</p>
+        </div>
+
+        <h2>KPIs — Indicadores de Desempenho</h2>
+        <p>Os KPIs (Key Performance Indicators) são números que mostram a saúde do seu faturamento. Acompanhe mensalmente:</p>
+
+        <h3>1. Total faturado</h3>
+        <p>Soma de todos os valores faturados no mês.</p>
+        <div class="exemplo">
+          <div class="exemplo__title">Fórmula</div>
+          <p><strong>Total Faturado</strong> = Soma de todos os "Valor Faturado" do mês</p>
+          <p>Exemplo: R$ 25.000,00</p>
+        </div>
+
+        <h3>2. Total recebido</h3>
+        <p>Soma de todos os valores efetivamente pagos pelas operadoras no mês.</p>
+        <div class="exemplo">
+          <div class="exemplo__title">Fórmula</div>
+          <p><strong>Total Recebido</strong> = Soma de todos os "Valor Pago" do mês</p>
+          <p>Exemplo: R$ 22.500,00</p>
+        </div>
+
+        <h3>3. Taxa de glosa</h3>
+        <p>Percentual do faturamento que foi glosado. Esse é o indicador mais importante!</p>
+        <div class="exemplo">
+          <div class="exemplo__title">Fórmula</div>
+          <p><strong>Taxa de Glosa</strong> = (Total Glosado ÷ Total Faturado) × 100</p>
+          <p>Exemplo: (R$ 2.500 ÷ R$ 25.000) × 100 = <strong>10%</strong></p>
+          <p>Meta ideal: <strong>abaixo de 5%</strong></p>
+        </div>
+
+        <h3>4. Taxa de recuperação de glosa</h3>
+        <p>Percentual das glosas que foram revertidas por meio de recurso.</p>
+        <div class="exemplo">
+          <div class="exemplo__title">Fórmula</div>
+          <p><strong>Taxa de Recuperação</strong> = (Glosas Revertidas ÷ Total Glosado) × 100</p>
+          <p>Exemplo: (R$ 1.500 ÷ R$ 2.500) × 100 = <strong>60%</strong></p>
+        </div>
+
+        <h3>5. Tempo médio de recebimento</h3>
+        <p>Quantos dias, em média, a clínica leva entre o envio da guia e o recebimento do pagamento.</p>
+        <div class="exemplo">
+          <div class="exemplo__title">Fórmula</div>
+          <p><strong>TMR</strong> = Média de (Data Pagamento − Data Envio) de todas as guias pagas</p>
+          <p>Exemplo: <strong>38 dias</strong></p>
+          <p>Meta: <strong>abaixo de 45 dias</strong></p>
+        </div>
+
+        <h3>6. Guias pendentes</h3>
+        <p>Quantidade de guias que ainda estão em aberto (não pagas nem glosadas definitivamente).</p>
+
+        <div class="info-box info-box--atencao">
+          <span class="info-box__title">⚠️ Atenção!</span>
+          <p>Se a <strong>taxa de glosa</strong> estiver acima de 10%, algo sério está errado no processo. Revise os motivos das glosas (será o tema do Módulo 4) e identifique se há erros recorrentes que podem ser corrigidos na origem.</p>
+        </div>
+
+        <h2>Modelo de Relatório Mensal Resumido</h2>
+        <p>Ao final do fechamento, monte um resumo simples para o gestor:</p>
+
+        <div class="exemplo">
+          <div class="exemplo__title">Relatório de Faturamento — Março/2024</div>
+          <p><strong>Total de guias faturadas:</strong> 87</p>
+          <p><strong>Total faturado:</strong> R$ 25.340,00</p>
+          <p><strong>Total recebido:</strong> R$ 22.806,00</p>
+          <p><strong>Total glosado:</strong> R$ 2.534,00 (10%)</p>
+          <p><strong>Recursos enviados:</strong> 12 guias (R$ 1.890,00)</p>
+          <p><strong>Recursos aceitos:</strong> 8 guias (R$ 1.350,00)</p>
+          <p><strong>Tempo médio de recebimento:</strong> 42 dias</p>
+          <p><strong>Guias pendentes:</strong> 15</p>
+          <p><strong>Observação:</strong> Taxa de glosa acima da meta — principais motivos: falta de foto em restaurações anteriores e CRO divergente em 3 guias do Dr. João.</p>
+        </div>
+
+        <h2>Dicas Avançadas</h2>
+        <ul>
+          <li><strong>Abas separadas por operadora:</strong> Se a clínica trabalha com muitas operadoras, crie uma aba para cada uma e uma aba "Consolidado" com a soma</li>
+          <li><strong>Gráficos automáticos:</strong> Use gráficos do Excel/Google Sheets para visualizar a evolução mensal do faturamento, taxa de glosa e TMR</li>
+          <li><strong>Filtros e validação de dados:</strong> Use filtros nas colunas e validação de dados (lista suspensa) para o campo "Status", evitando erros de digitação</li>
+          <li><strong>Backup automático:</strong> Se usar Google Sheets, o backup é automático. Se usar Excel, configure o salvamento em nuvem (OneDrive, Google Drive)</li>
+        </ul>
+
+        <div class="info-box info-box--dica">
+          <span class="info-box__title">✅ Dica da Marisa:</span>
+          <p>Como bônus deste curso, disponibilizamos um <strong>modelo de planilha</strong> pronto para uso. Mas o mais importante é entender a lógica por trás dela. Se você compreendeu os campos e indicadores desta aula, pode adaptar qualquer modelo à realidade da sua clínica.</p>
+        </div>
+
+        <h2>Resumo da Aula</h2>
+        <ul>
+          <li>A planilha de controle é sua <strong>visão consolidada</strong> do faturamento</li>
+          <li>Estruture com colunas essenciais: GTO, paciente, operadora, valores, status, pagamento</li>
+          <li>Use <strong>códigos de status padronizados</strong> e cores para visualização rápida</li>
+          <li>Faça o <strong>fechamento mensal</strong> no primeiro dia útil de cada mês</li>
+          <li>Acompanhe os <strong>KPIs</strong>: total faturado, total recebido, taxa de glosa, TMR</li>
+          <li>Monte um <strong>relatório resumido</strong> para o gestor</li>
+        </ul>
+
+        <p>Na próxima aula — a última deste módulo — vamos colocar tudo em prática com exercícios de simulação completa!</p>
+      </div>
+      <div class="aula-nav">
+        <a href="m2-aula7.html" class="btn btn--outline">← Aula Anterior</a>
+        <a href="m2-aula9.html" class="btn btn--primary">Próxima Aula →</a>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

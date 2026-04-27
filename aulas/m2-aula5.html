@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aula 5 — Montagem de Lotes para Faturamento | Módulo 2</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="aulas.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header header--scrolled">
+    <nav class="nav container">
+      <a href="../index.html" class="nav__logo"><span class="logo-icon">🦷</span> FaturaOdonto</a>
+      <a href="../modulo2.html" class="btn btn--outline nav__cta">← Voltar ao Módulo 2</a>
+    </nav>
+  </header>
+  <div class="membros">
+    <aside class="sidebar">
+      <div class="progress-bar">
+        <div class="progress-bar__label">Módulo 2 — Progresso</div>
+        <div class="progress-bar__track"><div class="progress-bar__fill" style="width: 55%"></div></div>
+      </div>
+      <div class="sidebar__title">Módulo 02</div>
+      <div class="sidebar__module">Faturamento das GTOs</div>
+      <div class="sidebar__list">
+        <a href="m2-aula1.html" class="sidebar__link"><span>01</span> Fluxo do faturamento</a>
+        <a href="m2-aula2.html" class="sidebar__link"><span>02</span> Lote vs individual</a>
+        <a href="m2-aula3.html" class="sidebar__link"><span>03</span> Prazos por operadora</a>
+        <a href="m2-aula4.html" class="sidebar__link"><span>04</span> Envio das guias</a>
+        <a href="m2-aula5.html" class="sidebar__link sidebar__link--active"><span>05</span> Montagem de lotes</a>
+        <a href="m2-aula6.html" class="sidebar__link"><span>06</span> Status das guias</a>
+        <a href="m2-aula7.html" class="sidebar__link"><span>07</span> Conferência de pagamentos</a>
+        <a href="m2-aula8.html" class="sidebar__link"><span>08</span> Planilha de controle</a>
+        <a href="m2-aula9.html" class="sidebar__link"><span>09</span> Exercícios práticos</a>
+      </div>
+    </aside>
+    <main class="aula-content">
+      <span class="aula-content__badge">Módulo 2 · Aula 5 de 9</span>
+      <h1>Montagem de Lotes para Faturamento</h1>
+      <p class="aula-content__meta">Tempo estimado de leitura: 12 minutos</p>
+      <div class="prose">
+        <h2>O Que é um Lote de Faturamento?</h2>
+        <p>Um lote de faturamento é um <strong>conjunto organizado de GTOs</strong> que será enviado à operadora para processamento e pagamento. Pense no lote como um "envelope" que contém todas as guias de um determinado período, de uma mesma operadora.</p>
+        <p>A montagem correta do lote é fundamental para evitar rejeições e garantir que o pagamento seja processado sem atrasos.</p>
+
+        <h2>Regras de Ouro para Montar Lotes</h2>
+        <p>Antes de montar qualquer lote, grave estas regras:</p>
+        <ol>
+          <li><strong>Um lote por operadora:</strong> Nunca misture guias de operadoras diferentes no mesmo lote</li>
+          <li><strong>Um lote por profissional (quando exigido):</strong> Algumas operadoras exigem lotes separados por CRO</li>
+          <li><strong>Período definido:</strong> Cada lote deve cobrir um período claro (ex: 01/03 a 15/03)</li>
+          <li><strong>Numeração sequencial:</strong> Numere seus lotes para facilitar o rastreamento</li>
+          <li><strong>Documentação completa:</strong> Só inclua guias que estejam 100% prontas</li>
+        </ol>
+
+        <div class="info-box info-box--atencao">
+          <span class="info-box__title">⚠️ Atenção!</span>
+          <p>Incluir uma guia incompleta no lote pode causar a rejeição do <strong>lote inteiro</strong> em algumas operadoras. É melhor deixar uma guia pendente para o próximo lote do que comprometer todas as outras.</p>
+        </div>
+
+        <h2>Passo a Passo da Montagem</h2>
+
+        <h3>Passo 1: Separe as guias por operadora</h3>
+        <p>Reúna todas as GTOs fechadas e separe-as por operadora. Você pode usar:</p>
+        <ul>
+          <li>Pastas físicas com o nome de cada operadora</li>
+          <li>Pastas digitais no computador</li>
+          <li>Filtro no sistema de gestão da clínica</li>
+        </ul>
+
+        <h3>Passo 2: Verifique cada guia individualmente</h3>
+        <p>Para cada GTO no lote, confira:</p>
+        <ul>
+          <li>Dados do paciente corretos (nome, carteirinha, data de nascimento)</li>
+          <li>CRO do profissional executante</li>
+          <li>Código(s) TUSS correto(s) para o(s) procedimento(s)</li>
+          <li>Data de execução preenchida</li>
+          <li>Número de autorização (quando houver)</li>
+          <li>Assinatura do profissional</li>
+          <li>Anexos necessários (fotos, raio-X)</li>
+        </ul>
+
+        <div class="info-box info-box--dica">
+          <span class="info-box__title">✅ Dica da Marisa:</span>
+          <p>Crie um <strong>checklist impresso</strong> com todos esses itens e use-o para conferir cada guia antes de incluí-la no lote. Parece burocrático, mas depois de algumas semanas vira automático — e a taxa de glosa cai drasticamente.</p>
+        </div>
+
+        <h3>Passo 3: Numere o lote</h3>
+        <p>Use um sistema de numeração que facilite a identificação posterior. Eu recomendo o formato:</p>
+
+        <div class="exemplo">
+          <div class="exemplo__title">Sistema de Numeração de Lotes</div>
+          <p><strong>Formato:</strong> [OPERADORA]-[ANO]-[MÊS]-[SEQUENCIAL]</p>
+          <p><strong>Exemplos:</strong></p>
+          <p>AMIL-2024-03-001 → Primeiro lote da Amil em março/2024</p>
+          <p>AMIL-2024-03-002 → Segundo lote da Amil em março/2024</p>
+          <p>BRAD-2024-03-001 → Primeiro lote do Bradesco em março/2024</p>
+        </div>
+
+        <h3>Passo 4: Monte o resumo do lote</h3>
+        <p>Antes de enviar, prepare um resumo com as informações principais:</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Campo</th>
+              <th>Exemplo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Número do lote</td>
+              <td>AMIL-2024-03-001</td>
+            </tr>
+            <tr>
+              <td>Operadora</td>
+              <td>Amil Dental</td>
+            </tr>
+            <tr>
+              <td>Período</td>
+              <td>01/03 a 15/03/2024</td>
+            </tr>
+            <tr>
+              <td>Quantidade de guias</td>
+              <td>18</td>
+            </tr>
+            <tr>
+              <td>Valor total estimado</td>
+              <td>R$ 3.420,00</td>
+            </tr>
+            <tr>
+              <td>Data de envio</td>
+              <td>16/03/2024</td>
+            </tr>
+            <tr>
+              <td>Profissional(is)</td>
+              <td>Dr. Carlos (CRO 12345-SP)</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>Passo 5: Faça a pré-validação</h3>
+        <p>Muitos portais de operadoras oferecem uma função de <strong>pré-validação</strong> ou "teste" antes do envio definitivo. Essa função verifica se há erros nas guias sem registrá-las no sistema. Sempre use essa função quando disponível!</p>
+
+        <h2>Motivos Comuns de Rejeição de Lotes</h2>
+        <p>Entender por que os lotes são rejeitados ajuda a evitar os erros:</p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Motivo</th>
+              <th>Descrição</th>
+              <th>Frequência</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>CRO não credenciado</strong></td>
+              <td>O profissional não está vinculado à clínica naquela operadora</td>
+              <td>Alta</td>
+            </tr>
+            <tr>
+              <td><strong>Guia duplicada</strong></td>
+              <td>A mesma guia já foi enviada em outro lote</td>
+              <td>Média</td>
+            </tr>
+            <tr>
+              <td><strong>Paciente inelegível</strong></td>
+              <td>Plano do paciente vencido ou com carência</td>
+              <td>Média</td>
+            </tr>
+            <tr>
+              <td><strong>Código TUSS inválido</strong></td>
+              <td>Código não existe ou foi descontinuado</td>
+              <td>Baixa</td>
+            </tr>
+            <tr>
+              <td><strong>Documentação incompleta</strong></td>
+              <td>Falta foto ou raio-X quando exigido</td>
+              <td>Alta</td>
+            </tr>
+            <tr>
+              <td><strong>Formato do arquivo incorreto</strong></td>
+              <td>Upload em formato não aceito pelo portal</td>
+              <td>Baixa</td>
+            </tr>
+            <tr>
+              <td><strong>Prazo vencido</strong></td>
+              <td>Data de execução fora do prazo de envio</td>
+              <td>Média</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Gestão Eficiente de Lotes</h2>
+        <p>Para manter o controle dos seus lotes ao longo do mês, siga estas práticas:</p>
+
+        <h3>Organização por status</h3>
+        <p>Cada lote pode estar em um dos seguintes status:</p>
+        <ul>
+          <li><strong>Em montagem:</strong> Guias sendo conferidas e agrupadas</li>
+          <li><strong>Pronto para envio:</strong> Conferido e aguardando envio</li>
+          <li><strong>Enviado:</strong> Protocolo de envio gerado</li>
+          <li><strong>Recebido:</strong> Confirmado pela operadora</li>
+          <li><strong>Processado:</strong> Guias analisadas e com status individual</li>
+          <li><strong>Pago:</strong> Pagamento recebido e conferido</li>
+        </ul>
+
+        <h3>Frequência ideal de montagem</h3>
+        <ul>
+          <li><strong>Clínicas com alto volume (50+ guias/mês):</strong> Montar e enviar lotes semanalmente</li>
+          <li><strong>Clínicas com médio volume (20-50 guias/mês):</strong> Montar e enviar a cada 15 dias</li>
+          <li><strong>Clínicas com baixo volume (até 20 guias/mês):</strong> Montar e enviar mensalmente, antes da data de corte</li>
+        </ul>
+
+        <div class="info-box info-box--dica">
+          <span class="info-box__title">✅ Dica da Marisa:</span>
+          <p>Independente do volume, eu recomendo no mínimo o envio <strong>quinzenal</strong>. Já gerenciei clínicas que passaram de mensal para quinzenal e viram o fluxo de caixa melhorar em 30%, simplesmente porque os pagamentos começaram a entrar mais rápido e de forma mais distribuída ao longo do mês.</p>
+        </div>
+
+        <h2>O Que Fazer com Guias Rejeitadas</h2>
+        <p>Se uma guia do seu lote for rejeitada:</p>
+        <ol>
+          <li><strong>Identifique o motivo:</strong> Verifique no portal qual o código/motivo da rejeição</li>
+          <li><strong>Corrija o problema:</strong> Atualize os dados, anexe documentação faltante, etc.</li>
+          <li><strong>Inclua no próximo lote:</strong> A guia corrigida vai no lote seguinte</li>
+          <li><strong>Registre na planilha:</strong> Anote que a guia foi reenviada e em qual lote</li>
+        </ol>
+
+        <div class="info-box info-box--atencao">
+          <span class="info-box__title">⚠️ Atenção!</span>
+          <p>Cuidado com o prazo! Se a guia foi rejeitada e precisa ser corrigida, verifique se ainda está dentro do prazo de envio da operadora antes de incluí-la no próximo lote.</p>
+        </div>
+
+        <h2>Resumo da Aula</h2>
+        <ul>
+          <li>Um lote é um conjunto organizado de GTOs da <strong>mesma operadora</strong></li>
+          <li>Siga as 5 regras de ouro: uma operadora, um profissional (se exigido), período definido, numeração e documentação completa</li>
+          <li>Confira cada guia individualmente antes de incluí-la no lote</li>
+          <li>Use a pré-validação do portal sempre que possível</li>
+          <li>Mantenha uma rotina de montagem adequada ao volume da clínica</li>
+          <li>Guias rejeitadas devem ser corrigidas e incluídas no próximo lote</li>
+        </ul>
+
+        <p>Na próxima aula, vamos aprender a acompanhar o status das guias após o envio!</p>
+      </div>
+      <div class="aula-nav">
+        <a href="m2-aula4.html" class="btn btn--outline">← Aula Anterior</a>
+        <a href="m2-aula6.html" class="btn btn--primary">Próxima Aula →</a>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
