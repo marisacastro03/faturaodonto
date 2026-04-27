@@ -19,6 +19,13 @@ Depois de ativar o GitHub Pages (passos abaixo), o endereço público será:
 4. Faça um **push** na branch `main` (ou use **Actions** → workflow **Deploy GitHub Pages** → **Run workflow**). Quando o job ficar verde, o site estará publicado em alguns minutos
 5. Se a primeira publicação não aparecer, confira **Settings** → **Pages** se a **URL** do site está indicada e se não há erros na aba **Actions**
 
+### Se o workflow “Deploy GitHub Pages” falhar
+
+- Confirme **Settings** → **Pages** → **Source: GitHub Actions** (não deixe em “None”).
+- Confirme **Settings** → **Actions** → **General** → **Workflow permissions** em **Read and write permissions**.
+- O arquivo do workflow usa **dois jobs** (`build` e `deploy`); é o formato que o `deploy-pages` espera.
+- **Plano B:** em **Pages**, troque a source para **Deploy from a branch** → branch **main** → pasta **/ (root)** e salve (publica sem Actions).
+
 ### Domínio próprio (opcional)
 
 Quando comprar domínio (ex.: `faturaodonto.com.br`), configure no GitHub em **Pages** → **Custom domain** e atualize no código as meta tags `og:url` e `og:image` em `index.html` e `anuncio.html` para usar a nova URL.
