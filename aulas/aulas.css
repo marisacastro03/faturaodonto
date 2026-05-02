@@ -1,22 +1,43 @@
 /* ===== ÁREA DE MEMBROS — LAYOUT DE LEITURA ===== */
 
-/* Sidebar + Content Layout */
+/* Sidebar + Content Layout — mobile first */
 .membros {
   display: grid;
-  grid-template-columns: 280px 1fr;
-  min-height: 100vh;
-  padding-top: 72px;
+  grid-template-columns: 1fr;
+  min-height: 100dvh;
+  padding-top: 64px;
+}
+
+@media (min-width: 900px) {
+  .membros {
+    grid-template-columns: 280px 1fr;
+    padding-top: 72px;
+  }
 }
 
 /* Sidebar */
 .sidebar {
   background: var(--dark);
   color: var(--white);
-  padding: 32px 0;
-  position: sticky;
-  top: 72px;
-  height: calc(100vh - 72px);
-  overflow-y: auto;
+  padding: 20px 0 max(20px, env(safe-area-inset-bottom));
+  position: relative;
+  top: 0;
+  height: auto;
+  max-height: none;
+  overflow-y: visible;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+@media (min-width: 900px) {
+  .sidebar {
+    padding: 32px 0;
+    position: sticky;
+    top: 72px;
+    height: calc(100vh - 72px);
+    max-height: calc(100vh - 72px);
+    overflow-y: auto;
+    border-bottom: none;
+  }
 }
 
 .sidebar__title {
@@ -75,8 +96,11 @@
 
 /* Content Area */
 .aula-content {
-  padding: 48px 60px 80px;
+  padding: clamp(24px, 5vw, 48px) clamp(16px, 4vw, 60px) clamp(48px, 10vw, 80px);
   max-width: 860px;
+  margin-inline: auto;
+  overflow-x: auto;
+  overflow-wrap: break-word;
 }
 
 .aula-content__badge {
@@ -91,10 +115,10 @@
 }
 
 .aula-content h1 {
-  font-size: 2rem;
+  font-size: clamp(1.35rem, 4.5vw, 2rem);
   font-weight: 800;
   margin-bottom: 8px;
-  line-height: 1.3;
+  line-height: 1.25;
 }
 
 .aula-content__meta {
@@ -129,8 +153,8 @@
 }
 
 .prose p {
-  font-size: 1.05rem;
-  line-height: 1.8;
+  font-size: clamp(1rem, 2.8vw, 1.05rem);
+  line-height: 1.75;
   color: #374151;
   margin-bottom: 16px;
 }
@@ -233,6 +257,8 @@
 /* Navigation between lessons */
 .aula-nav {
   display: flex;
+  flex-direction: column;
+  align-items: stretch;
   justify-content: space-between;
   gap: 16px;
   margin-top: 48px;
@@ -241,7 +267,16 @@
 }
 
 .aula-nav a {
-  padding: 12px 24px;
+  padding: 14px 24px;
+  text-align: center;
+}
+
+@media (min-width: 640px) {
+  .aula-nav {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
 }
 
 /* Progress bar */
@@ -270,30 +305,4 @@
   background: var(--gradient);
   border-radius: 3px;
   transition: width 0.3s;
-}
-
-/* Responsive */
-@media (max-width: 900px) {
-  .membros {
-    grid-template-columns: 1fr;
-  }
-
-  .sidebar {
-    position: relative;
-    top: 0;
-    height: auto;
-    padding: 20px 0;
-  }
-
-  .aula-content {
-    padding: 32px 20px 60px;
-  }
-
-  .aula-nav {
-    flex-direction: column;
-  }
-
-  .aula-nav a {
-    text-align: center;
-  }
 }
