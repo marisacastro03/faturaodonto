@@ -2,25 +2,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Header scroll effect
   const header = document.getElementById('header');
-  window.addEventListener('scroll', () => {
-    header.classList.toggle('header--scrolled', window.scrollY > 50);
-  });
+  if (header) {
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('header--scrolled', window.scrollY > 50);
+    });
+  }
 
-  // Mobile menu toggle
+  // Mobile menu toggle (apenas na landing com #navToggle)
   const navToggle = document.getElementById('navToggle');
   const navList = document.getElementById('navList');
 
-  navToggle.addEventListener('click', () => {
-    navList.classList.toggle('active');
-    navToggle.classList.toggle('active');
-  });
-
-  navList.querySelectorAll('.nav__link').forEach(link => {
-    link.addEventListener('click', () => {
-      navList.classList.remove('active');
-      navToggle.classList.remove('active');
+  if (navToggle && navList) {
+    navToggle.addEventListener('click', () => {
+      navList.classList.toggle('active');
+      navToggle.classList.toggle('active');
     });
-  });
+
+    navList.querySelectorAll('.nav__link').forEach(link => {
+      link.addEventListener('click', () => {
+        navList.classList.remove('active');
+        navToggle.classList.remove('active');
+      });
+    });
+  }
 
   // Animated counter
   function animateCounters() {
