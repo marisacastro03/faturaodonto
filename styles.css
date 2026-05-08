@@ -362,6 +362,92 @@ ul { list-style: none; }
   animation: fadeInUp 0.6s ease 0.2s both;
 }
 
+.hero__context {
+  font-size: clamp(0.95rem, 3vw, 1.06rem);
+  font-weight: 600;
+  color: var(--dark-2);
+  max-width: 640px;
+  margin: -4px auto 14px;
+  line-height: 1.48;
+}
+
+.hero__context strong {
+  color: var(--primary-dark);
+}
+
+.hero__subtitle--mobile {
+  display: block;
+}
+
+.hero__subtitle--desktop {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .hero__subtitle--mobile {
+    display: none;
+  }
+
+  .hero__subtitle--desktop {
+    display: block;
+  }
+
+  .hero__context {
+    margin-bottom: 18px;
+  }
+}
+
+.hero__trust {
+  margin: -4px auto 32px;
+  max-width: 520px;
+  padding: 14px max(14px, 3vw);
+  background: rgba(241, 245, 249, 0.95);
+  border-radius: var(--radius);
+  border-left: 4px solid var(--secondary);
+  text-align: left;
+  box-shadow: var(--shadow-sm);
+}
+
+.hero__trust-stars {
+  font-size: 0.9rem;
+  letter-spacing: 0.06em;
+  margin-bottom: 8px;
+  line-height: 1;
+}
+
+.hero__trust-quote {
+  font-size: clamp(0.88rem, 2.9vw, 0.96rem);
+  color: var(--dark-2);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.hero__trust-author {
+  font-size: 0.82rem;
+  color: var(--gray);
+  margin: 10px 0 10px;
+  line-height: 1.35;
+}
+
+.hero__trust-name {
+  font-weight: 600;
+  color: var(--dark-2);
+}
+
+.hero__trust-link {
+  display: inline-block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--primary);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.hero__trust-link:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
 @media (min-width: 768px) {
   .hero__subtitle {
     margin-bottom: 36px;
@@ -376,6 +462,10 @@ ul { list-style: none; }
 
   .hero__title {
     margin-bottom: 24px;
+  }
+
+  .hero__trust {
+    margin-bottom: 40px;
   }
 }
 
@@ -499,6 +589,14 @@ ul { list-style: none; }
   max-width: 600px;
   margin: 0 auto 36px;
   text-align: center;
+}
+
+@media (max-width: 767px) {
+  .section__desc {
+    font-size: 0.94rem;
+    line-height: 1.58;
+    margin-bottom: 28px;
+  }
 }
 
 @media (min-width: 768px) {
@@ -907,6 +1005,13 @@ ul { list-style: none; }
   color: var(--gray);
   line-height: 1.7;
   margin-bottom: 12px;
+}
+
+@media (max-width: 767px) {
+  .instrutora__info p {
+    font-size: 0.92rem;
+    line-height: 1.62;
+  }
 }
 
 .instrutora__info p strong {
@@ -1793,6 +1898,13 @@ ul { list-style: none; }
   }
 }
 
+/* Barra de CTA fixa no mobile: sobe o WhatsApp para não competir com o mesmo canto */
+@media (max-width: 767px) {
+  body:has(#mobileCta.visible) .whatsapp-float {
+    bottom: calc(92px + env(safe-area-inset-bottom, 0px));
+  }
+}
+
 @media (hover: hover) and (pointer: fine) {
   .whatsapp-float:hover {
     transform: translateY(-2px);
@@ -2321,8 +2433,10 @@ ul { list-style: none; }
 
   .hero__badge,
   .hero__title,
+  .hero__context,
   .hero__subtitle,
   .hero__actions,
+  .hero__trust,
   .hero__stats {
     animation: none;
   }

@@ -69,22 +69,32 @@ document.addEventListener('DOMContentLoaded', () => {
   // Countdown timer (7 days from first visit)
   function initCountdown() {
     const countdownEl = document.getElementById('countdown');
-    if (!countdownEl) return;
+    const daysEl = document.getElementById('days');
+    const hoursEl = document.getElementById('hours');
+    const minutesEl = document.getElementById('minutes');
+    const secondsEl = document.getElementById('seconds');
+    if (!countdownEl || !daysEl || !hoursEl || !minutesEl || !secondsEl) return;
 
-    let deadline = localStorage.getItem('faturaodonto_deadline');
-    if (!deadline) {
-      deadline = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).getTime();
-      localStorage.setItem('faturaodonto_deadline', deadline);
+    function loadDeadlineMs() {
+      const raw = localStorage.getItem('faturaodonto_deadline');
+      let ms = raw ? Number(raw) : NaN;
+      if (!Number.isFinite(ms)) {
+        ms = Date.now() + 7 * 24 * 60 * 60 * 1000;
+        localStorage.setItem('faturaodonto_deadline', String(ms));
+      }
+      return ms;
     }
 
+    let deadlineMs = loadDeadlineMs();
+
     function updateCountdown() {
-      const now = new Date().getTime();
-      const distance = deadline - now;
+      let distance = deadlineMs - Date.now();
 
       if (distance < 0) {
         localStorage.removeItem('faturaodonto_deadline');
-        deadline = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).getTime();
-        localStorage.setItem('faturaodonto_deadline', deadline);
+        deadlineMs = Date.now() + 7 * 24 * 60 * 60 * 1000;
+        localStorage.setItem('faturaodonto_deadline', String(deadlineMs));
+        distance = deadlineMs - now;
       }
 
       const d = Math.floor(distance / (1000 * 60 * 60 * 24));
@@ -92,10 +102,10 @@ document.addEventListener('DOMContentLoaded', () => {
       const m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
       const s = Math.floor((distance % (1000 * 60)) / 1000);
 
-      document.getElementById('days').textContent = String(d).padStart(2, '0');
-      document.getElementById('hours').textContent = String(h).padStart(2, '0');
-      document.getElementById('minutes').textContent = String(m).padStart(2, '0');
-      document.getElementById('seconds').textContent = String(s).padStart(2, '0');
+      daysEl.textContent = String(d).padStart(2, '0');
+      hoursEl.textContent = String(h).padStart(2, '0');
+      minutesEl.textContent = String(m).padStart(2, '0');
+      secondsEl.textContent = String(s).padStart(2, '0');
     }
 
     updateCountdown();
