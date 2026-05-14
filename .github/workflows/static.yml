@@ -27,13 +27,31 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Pasta pública (sem .git / .github)
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Instalar dependências e testes
+        run: |
+          npm ci
+          npm test
+          node --check script.js
+
+      - name: Pasta pública (sem .git / .github / node / testes)
         run: |
           mkdir -p _site
-          rsync -a --exclude='.git' --exclude='.github' --exclude='_site' ./ _site/
-
-      - name: Verificar sintaxe do script.js
-        run: node --check script.js
+          rsync -a \
+            --exclude='.git' \
+            --exclude='.github' \
+            --exclude='_site' \
+            --exclude='node_modules' \
+            --exclude='package.json' \
+            --exclude='package-lock.json' \
+            --exclude='vitest.config.js' \
+            --exclude='*.test.js' \
+            ./ _site/
 
       - name: Setup Pages
         uses: actions/configure-pages@v5

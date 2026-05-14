@@ -1,8 +1,28 @@
+import {
+  anchorScrollBehavior,
+  DEFAULT_COUNTDOWN_TTL_MS,
+  distanceToDeadline,
+  faqClickAction,
+  getFadeInSelectorString,
+  padTimeUnit,
+  parseStoredDeadlineMs,
+  renewDeadlineIfExpired,
+  resolveDeadlineFromStorage,
+  shouldAnimateStatCounter,
+  shouldHeaderShowScrolledState,
+  shouldShowMobileCtaBar,
+  splitCountdownParts,
+  statAnimationAfterTick,
+  statAnimationStep,
+  statsEntriesTriggerCounters,
+} from './landing-logic.js';
+
+const COUNTDOWN_STORAGE_KEY = 'faturaodonto_deadline';
+
 document.addEventListener('DOMContentLoaded', () => {
   const prefersReducedMotion = () =>
     window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  // Scroll: cabeçalho + CTA mobile num único listener (passive + rAF)
   const header = document.getElementById('header');
   const mobileCta = document.getElementById('mobileCta');
   const heroSection = document.querySelector('.hero');
@@ -11,12 +31,15 @@ document.addEventListener('DOMContentLoaded', () => {
   let scrollRafPending = false;
   function updateScrollDerivedUi() {
     if (header) {
-      header.classList.toggle('header--scrolled', window.scrollY > 50);
+      header.classList.toggle(
+        'header--scrolled',
+        shouldHeaderShowScrolledState(window.scrollY)
+      );
     }
     if (mobileCta) {
       const heroBottom = heroSection ? heroSection.getBoundingClientRect().bottom : 0;
       const precoTop = precoSection ? precoSection.getBoundingClientRect().top : Infinity;
-      const show = heroBottom < 0 && precoTop > window.innerHeight;
+      const show = shouldShowMobileCtaBar(heroBottom, precoTop, window.innerHeight);
       mobileCta.classList.toggle('visible', show);
     }
   }
@@ -35,7 +58,6 @@ document.addEventListener('DOMContentLoaded', () => {
     updateScrollDerivedUi();
   }
 
-  // Menu mobile
   const navToggle = document.getElementById('navToggle');
   const navList = document.getElementById('navList');
 
@@ -60,7 +82,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Contadores do hero
   function animateCounters() {
     const counters = document.querySelectorAll('.stat__number');
     counters.forEach((counter) => {
@@ -68,20 +89,21 @@ document.addEventListener('DOMContentLoaded', () => {
         counter.textContent = counter.dataset.fixed;
         return;
       }
+      if (!shouldAnimateStatCounter(counter.dataset)) return;
+
       const target = +counter.dataset.target;
-      if (!target) return;
-      const duration = 2000;
-      const step = target / (duration / 16);
-      let current = 0;
+      const step = statAnimationStep(target, 2000, 16);
+      let currentFloat = 0;
 
       const update = () => {
-        current += step;
-        if (current < target) {
-          counter.textContent = Math.floor(current);
-          requestAnimationFrame(update);
-        } else {
-          counter.textContent = String(target);
-        }
+        const { currentFloat: nextFloat, displayValue, done } = statAnimationAfterTick(
+          currentFloat,
+          step,
+          target
+        );
+        currentFloat = nextFloat;
+        counter.textContent = String(displayValue);
+        if (!done) requestAnimationFrame(update);
       };
       update();
     });
@@ -92,8 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const statsObserver = new IntersectionObserver(
     (entries) => {
-      const visible = entries.some((e) => e.isIntersecting);
-      if (visible && !counterStarted) {
+      if (statsEntriesTriggerCounters(entries) && !counterStarted) {
         counterStarted = true;
         animateCounters();
       }
@@ -103,7 +124,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (statsSection) statsObserver.observe(statsSection);
 
-  // Countdown (7 dias a partir da primeira visita)
   function initCountdown() {
     const countdownEl = document.getElementById('countdown');
     const daysEl = document.getElementById('days');
@@ -113,11 +133,10 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!countdownEl || !daysEl || !hoursEl || !minutesEl || !secondsEl) return;
 
     function loadDeadlineMs() {
-      const raw = localStorage.getItem('faturaodonto_deadline');
-      let ms = raw ? Number(raw) : NaN;
-      if (!Number.isFinite(ms)) {
-        ms = Date.now() + 7 * 24 * 60 * 60 * 1000;
-        localStorage.setItem('faturaodonto_deadline', String(ms));
+      const raw = localStorage.getItem(COUNTDOWN_STORAGE_KEY);
+      const ms = resolveDeadlineFromStorage(raw, Date.now(), DEFAULT_COUNTDOWN_TTL_MS);
+      if (!Number.isFinite(parseStoredDeadlineMs(raw))) {
+        localStorage.setItem(COUNTDOWN_STORAGE_KEY, String(ms));
       }
       return ms;
     }
@@ -125,24 +144,25 @@ document.addEventListener('DOMContentLoaded', () => {
     let deadlineMs = loadDeadlineMs();
 
     function updateCountdown() {
-      let distance = deadlineMs - Date.now();
-
-      if (distance < 0) {
-        localStorage.removeItem('faturaodonto_deadline');
-        deadlineMs = Date.now() + 7 * 24 * 60 * 60 * 1000;
-        localStorage.setItem('faturaodonto_deadline', String(deadlineMs));
-        distance = deadlineMs - Date.now();
+      const now = Date.now();
+      const { deadlineMs: nextDeadline, renewed } = renewDeadlineIfExpired(
+        deadlineMs,
+        now,
+        DEFAULT_COUNTDOWN_TTL_MS
+      );
+      if (renewed) {
+        localStorage.removeItem(COUNTDOWN_STORAGE_KEY);
+        localStorage.setItem(COUNTDOWN_STORAGE_KEY, String(nextDeadline));
+        deadlineMs = nextDeadline;
       }
 
-      const d = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const s = Math.floor((distance % (1000 * 60)) / 1000);
+      const distance = distanceToDeadline(deadlineMs, Date.now());
+      const { days, hours, minutes, seconds } = splitCountdownParts(distance);
 
-      daysEl.textContent = String(d).padStart(2, '0');
-      hoursEl.textContent = String(h).padStart(2, '0');
-      minutesEl.textContent = String(m).padStart(2, '0');
-      secondsEl.textContent = String(s).padStart(2, '0');
+      daysEl.textContent = padTimeUnit(days);
+      hoursEl.textContent = padTimeUnit(hours);
+      minutesEl.textContent = padTimeUnit(minutes);
+      secondsEl.textContent = padTimeUnit(seconds);
     }
 
     updateCountdown();
@@ -151,10 +171,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   initCountdown();
 
-  // Fade-in ao scroll
-  const fadeElements = document.querySelectorAll(
-    '.feature-card, .module-card, .testimonial-card, .pricing-card, .publico__grid, .faq-item, .ad-card, .bonus-card, .glosa-tip, .numero-card, .jornada__step, .diff-item, .certificado__doc, .garantia__box, .instrutora__grid'
-  );
+  const fadeElements = document.querySelectorAll(getFadeInSelectorString());
 
   fadeElements.forEach((el) => el.classList.add('fade-in'));
 
@@ -172,7 +189,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   fadeElements.forEach((el) => fadeObserver.observe(el));
 
-  // FAQ acordeão (aria + Escape)
   const faqItems = document.querySelectorAll('.faq-item');
 
   function closeAllFaq() {
@@ -195,7 +211,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!btn) return;
     btn.addEventListener('click', () => {
       const wasActive = item.classList.contains('active');
-      if (wasActive) {
+      if (faqClickAction(wasActive) === 'close-all') {
         closeAllFaq();
       } else {
         openFaqItem(item);
@@ -214,7 +230,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Âncoras internas (respeita redução de movimento)
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener('click', (e) => {
       const href = anchor.getAttribute('href');
@@ -223,7 +238,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!target) return;
       e.preventDefault();
       target.scrollIntoView({
-        behavior: prefersReducedMotion() ? 'auto' : 'smooth',
+        behavior: anchorScrollBehavior(prefersReducedMotion()),
       });
     });
   });
