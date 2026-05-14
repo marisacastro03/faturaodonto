@@ -2,6 +2,19 @@
 
 Site estático do curso **FaturaOdonto** — faturamento de convênios odontológicos.
 
+## Estrutura do repositório
+
+| Pasta / ficheiro | Conteúdo |
+|------------------|-----------|
+| `index.html` | Landing na raiz (URL principal do site) |
+| `assets/css/` | `styles.css`, `modulos.css`, `aulas.css`, `anuncio.css` |
+| `assets/js/` | `script.js` (ES module) e `landing-logic.js` |
+| `assets/img/` | Imagens públicas (ex.: `marisa.jpg`) |
+| `modulos/` | Índice de cada módulo (`modulo1.html` … `modulo5.html`) |
+| `aulas/` | Uma página por aula (`m1-aula1.html`, …) |
+| `paginas/` | Termos, privacidade, materiais bónus, LPs de anúncio |
+| `.github/workflows/` | Deploy para GitHub Pages + `npm test` na CI |
+
 ## Link para testar
 
 **https://marisacastro03.github.io/faturaodonto/**

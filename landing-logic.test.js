@@ -20,7 +20,7 @@ import {
   statAnimationStep,
   statInitialTextFromDataset,
   statsEntriesTriggerCounters,
-} from './landing-logic.js';
+} from './assets/js/landing-logic.js';
 
 describe('constantes', () => {
   it('DEFAULT_COUNTDOWN_TTL_MS equivale a 7 dias', () => {
