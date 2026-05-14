@@ -32,6 +32,9 @@ jobs:
           mkdir -p _site
           rsync -a --exclude='.git' --exclude='.github' --exclude='_site' ./ _site/
 
+      - name: Verificar sintaxe do script.js
+        run: node --check script.js
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 

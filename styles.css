@@ -96,7 +96,7 @@ ul { list-style: none; }
   font-weight: 600;
   font-size: 1rem;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: box-shadow 0.3s ease, transform 0.3s ease, background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
   border: 2px solid transparent;
 }
 
@@ -263,7 +263,7 @@ ul { list-style: none; }
   height: 2px;
   background: var(--dark);
   border-radius: 2px;
-  transition: all 0.3s;
+  transition: transform 0.3s ease, opacity 0.3s ease, background-color 0.3s ease;
 }
 
 .nav__list.active {
@@ -634,7 +634,7 @@ ul { list-style: none; }
   border-radius: var(--radius-lg);
   padding: 24px 20px;
   text-align: left;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 @media (min-width: 768px) {
@@ -680,7 +680,7 @@ ul { list-style: none; }
   border-radius: var(--radius-lg);
   padding: 24px 20px;
   position: relative;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
   border: 1px solid transparent;
 }
 
@@ -1126,7 +1126,7 @@ ul { list-style: none; }
   padding: 32px 20px;
   background: var(--white);
   border-radius: var(--radius-lg);
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .diff-item:hover {
@@ -1223,7 +1223,7 @@ ul { list-style: none; }
   background: var(--white);
   border-radius: var(--radius-lg);
   padding: 32px;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .testimonial-card:hover {
@@ -1333,8 +1333,8 @@ ul { list-style: none; }
   border-radius: var(--radius-lg);
   padding: 36px 28px;
   text-align: center;
-  transition: all 0.3s ease;
   position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .pricing-card:hover {
@@ -1656,7 +1656,7 @@ ul { list-style: none; }
   padding: 28px 24px;
   text-align: center;
   border: 2px dashed rgba(8, 145, 178, 0.2);
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
   position: relative;
 }
 
@@ -2101,9 +2101,9 @@ ul { list-style: none; }
   color: var(--dark);
 }
 
-.comparativo__destaque {
-  background: var(--primary-light) !important;
-  color: var(--primary) !important;
+.comparativo__table thead th.comparativo__destaque {
+  background: var(--primary-light);
+  color: var(--primary);
   position: relative;
 }
 
